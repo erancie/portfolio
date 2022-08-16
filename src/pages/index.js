@@ -1,25 +1,20 @@
 import React, { useEffect, useState } from "react"
-import TopNav from "../components/TopNav"
-import Layout from "../components/Layout"
 import Box from "../components/Box"
 import '../styles/global.sass'
-import * as styles from '../styles/home.module.sass'
-import Nav from "../components/Nav"
+import Layout from "../components/Layout"
 import Story from "../components/Story"
 import ProjectsList from "../components/ProjectsList"
 
 
-export default function Home() {
-
-
-
+export default function Home({data}) {
+  console.log(`data: ${data}`)
   return (
-    <div className="wrapper">
+    <Layout>
       
       <div className="landing">
         <div className="landing-bg"></div>
 
-        <Nav />
+        
         <div className="landing-left">
           <div className="">
             <h1 className="">Design & Develop</h1>
@@ -39,6 +34,6 @@ export default function Home() {
 
       <ProjectsList />
 
-    </div>
+    </ Layout>
   )
 }

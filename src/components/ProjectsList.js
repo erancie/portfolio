@@ -1,22 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
-export const projects = [
-  {
-    name:'mern',
-    title: 'MERN Platform',
-    img: null,
-    desc: 'A full stack project bringing experts and clients together.',
-    tools: ['Mongo', 'Express', 'React', 'Node'],
-  },
-  {
-    name: 'gpt',
-    title: 'GPT-3 App',
-    img: null,
-    desc: 'A front end implementation using the GPT-3 API',
-    tools: ['React', 'GPT-3', 'Speech Recognition']
-  },
-]
+import projects from '../../content/projectsData'
 
 export function ProjectThumb(props) {
   return (
@@ -26,6 +10,7 @@ export function ProjectThumb(props) {
       <p>{props.desc}</p>
       <div>{props.tools.map((t)=>t+' ')}</div>
       <Link to={`/projects/${props.name}`}>Link</Link>
+      {/* <Link to={`/projects/${props.name}`}>Link</Link> */}
     </div>
   )
 }
@@ -34,7 +19,7 @@ export function ProjectThumb(props) {
 export default function ProjectsList() {
 
   return (
-    <div className='projects-list'>
+    <div id='projects' className='projects-list'>
       {projects.map((p)=>(
         <ProjectThumb name={p.name}
                       title={p.title}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Toggle from './Toggle'
+import { Link } from 'gatsby'
 
 export default function Nav() {
 
@@ -21,9 +22,9 @@ export default function Nav() {
 
   return (
     <nav className={`nav ${hide && 'hide'}`}>
-      <div>LOGO</div>
+      <div><Link to='/'>LOGO</Link></div>
       <div className='nav-links'>
-        <div><a href='#page-one'>PROJECTS</a></div>
+        <div><Link to='/#projects'>PROJECTS</Link></div>
         <div><a>BLOG</a></div>
         <div><a>RESUME</a></div>
       </div>

@@ -18,13 +18,6 @@ html, body
     // scroll-snap-type: y mandatory
     scroll-behavior: smooth
 
-
-.wrapper
-    font-family: 'Raleway'
-    position: relative
-    top: 0
-    left: 0
-
 .middle
     margin: 25vh auto
     // margin-top: 10vh
@@ -40,6 +33,7 @@ html, body
   grid-template-columns: 1fr repeat(2, minmax(300px, auto)) 1fr
   grid-template-areas: 'nav nav nav nav''land1 land1 land2 land2''land1 land1 land2 land2''land1 land1 land2 land2'
   gap: 10px
+  font-family: 'Raleway'
 
     // 'nav nav nav nav'
     // 'land1 land1 land2 land2'
@@ -150,12 +144,29 @@ html, body
 //project page
 
 .project
-  width: 100%
+  width: 80%
+  margin: auto
+  padding: 6rem
   height: 100vh
   background: lightgray
 
 //projects list
 .projects-list
-  width: 100%
+  margin: auto
+  padding: 4rem
+  width: 80%
   height: 100vh
-  background: lightblue
+  background: none
+  display: flex
+  flex-wrap: wrap
+
+
+.project-thumb
+  padding: '20px'
+  width: 40%
+  margin: auto
+  box-shadow: 0px 3px 4px #3a748fce
+  border-radius: 8px
+  transition: all .25s ease-in-out
+  &:hover
+    transform: translateY(-3px)
