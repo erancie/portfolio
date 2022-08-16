@@ -46,11 +46,16 @@ const Box = () => {
     color: hovered ? "hotpink" : "gray",
   })
 
+  const handleClick =()=> {
+    window.location = '#page-one'
+  }
+
   return (
     <a.mesh
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
-      onClick={() => setActive(!active)}
+      // onClick={() => setActive(!active)}
+      onClick={handleClick}
       scale={props.scale}
       castShadow
     >
@@ -67,6 +72,7 @@ export default () => {
     <>
       {isBrowser && (
         <Canvas
+          // style={{zIndex: '-1'}} //find another way to style so can click
           camera={{ position: [0, 0, 5] }}
           onCreated={({ gl }) => {
             gl.shadowMap.enabled = true

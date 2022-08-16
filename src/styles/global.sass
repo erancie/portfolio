@@ -1,5 +1,161 @@
-/* global styles */
+// tailwind directives
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap')
+
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+//fonts
+// @font-face 
+//     font-family: 'Raleway'
+//     src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;600;800&display=swap')
+    
+ 
+
+// global styles 
 
 html, body
-    scroll-snap-type: y mandatory
+    // scroll-snap-type: y mandatory
     scroll-behavior: smooth
+
+
+.wrapper
+    font-family: 'Raleway'
+    position: relative
+    top: 0
+    left: 0
+
+.middle
+    margin: 25vh auto
+    // margin-top: 10vh
+    // margin-bottom: 10vh
+
+.landing
+  scroll-snap-align: start
+  font-weight: 400
+  color: white
+  height: 100vh
+  display: grid
+  grid-template-rows: repeat(4, 1fr)
+  grid-template-columns: 1fr repeat(2, minmax(300px, auto)) 1fr
+  grid-template-areas: 'nav nav nav nav''land1 land1 land2 land2''land1 land1 land2 land2''land1 land1 land2 land2'
+  gap: 10px
+
+    // 'nav nav nav nav'
+    // 'land1 land1 land2 land2'
+    // 'land1 land1 land2 land2'
+    // 'land1 land1 land2 land2'
+
+//Navigation
+.nav
+  border-bottom: 1px solid white
+  grid-area: nav
+  position: fixed
+  transition: all .3s ease-in-out
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 4rem
+  padding-left: 2rem
+  padding-right: 2rem
+  z-index: 99
+
+.hide
+  transform: translateY(-4rem)
+
+.nav-links
+  color: orange
+  display: flex
+  padding-left: 2rem
+  padding-right: 2rem
+  width: 50%
+  margin: auto
+  justify-content: space-between
+  align-items: center
+
+.nav-links a:hover
+  font-weight: 600
+
+//Landing
+
+.landing-left
+  grid-area: land1
+
+.landing-right
+  grid-area: land2
+
+.landing-bg 
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -1
+  width: 100%
+  height: 100vh
+  background: linear-gradient(to bottom, rgba(45, 52, 57, 0.98), rgba(0, 0, 0, 1) ), url('../../static/grate.jpg')
+  //Brett Sayles - pexels.com
+  background-position: center center
+  background-repeat: no-repeat
+  // overflow-x: hidden
+
+.p1-bg 
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -1
+  width: 100%
+  height: 100vh
+  background: black
+  //background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .92), rgba(0, 0, 0, 1) ), url('../../static/build.jpg')
+  //isa bulle - pexels.com
+  background-position: center center
+  background-repeat: no-repeat
+  overflow-x: hidden
+
+.story
+  position: relative
+  height: 200vh
+  display: grid 
+  grid-template-rows: repeat(4, 50vh)
+  grid-template-columns: 1fr repeat(2, minmax(300px, auto)) 1fr
+  grid-template-areas: 'label0 label0 label1 label1' 'label0 label0 label1 label1' 'label0 label0 label1 label1' 'label0 label0 label1 label1'
+  gap: 0px
+  // height: 100%
+  
+.story-left 
+  background-color: #659a93
+  grid-area: label0
+   
+
+.story-right
+  background-color: #659a93
+  grid-area: label1
+   
+.left-1
+  grid-row: 1/2
+  grid-column: 1/3
+  background: #9A656C
+  position: sticky
+  top: 25vh
+  margin: 20px
+
+.right-1
+  grid-row: 3/5
+  grid-column: 3/5
+  background: #78659A
+  position: sticky
+
+
+
+//project page
+
+.project
+  width: 100%
+  height: 100vh
+  background: lightgray
+
+//projects list
+.projects-list
+  width: 100%
+  height: 100vh
+  background: lightblue

@@ -9,5 +9,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-mdx`,
     `gatsby-plugin-sass`,
+    'gatsby-plugin-postcss',
   ],
 }
