@@ -28,7 +28,7 @@ export default function Nav() {
         <div><a>BLOG</a></div>
         <div><a>RESUME</a></div>
       </div>
-      <Toggle />
+      {/* <Toggle /> */}
     </nav>
   )
 }

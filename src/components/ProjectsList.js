@@ -4,7 +4,7 @@ import projects from '../../content/projectsData'
 
 export function ProjectThumb(props) {
   return (
-    <div className='project-thumb' style={{padding: '20px'}}>
+    <div className='project-thumb'>
       <h1>{props.title}</h1>
       <img src={props.img}></img>
       <p>{props.desc}</p>
