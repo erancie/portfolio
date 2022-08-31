@@ -9,12 +9,14 @@ import projects from '../../../content/projectsData'
 
 export default function Project(props) {
 
-  const [proj, setProj] = useState(null)
+  const [proj, setProj] = useState({})
 
   useEffect(()=>{
     const [ project ] = projects.filter((proj)=>proj.name === props.params.projectId)
     setProj(project)
   }, [])
+
+  // const [ proj ] = projects.filter((proj)=>proj.name === props.params.projectId)
 
   return (
     <Layout>
