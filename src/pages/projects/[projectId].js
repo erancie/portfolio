@@ -2,14 +2,19 @@
 //this file name denotes a dynamic path/param as part of the url using [param] (not :param)
 //the param value is made available through the default component's props.params.[filename]
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from '../../components/Layout'
 import projects from '../../../content/projectsData'
 
 
 export default function Project(props) {
 
-  const [ proj ] = projects.filter((proj)=>proj.name === props.params.projectId)
+  const [proj, setProj] = useState(null)
+
+  useEffect(()=>{
+    const [ project ] = projects.filter((proj)=>proj.name === props.params.projectId)
+    setProj(project)
+  }, [])
 
   return (
     <Layout>
