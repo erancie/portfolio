@@ -17,7 +17,7 @@ export default function Home() {
     const handleScroll = useCallback(()=>{    
       if(window.scrollY < 1280){
         bgRef.current.style.backgroundSize = 320 - window.scrollY/16+"%"
-        console.log(`scale(${1-window.scrollY/10})`)
+        // console.log(`scale(${1-window.scrollY/10})`)
         // landingRef.current.style.top = '-'+(window.scrollY/15)+'px'
         landingRef.current.style.transform = `scale(${1-window.scrollY/1500})`
         // landingRef.current.style.transform = `translateY(${-window.scrollY/1500})`
