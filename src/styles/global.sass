@@ -17,6 +17,9 @@
 html, body
     // scroll-snap-type: y mandatory
     scroll-behavior: smooth
+    
+.container
+  width: 100vw
 
 //Navigation
 .nav
@@ -67,6 +70,7 @@ html, body
   scroll-snap-align: start
   color: white
   height: 100vh
+  width: 100%
   display: grid
   grid-template-rows: repeat(6, 16.666%)
   grid-template-columns: repeat(12, 8.333%)
@@ -75,7 +79,10 @@ html, body
   font-family: 'Raleway'
   font-size: 8rem
   font-weight: 600
-  position: relative
+  position: absolute
+  top: 0
+  left: 0
+  // margin: auto
   margin-bottom: 50vh
 
 .title-1
@@ -126,13 +133,19 @@ html, body
   // margin-top: -6rem
   color: #5d3885
 
+.back-scene
+  height: 140vh
+  top: 0
+  left: 0
+  position: relative
+  z-index: -1
 
 .bg-overlay
   // background: (linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, .1) 30%, rgba(0, 0, 0, 1) 100%))
   // background: (linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff10 70%, #ffffff25 80%, #ffffff60 90%, #ffffff95 100%))
   background: (linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff10 55%, #00000050 75%, #00000090 82%, #000000 97%))
   width: 100%
-  height: 140vh
+  height: 100%
   position: absolute
   z-index: -1
 
@@ -142,7 +155,7 @@ html, body
   left: 0
   z-index: -1
   width: 100%
-  height: 140vh
+  height: 100%
   // background: linear-gradient(to bottom, rgba(45, 20, 57, 0.2), rgba(0, 0, 0, 1)) ,url('../../static/stars-8k.jpg')
   background: rgb(0,212,255)
   background: radial-gradient(circle, rgba(0,212,255,.2) 0%, rgba(28,28,195,.2) 18%, rgba(2,0,36,.2) 40%), url('../../static/milky-way-8k.jpg')
@@ -156,7 +169,7 @@ html, body
 .globe
   position: absolute
   width: 100%
-  height: 140vh
+  height: 100%
   top: 0
   left: 0
   z-index: -1
@@ -177,6 +190,10 @@ html, body
   position: sticky
 
 //project page
+#projects
+
+  // height: 
+
 .project
   width: 80%
   margin: auto
@@ -186,19 +203,21 @@ html, body
 
 //projects list
 .projects-list
-  margin: auto
-  padding: 4rem
-  width: 80%
+  background: black
   height: 100vh
-  background: none
+  width: 100%
+  margin: -4px auto
+  padding: 4rem
   display: flex
   flex-wrap: wrap
 
 .project-thumb
+  background: #b157da67
+  color: #a465c1
   padding: '20px'
   width: 40%
   margin: auto
-  box-shadow: 0px 3px 4px #3a748fce
+  box-shadow: 0px 3px 4px #4084b2e4
   border-radius: 8px
   transition: all .25s ease-in-out
   &:hover

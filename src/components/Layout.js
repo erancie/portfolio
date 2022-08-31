@@ -1,12 +1,10 @@
 import React from 'react'
-import TopNav from './TopNav'
-import * as styles from '../styles/home.module.sass'
 import Nav from './Nav'
 
 export default function Layout(props) {
 
   return (
-    <div className={styles.layout}>
+    <div className='container'>
       <Nav />
 
       {props.children}

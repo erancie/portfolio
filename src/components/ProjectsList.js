@@ -6,7 +6,7 @@ export function ProjectThumb(props) {
   return (
     <div className='project-thumb'>
       <h1>{props.title}</h1>
-      <img src={props.img}></img>
+      <img alt='meaningful alt' src={props.img}></img>
       <p>{props.desc}</p>
       <div>{props.tools.map((t)=>t+' ')}</div>
       <Link to={`/projects/${props.name}`}>Link</Link>

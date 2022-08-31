@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect, useCallback } from "react"
 import * as THREE from "three"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 // import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { Canvas, extend, useLoader, useThree, useFrame } from "react-three-fiber"
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
-import { useSpring, a } from "@react-spring/three"
-import { TWEEN } from 'three/examples/jsm/libs/tween.module.min'
+import { a } from "@react-spring/three"
+// import { TWEEN } from 'three/examples/jsm/libs/tween.module.min'
 
 import "../styles/box.module.css"
 
@@ -35,12 +35,18 @@ const Sphere = () => {
   const matRef = React.useRef()
   const outterMap = useLoader(TextureLoader, 'earth-clouds-8k.jpg')
   const innerNightMap = useLoader(TextureLoader, 'earth-night-8k.jpg')
-  const innerDayMap = useLoader(TextureLoader, 'earth-8k.jpg')
-  const surface = useLoader(TextureLoader, 'surface.jpg')
-  // const em = useLoader(TextureLoader, 'earth-8k.jpg')
+  // const innerDayMap = useLoader(TextureLoader, 'earth-8k.jpg')
+
   // https://www.solarsystemscope.com/textures/
  
   const [scale, setScale] = useState([1, 1, 1])
+
+  const handleScroll = useCallback(()=>{    
+    if(window.scrollY < 1280)
+      setScale([1-window.scrollY/2500, 
+                1-window.scrollY/2500, 
+                1-window.scrollY/2500])
+  }, [])
 
   useEffect(() => { 
     window.addEventListener('scroll', handleScroll);
@@ -49,18 +55,9 @@ const Sphere = () => {
     };
   }, [handleScroll]);
 
-  const handleScroll = () => {    
-    // console.log(1+window.scrollY/5000)
-    if(window.scrollY < 1280)
-      setScale([1-window.scrollY/2500, 
-                1-window.scrollY/2500, 
-                1-window.scrollY/2500])
-  }
-
   useFrame(() => {
     innerRef.current.rotation.x += .0002
     outterRef.current.rotation.x += .0002
-    // TWEEN.update()
   })
   
   // const ref = useUpdate(group => {
@@ -106,7 +103,7 @@ const Sphere = () => {
   )
 }
 
-export default () => {
+ const Globe = () => {
   const isBrowser = typeof window !== "undefined"
   return (
     <>
@@ -133,7 +130,7 @@ export default () => {
 
 
 
-
+export default Globe
 
 
 // onPointerOver={() => setHovered(true)}
