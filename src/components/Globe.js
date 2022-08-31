@@ -51,7 +51,7 @@ const Sphere = () => {
 
   const handleScroll = () => {    
     // console.log(1+window.scrollY/5000)
-    if(window.scrollY < 780)
+    if(window.scrollY < 1280)
       setScale([1-window.scrollY/2500, 
                 1-window.scrollY/2500, 
                 1-window.scrollY/2500])

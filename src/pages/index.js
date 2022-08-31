@@ -9,6 +9,8 @@ import ProjectsList from "../components/ProjectsList"
 
 export default function Home() {
 
+  const landingRef = useRef()
+
   const BackgroundScene = () => {
 
     const bgRef = useRef()
@@ -21,10 +23,13 @@ export default function Home() {
     }, [handleScroll]);
   
     const handleScroll = () => {    
-      // console.log('bgRef bg size: ', bgRef.current.style.backgroundSize)
-      // console.log('pageY: ', window.scrollY)
-      if(window.scrollY < 780)
-        bgRef.current.style.backgroundSize = 320 + window.scrollY/5+"%"
+      if(window.scrollY < 1280){
+        bgRef.current.style.backgroundSize = 320 - window.scrollY/16+"%"
+        console.log(`scale(${1-window.scrollY/10})`)
+        // landingRef.current.style.top = '-'+(window.scrollY/15)+'px'
+        landingRef.current.style.transform = `scale(${1-window.scrollY/1500})`
+        // landingRef.current.style.transform = `translateY(${-window.scrollY/1500})`
+      }
     }
 
     return(
@@ -42,7 +47,7 @@ export default function Home() {
 
       <BackgroundScene />
       
-      <div className="landing">
+      <div ref={landingRef} className="landing">
 
         {/* <h1 className="title-6">||</h1>
         <h1 className="title-7">|</h1> */}
