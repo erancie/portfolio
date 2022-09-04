@@ -8,6 +8,7 @@ import { a } from "@react-spring/three"
 // import { TWEEN } from 'three/examples/jsm/libs/tween.module.min'
 
 import "../styles/box.module.css"
+import useScrollListener from "./utils/useScrollListener"
 
 extend({ OrbitControls })
 
@@ -40,29 +41,24 @@ const Sphere = () => {
   // https://www.solarsystemscope.com/textures/
  
   const [scale, setScale] = useState([1, 1, 1])
+  // const scale = useRef([1, 1, 1])
 
   const handleScroll = useCallback(()=>{    
     if(window.scrollY < 1280)
+      // scale = [1-window.scrollY/2500, 
+      //           1-window.scrollY/2500, 
+      //           1-window.scrollY/2500]
       setScale([1-window.scrollY/2500, 
                 1-window.scrollY/2500, 
                 1-window.scrollY/2500])
   }, [])
 
-  useEffect(() => { 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [handleScroll]);
+  useScrollListener(scale, handleScroll)
 
   useFrame(() => {
     innerRef.current.rotation.x += .0002
     outterRef.current.rotation.x += .0002
   })
-  
-  // const ref = useUpdate(group => {
-  //   group.rotateOnAxis(new THREE.Vector3(1, 0, 0), Math.PI/2)
-  // }, [])
 
   return (
     <>

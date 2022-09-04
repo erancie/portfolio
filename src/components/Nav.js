@@ -1,27 +1,25 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useCallback, useRef } from 'react'
 import { Link } from 'gatsby'
+import useScrollListener from './utils/useScrollListener'
 
 export default function Nav() {
 
+  const [bgColor, setBgColor] = useState(false)//change to ref? b/c dont need rerender when changes?
   const [hide, setHide] = useState(false)
-  const [lastPosition, setLastPosition] = useState(0)
+  let lastPosition = useRef(0)
 
   const handleScroll = useCallback(()=>{    
-    if( window.scrollY > lastPosition ) setHide(true)
+    if( window.scrollY > lastPosition.current ) setHide(true)
     else setHide(false)
-    setLastPosition(window.scrollY)
+    if( window.scrollY > '150') setBgColor(true)
+    else setBgColor(false)
+    lastPosition.current = window.scrollY   //why does this work using ref and not state for lastPos?
   }, [lastPosition])
 
-  useEffect(() => { //scroll listeners have to be bound after component mounts (not JSX event attr)
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [handleScroll]);
-
+  useScrollListener(lastPosition, handleScroll)
 
   return (
-    <nav className={`nav ${hide && 'hide'}`}>
+    <nav className={`nav ${hide && 'hide'} ${bgColor && 'bgColor'}`}>
       <div><Link to='/'>LOGO</Link></div>
       <div className='nav-links'>
         <div><Link to='/#projects'>PROJECTS</Link></div>

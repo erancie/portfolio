@@ -1,46 +1,23 @@
-import React, { useCallback, useEffect, useRef } from "react"
-import Globe from "../components/Globe"
+import React, { useCallback, useRef } from "react"
+import BackgroundScene from "../components/BackgroundScene"
 import '../styles/global.sass'
 import Layout from "../components/Layout"
 import ProjectsList from "../components/ProjectsList"
-
-
+import useScrollListener from '../components/utils/useScrollListener'
 
 export default function Home() {
 
   const landingRef = useRef()
 
-  const BackgroundScene = () => {
+  const handleScroll = useCallback(()=>{    
+    let scrollY = window.scrollY  
+    if(scrollY < 1280){
+      landingRef.current.style.transform = `scale(${1-scrollY/1500})`
+    }
+  }, [landingRef])
 
-    const bgRef = useRef()
+  useScrollListener(landingRef, handleScroll)
 
-    const handleScroll = useCallback(()=>{    
-      if(window.scrollY < 1280){
-        bgRef.current.style.backgroundSize = 320 - window.scrollY/16+"%"
-        // console.log(`scale(${1-window.scrollY/10})`)
-        // landingRef.current.style.top = '-'+(window.scrollY/15)+'px'
-        landingRef.current.style.transform = `scale(${1-window.scrollY/1500})`
-        // landingRef.current.style.transform = `translateY(${-window.scrollY/1500})`
-      }
-    }, [])
-
-    useEffect(() => { 
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, [handleScroll]);
-
-    return(
-      <div className="back-scene">
-        <div ref={bgRef} className="landing-bg"></div>
-        <div className="globe">
-          <Globe />
-        </div>
-        <div className="bg-overlay"></div>
-      </div>
-    )
-  }
   return (
     <Layout>
 

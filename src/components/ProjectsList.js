@@ -5,29 +5,34 @@ import projects from '../../content/projectsData'
 export function ProjectThumb(props) {
   return (
     <div className='project-thumb'>
-      <h1>{props.title}</h1>
-      <img alt='meaningful alt' src={props.img}></img>
-      <p>{props.desc}</p>
-      <div>{props.tools.map((t)=>t+' ')}</div>
-      <Link to={`/projects/${props.name}`}>Link</Link>
+      <h1 className='project-title'>{props.title}</h1>
+      <img className='project-img' alt='meaningful alt' src={props.img}></img>
+      <p className='project-desc'>{props.desc}</p>
+      <div className='project-tools'>{props.tools.map((t)=>t+' ')}</div>
+      <Link className='project-link' to={`/projects/${props.name}`}>Info</Link>
+      <Link className='project-link' to={`/projects/${props.name}`}>Visit</Link>
+      <Link className='project-link' to={`/projects/${props.name}`}>More</Link>
       {/* <Link to={`/projects/${props.name}`}>Link</Link> */}
     </div>
   )
 }
 
-
 export default function ProjectsList() {
 
   return (
-    <div id='projects' className='projects-list'>
-      {projects.map((p)=>(
-        <ProjectThumb name={p.name}
-                      title={p.title}
-                      img={p.img}
-                      desc={p.desc}
-                      tools={p.tools}    
-        />
-      ))}
+    <div id='projects' className='projects-container'>
+      <div className='projects-list'>
+        {projects.map((p)=>(
+          // <div className='thumb-wrapper'>
+          <ProjectThumb name={p.name}
+                        title={p.title}
+                        img={p.img}
+                        desc={p.desc}
+                        tools={p.tools}    
+          />
+          // </div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -35,7 +40,7 @@ export default function ProjectsList() {
 //
 
 
-// //for loop for an object data structure
+// //for in loop for an object data structure
 // const list =()=> {
 //   let projs = []
 //   for (const project in projects) {

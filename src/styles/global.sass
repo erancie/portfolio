@@ -5,44 +5,61 @@
 @tailwind components
 @tailwind utilities
 
-//fonts
-// @font-face 
-//     font-family: 'Raleway'
-//     src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;600;800&display=swap')
-    
- 
+//colors
+$b: #101018
+$fore: #1c1c29
+$font: #81dffb
+$teal: #00d4ff
+$shadow: #0a0a0abf
+$purple: #6d498c
+$light-purple: #b17fdc
+$orange: #dda345
+
 
 // global styles 
 
 html, body
-    // scroll-snap-type: y mandatory
-    scroll-behavior: smooth
+  // scroll-snap-type: y mandatory
+  scroll-behavior: smooth
+  // width: 100%
+  // overflow-x: hidden
 
 .container
-  width: 100vw
+  // width: 100vw
+  max-width: 100%
+  height: 100%
+  // margin: auto
+  // background: $b
+
+// .gatsby-focus-wrapper
+//   height: 100%
 
 //Navigation
 .nav
-  // border-bottom: 1px solid white
-  // background: (linear-gradient(to top, rgba(0, 0, 0, 0) , rgba(0, 0, 0, .6)))
-  // background: #071d36
+  // margin: auto
   grid-area: nav
   position: fixed
-  transition: all .3s ease-in-out
+  transition: all .2s ease-in
   display: flex
   justify-content: center
   align-items: center
   width: 100%
-  height: 4rem
+  height: 3.2rem
   padding-left: 2rem
   padding-right: 2rem
   z-index: 99
+  // overflow-x: none
 
 .hide
-  transform: translateY(-4rem)
+  transform: translateY(-4.2rem)
+
+.bgColor
+  background: $b
+  // border-bottom: 2px solid $fore
+  box-shadow: 0px 3px 4px $shadow
 
 .nav-links
-  color: #6d498c
+  color: $purple
   font-size: 1.3rem
   font-weight: 600
   display: flex
@@ -55,22 +72,22 @@ html, body
   text-align: center
   div
     width: 8rem
-    height: 4rem
-    margin-top: 1rem
+    height: 2rem
+    // margin-top: 1rem
     transition: all .15s ease-in
 
 .nav-links div:hover
   // font-weight: 800
-  font-size: 1.6rem
+  font-size: 1.4rem
   color: white
-  transform: translateY(5px)
+  transform: translateY(4px)
 
 //Landing
 .landing
   scroll-snap-align: start
   color: white
   height: 100vh
-  width: 100vw
+  width: 100%
   display: grid
   grid-template-rows: repeat(6, 16.666%)
   grid-template-columns: repeat(12, 8.333%)
@@ -84,6 +101,7 @@ html, body
   left: 0
   // margin: auto
   margin-bottom: 50vh
+  // transition: transform .02s ease
 
 .title-1
   grid-column: 4/6
@@ -135,7 +153,7 @@ html, body
 
 .back-scene
   height: 140vh
-  width: 100vw
+  width: 100%
   top: 0
   left: 0
   position: relative
@@ -159,12 +177,14 @@ html, body
   height: 100%
   // background: linear-gradient(to bottom, rgba(45, 20, 57, 0.2), rgba(0, 0, 0, 1)) ,url('../../static/stars-8k.jpg')
   background: rgb(0,212,255)
-  background: radial-gradient(circle, rgba(0,212,255,.2) 0%, rgba(28,28,195,.2) 18%, rgba(2,0,36,.2) 40%), url('../../static/milky-way-8k.jpg')
+  background: radial-gradient(circle, #00d4ff33 0%, #1c1cc333 18%, #02002433 40%), url('../../static/milky-way-8k.jpg')
     // https://www.solarsystemscope.com/textures/
   background-size: 320%
   // background-size: 320%
   background-position: center center
   background-repeat: no-repeat
+  // transition: background-size .02s ease
+
 
 //globe
 .globe
@@ -175,26 +195,110 @@ html, body
   left: 0
   z-index: -1
 
-  
-.left-1
-  grid-row: 1/2
-  grid-column: 1/3
-  background: #9A656C
-  position: sticky
-  top: 25vh
-  margin: 20px
 
-.right-1
-  grid-row: 3/5
-  grid-column: 3/5
-  background: #78659A
-  position: sticky
 
 //project page
 #projects
 
-  // height: 
+//////////////////////////////////////
+//projects list
+/////////////////////////////////////
+.projects-container
+  width: 100%
+  height: 100%
+  background: $b
 
+
+.projects-list
+  // background: $b
+  height: 100%
+  width: 80%
+  margin: auto
+  padding-bottom: 12rem
+  // padding: 0 4rem
+  display: flex
+  flex-wrap: wrap
+
+
+// .thumb-wrapper
+//   width: 42%
+//   margin: 2rem
+
+.project-thumb
+  // background: $fore
+  background: linear-gradient(345deg, $fore 42%, #4b4b63 100%)
+  // min-width: 500px
+  // max-width: 640px
+  color: white
+  font-weight: 600
+  padding: 40px
+  width: 46%
+  margin: 8rem auto 0
+  box-shadow: 0px 3px 4px $shadow
+  border-radius: 8px
+  transition: all .25s ease-in-out
+  &:hover
+    transform: translateY(-3px)
+
+@media (max-width: 900px)  
+  .project-list
+    width: 100%
+  .project-thumb
+    width: 90%
+
+@media (min-width: 1600px)  
+  .project-list
+    width: 80%
+  .project-thumb
+    width: 30%
+
+.project-title
+  padding-bottom: 2rem
+  font-size: 2.4rem
+  color: $font
+
+.project-img
+  width: 100%
+  height: 10rem
+  background: white
+  margin: 0 auto
+
+.project-desc
+  padding-top: 1.5rem
+
+.project-tools
+  padding-top: 1rem
+  padding-bottom: 2.5rem
+
+
+
+.project-link
+  border: 2px solid $font
+  color: $font
+  border-radius: 5px
+  // margin-top: 4rem
+  padding: .8rem
+  margin-right: 2rem
+  &:hover
+    background: $font
+    color: black
+  &:nth-of-type(2)
+    color: $orange
+    border: 2px solid $orange
+    &:hover
+      background: $orange
+      color: black
+  &:nth-of-type(3)
+    color: $light-purple
+    border: 2px solid $light-purple
+    &:hover
+      background: $light-purple
+      color: black
+    
+
+/////////////////////////////
+//project page
+///////////////////////////////////////
 .project
   width: 80%
   margin: auto
@@ -202,46 +306,38 @@ html, body
   height: 100vh
   background: lightgray
 
-//projects list
-.projects-list
-  background: black
-  height: 100vh
-  width: 100vw
-  margin: -4px auto
-  padding: 4rem
-  display: flex
-  flex-wrap: wrap
 
-.project-thumb
-  background: #b157da67
-  color: #a465c1
-  padding: '20px'
-  width: 40%
-  margin: auto
-  box-shadow: 0px 3px 4px #4084b2e4
-  border-radius: 8px
-  transition: all .25s ease-in-out
-  &:hover
-    transform: translateY(-3px)
-
-
-
-//story
-.story
-  position: relative
-  height: 200vh
-  display: grid 
-  grid-template-rows: repeat(4, 50vh)
-  grid-template-columns: 1fr repeat(2, minmax(300px, auto)) 1fr
-  grid-template-areas: 'label0 label0 label1 label1' 'label0 label0 label1 label1' 'label0 label0 label1 label1' 'label0 label0 label1 label1'
-  gap: 0px
-  // height: 100%
+// //story
+// .story
+//   position: relative
+//   height: 200vh
+//   display: grid 
+//   grid-template-rows: repeat(4, 50vh)
+//   grid-template-columns: 1fr repeat(2, minmax(300px, auto)) 1fr
+//   grid-template-areas: 'label0 label0 label1 label1' 'label0 label0 label1 label1' 'label0 label0 label1 label1' 'label0 label0 label1 label1'
+//   gap: 0px
+//   // height: 100%
   
-.story-left 
-  background-color: #659a93
-  grid-area: label0
+// .story-left 
+//   background-color: #659a93
+//   grid-area: label0
    
 
-.story-right
-  background-color: #659a93
-  grid-area: label1
+// .story-right
+//   background-color: #659a93
+//   grid-area: label1
+
+    
+// .left-1
+//   grid-row: 1/2
+//   grid-column: 1/3
+//   background: #9A656C
+//   position: sticky
+//   top: 25vh
+//   margin: 20px
+
+// .right-1
+//   grid-row: 3/5
+//   grid-column: 3/5
+//   background: #78659A
+//   position: sticky
