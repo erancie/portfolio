@@ -16,27 +16,15 @@ $light-purple: #b17fdc
 $orange: #dda345
 
 
-// global styles 
-
 html, body
-  // scroll-snap-type: y mandatory
   scroll-behavior: smooth
-  // width: 100%
-  // overflow-x: hidden
 
 .container
-  // width: 100vw
   max-width: 100%
   height: 100%
-  // margin: auto
-  // background: $b
-
-// .gatsby-focus-wrapper
-//   height: 100%
 
 //Navigation
 .nav
-  // margin: auto
   grid-area: nav
   position: fixed
   transition: all .2s ease-in
@@ -44,27 +32,26 @@ html, body
   justify-content: center
   align-items: center
   width: 100%
-  height: 3.2rem
+  height: 2.8rem
   padding-left: 2rem
   padding-right: 2rem
   z-index: 99
-  // overflow-x: none
 
 .hide
   transform: translateY(-4.2rem)
 
 .bgColor
   background: $b
-  // border-bottom: 2px solid $fore
   box-shadow: 0px 3px 4px $shadow
 
 .nav-links
   color: $purple
-  font-size: 1.3rem
+  // font-size: 1.1rem
   font-weight: 600
   display: flex
-  padding-left: 2rem
-  padding-right: 2rem
+  // padding-left: 2rem
+  // padding-right: 2rem
+  padding: .5rem 2rem 0
   width: 50%
   margin: auto
   justify-content: space-evenly
@@ -73,14 +60,12 @@ html, body
   div
     width: 8rem
     height: 2rem
-    // margin-top: 1rem
     transition: all .15s ease-in
 
 .nav-links div:hover
-  // font-weight: 800
-  font-size: 1.4rem
+  font-size: 1.08rem
   color: white
-  transform: translateY(4px)
+  transform: translateY(2px)
 
 //Landing
 .landing
@@ -208,7 +193,6 @@ html, body
   height: 100%
   background: $b
 
-
 .projects-list
   // background: $b
   height: 100%
@@ -219,23 +203,18 @@ html, body
   display: flex
   flex-wrap: wrap
 
-
-// .thumb-wrapper
-//   width: 42%
-//   margin: 2rem
-
 .project-thumb
-  // background: $fore
+  // background: #fff
   background: linear-gradient(345deg, $fore 42%, #4b4b63 100%)
   // min-width: 500px
   // max-width: 640px
   color: white
   font-weight: 600
-  padding: 40px
+  padding: 0 20px 40px
   width: 46%
   margin: 8rem auto 0
   box-shadow: 0px 3px 4px $shadow
-  border-radius: 8px
+  border-radius: 5px
   transition: all .25s ease-in-out
   &:hover
     transform: translateY(-3px)
@@ -253,13 +232,13 @@ html, body
     width: 30%
 
 .project-title
-  padding-bottom: 2rem
+  padding: 1rem 0 1.4rem
   font-size: 2.4rem
   color: $font
+  // color: $orange
 
 .project-img
   width: 100%
-  height: 10rem
   background: white
   margin: 0 auto
 
@@ -269,14 +248,16 @@ html, body
 .project-tools
   padding-top: 1rem
   padding-bottom: 2.5rem
-
+/////////////////////////////
+.project-links
+  margin-left: 1.2rem
+  padding-bottom: 2rem
 
 
 .project-link
   border: 2px solid $font
   color: $font
   border-radius: 5px
-  // margin-top: 4rem
   padding: .8rem
   margin-right: 2rem
   &:hover
@@ -295,6 +276,7 @@ html, body
       background: $light-purple
       color: black
     
+@import "cards.sass"
 
 /////////////////////////////
 //project page
@@ -305,6 +287,24 @@ html, body
   padding: 6rem
   height: 100vh
   background: lightgray
+
+
+// .cont
+//   width: 50%
+//   height: 600px
+//   background: $purple
+//   margin: auto
+//   position: relative
+//   h1
+//     position: absolute
+
+// .bg-img
+//   width: 100%
+//   height: 40%
+//   background: url('https://images.pexels.com/photos/10980739/pexels-photo-10980739.jpeg?cs=srgb&dl=pexels-karina-curci-10980739.jpg&fm=jpg')
+//   background-repeat: no-repeat
+//   background-size: cover
+//   background-position: center center
 
 
 // //story

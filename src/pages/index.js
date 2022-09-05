@@ -3,6 +3,7 @@ import BackgroundScene from "../components/BackgroundScene"
 import '../styles/global.sass'
 import Layout from "../components/Layout"
 import ProjectsList from "../components/ProjectsList"
+import ProjectsList2 from "../components/ProjectsList2"
 import useScrollListener from '../components/utils/useScrollListener'
 
 export default function Home() {
@@ -35,7 +36,14 @@ export default function Home() {
 
       </div>
 
-      <ProjectsList />
+      {/* <ProjectsList /> */}
+
+      <ProjectsList2 />
+
+      {/* <div className="cont">
+        <h1>It's me!</h1>
+        <div className="bg-img"></div>
+      </div> */}
 
     </ Layout>
   )

@@ -23,7 +23,7 @@ export default function Nav() {
       <div><Link to='/'>LOGO</Link></div>
       <div className='nav-links'>
         <div><Link to='/#projects'>PROJECTS</Link></div>
-        <div><a href='/'>BLOG</a></div>
+        <div><a href='/'>CONTACT</a></div>
         <div><a href='/'>RESUME</a></div>
       </div>
       {/* <Toggle /> */}

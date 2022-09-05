@@ -1,29 +1,31 @@
- const projects = [
+import mern1 from '../static/mern1.png'
+const url = 'https://images.pexels.com/photos/190364/pexels-photo-190364.jpeg?auto=compress&cs=tinysrgb&w=800'
+const projects = [
   {
     name:'mern',
     title: 'MERN Platform',
-    img: null,
+    img: mern1,
     desc: 'A full stack project bringing experts and clients together.',
     tools: ['Mongo', 'Express', 'React', 'Node'],
   },
   {
     name: 'gpt',
     title: 'GPT-3 App',
-    img: null,
+    img: 'https://images.pexels.com/photos/38519/macbook-laptop-ipad-apple-38519.jpeg?auto=compress&cs=tinysrgb&w=800',
     desc: 'A front end implementation using the GPT-3 API',
     tools: ['React', 'GPT-3', 'Speech Recognition']
   },
   {
     name: 'gpt',
     title: 'GPT-3 App',
-    img: null,
+    img: url,
     desc: 'A front end implementation using the GPT-3 API',
     tools: ['React', 'GPT-3', 'Speech Recognition']
   },
   {
     name: 'gpt',
     title: 'GPT-3 App',
-    img: null,
+    img: url,
     desc: 'A front end implementation using the GPT-3 API',
     tools: ['React', 'GPT-3', 'Speech Recognition']
   },
