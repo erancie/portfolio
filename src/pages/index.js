@@ -3,7 +3,6 @@ import BackgroundScene from "../components/BackgroundScene"
 import '../styles/global.sass'
 import Layout from "../components/Layout"
 import ProjectsList from "../components/ProjectsList"
-import ProjectsList2 from "../components/ProjectsList2"
 import useScrollListener from '../components/utils/useScrollListener'
 import TrickCards from "../components/TrickCards"
 
@@ -37,17 +36,9 @@ export default function Home() {
 
       </div>
 
-      {/* <ProjectsList /> */}
-
-      <ProjectsList2 />
+      <ProjectsList />
 
       <TrickCards />
-      <TrickCards />
-
-      {/* <div className="cont">
-        <h1>It's me!</h1>
-        <div className="bg-img"></div>
-      </div> */}
 
     </ Layout>
   )

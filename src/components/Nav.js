@@ -20,11 +20,12 @@ export default function Nav() {
 
   return (
     <nav className={`nav ${hide && 'hide'} ${bgColor && 'bgColor'}`}>
-      <div><Link to='/'>LOGO</Link></div>
+      <div className='logo'><Link to='/'>LOGO</Link></div>
       <div className='nav-links'>
-        <div><Link to='/#projects'>PROJECTS</Link></div>
-        <div><a href='/'>CONTACT</a></div>
-        <div><a href='/'>RESUME</a></div>
+        <div><Link to='/#projects'>Work</Link></div>
+        <div><a href='/'>Contact</a></div>
+        <div><a href='/'>Resume</a></div>
+        <div><a href='/'>GitLogo</a></div>
       </div>
       {/* <Toggle /> */}
     </nav>

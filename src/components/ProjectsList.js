@@ -1,35 +1,78 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'gatsby'
 import projects from '../../content/projectsData'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export function ProjectThumb(props) {
 
+  const cardRef = useRef(null)
+
+  useEffect(()=> {
+    // gsap.set(cardRef.current, { translateY: -20 })
+
+    cardRef.current.addEventListener("mouseenter", () => {
+      gsap.to(cardRef.current, {
+          translateY: -10, rotationZ: -.5, duration: .18, ease:'none', 
+      })
+    });
+    cardRef.current.addEventListener("mouseleave", () => {
+      gsap.to(cardRef.current, {
+          translateY: 0, rotationZ: 0, duration: .18, ease:'none' 
+      })
+    });
+  },[])
+
+  useEffect(()=> {
+    gsap.to(cardRef.current, { 
+      translateY: 0,
+      opacity: 1,
+      ease: 'none',
+      duration: .8,
+      scrollTrigger: {
+        trigger: cardRef.current, // make .panel2 the trigger
+        start: "center bottom", // 10% of .panel2 enters the bottom of the viewport
+        // end: "botttom bottom",
+        markers: true
+      }
+    });
+  }, [cardRef])
+
   return (
-    <div className='project-thumb'>
-      <h1 className='project-title'>{props.title}</h1>
-      <img className='project-img' alt='meaningful alt' src={props.img}></img>
-      <p className='project-desc'>{props.desc}</p>
-      <div className='project-tools'>{props.tools.map((t)=>t+' ')}</div>
-      <Link className='project-link' to={`/projects/${props.name}`}>Info</Link>
-      <Link className='project-link' to={`/projects/${props.name}`}>Visit</Link>
-      <Link className='project-link' to={`/projects/${props.name}`}>More</Link>
-      {/* <Link to={`/projects/${props.name}`}>Link</Link> */}
+    <div ref={cardRef} key={props.name} className='project-thumb2'>
+      <h1 className='project-title2'>{props.title}</h1>
+      <div className="project-img-wrapper">
+        {/* <div style={{backgroundImage: `url("../../static/${props.name}1.png")`}} className='project-img2'></div> */}
+        {/* <div style={{backgroundImage:` url('../../static/mern1.png')`}} className='project-img2'></div> */}
+        <img className='project-img2' alt='meaningful alt' src={props.img}></img>
+      </div>
+      <p className='project-desc2'>{props.desc}</p>
+
+      <div className='project-tools2'>{props.tools.map((t)=>t+' ')}</div>
+      <div className='project-links'>
+        <Link className='project-link' to={`/projects/${props.name}`}>Info</Link>
+        <Link className='project-link' to={`${props.link}`}>Visit</Link>
+        <Link className='project-link' to={`/projects/${props.name}`}>More</Link>
+      </div>
     </div>
-  )
+  ) 
 }
 
-export default function ProjectsList() {
+export default function ProjectsList2() {
 
   return (
-    <div id='projects' className='projects-container'>
-      <div className='projects-list'>
+    <div  className='projects-container2'>
+      <div className='projects-list2'>
         {projects.map((p)=>(
           // <div className='thumb-wrapper'>
           <ProjectThumb name={p.name}
                         title={p.title}
                         img={p.img}
                         desc={p.desc}
-                        tools={p.tools}    
+                        tools={p.tools}
+                        link={p.link}    
           />
           // </div>
         ))}
@@ -37,20 +80,3 @@ export default function ProjectsList() {
     </div>
   )
 }
-
-//
-
-
-// //for in loop for an object data structure
-// const list =()=> {
-//   let projs = []
-//   for (const project in projects) {
-//     const proj = projects[project];
-//     projs.push(<ProjectThumb title={proj.title}
-//                             img={proj.img}
-//                             desc={proj.desc}
-//                             tools={proj.tools}
-//               />)
-//   }
-//   return projs
-// }

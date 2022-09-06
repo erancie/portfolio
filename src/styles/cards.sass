@@ -19,10 +19,12 @@
   margin: 8rem auto 0
   box-shadow: 0px 3px 4px $shadow
   border-radius: 8px
-  transition: all .25s ease-in-out
+  // transition: transform .25s ease-in-out
   position: relative
-  &:hover
-    transform: translateY(-20px) rotateZ(-.5deg) 
+  transform: translateY(20px)
+  opacity: 0
+  // &:hover
+  //   transform: translateY(-20px) rotateZ(-.5deg) 
 
 .project-title2
   margin-top: -1px
@@ -67,6 +69,34 @@
   margin-left: 1.2rem
   color: lightgrey
 
+  .project-links
+  margin-left: 1.2rem
+  padding-bottom: 2rem
+
+
+.project-link
+  border: 1px solid $font
+  color: $font
+  border-radius: 5px
+  padding: .3rem .6rem .5rem
+  // padding-bottom: .5rem
+  margin-right: 2rem
+  &:hover
+    background: $font
+    color: black
+  &:nth-of-type(2)
+    color: $orange
+    border: 2px solid $orange
+    &:hover
+      background: $orange
+      color: black
+  &:nth-of-type(3)
+    color: $light-purple
+    border: 2px solid $light-purple
+    &:hover
+      background: $light-purple
+      color: black
+      
 //media queries
 @media (max-width: 900px)  
   .project-list2

@@ -37,25 +37,22 @@
   border-radius: 8px
   transition: all .18s ease-in-out
   position: relative
-  box-shadow: -1rem 0 2.5rem #000000b0
+  box-shadow: -6px 4px 4px $shadow
   margin-left: -80px 
   margin-right: 0
-  &:hover
-    transform: translate(-0px, -1.2rem) rotateZ(-1deg) scale(1.1)
-    &~.trick-card
-      transform: translateX(120px) rotateZ(0deg)
+  tranform: perspective(800px)
   &:first-child
     margin-left: 0
+  &:hover
+    transform: perspective(800px) rotateY(3deg) scale(1.1) translate(-0px, -1.2rem) 
+    &~.trick-card
+      transform: translateX(8rem)
+  &:hover:last-child
+    transform: perspective(800px) rotateY(-3deg) scale(1.1) translate(-0px, -1.2rem) 
+  // &:nth-of-type(2)~.trick-card:hover
+  //   transform: perspective(800px) rotateY(-3deg) scale(1.1) translate(-0px, -1.2rem) 
 
-
-
-  // &:nth-of-type(1):hover~.trick-card //can't use :first-child?
-  //   transform: translateX(40px)
-
-// .card:not(:first-child)
-//   margin-left: -130px
-  // wont work?
-
+// .trick-cards:nth-of-type(2)~.trick-card:hover //prob the greatest selector ive ever written :D
 
 .trick-title
   margin-top: -1px
