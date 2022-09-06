@@ -5,6 +5,7 @@ import Layout from "../components/Layout"
 import ProjectsList from "../components/ProjectsList"
 import ProjectsList2 from "../components/ProjectsList2"
 import useScrollListener from '../components/utils/useScrollListener'
+import TrickCards from "../components/TrickCards"
 
 export default function Home() {
 
@@ -39,6 +40,9 @@ export default function Home() {
       {/* <ProjectsList /> */}
 
       <ProjectsList2 />
+
+      <TrickCards />
+      <TrickCards />
 
       {/* <div className="cont">
         <h1>It's me!</h1>

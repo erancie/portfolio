@@ -3,14 +3,11 @@
   height: 100%
   background: $b
 
-
 .projects-list2
-  // background: $b
   height: 100%
   width: 80%
   margin: auto
   padding-bottom: 12rem
-  // padding: 0 4rem
   display: flex
   flex-wrap: wrap
   align-items: flex-start
@@ -18,7 +15,6 @@
 .project-thumb2
   background: linear-gradient(25deg, $fore 28%, #4b4b63 100%)
   color: white
-  // padding: 40px
   width: 46%
   margin: 8rem auto 0
   box-shadow: 0px 3px 4px $shadow
@@ -26,14 +22,13 @@
   transition: all .25s ease-in-out
   position: relative
   &:hover
-    transform: translateY(-3px)
-
+    transform: translateY(-20px) rotateZ(-.5deg) 
 
 .project-title2
   margin-top: -1px
   font-size: 2rem
   font-weight: 500
-  color: $font
+  color: white
   z-index: 10
   position: absolute
   top: 0
@@ -41,28 +36,24 @@
   background: $fore
   text-transform: uppercase
   // background: linear-gradient(60deg, $fore 70%, #4b4b63 100%)
-
   border-radius: 5px 0 24px 0
   padding: .2rem 1.5rem .5rem 1rem
 
 .project-img-wrapper
   position: relative
   height: 80%
-  // height: 300px
   top: 0
   left: 0
   overflow: hidden
 
 .project-img2
   width: 100%
-  // height: 10rem
   background: white
   margin: 0 auto
   position: relative
   top: 0
   left: 0
   border-radius: 8px 8px 0 0
-  // height
 
 .project-desc2
   padding-top: 1.2rem
@@ -74,7 +65,7 @@
   padding-top: 1rem
   padding-bottom: 2.5rem
   margin-left: 1.2rem
-  color: grey
+  color: lightgrey
 
 //media queries
 @media (max-width: 900px)  
@@ -88,3 +79,5 @@
     width: 80%
   .project-thumb2
     width: 30%
+
+

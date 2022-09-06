@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import projects from '../../content/projectsData'
 
 export function ProjectThumb(props) {
+
   return (
     <div className='project-thumb'>
       <h1 className='project-title'>{props.title}</h1>

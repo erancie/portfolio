@@ -1,0 +1,144 @@
+.tricks-container
+  width: 100%
+  height: 100%
+  background: $b
+
+.tricks-list
+  height: 100%
+  width: 90%
+  margin: auto
+  // margin-left: 2rem
+  padding: 4rem 0
+  display: flex
+  align-items: flex-start
+  overflow-x: visible
+  // overflow-x: scroll
+  // box-shadow: 0 0 3rem #000
+
+// custom scrollbar
+.tricks-list::-webkit-scrollbar 
+  // width: 20px
+  height: 10px
+
+.tricks-list::-webkit-scrollbar-thumb 
+  background: #201c29
+  border-radius: 10px
+  box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25)
+
+.tricks-list::-webkit-scrollbar-track 
+  background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d)
+
+
+.trick-card
+  background: linear-gradient(25deg, $fore 28%, #4b4b63 100%)
+  color: white
+  width: 46%
+  margin: 4rem auto 0
+  border-radius: 8px
+  transition: all .18s ease-in-out
+  position: relative
+  box-shadow: -1rem 0 2.5rem #000000b0
+  margin-left: -80px 
+  margin-right: 0
+  &:hover
+    transform: translate(-0px, -1.2rem) rotateZ(-1deg) scale(1.1)
+    &~.trick-card
+      transform: translateX(120px) rotateZ(0deg)
+  &:first-child
+    margin-left: 0
+
+
+
+  // &:nth-of-type(1):hover~.trick-card //can't use :first-child?
+  //   transform: translateX(40px)
+
+// .card:not(:first-child)
+//   margin-left: -130px
+  // wont work?
+
+
+.trick-title
+  margin-top: -1px
+  font-size: 2rem
+  font-weight: 500
+  color: white
+  z-index: 10
+  position: absolute
+  top: 0
+  left: 0
+  background: $fore
+  text-transform: uppercase
+  // background: linear-gradient(60deg, $fore 70%, #4b4b63 100%)
+  border-radius: 5px 0 24px 0
+  padding: .2rem 1.5rem .5rem 1rem
+
+.trick-img-wrapper
+  position: relative
+  height: 80%
+  top: 0
+  left: 0
+  overflow: hidden
+
+.trick-img
+  width: 100%
+  // height: 10rem
+  background: white
+  margin: 0 auto
+  position: relative
+  top: 0
+  left: 0
+  border-radius: 8px 8px 0 0
+
+.trick-desc
+  padding-top: 1.2rem
+  margin: 0 1.2rem  
+  font-weight: 100
+  font-size: 1.1rem
+
+.trick-tools
+  padding-top: 1rem
+  padding-bottom: 2.5rem
+  margin-left: 1.2rem
+  color: lightgrey
+
+.trick-links
+  margin-left: 1.2rem
+  padding-bottom: 2rem
+
+.trick-link
+  border: 1px solid $font
+  color: $font
+  border-radius: 5px
+  padding: .3rem .6rem .5rem
+  // padding-bottom: .5rem
+  margin-right: 2rem
+  &:hover
+    background: $font
+    color: black
+  &:nth-of-type(2)
+    color: $orange
+    border: 2px solid $orange
+    &:hover
+      background: $orange
+      color: black
+  &:nth-of-type(3)
+    color: $light-purple
+    border: 2px solid $light-purple
+    &:hover
+      background: $light-purple
+      color: black
+
+//media queries
+@media (max-width: 900px)  
+  .trick-list
+    width: 100%
+  .trick-thumb
+    width: 90%
+
+@media (min-width: 1600px)  
+  .trick-list
+    width: 80%
+  .trick-thumb
+    width: 30%
+
+
