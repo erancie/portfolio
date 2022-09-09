@@ -13,7 +13,7 @@ const BackgroundScene = () => {
     }
   }, [bgRef])
 
-  useScrollListener(bgRef, handleScroll)
+  useScrollListener([bgRef], handleScroll)
 
   return(
     <div className="back-scene">

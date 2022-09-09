@@ -53,7 +53,7 @@ const Sphere = () => {
                 1-window.scrollY/2500])
   }, [])
 
-  useScrollListener(scale, handleScroll)
+  useScrollListener([scale], handleScroll)
 
   useFrame(() => {
     innerRef.current.rotation.x += .0002

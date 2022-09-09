@@ -11,12 +11,12 @@ export default function Nav() {
   const handleScroll = useCallback(()=>{    
     if( window.scrollY > lastPosition.current ) setHide(true)
     else setHide(false)
-    if( window.scrollY > '150') setBgColor(true)
+    if( window.scrollY > '80') setBgColor(true)
     else setBgColor(false)
     lastPosition.current = window.scrollY   //why does this work using ref and not state for lastPos?
   }, [lastPosition])
 
-  useScrollListener(lastPosition, handleScroll)
+  useScrollListener([lastPosition], handleScroll)
 
   return (
     <nav className={`nav ${hide && 'hide'} ${bgColor && 'bgColor'}`}>

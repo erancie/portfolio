@@ -1,6 +1,8 @@
 // tailwind directives
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap')
 
+@import './my-boot-grid.css'
+
 @tailwind base
 @tailwind components
 @tailwind utilities
@@ -15,6 +17,7 @@ $purple: #6d498c
 $light-purple: #b17fdc
 $orange: #dda345
 
+$on-dark-shadow: -6px 4px 4px $shadow
 
 html, body
   scroll-behavior: smooth
@@ -23,6 +26,8 @@ html, body
 .container
   max-width: 100%
   height: 100%
+  position: relative
+  // background: $b
 
 //Navigation
 .nav
@@ -52,7 +57,7 @@ html, body
   color: $purple
   font-weight: 600
   display: flex
-  padding: .5rem 2rem 0
+  padding: .5rem 3rem 0 0
   width: 50%
   margin: auto
   justify-content: space-evenly
@@ -140,9 +145,9 @@ html, body
   z-index: -1
 
 .bg-overlay
-  // background: (linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, .1) 30%, rgba(0, 0, 0, 1) 100%))
-  // background: (linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff10 70%, #ffffff25 80%, #ffffff60 90%, #ffffff95 100%))
-  background: (linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff10 55%, #00000050 75%, #00000090 82%, #000000 97%))
+  // background: (linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff10 55%, #00000050 75%, #00000090 82%, #000000 97%))
+  // background: (linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff10 55%, #1010185b 70%, #1010189f 80%, #101018f5 90% ,$b 100%))
+  background: (linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff0b 54%, #10101863 64%, #101018ac 73%, #101018ea 82%, #101018fa 91%, $b 100%))
   width: 100%
   height: 100%
   position: absolute
@@ -172,14 +177,170 @@ html, body
   left: 0
   z-index: -1
 
+.landing-svg-fore, .landing-svg-back, .landing-svg-back-bot
+  fill:#101018
+  stroke:#3c3c54
+  stroke-miterlimit:10
+  stroke-width: 1.5px
+  
+.landing-svg-fore
+  // fill: #12121e
+  fill: #12121d
+
+.landing-svg-fore
+  stroke-width: 5px
+  // width: 80%
+  
+
+#svg-back
+  width: 80%
+  position: absolute
+  top: 100vh
+  left: 50%
+  transform: translateX(-50%)
+
+#svg-back-bot
+  width: 80%
+  position: absolute
+  bottom: 10vh
+  left: 50%
+  transform: translateX(-50%)
+
+#svg-fore
+  max-width: 96%
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  // top: 110vh
+
+
+
 //project list cards
 @import "cards.sass"
 @import "trick-cards.sass"
 
+
+// $b: #101018
+// $fore: #1c1c29
+// $shadow: #0a0a0abf
+
+// $light-teal: #81dffb
+// $teal: #00d4ff
+// $dark-teal: #00d4ff33
+
+// $purple: #6d498c
+// $light-purple: #b17fdc
+// $opac-purple: #1c1cc333
+// $dark-purple: #02002433
+
+// $orange: #dda345
+
 //project page
+.project-container
+  width: 100%
+  padding-top: 3rem
+  background: $fore
+  color: white
+  font-family: Raleway
+  justify-content: center
+
 .project
-  width: 80%
-  margin: auto
-  padding: 6rem
+  margin-bottom: 50px
+  // padding: 6rem
   height: 100vh
-  background: lightgray
+  // background: $b
+  text-align: center
+
+.project-header
+  font-size: 2.4rem
+  margin: 1.2rem 0
+  padding: 1.2rem
+
+.project-icons
+  margin-bottom: 3.2rem
+  // margin: 1.2rem 0
+
+
+.layout-img
+  box-shadow: -2px 6px 6px $shadow
+  border-radius: 3px
+  position: relative
+  top: 0
+  left: 0
+
+$overlay-back: #8d49fbe5
+$overlay-fore: #ffe48c
+// $overlay-fore: white
+
+
+.layout-img-layover
+  opacity: 0
+  position: absolute
+  width: 100%
+  height: 100%
+  background: $overlay-back
+  // background: linear-gradient(110deg, #865fc4ea 0%, #3d3795e8 50%)
+  // background: radial-gradient(circle,#32253e 0%, #32253e89 100%)
+  background: radial-gradient(circle,#4e3b7a 0%, #5432bba7 100%)
+  // background: linear-gradient(110deg, #865fc4ea 35%,#3d3795 50%, #3d3795e8 65%)
+
+
+// .overlay-link
+//   font-size: 2.2rem
+//   font-weight: 400
+//   // border-top: 1px solid $overlay-fore
+//   // border-bottom: 1px solid $overlay-fore
+//   // border: 1px solid white
+//   // color: $overlay-fore
+//   color: white
+//   // color: white
+//   border-radius: 80px 80px 80px 80px
+//   padding: 2rem 4rem 2rem
+//   margin: 0 10rem
+//   // background: #5c377b
+//   // background: $purple
+//   background: linear-gradient(290deg, #5747e3ea 70%, #4f44dee8 100%)
+//   position: relative
+//   top: 50%
+//   transform: translateY(-50%)
+//   display: block
+//   // transition: border .3s ease
+//   //note: transform is ignored on inline elements!! pffwhat!
+//   &:hover
+//     // background: $overlay-fore
+//     // background: white
+//     // color: $purple
+//     border: none
+//     color: white
+//     background: linear-gradient(290deg, #6455e6ea 70%, #5c52e4e8 100%)
+//     // font-weight: 600
+
+
+//small link design////
+
+.overlay-link
+  font-size: 2.4rem
+  font-weight: 800
+  border-top: 5px solid $overlay-fore
+  border-bottom: 5px solid $overlay-fore
+  color: $overlay-fore
+  // border-radius: 1px 12px 0px 12px
+  padding: 2.2rem 4rem 2.4rem
+  // background: #5c377b
+  // background: $purple
+  // background: linear-gradient(290deg, #5747e3ea 70%, #4f44dee8 100%)
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
+  display: inline-block
+  transition: background .3s ease
+  //note: transform is ignored on inline elements!! pffwhat!
+  &:hover
+    background: $overlay-fore
+    color: $purple
+    font-weight: 800
+
+
+.project-desc
+  margin: 2.4rem auto
+

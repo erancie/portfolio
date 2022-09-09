@@ -10,20 +10,18 @@ export function ProjectThumb(props) {
 
   const cardRef = useRef(null)
 
-  useEffect(()=> {
-    // gsap.set(cardRef.current, { translateY: -20 })
-
-    cardRef.current.addEventListener("mouseenter", () => {
-      gsap.to(cardRef.current, {
-          translateY: -10, rotationZ: -.5, duration: .18, ease:'none', 
-      })
-    });
-    cardRef.current.addEventListener("mouseleave", () => {
-      gsap.to(cardRef.current, {
-          translateY: 0, rotationZ: 0, duration: .18, ease:'none' 
-      })
-    });
-  },[])
+  // useEffect(()=> {
+  //   cardRef.current.addEventListener("mouseenter", () => {
+  //     gsap.to(cardRef.current, {
+  //         translateY: -10, duration: .18, ease:'none', 
+  //     })
+  //   });
+  //   cardRef.current.addEventListener("mouseleave", () => {
+  //     gsap.to(cardRef.current, {
+  //         translateY: 0, duration: .18, ease:'none' 
+  //     })
+  //   });
+  // },[])
 
   useEffect(()=> {
     gsap.to(cardRef.current, { 
@@ -33,9 +31,9 @@ export function ProjectThumb(props) {
       duration: .8,
       scrollTrigger: {
         trigger: cardRef.current, // make .panel2 the trigger
-        start: "center bottom", // 10% of .panel2 enters the bottom of the viewport
+        start: "80% bottom", // 10% of .panel2 enters the bottom of the viewport
         // end: "botttom bottom",
-        markers: true
+        // markers: true
       }
     });
   }, [cardRef])
@@ -53,8 +51,8 @@ export function ProjectThumb(props) {
       <div className='project-tools2'>{props.tools.map((t)=>t+' ')}</div>
       <div className='project-links'>
         <Link className='project-link' to={`/projects/${props.name}`}>Info</Link>
-        <Link className='project-link' to={`${props.link}`}>Visit</Link>
-        <Link className='project-link' to={`/projects/${props.name}`}>More</Link>
+        <Link className='project-link' target="_blank" to={`${props.link}`}>Visit</Link>
+        {/* <Link className='project-link' to={`/projects/${props.name}`}>More</Link> */}
       </div>
     </div>
   ) 
