@@ -15,7 +15,7 @@ export default function Home() {
     let scrollY = window.scrollY  
     if(scrollY < 1280) 
       landingRef.current.style.transform = `scale(${1-scrollY/1500})`
-    svgRef.current.style.top = `${100+scrollY/40}vh`
+    svgRef.current.style.top = `${100+scrollY/42}vh`
     // botSvgRef.current.style.bottom = `${120-scrollY/40}vh`
   }, [landingRef, svgRef])
 
