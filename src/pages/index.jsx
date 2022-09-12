@@ -4,6 +4,7 @@ import '../styles/global.sass'
 import Layout from "../components/Layout"
 import ProjectsList from "../components/ProjectsList"
 import useScrollListener from '../components/utils/useScrollListener'
+import Clip from "../components/Clip"
 
 export default function Home() {
 
@@ -117,37 +118,6 @@ export default function Home() {
         />
       </svg>
 
-      {/* <svg
-        ref={svgRef}
-        id="svg-fore"
-        xmlns="http://www.w3.org/2000/svg"
-        // viewBox="0 0 4234.5 3727.74"
-        viewBox="0 0 4415 1800"
-
-      >
-        <g>
-          <polygon
-            id="_YOUR_IMAGE_HERE_"
-            class="landing-svg-fore"
-            points="613.89 1104.37 309.94 928.89 6 1104.37 6 1455.33 309.94 1630.81 613.89 1455.33 613.89 1104.37"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-2"
-            class="landing-svg-fore"
-            points="1636 263.12 1415.63 135.89 1195.26 263.12 1195.26 517.58 1415.63 644.81 1636 517.58 1636 263.12"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-3"
-            class="landing-svg-fore"
-            points="4025.5 629.14 3716.77 450.89 3408.03 629.14 3408.03 985.64 3716.77 1163.89 4025.5 985.64 4025.5 629.14"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-4"
-            class="landing-svg-fore"
-            points="2780.63 162.42 2511.32 6.93 2242 162.42 2242 473.4 2511.32 628.89 2780.63 473.4 2780.63 162.42"
-          />
-        </g>
-      </svg> */}
 
       <div ref={landingRef} className="landing">
         {/* <h1 className="title-6">||</h1>
@@ -161,7 +131,8 @@ export default function Home() {
 
       <ProjectsList />
 
-      {/* <TrickCards /> */}
+      {/* <Clip /> */}
+      
     </Layout>
   )
 }

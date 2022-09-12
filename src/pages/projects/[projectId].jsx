@@ -58,7 +58,6 @@ export default function Project(props) {
         </div>
         <TrickCards />
       </div>
-
     </Layout>
   )
 }

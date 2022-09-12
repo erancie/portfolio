@@ -39,16 +39,16 @@ export function ProjectThumb(props) {
   }, [cardRef])
 
   return (
-    <div ref={cardRef} key={props.name} className='project-thumb2'>
-      <h1 className='project-title2'>{props.title}</h1>
+    <div ref={cardRef} key={props.name} className='project-thumb'>
+      <h1 className='project-title'>{props.title}</h1>
       <div className="project-img-wrapper">
         {/* <div style={{backgroundImage: `url("../../static/${props.name}1.png")`}} className='project-img2'></div> */}
         {/* <div style={{backgroundImage:` url('../../static/mern1.png')`}} className='project-img2'></div> */}
-        <img className='project-img2' alt='meaningful alt' src={props.img}></img>
+        <img className='project-img' alt='meaningful alt' src={props.img}></img>
       </div>
-      <p className='project-desc2'>{props.desc}</p>
+      <p className='project-desc'>{props.desc}</p>
 
-      <div className='project-tools2'>{props.tools.map((t)=>t+' ')}</div>
+      <div className='project-tools'>{props.tools.map((t)=>t+' ')}</div>
       <div className='project-links'>
         <Link className='project-link' to={`/projects/${props.name}`}>Info</Link>
         <Link className='project-link' target="_blank" to={`${props.link}`}>Visit</Link>
@@ -58,11 +58,11 @@ export function ProjectThumb(props) {
   ) 
 }
 
-export default function ProjectsList2() {
+export default function ProjectsList() {
 
   return (
-    <div  className='projects-container2'>
-      <div className='projects-list2'>
+    <div  className='projects-container'>
+      <div className='projects-list'>
         {projects.map((p)=>(
           // <div className='thumb-wrapper'>
           <ProjectThumb name={p.name}

@@ -1,5 +1,5 @@
 import React, { useCallback, useRef } from "react"
-import Globe from "../components/Globe"
+import Globe from "./Globe"
 import useScrollListener from "./utils/useScrollListener"
 
 const BackgroundScene = () => {
