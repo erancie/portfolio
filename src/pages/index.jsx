@@ -9,24 +9,24 @@ import Clip from "../components/Clip"
 export default function Home() {
 
   const landingRef = useRef()
-  const svgRef = useRef()
+  // const svgRef = useRef()
   // const botSvgRef = useRef()
 
   const handleScroll = useCallback(()=>{    
     let scrollY = window.scrollY  
     if(scrollY < 1280) 
       landingRef.current.style.transform = `scale(${1-scrollY/1500})`
-    svgRef.current.style.top = `${100+scrollY/42}vh`
+    // svgRef.current.style.top = `${100+scrollY/42}vh`
     // botSvgRef.current.style.bottom = `${120-scrollY/40}vh`
-  }, [landingRef, svgRef])
+  }, [landingRef])
 
-  useScrollListener([landingRef, svgRef], handleScroll)
+  useScrollListener([landingRef], handleScroll)
 
   return (
     <Layout>
       <BackgroundScene />
 
-      <svg
+      {/* <svg
         id="svg-back"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 4415 2223.58"
@@ -116,22 +116,35 @@ export default function Home() {
           class="landing-svg-fore"
           points="2337.63 162.42 2068.32 6.93 1799 162.42 1799 473.4 2068.32 628.89 2337.63 473.4 2337.63 162.42"
         />
-      </svg>
-
+      </svg> */}
 
       <div ref={landingRef} className="landing">
+
+        {/* <h1 className="title-3">&</h1> */}
+
+        <h1 className="title-1">Out of this World</h1>
+        <h1 className="title-2">Digital Spaces.</h1>
+        {/* <h1 className="title-4"></h1> */}
+        {/* <h3 className="title-5">I'm Elliot. </h3> */}
+        <h3 className="title-5">Elliot Rancie is taking web design & develop to the next level and beyond.</h3>
+        {/* unique user experiences for brands on the web. </h3> */}
+        {/* & compelling stories */}
+        {/* UI Design
+        UX Design
+        UI Development */}
+
+
+
         {/* <h1 className="title-6">||</h1>
         <h1 className="title-7">|</h1> */}
-        <h1 className="title-1">Web</h1>
+        {/* <h1 className="title-1">Web</h1>
         <h1 className="title-3">&</h1>
         <h1 className="title-2">Design</h1>
         <h1 className="title-4">Development</h1>
-        <h3 className="title-5">by Elliot Rancie</h3>
+        <h3 className="title-5">by Elliot Rancie</h3> */}
       </div>
 
       <ProjectsList />
-
-      {/* <Clip /> */}
       
     </Layout>
   )
