@@ -48,9 +48,9 @@ const Sphere = () => {
       // scale = [1-window.scrollY/2500, 
       //           1-window.scrollY/2500, 
       //           1-window.scrollY/2500]
-      setScale([1-window.scrollY/2800, 
-                1-window.scrollY/2800, 
-                1-window.scrollY/2800])
+      setScale([1-window.scrollY/3600, 
+                1-window.scrollY/3600, 
+                1-window.scrollY/3600])
   }, [])
 
   useScrollListener([scale], handleScroll)
