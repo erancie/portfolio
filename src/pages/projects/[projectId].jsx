@@ -51,14 +51,13 @@ export default function Project(props) {
             </div>
             <img className='' src={proj.img}></img>
           </div>
-          <div className='project-desc col-9'>
+          <div className='project-item-desc col-9'>
             {proj.desc}
           </div>
           {/* <Link className='project-link no-right' to={`${proj.link}`}>Visit</Link> */}
         </div>
         <TrickCards />
       </div>
-
     </Layout>
   )
 }

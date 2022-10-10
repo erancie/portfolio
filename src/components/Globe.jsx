@@ -44,13 +44,13 @@ const Sphere = () => {
   // const scale = useRef([1, 1, 1])
 
   const handleScroll = useCallback(()=>{    
-    if(window.scrollY < 1280)
+    if(window.scrollY < 1800)
       // scale = [1-window.scrollY/2500, 
       //           1-window.scrollY/2500, 
       //           1-window.scrollY/2500]
-      setScale([1-window.scrollY/2500, 
-                1-window.scrollY/2500, 
-                1-window.scrollY/2500])
+      setScale([1-window.scrollY/3600, 
+                1-window.scrollY/3600, 
+                1-window.scrollY/3600])
   }, [])
 
   useScrollListener([scale], handleScroll)
@@ -65,7 +65,7 @@ const Sphere = () => {
       <a.mesh
         ref={innerRef}
         scale={scale}
-        position={[0, 1.4, 4.2]} 
+        position={[0, 1.44, 4.2]} 
         rotation={[2*Math.PI, 0, Math.PI/2]}
       >   
         <sphereGeometry args={[1, 80, 80]} />
@@ -81,7 +81,7 @@ const Sphere = () => {
       <a.mesh
         ref={outterRef}
         scale={scale}
-        position={[0, 1.4, 4.2]} 
+        position={[0, 1.44, 4.2]} 
         rotation={[0, 0, Math.PI/2]}
       >   
         <sphereGeometry args={[1.03, 80, 80]} />

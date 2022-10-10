@@ -1,32 +1,111 @@
-.projects-container2
+// projects section 
+.projects-container
   width: 100%
   height: 100%
-  background: $b
+  position: relative
+  margin-top: -400px
 
-.projects-list2
+
+// SVG backgrounds 
+.proj-bg-container
+  position: -webkit-sticky
+  position: sticky
+  // margin-top: -200px
+  width: 100%
+  top: 0
+
+#svg-proj-back
+  fill:#2d2d52
+  stroke:#7d7d92
+  stroke-miterlimit:10
+  stroke-width: 1.5px
+  width: 80%
+  // position: -webkit-sticky
+  position: absolute
+  margin-top: -300px
+  // top: 0
+  left: 50%
+  transform: translateX(-50%)
+
+#svg-proj-fore
+  fill:#324e52
+  stroke:#7d7d92
+  stroke-miterlimit:10
+  stroke-width: 1.5px
+  width: 80%
+  // position: -webkit-sticky
+  position: absolute
+  // top: 
+  left: 55%
+  transform: translateX(-50%)
+
+// projects
+.projects-list
+  position: relative
   height: 100%
   width: 80%
-  margin: auto
+  margin: 2rem auto 0
+  // top: 800px
   padding-bottom: 12rem
   display: flex
   flex-wrap: wrap
   align-items: flex-start
 
-.project-thumb2
-  background: linear-gradient(25deg, $fore 28%, #4b4b63 100%)
-  color: white
-  width: 46%
-  margin: 8rem auto 0
-  box-shadow: 0px 3px 4px $shadow
-  border-radius: 8px
-  // transition: transform .25s ease-in-out
-  position: relative
-  transform: translateY(20px)
-  opacity: 0
-  // &:hover
-  //   transform: translateY(-20px) rotateZ(-.5deg) 
+  .project-thumb
+    background: linear-gradient(25deg, $fore 28%, #4b4b63 100%)
+    color: white
+    margin: 4rem auto
+    box-shadow: 0px 3px 4px $shadow
+    border-radius: 4px
+    position: relative
+    transform: translateY(20px)
+    opacity: 0
+    //jagged on mobile
+    // margin-left: -1rem
+    // &:nth-of-type(2n)
+    //   margin-left: 1rem
 
-.project-title2
+@media (min-width: 768px) 
+  .projects-list
+    width: 100%
+    // margin: 0 auto
+    // margin-top: -200px
+    display: grid
+    grid-template-columns: repeat(12, 8.333%)
+    // grid-template-rows: 50vh
+    // grid-template-rows: repeat(24, 50vh)
+    row-gap: 10rem
+    .project-thumb
+      margin: 0 auto
+      &:nth-of-type(1)
+        grid-column: 3/9
+        // grid-row: 1
+      &:nth-of-type(2)
+        grid-column: 6/12
+        // grid-row: 4
+      &:nth-of-type(3)
+        grid-column: 2/8
+        // grid-row: 7
+      &:nth-of-type(4)
+        grid-column: 5/11
+        // grid-row: 11
+      &:nth-of-type(5)
+        grid-column: 3/9
+        // grid-row: 15
+      &:nth-of-type(6)
+        grid-column: 6/12
+        // grid-row: 19
+      &:nth-of-type(7)
+        grid-column: 2/8
+        // grid-row: 22
+      &:nth-of-type(8)
+        grid-column: 5/11
+        // grid-row: 25
+    
+//grid is good for more specific alignment
+  //also col&row boundaries act as container 
+
+.project-title
   margin-top: -1px
   font-size: 2rem
   font-weight: 500
@@ -43,12 +122,12 @@
 
 .project-img-wrapper
   position: relative
-  height: 80%
+  // height: 80%
   top: 0
   left: 0
   overflow: hidden
 
-.project-img2
+.project-img
   width: 100%
   background: white
   margin: 0 auto
@@ -57,13 +136,18 @@
   left: 0
   border-radius: 8px 8px 0 0
 
-.project-desc2
+.project-desc
   padding-top: 1.2rem
   margin: 0 1.2rem  
   font-weight: 100
   font-size: 1.1rem
 
-.project-tools2
+// @media (min-width: 768px) 
+// @media (min-width: 992px)
+// @media (min-width: 1200px) 
+// @media (min-width: 1400px)
+
+.project-tools
   padding-top: 1rem
   padding-bottom: 2.5rem
   margin-left: 1.2rem

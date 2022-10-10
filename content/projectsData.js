@@ -44,14 +44,6 @@ const projects = [
   {
     name: 'gpt',
     title: 'GPT-3 App',
-    img: 'https://images.pexels.com/photos/38519/macbook-laptop-ipad-apple-38519.jpeg?auto=compress&cs=tinysrgb&w=800',
-    desc: 'A front end implementation using the GPT-3 API',
-    tools: ['React', 'GPT-3', 'Speech Recognition'],
-    link: ''
-  },
-  {
-    name: 'gpt',
-    title: 'GPT-3 App',
     img: url,
     desc: 'A front end implementation using the GPT-3 API',
     tools: ['React', 'GPT-3', 'Speech Recognition'],

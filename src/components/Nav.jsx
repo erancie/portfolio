@@ -8,7 +8,8 @@ export default function Nav() {
   const [hide, setHide] = useState(false)
   let lastPosition = useRef(0)
 
-  const handleScroll = useCallback(()=>{    
+  const handleScroll = useCallback(()=>{  
+    // console.log('scrollY: ', window.scrollY)  
     if( window.scrollY > lastPosition.current ) setHide(true)
     else setHide(false)
     if( window.scrollY > '80') setBgColor(true)
@@ -18,7 +19,7 @@ export default function Nav() {
 
   useScrollListener([lastPosition], handleScroll)
 
-  return (
+  return ( 
     <nav className={`nav ${hide && 'hide'} ${bgColor && 'bgColor'}`}>
       <div className='logo'><Link to='/'>LOGO</Link></div>
       <div className='nav-links'>
@@ -26,6 +27,7 @@ export default function Nav() {
         <div><a href='/'>Contact</a></div>
         <div><a href='/'>Resume</a></div>
         <div><a href='/'>GitLogo</a></div>
+        <div><a href='/'>LiLogo</a></div>
       </div>
       {/* <Toggle /> */}
     </nav>

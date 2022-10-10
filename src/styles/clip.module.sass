@@ -1,0 +1,30 @@
+.container
+  margin: auto
+  color: white
+  width: 250px
+  display: grid
+  .info
+    margin: auto
+    border-radius: 30px 
+    width: 250px
+    height: 100px
+    text-align: center
+    background: purple
+    clip-path: circle(10% at 90% 20%)
+    // clip-path: inset(20% 20% 20% 20%)
+    transition: clip-path .5s ease-in
+    cursor: pointer
+    &:hover
+      clip-path: circle(75%)
+      // clip-path: inset(20% 20% 0% 0%)
+    &:hover span
+      color: purple
+    h1
+      padding: 2rem
+    span
+      float: right
+      position: relative
+      color: white
+      transition: color .2s
+      margin-top: 5px
+      margin-right: 15px
