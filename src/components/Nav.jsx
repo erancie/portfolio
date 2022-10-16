@@ -7,17 +7,20 @@ export default function Nav() {
   const [bgColor, setBgColor] = useState(false)//change to ref? b/c dont need rerender when changes?
   const [hide, setHide] = useState(false)
   let lastPosition = useRef(0)
+  
+  const scrollRef = useRef()
 
-  const handleScroll = useCallback(()=>{  
-    // console.log('scrollY: ', window.scrollY)  
-    if( window.scrollY > lastPosition.current ) setHide(true)
-    else setHide(false)
-    if( window.scrollY > '80') setBgColor(true)
-    else setBgColor(false)
-    lastPosition.current = window.scrollY   //why does this work using ref and not state for lastPos?
-  }, [lastPosition])
 
-  useScrollListener([lastPosition], handleScroll)
+  // const handleScroll = useCallback(()=>{  
+  //   // console.log('scrollY: ', window.scrollY)  
+  //   if( window.scrollY > lastPosition.current ) setHide(true)
+  //   else setHide(false)
+  //   if( window.scrollY > '80') setBgColor(true)
+  //   else setBgColor(false)
+  //   lastPosition.current = window.scrollY   //why does this work using ref and not state for lastPos?
+  // }, [lastPosition])
+
+  // useScrollListener([lastPosition], handleScroll)
 
   return ( 
     <nav className={`nav ${hide && 'hide'} ${bgColor && 'bgColor'}`}>

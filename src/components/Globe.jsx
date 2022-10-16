@@ -10,6 +10,7 @@ import { a } from "@react-spring/three"
 import "../styles/box.module.css"
 import useScrollListener from "./utils/useScrollListener"
 
+
 extend({ OrbitControls })
 
 const Controls = () => {
@@ -31,6 +32,9 @@ const Controls = () => {
 }
 
 const Sphere = () => {
+
+  const scrollRef = useRef()
+
   const outterRef = React.useRef()
   const innerRef = React.useRef()
   const matRef = React.useRef()
@@ -52,8 +56,9 @@ const Sphere = () => {
                 1-window.scrollY/3600, 
                 1-window.scrollY/3600])
   }, [])
+  //NOTE: try optimization - scale z only and transition y
 
-  useScrollListener([scale], handleScroll)
+  // useScrollListener([scale], handleScroll)
 
   useFrame(() => {
     innerRef.current.rotation.x += .0002

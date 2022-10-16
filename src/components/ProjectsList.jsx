@@ -7,9 +7,14 @@ import useScrollListener from '../components/utils/useScrollListener'
 
 gsap.registerPlugin(ScrollTrigger)
 
+
 export function ProjectThumb(props) {
 
+
+  const scrollRef = useRef()
+
   const cardRef = useRef(null)
+
 
   // useEffect(()=> {
   //   cardRef.current.addEventListener("mouseenter", () => {
@@ -69,7 +74,7 @@ export default function ProjectsList() {
       landingRef.current.style.top = `${800-scrollY/8}px` //500 offset for window.scrollY
   }, [landingRef])
 
-  useScrollListener([landingRef], handleScroll)
+  // useScrollListener([landingRef], handleScroll)
 
   return (
     <div  className='projects-container'>

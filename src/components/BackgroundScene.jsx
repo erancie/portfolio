@@ -1,19 +1,23 @@
-import React, { useCallback, useRef } from "react"
+import React, { useCallback, useRef, useContext } from "react"
 import Globe from "./Globe"
 import useScrollListener from "./utils/useScrollListener"
 
 const BackgroundScene = () => {
 
   const bgRef = useRef()
+  
+  const scrollRef = useRef()
 
-  const handleScroll = useCallback(()=>{  
-    let scrollY = window.scrollY  
-    if(scrollY < 1280){
-      bgRef.current.style.backgroundSize = 320 - scrollY/16+"%"
-    }
-  }, [bgRef])
+  // const scrollPos = useContext(scrollYPos)
+  
+  // const handleScroll = useCallback(()=>{  
+  //   let scrollY = window.scrollY  
+  //   if(scrollY < 1280){
+  //     bgRef.current.style.backgroundSize = 320 - scrollY/16+"%"
+  //   }
+  // }, [bgRef])
 
-  useScrollListener([bgRef], handleScroll)
+  // useScrollListener([bgRef], handleScroll)
 
   return(
     <div className="back-scene">
