@@ -1,15 +1,15 @@
 import React, { useState, useCallback, useRef } from 'react'
 import { Link } from 'gatsby'
-import useScrollListener from './utils/useScrollListener'
+import useScrollListener from './utils/useScrollPosition'
 
 export default function Nav() {
 
   const [bgColor, setBgColor] = useState(false)//change to ref? b/c dont need rerender when changes?
   const [hide, setHide] = useState(false)
-  let lastPosition = useRef(0)
-  
-  const scrollRef = useRef()
 
+  // let lastPosition = useRef(0)
+  
+  // const scrollRef = useRef()
 
   // const handleScroll = useCallback(()=>{  
   //   // console.log('scrollY: ', window.scrollY)  

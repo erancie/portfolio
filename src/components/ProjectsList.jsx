@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import projects from '../../content/projectsData'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import useScrollListener from '../components/utils/useScrollListener'
+import useScrollListener from './utils/useScrollPosition'
 
 gsap.registerPlugin(ScrollTrigger)
 

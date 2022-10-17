@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from "react"
+import React, { useState, useRef, useEffect, useCallback, createContext, useContext } from "react"
 import * as THREE from "three"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 // import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
@@ -6,10 +6,9 @@ import { Canvas, extend, useLoader, useThree, useFrame } from "react-three-fiber
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import { a } from "@react-spring/three"
 // import { TWEEN } from 'three/examples/jsm/libs/tween.module.min'
-
 import "../styles/box.module.css"
-import useScrollListener from "./utils/useScrollListener"
-
+import { useScrollPosition } from "./utils/useScrollPosition"
+import {ScrollContextProvider, ScrollProvider, ScrollConsumer, useScroll} from './utils/scrollContext'
 
 extend({ OrbitControls })
 
@@ -31,9 +30,9 @@ const Controls = () => {
   )
 }
 
-const Sphere = () => {
+const BridgeContext = createContext()
 
-  const scrollRef = useRef()
+const Sphere = () => {
 
   const outterRef = React.useRef()
   const innerRef = React.useRef()
@@ -44,21 +43,16 @@ const Sphere = () => {
 
   // https://www.solarsystemscope.com/textures/
  
-  const [scale, setScale] = useState([1, 1, 1])
-  // const scale = useRef([1, 1, 1])
-
-  const handleScroll = useCallback(()=>{    
-    if(window.scrollY < 1800)
-      // scale = [1-window.scrollY/2500, 
-      //           1-window.scrollY/2500, 
-      //           1-window.scrollY/2500]
-      setScale([1-window.scrollY/3600, 
-                1-window.scrollY/3600, 
-                1-window.scrollY/3600])
-  }, [])
-  //NOTE: try optimization - scale z only and transition y
-
-  // useScrollListener([scale], handleScroll)
+  // const scrollPos = useScroll()
+  // console.log('scrollieBollie: ', scrollPos)
+  const scrollPos = useContext(BridgeContext)
+  // console.log(`scrollposie: ${scrollPos}`)
+  // console.log(`val: `)
+  // console.log(BridgeContainer)
+  // const scrollPos = useScrollPosition()  
+  // const scroll = useRef(useScrollListener())  
+  // const scrollPos = scroll.current
+  const scaling = 1-scrollPos/2500
 
   useFrame(() => {
     innerRef.current.rotation.x += .0002
@@ -69,7 +63,8 @@ const Sphere = () => {
     <>
       <a.mesh
         ref={innerRef}
-        scale={scale}
+        scale={[scaling, scaling, scaling]}
+        // scale={scale}
         position={[0, 1.44, 4.2]} 
         rotation={[2*Math.PI, 0, Math.PI/2]}
       >   
@@ -85,7 +80,8 @@ const Sphere = () => {
 
       <a.mesh
         ref={outterRef}
-        scale={scale}
+        scale={[scaling, scaling, scaling]}
+        // scale={scale}
         position={[0, 1.44, 4.2]} 
         rotation={[0, 0, Math.PI/2]}
       >   
@@ -104,7 +100,12 @@ const Sphere = () => {
   )
 }
 
- const Globe = () => {
+
+const Globe = () => {
+
+  const scroll = useScroll()
+  console.log('scrollie: ', scroll)
+
   const isBrowser = typeof window !== "undefined"
   return (
     <>
@@ -116,13 +117,16 @@ const Sphere = () => {
             gl.shadowMap.type = THREE.PCFSoftShadowMap
           }}
         >
-          {/* <ambientLight intensity={.03} /> */}
-          <pointLight color="white" intensity={.8} position={[-1, .6, -8]} />
-          <fog attach="fog" args={["black", 10, 25]} />
-          <Controls />
+        <BridgeContext.Provider value={ scroll }>
+          {/* <ScrollProvider value={scroll}> */}
+            {  console.log('scrollieIN: ', scroll)}
+            {/* <ambientLight intensity={.03} /> */}
+            <pointLight color="white" intensity={.8} position={[-1, .6, -8]} />
+            <fog attach="fog" args={["black", 10, 25]} />
+            <Controls />
 
-          <Sphere />
-
+            <Sphere />
+        </BridgeContext.Provider>
         </Canvas>
       )}
     </>

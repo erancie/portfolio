@@ -1,27 +1,24 @@
-import React, { useCallback, useRef, useContext } from "react"
+import React from "react"
+// import { useCallback, useRef, useContext, useState, useEffect } from "react"
 import Globe from "./Globe"
-import useScrollListener from "./utils/useScrollListener"
+import { useScroll } from "./utils/scrollContext"
+import { useScrollPosition } from "./utils/useScrollPosition"
 
 const BackgroundScene = () => {
 
-  const bgRef = useRef()
-  
-  const scrollRef = useRef()
+  // const bgRef = useRef()
+  // const [bgStyle, setBgStyle] = useState({backgroundSize: '320%'}) 
 
-  // const scrollPos = useContext(scrollYPos)
-  
-  // const handleScroll = useCallback(()=>{  
-  //   let scrollY = window.scrollY  
-  //   if(scrollY < 1280){
-  //     bgRef.current.style.backgroundSize = 320 - scrollY/16+"%"
-  //   }
-  // }, [bgRef])
+  const scrollPos = useScroll()
+  // OR
+  // const scrollPos = useScrollPosition()
 
-  // useScrollListener([bgRef], handleScroll)
 
   return(
     <div className="back-scene">
-      <div ref={bgRef} className="landing-bg"></div>
+      <div style={scrollPos < 1280 ? {backgroundSize : 320 - scrollPos/16+"%"} : {backgroundSize : 320} } className="landing-bg"></div>
+      {/* style={bgStyle} */}
+      {/* ref={bgRef}  */}
       <div className="globe">
         <Globe />
       </div>
@@ -31,3 +28,14 @@ const BackgroundScene = () => {
 }
 
 export default BackgroundScene
+
+
+
+
+
+     {/* background scene is a sticky element 
+          sticky elements share properties of relative and fixed
+            and will still stay in the document flow / take up their original relative positioning 
+              even though they become fixed when scrolling
+                consider how fixed positioning alone would be taken out of doc flow like absolute elements are
+                  this is why the relatively positioned projects list still appears after the sticky bg scene */}
