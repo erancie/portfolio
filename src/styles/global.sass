@@ -91,6 +91,7 @@ html, body
   position: absolute
   top: 0
   left: 0
+  transition: transform 100ms ease-out
   // margin: auto
   // margin-bottom: 50vh //?
   h1, h3
@@ -198,13 +199,13 @@ html, body
 //   color: #5d3885
 
 .back-scene
-  height: 160vh
+  height: 100vh
   // height: 220vh //for longer scene also see .projects-continer { margin-top: ...}
   // would need changes to globe position(higher) & scroll listener, 
   width: 100%
   top: 0
   left: 0
-  position: relative
+  position: sticky
   z-index: -1
   // background: $b
 
@@ -231,6 +232,8 @@ html, body
   background-size: 320%
   background-position: center center
   background-repeat: no-repeat
+  // transition: background-size 100ms ease-out
+
 
 //globe
 .globe

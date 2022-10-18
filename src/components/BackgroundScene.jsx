@@ -1,24 +1,17 @@
 import React from "react"
-// import { useCallback, useRef, useContext, useState, useEffect } from "react"
 import Globe from "./Globe"
-import { useScroll } from "./utils/scrollContext"
-import { useScrollPosition } from "./utils/useScrollPosition"
+import { useScrollContext } from "./utils/scrollContext"
+import { useScrollStore } from './../store'
 
 const BackgroundScene = () => {
 
-  // const bgRef = useRef()
-  // const [bgStyle, setBgStyle] = useState({backgroundSize: '320%'}) 
-
-  const scrollPos = useScroll()
-  // OR
-  // const scrollPos = useScrollPosition()
-
+  const scrollPos = useScrollContext()
+  // const scrollPos = useScrollStore((s)=>s.scrollPos)
+  // const scrollPos = 0
 
   return(
     <div className="back-scene">
-      <div style={scrollPos < 1280 ? {backgroundSize : 320 - scrollPos/16+"%"} : {backgroundSize : 320} } className="landing-bg"></div>
-      {/* style={bgStyle} */}
-      {/* ref={bgRef}  */}
+      <div style={scrollPos < 1280 ? {backgroundSize : 320 - scrollPos/16+"%"} : {backgroundSize : 243+'%'} } className="landing-bg"></div>
       <div className="globe">
         <Globe />
       </div>
@@ -26,7 +19,6 @@ const BackgroundScene = () => {
     </div>
   )
 }
-
 export default BackgroundScene
 
 
@@ -34,7 +26,7 @@ export default BackgroundScene
 
 
      {/* background scene is a sticky element 
-          sticky elements share properties of relative and fixed
+          sticky elements share properties of relative and fixed (or is it absolute and fixed? check)
             and will still stay in the document flow / take up their original relative positioning 
               even though they become fixed when scrolling
                 consider how fixed positioning alone would be taken out of doc flow like absolute elements are

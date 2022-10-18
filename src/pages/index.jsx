@@ -5,8 +5,12 @@ import BackgroundScene from "../components/BackgroundScene"
 import ProjectsList from "../components/ProjectsList"
 import { ScrollContextProvider } from "../components/utils/scrollContext"
 import LandingHeaders from "../components/LandingHeaders"
+import { useScrollZustand } from "../components/utils/useScrollZustand"
 
 export default function Home() {
+
+  // useScrollZustand()
+  
   return (
     <ScrollContextProvider>
       <Layout>

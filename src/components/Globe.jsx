@@ -1,14 +1,14 @@
 import React, { useState, useRef, useEffect, useCallback, createContext, useContext } from "react"
 import * as THREE from "three"
+// import { useSpring, animated } from '@react-spring/three'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { Canvas, extend, useLoader, useThree, useFrame } from "react-three-fiber"
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
-import { a } from "@react-spring/three"
-// import { TWEEN } from 'three/examples/jsm/libs/tween.module.min'
+import { animated, useSpring } from "@react-spring/three"
 import "../styles/box.module.css"
-import { useScrollPosition } from "./utils/useScrollPosition"
-import {ScrollContextProvider, ScrollProvider, ScrollConsumer, useScroll} from './utils/scrollContext'
+import { ScrollProvider, useScrollContext } from './utils/scrollContext'
+import { useScrollStore } from './../store'
+
 
 extend({ OrbitControls })
 
@@ -30,8 +30,6 @@ const Controls = () => {
   )
 }
 
-const BridgeContext = createContext()
-
 const Sphere = () => {
 
   const outterRef = React.useRef()
@@ -40,19 +38,16 @@ const Sphere = () => {
   const outterMap = useLoader(TextureLoader, 'earth-clouds-8k.jpg')
   const innerNightMap = useLoader(TextureLoader, 'earth-night-8k.jpg')
   // const innerDayMap = useLoader(TextureLoader, 'earth-8k.jpg')
-
   // https://www.solarsystemscope.com/textures/
  
-  // const scrollPos = useScroll()
-  // console.log('scrollieBollie: ', scrollPos)
-  const scrollPos = useContext(BridgeContext)
-  // console.log(`scrollposie: ${scrollPos}`)
-  // console.log(`val: `)
-  // console.log(BridgeContainer)
-  // const scrollPos = useScrollPosition()  
-  // const scroll = useRef(useScrollListener())  
-  // const scrollPos = scroll.current
+  const scrollPos = useScrollContext()
+  // const scrollPos = useScrollStore((s)=>s.scrollPos)
+  // const scrollPos = 0
+
+  //scale according to scroll
   const scaling = 1-scrollPos/2500
+  //animate changes in scale w/ spring
+  const { scale } = useSpring({ scale: [scaling, scaling, scaling] })
 
   useFrame(() => {
     innerRef.current.rotation.x += .0002
@@ -61,10 +56,9 @@ const Sphere = () => {
 
   return (
     <>
-      <a.mesh
+      <animated.mesh
         ref={innerRef}
-        scale={[scaling, scaling, scaling]}
-        // scale={scale}
+        scale={scale}
         position={[0, 1.44, 4.2]} 
         rotation={[2*Math.PI, 0, Math.PI/2]}
       >   
@@ -76,12 +70,11 @@ const Sphere = () => {
           // map={surface}
           color="#fff"
           />
-      </a.mesh>
+      </animated.mesh>
 
-      <a.mesh
+      <animated.mesh
         ref={outterRef}
-        scale={[scaling, scaling, scaling]}
-        // scale={scale}
+        scale={scale}
         position={[0, 1.44, 4.2]} 
         rotation={[0, 0, Math.PI/2]}
       >   
@@ -95,16 +88,14 @@ const Sphere = () => {
           emissive={"white"}
           emissiveIntensity={100}
           />
-      </a.mesh>
+      </animated.mesh>
     </>
   )
 }
 
-
 const Globe = () => {
 
-  const scroll = useScroll()
-  console.log('scrollie: ', scroll)
+  const scroll = useScrollContext()
 
   const isBrowser = typeof window !== "undefined"
   return (
@@ -117,16 +108,13 @@ const Globe = () => {
             gl.shadowMap.type = THREE.PCFSoftShadowMap
           }}
         >
-        <BridgeContext.Provider value={ scroll }>
-          {/* <ScrollProvider value={scroll}> */}
-            {  console.log('scrollieIN: ', scroll)}
-            {/* <ambientLight intensity={.03} /> */}
-            <pointLight color="white" intensity={.8} position={[-1, .6, -8]} />
-            <fog attach="fog" args={["black", 10, 25]} />
-            <Controls />
-
-            <Sphere />
-        </BridgeContext.Provider>
+          <ScrollProvider value={scroll}>
+              {/* <ambientLight intensity={.03} /> */}
+              <pointLight color="white" intensity={.8} position={[-1, .6, -8]} />
+              <fog attach="fog" args={["black", 10, 25]} />
+              <Controls />
+              <Sphere />
+          </ScrollProvider>
         </Canvas>
       )}
     </>

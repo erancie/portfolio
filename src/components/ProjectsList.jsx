@@ -3,18 +3,19 @@ import { Link } from 'gatsby'
 import projects from '../../content/projectsData'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import useScrollListener from './utils/useScrollPosition'
+import { useScrollStore } from './../store'
+import { useScrollContext } from "./utils/scrollContext"
+
+
 
 gsap.registerPlugin(ScrollTrigger)
 
 
 export function ProjectThumb(props) {
 
-
   const scrollRef = useRef()
 
   const cardRef = useRef(null)
-
 
   // useEffect(()=> {
   //   cardRef.current.addEventListener("mouseenter", () => {
@@ -63,13 +64,14 @@ export function ProjectThumb(props) {
 
 export default function ProjectsList() {  
 
+  // const scrollPos = useScrollStore((s)=>s.scrollPos)
+  const scrollPos = useScrollContext()
+
   const bgContainer = useRef()
   const landingRef = useRef()
 
   const handleScroll = useCallback(()=>{    
-    // console.log('clientRect: ', bgContainer.current.getBoundingClientRect())
-    let scrollY = window.scrollY  //get scrollY distance from top w/ boundingClientRect
-                                  //instead window??
+    let scrollY = window.scrollY  
     // if(scrollY > 1600) 
       landingRef.current.style.top = `${800-scrollY/8}px` //500 offset for window.scrollY
   }, [landingRef])
@@ -143,7 +145,8 @@ export default function ProjectsList() {
           />
         </svg>
 
-        <svg id="svg-proj-fore" ref={landingRef}
+        <svg id="svg-proj-fore" style={{top: `${800-scrollPos/8}px`}}
+          ref={landingRef}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 4415 2223.58"
         >

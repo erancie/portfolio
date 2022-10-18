@@ -1,29 +1,37 @@
 import React, { useState, useCallback, useRef } from 'react'
 import { Link } from 'gatsby'
-import useScrollListener from './utils/useScrollPosition'
+import { useScrollStore } from './../store'
+import { useEffect } from 'react'
+import { useScrollContext } from './utils/scrollContext'
+
+
 
 export default function Nav() {
 
-  const [bgColor, setBgColor] = useState(false)//change to ref? b/c dont need rerender when changes?
-  const [hide, setHide] = useState(false)
+  const scrollPos = useScrollContext()
+  // const scrollPos = useScrollStore((state)=>state.scrollPos)
 
-  // let lastPosition = useRef(0)
-  
-  // const scrollRef = useRef()
+  const [bgColor, setBgColor] = useState(false) 
+  // const bgColor = useRef(false) //why wont work with ref?
+  const hide = useRef(false)
+  const lastPosition = useRef(0)
 
-  // const handleScroll = useCallback(()=>{  
-  //   // console.log('scrollY: ', window.scrollY)  
-  //   if( window.scrollY > lastPosition.current ) setHide(true)
-  //   else setHide(false)
-  //   if( window.scrollY > '80') setBgColor(true)
-  //   else setBgColor(false)
-  //   lastPosition.current = window.scrollY   //why does this work using ref and not state for lastPos?
-  // }, [lastPosition])
+  const handleScroll = useCallback(()=>{  
+    if( scrollPos > lastPosition.current ) hide.current = true
+    else hide.current = false
+    if( scrollPos > 80) setBgColor(true)
+    else setBgColor(false)
+    // if( scrollPos > '80') bgColor.current = true
+    // else bgColor.current = false
+    lastPosition.current = scrollPos   //why does this work using ref and not state for lastPos?
+  }, [scrollPos])
 
-  // useScrollListener([lastPosition], handleScroll)
+  useEffect(()=>{
+    handleScroll()
+  }, [scrollPos, handleScroll])
 
   return ( 
-    <nav className={`nav ${hide && 'hide'} ${bgColor && 'bgColor'}`}>
+    <nav className={`nav ${hide.current && 'hide'} ${bgColor && 'bgColor'}`}>
       <div className='logo'><Link to='/'>LOGO</Link></div>
       <div className='nav-links'>
         <div><Link to='/#projects'>Work</Link></div>
@@ -36,6 +44,11 @@ export default function Nav() {
     </nav>
   )
 }
+
+        // if( scrollPos > lastPosition.current ) setHide(true)
+        // else setHide(false)
+        // if( scrollPos > '80') setBgColor(true)
+        // else setBgColor(false)
 
 
 // function classNames(...classes) {
