@@ -11,7 +11,7 @@ const BackgroundScene = () => {
 
   return(
     <div className="back-scene">
-      <div style={scrollPos < 1280 ? {backgroundSize : 320 - scrollPos/16+"%"} : {backgroundSize : 243+'%'} } className="landing-bg"></div>
+      <div style={scrollPos < 800 ? {backgroundSize : 320 - scrollPos/16+"%"} : {backgroundSize : 270+'%'} } className="landing-bg"></div>
       <div className="globe">
         <Globe />
       </div>

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback, createContext, useContext } from "react"
+import React, { useState, useMemo, useRef, useEffect, useCallback, createContext, useContext } from "react"
 import * as THREE from "three"
 // import { useSpring, animated } from '@react-spring/three'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
@@ -35,8 +35,8 @@ const Sphere = () => {
   const outterRef = React.useRef()
   const innerRef = React.useRef()
   const matRef = React.useRef()
-  const outterMap = useLoader(TextureLoader, 'earth-clouds-8k.jpg')
-  const innerNightMap = useLoader(TextureLoader, 'earth-night-8k.jpg')
+  const outterMap = useLoader(TextureLoader, 'earth-clouds-2k-lossy.jpg')
+  const innerNightMap = useLoader(TextureLoader, 'earth-night-2k-lossless.jpg')
   // const innerDayMap = useLoader(TextureLoader, 'earth-8k.jpg')
   // https://www.solarsystemscope.com/textures/
  
@@ -44,10 +44,25 @@ const Sphere = () => {
   // const scrollPos = useScrollStore((s)=>s.scrollPos)
   // const scrollPos = 0
 
+
+
   //scale according to scroll
-  const scaling = 1-scrollPos/2500
-  //animate changes in scale w/ spring
-  const { scale } = useSpring({ scale: [scaling, scaling, scaling] })
+  const [scaling, positionZ] = useMemo(() => {
+    const th = 800
+    if(scrollPos < th)
+      return [1-scrollPos/2500, 4.4-scrollPos/300]
+    return [ 1-th/2500, 4.4-th/300 ]
+  }, [scrollPos])
+
+  console.log('scroll: ', scrollPos)
+  // console.log(`scaling w/ (useMemo): ${scaling}`)
+
+
+  //animate changes in scale/position w/ spring
+  const { scale, position } = useSpring({ 
+    scale: [scaling, scaling, scaling],
+    position: [0, 1.42, positionZ]
+  })
 
   useFrame(() => {
     innerRef.current.rotation.x += .0002
@@ -58,8 +73,9 @@ const Sphere = () => {
     <>
       <animated.mesh
         ref={innerRef}
-        scale={scale}
-        position={[0, 1.44, 4.2]} 
+        scale={[1, 1, 1]}
+        // scale={scale}
+        position={position} 
         rotation={[2*Math.PI, 0, Math.PI/2]}
       >   
         <sphereGeometry args={[1, 80, 80]} />
@@ -72,10 +88,13 @@ const Sphere = () => {
           />
       </animated.mesh>
 
+      {/* -scrollPos/2500 */}
+
       <animated.mesh
         ref={outterRef}
-        scale={scale}
-        position={[0, 1.44, 4.2]} 
+        scale={[1, 1, 1]}
+        // scale={scale}
+        position={position} 
         rotation={[0, 0, Math.PI/2]}
       >   
         <sphereGeometry args={[1.03, 80, 80]} />
@@ -86,7 +105,7 @@ const Sphere = () => {
           alphaMap={outterMap} 
           // emissiveMap={outterMap}
           emissive={"white"}
-          emissiveIntensity={100}
+          emissiveIntensity={.4}
           />
       </animated.mesh>
     </>
@@ -121,10 +140,18 @@ const Globe = () => {
   )
 }
 
-
-
 export default Globe
 
+
+
+//on dep change useCallback returns cb ref --> call once, apply for all dimensions
+// const scaling = useCallback(() => {
+//   if(scrollPos < 1800)
+//     return 1-scrollPos/2500
+// }, [scrollPos])
+// const s = scaling() 
+// console.log(`scaling w/ useCallback: ${scaling}`)
+// console.log(`scaling(): ${s}`)
 
 // onPointerOver={() => setHovered(true)}
 // onPointerOut={() => setHovered(false)}

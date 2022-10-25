@@ -56,7 +56,7 @@ export function ProjectThumb(props) {
       <div className='project-tools'>{props.tools.map((t)=>t+' ')}</div>
       <div className='project-links'>
         <Link className='project-link' to={`/projects/${props.name}`}>Info</Link>
-        <Link className='project-link' target="_blank" to={`${props.link}`}>Visit</Link>
+        <a className='project-link' target="_blank" href={`${props.link}`}>Visit</a>
       </div>
     </div>
   ) 
