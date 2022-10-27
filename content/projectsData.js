@@ -1,4 +1,4 @@
-import mern1 from '../static/mern1.png'
+import mern1 from '../static/mern1-lossy.png'
 const url = 'https://images.pexels.com/photos/190364/pexels-photo-190364.jpeg?auto=compress&cs=tinysrgb&w=800'
 const projects = [
   {

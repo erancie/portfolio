@@ -3,7 +3,7 @@ import create from 'zustand'
 
 export const useScrollStore = create((set) => ({
   scrollPos: 0,
-  greeting: 'wassup yo!'
+  greeting: 'Greetings!'
 }))
 
 
