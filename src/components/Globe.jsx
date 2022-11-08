@@ -35,8 +35,14 @@ const Sphere = () => {
   const outterRef = React.useRef()
   const innerRef = React.useRef()
   const matRef = React.useRef()
-  const outterMap = useLoader(TextureLoader, 'earth-clouds-2k-lossy.jpg')
-  const innerNightMap = useLoader(TextureLoader, 'earth-night-2k-lossless.jpg')
+  // const outterMap = useLoader(TextureLoader, 'earth-clouds-2k-lossy.jpg')
+  // const innerNightMap = useLoader(TextureLoader, 'earth-night-2k-lossless.jpg')
+
+  const outterMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-20/earth-clouds-2k-lossless_Fx89Vwggc.jpg')
+  const innerNightMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-90/earth-night-2k-lossless_HedixKXNh.jpg')
+
+  // const outterMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/earth-clouds-8k_UOEE97iRL.jpg')
+  // const innerNightMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/earth-night-8k_dMIDkPbA_.jpg')
   // const innerDayMap = useLoader(TextureLoader, 'earth-8k.jpg')
   // https://www.solarsystemscope.com/textures/
  
@@ -44,8 +50,7 @@ const Sphere = () => {
   // const scrollPos = useScrollStore((s)=>s.scrollPos)
   // const scrollPos = 0
 
-
-
+  
   //scale according to scroll
   const [scaling, positionZ] = useMemo(() => {
     const th = 800
@@ -54,7 +59,7 @@ const Sphere = () => {
     return [ 1-th/2500, 4.4-th/300 ]
   }, [scrollPos])
 
-  console.log('scroll: ', scrollPos)
+  // console.log('scroll: ', scrollPos)
   // console.log(`scaling w/ (useMemo): ${scaling}`)
 
 
@@ -153,15 +158,9 @@ export default Globe
 // console.log(`scaling w/ useCallback: ${scaling}`)
 // console.log(`scaling(): ${s}`)
 
+
+
 // onPointerOver={() => setHovered(true)}
 // onPointerOut={() => setHovered(false)}
-// scale={props.scale}
-
-
-
 // const [hovered, setHovered] = useState(false)
 // const [active, setActive] = useState(false)
-// const props = useSpring({
-//   scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
-//   color: hovered ? "hotpink" : "gray",
-// })

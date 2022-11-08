@@ -6,14 +6,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useScrollStore } from './../store'
 import { useScrollContext } from "./utils/scrollContext"
 
-
-
 gsap.registerPlugin(ScrollTrigger)
-
 
 export function ProjectThumb(props) {
 
-  const scrollRef = useRef()
+  const scrollRef = useRef() 
 
   const cardRef = useRef(null)
 
@@ -65,8 +62,8 @@ export function ProjectThumb(props) {
 export default function ProjectsList() {  
 
   // const scrollPos = useScrollStore((s)=>s.scrollPos)
-  const scrollPos = useScrollContext()
 
+  const scrollPos = useScrollContext()
   const bgContainer = useRef()
   const landingRef = useRef()
 
@@ -78,6 +75,8 @@ export default function ProjectsList() {
 
   // useScrollListener([landingRef], handleScroll)
 
+
+          
   return (
     <div  className='projects-container'>
 
@@ -180,6 +179,7 @@ export default function ProjectsList() {
       </div>
 
       <div className='projects-list'>
+
         {projects.map((p)=>(
           // <div className='thumb-wrapper'>
           <ProjectThumb name={p.name}

@@ -5,19 +5,30 @@ import BackgroundScene from "../components/BackgroundScene"
 import ProjectsList from "../components/ProjectsList"
 import { ScrollContextProvider } from "../components/utils/scrollContext"
 import LandingHeaders from "../components/LandingHeaders"
-import { useScrollZustand } from "../components/utils/useScrollZustand"
+import { IKImage, IKContext} from 'imagekitio-react'
 
 export default function Home() {
-
-  // useScrollZustand()
-  
+ 
   return (
     <ScrollContextProvider>
-      <Layout>
-        <BackgroundScene />
-        <LandingHeaders />
-        <ProjectsList /> 
-      </Layout>
+      <IKContext publicKey={process.env.GATSBY_IK_PUBLIC_KEY}
+                 urlEndpoint='https://ik.imagekit.io/kv4ohthhz'>
+
+        <Layout>
+          <BackgroundScene />
+          <LandingHeaders />
+          <ProjectsList /> 
+        </Layout> 
+
+      </IKContext>
     </ScrollContextProvider>
   )
 }
+
+
+{/* <IKImage style={{margin: 'auto', width: '200px'}} path="/mern1-1280_qH3SRTAhB" 
+transformation={[{
+  // "height": "200",
+  // "width": "200"
+}]}
+loading="lazy" /> */}
