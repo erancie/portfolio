@@ -31,7 +31,10 @@ html, body
   height: 100%
   position: relative
   background: $b
-  z-index: -2
+  // z-index: 1
+
+  // z-index stacking context is relevant to an element's nearest parent with a z-index (always infront) - otherwise it's on the global z-index (can be behind)
+  //https://web.dev/learn/css/z-index/ 
 
 //Navigation
 .nav
@@ -206,7 +209,7 @@ html, body
   top: 0
   left: 0
   position: sticky
-  z-index: -1
+  // z-index: -1
   // background: $b
 
 .bg-overlay
@@ -214,13 +217,13 @@ html, body
   width: 100%
   height: 100%
   position: absolute
-  z-index: -1
+  // z-index: -1
 
 .landing-bg 
   position: absolute
   top: 0
   left: 0
-  z-index: -1
+  // z-index: -1
   width: 100%
   height: 100%
   background: rgb(0, 0, 0)
@@ -240,7 +243,7 @@ html, body
   height: 100%
   top: 0
   left: 0
-  z-index: -1
+  // z-index: -1
   // z-index: 10
 
 // .landing-svg-fore, .landing-svg-back, .landing-svg-back-bot

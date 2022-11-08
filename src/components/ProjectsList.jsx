@@ -3,8 +3,9 @@ import { Link } from 'gatsby'
 import projects from '../../content/projectsData'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useScrollStore } from './../store'
 import { useScrollContext } from "./utils/scrollContext"
+import { IKImage } from 'imagekitio-react'
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -59,9 +60,14 @@ export function ProjectThumb(props) {
   ) 
 }
 
-export default function ProjectsList() {  
+{/* <IKImage style={{margin: 'auto', width: '200px'}} path="/mern1-1280_qH3SRTAhB" 
+transformation={[{
+  // "height": "200",
+  // "width": "200"
+}]}
+loading="lazy" /> */}
 
-  // const scrollPos = useScrollStore((s)=>s.scrollPos)
+export default function ProjectsList() {  
 
   const scrollPos = useScrollContext()
   const bgContainer = useRef()
@@ -73,7 +79,6 @@ export default function ProjectsList() {
       landingRef.current.style.top = `${800-scrollY/8}px` //500 offset for window.scrollY
   }, [landingRef])
 
-  // useScrollListener([landingRef], handleScroll)
 
 
           

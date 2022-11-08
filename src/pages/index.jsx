@@ -5,7 +5,7 @@ import BackgroundScene from "../components/BackgroundScene"
 import ProjectsList from "../components/ProjectsList"
 import { ScrollContextProvider } from "../components/utils/scrollContext"
 import LandingHeaders from "../components/LandingHeaders"
-import { IKImage, IKContext} from 'imagekitio-react'
+import { IKContext } from 'imagekitio-react'
 
 export default function Home() {
  
@@ -26,9 +26,3 @@ export default function Home() {
 }
 
 
-{/* <IKImage style={{margin: 'auto', width: '200px'}} path="/mern1-1280_qH3SRTAhB" 
-transformation={[{
-  // "height": "200",
-  // "width": "200"
-}]}
-loading="lazy" /> */}
