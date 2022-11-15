@@ -41,10 +41,6 @@
   // transition: all .2s ease
 
 
-
-
-
-
 // projects
 .projects-list
   position: relative
@@ -58,7 +54,9 @@
   align-items: flex-start
 
   .project-thumb
-    background: linear-gradient(25deg, $fore 28%, #4b4b63 100%)
+    background: linear-gradient(25deg, #1f1f1f9b 28%, #1f1f1f9d 100%)
+    // background: linear-gradient(25deg, #1c1c299b 28%, #4b4b639d 100%)
+    // background: linear-gradient(25deg, $fore 28%, #4b4b63 100%)
     color: white
     margin: 4rem auto
     box-shadow: 0px 3px 4px $shadow
@@ -112,35 +110,82 @@
   //also col&row boundaries act as container 
 
 .project-title
-  margin-top: -1px
-  font-size: 2rem
-  font-weight: 500
-  color: white
-  z-index: 10
+
+
+.project-imgs-wrapper
+  // display: flex
+
+.card-img
   position: absolute
-  top: 0
-  left: 0
-  background: $fore
-  text-transform: uppercase
-  // background: linear-gradient(60deg, $fore 70%, #4b4b63 100%)
-  border-radius: 5px 0 24px 0
-  padding: .2rem 1.5rem .5rem 1rem
+  left: 50%
+  transform: translateX(-50%)
 
-.project-img-wrapper
-  position: relative
-  // height: 80%
-  top: 0
-  left: 0
-  overflow: hidden
+//IMGs
+.img-desktop 
+  width: 402px
+  top: 8px
+.img-laptop 
+  width: 286px
+  top: 6px
+.img-tablet 
+  width: 162px
+  top: 2.5%
+.img-mobile 
+  width: 76px
+  top: 3.8%
 
-.project-img
-  width: 100%
-  background: white
-  margin: 0 auto
+//wrappers
+.wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
+  margin: 50px auto
   position: relative
-  top: 0
-  left: 0
-  border-radius: 8px 8px 0 0
+.wrapper-desktop
+  width: 428px
+.wrapper-laptop
+  width: 316px
+.wrapper-tablet
+  width: 170px
+.wrapper-mobile
+  width: 81px
+
+//SVGs
+.svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet 
+  margin: auto
+  path
+    fill: rgb(100, 125, 157)
+
+@media (max-width: 1200px)
+  .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
+    transform: scale(.85)
+  .svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet
+    transform: scale(.85)
+  .card-img
+    transform: translateX(-50%) scale(.85)
+  .img-desktop
+    top: 9px
+  // .img-laptop
+  //   top: 5px
+  // .img-tablet
+  //   top: 5px
+  // .img-mobile
+  //   top: 5px
+
+@media (max-width: 800px)
+  .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
+    transform: scale(.7)
+  .svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet
+    transform: scale(.7)
+  .card-img
+    transform: translateX(-50%) scale(.7)
+  .img-desktop
+    top: 11px
+  // .img-laptop
+  //   top: 5px
+  // .img-tablet
+  //   top: 5px
+  // .img-mobile
+  //   top: 5px
+
+
 
 .project-desc
   padding-top: 1.2rem
@@ -201,3 +246,35 @@
     width: 30%
 
 
+//old card 
+
+// .project-title
+//   margin-top: -1px
+//   font-size: 2rem
+//   font-weight: 500
+//   color: white
+//   z-index: 10
+//   position: absolute
+//   top: 0
+//   left: 0
+//   background: $fore
+//   text-transform: uppercase
+//   // background: linear-gradient(60deg, $fore 70%, #4b4b63 100%)
+//   border-radius: 5px 0 24px 0
+//   padding: .2rem 1.5rem .5rem 1rem
+
+// .project-img-wrapper
+//   position: relative
+//   // height: 80%
+//   top: 0
+//   left: 0
+//   overflow: hidden
+
+// .project-img
+//   width: 100%
+//   background: white
+//   margin: 0 auto
+//   position: relative
+//   top: 0
+//   left: 0
+//   border-radius: 8px 8px 0 0

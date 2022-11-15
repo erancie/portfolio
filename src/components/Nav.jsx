@@ -1,15 +1,11 @@
 import React, { useState, useCallback, useRef } from 'react'
 import { Link } from 'gatsby'
-import { useScrollStore } from './../store'
 import { useEffect } from 'react'
 import { useScrollContext } from './utils/scrollContext'
-
-
 
 export default function Nav() {
 
   const scrollPos = useScrollContext()
-  // const scrollPos = useScrollStore((state)=>state.scrollPos)
 
   const [bgColor, setBgColor] = useState(false) 
   // const bgColor = useRef(false) //why wont work with ref?

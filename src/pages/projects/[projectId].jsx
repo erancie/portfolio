@@ -49,18 +49,21 @@ export default function Project(props) {
                 <Link className='overlay-link' target="_blank" to={`${proj.link}`}>Visit</Link>
               {/* </div> */}
             </div>
-            <img className='' src={proj.img}></img>
+            <img className='' alt='' src={proj.img}></img>
           </div>
           <div className='project-item-desc col-9'>
             {proj.desc}
           </div>
-          {/* <Link className='project-link no-right' to={`${proj.link}`}>Visit</Link> */}
         </div>
+
         <TrickCards />
       </div>
     </Layout>
   )
 }
+
+
+    
 
 
 //define routes --> link with components
