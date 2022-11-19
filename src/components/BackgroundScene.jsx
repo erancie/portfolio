@@ -1,6 +1,6 @@
 import React from "react"
 import Globe from "./Globe"
-import { useScrollContext } from "./utils/scrollContext"
+import { useScrollContext } from "./utils/useScrollContext"
 
 const BackgroundScene = () => {
 

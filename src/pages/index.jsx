@@ -3,7 +3,7 @@ import '../styles/global.sass'
 import Layout from "../components/Layout"
 import BackgroundScene from "../components/BackgroundScene"
 import ProjectsList from "../components/ProjectsList"
-import { ScrollContextProvider } from "../components/utils/scrollContext"
+import { ScrollContextProvider } from "../components/utils/useScrollContext"
 import LandingHeaders from "../components/LandingHeaders"
 import { IKContext } from 'imagekitio-react'
 
@@ -16,6 +16,7 @@ export default function Home() {
 
         <Layout>
           <BackgroundScene />
+          <div className="overlay"></div>
           <LandingHeaders />
           <ProjectsList /> 
         </Layout> 

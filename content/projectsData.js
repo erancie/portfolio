@@ -51,6 +51,76 @@ const projects = [
     tools: ['Mongo', 'Express', 'React', 'Node'],
     link: 'https://young-bastion-06311.herokuapp.com/'
   },
+  {
+    name:'mern',
+    title: 'MERN Platform',
+    imgRoot: IKRoot,
+    imgSrc: {
+      desktop: mernDesktop,
+      laptop: mernLaptop,
+      tablet: mernTablet,
+      mobile: mernMobile
+    },
+    desc: 'A full stack project bringing experts and clients together.',
+    tools: ['Mongo', 'Express', 'React', 'Node'],
+    link: 'https://young-bastion-06311.herokuapp.com/'
+  },
+  {
+    name:'mern',
+    title: 'MERN Platform',
+    imgRoot: IKRoot,
+    imgSrc: {
+      desktop: mernDesktop,
+      laptop: mernLaptop,
+      tablet: mernTablet,
+      mobile: mernMobile
+    },
+    desc: 'A full stack project bringing experts and clients together.',
+    tools: ['Mongo', 'Express', 'React', 'Node'],
+    link: 'https://young-bastion-06311.herokuapp.com/'
+  },
+  {
+    name:'mern',
+    title: 'MERN Platform',
+    imgRoot: IKRoot,
+    imgSrc: {
+      desktop: mernDesktop,
+      laptop: mernLaptop,
+      tablet: mernTablet,
+      mobile: mernMobile
+    },
+    desc: 'A full stack project bringing experts and clients together.',
+    tools: ['Mongo', 'Express', 'React', 'Node'],
+    link: 'https://young-bastion-06311.herokuapp.com/'
+  },
+  {
+    name:'mern',
+    title: 'MERN Platform',
+    imgRoot: IKRoot,
+    imgSrc: {
+      desktop: mernDesktop,
+      laptop: mernLaptop,
+      tablet: mernTablet,
+      mobile: mernMobile
+    },
+    desc: 'A full stack project bringing experts and clients together.',
+    tools: ['Mongo', 'Express', 'React', 'Node'],
+    link: 'https://young-bastion-06311.herokuapp.com/'
+  },
+  {
+    name:'mern',
+    title: 'MERN Platform',
+    imgRoot: IKRoot,
+    imgSrc: {
+      desktop: mernDesktop,
+      laptop: mernLaptop,
+      tablet: mernTablet,
+      mobile: mernMobile
+    },
+    desc: 'A full stack project bringing experts and clients together.',
+    tools: ['Mongo', 'Express', 'React', 'Node'],
+    link: 'https://young-bastion-06311.herokuapp.com/'
+  },
   // {
   //   name: 'gpt',
   //   title: 'GPT-3 App',
@@ -59,54 +129,7 @@ const projects = [
   //   tools: ['React', 'GPT-3', 'Speech Recognition'],
   //   link: ''
   // },
-  // {
-  //   name: 'gpt',
-  //   title: 'GPT-3 App',
-  //   img: url,
-  //   desc: 'A front end implementation using the GPT-3 API',
-  //   tools: ['React', 'GPT-3', 'Speech Recognition'],
-  //   link: ''
-  // },
-  // {
-  //   name: 'gpt',
-  //   title: 'GPT-3 App',
-  //   img: url,
-  //   desc: 'A front end implementation using the GPT-3 API',
-  //   tools: ['React', 'GPT-3', 'Speech Recognition'],
-  //   link: ''
-  // },
-  // {
-  //   name: 'gpt',
-  //   title: 'GPT-3 App',
-  //   img: url,
-  //   desc: 'A front end implementation using the GPT-3 API',
-  //   tools: ['React', 'GPT-3', 'Speech Recognition'],
-  //   link: ''
-  // },
-  // {
-  //   name: 'gpt',
-  //   title: 'GPT-3 App',
-  //   img: url,
-  //   desc: 'A front end implementation using the GPT-3 API',
-  //   tools: ['React', 'GPT-3', 'Speech Recognition'],
-  //   link: ''
-  // },
-  // {
-  //   name: 'gpt',
-  //   title: 'GPT-3 App',
-  //   img: url,
-  //   desc: 'A front end implementation using the GPT-3 API',
-  //   tools: ['React', 'GPT-3', 'Speech Recognition'],
-  //   link: ''
-  // },
-  // {
-  //   name: 'gpt',
-  //   title: 'GPT-3 App',
-  //   img: url,
-  //   desc: 'A front end implementation using the GPT-3 API',
-  //   tools: ['React', 'GPT-3', 'Speech Recognition'],
-  //   link: ''
-  // }
+
 ]
 
 export default projects

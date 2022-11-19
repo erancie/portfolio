@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useRef } from 'react'
 import { Link } from 'gatsby'
 import { useEffect } from 'react'
-import { useScrollContext } from './utils/scrollContext'
+import { useScrollContext } from './utils/useScrollContext'
 
 export default function Nav() {
 

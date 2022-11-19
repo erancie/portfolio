@@ -17,6 +17,7 @@ $shadow: #0a0a0abf
 $purple: #6d498c
 $light-purple: #b17fdc
 $orange: #dda345
+$bg: #101018db
 
 $on-dark-shadow: -6px 4px 4px $shadow
 
@@ -86,12 +87,13 @@ html, body
 .landing
   scroll-snap-align: start
   color: white
-  height: 100vh
+  height: 50vh
   width: 100%
   font-family: 'Raleway'
   font-size: 3rem
   font-weight: 600
-  position: absolute
+  // position: absolute
+  position: fixed
   top: 0
   left: 0
   transition: transform 100ms ease-out
@@ -209,21 +211,26 @@ html, body
   top: 0
   left: 0
   position: sticky
-  // z-index: -1
   // background: $b
 
 .bg-overlay
-  background: (linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff0b 54%, #10101863 64%, #101018ac 73%, #101018ea 82%, #101018fa 91%, $b 100%))
   width: 100%
   height: 100%
   position: absolute
-  // z-index: -1
+
+.overlay
+  // background: (linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #10101835 10%, #10101853 28%, #10101880 46%, #101018a0 64%, #101018ce 82%, $bg  100%))
+  background: (linear-gradient(to bottom, #10101800 0%, $bg  100%))
+  width: 100%
+  height: 100vh
+  position: absolute
+  top: 600px
+  transform: translateY()
 
 .landing-bg 
   position: absolute
   top: 0
   left: 0
-  // z-index: -1
   width: 100%
   height: 100%
   background: rgb(0, 0, 0)

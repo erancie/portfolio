@@ -1,17 +1,22 @@
 import React from 'react'
-import { useScrollContext } from './utils/scrollContext'
+import { useScrollContext } from './utils/useScrollContext'
 import { useScrollStore } from '../store'
 
 export default function LandingHeaders() {
 
-  // const scrollPos = 0
   const scrollPos = useScrollContext()
-  // const scrollPos = useScrollStore((s)=>s.scrollPos)
-  
+    console.log(scrollPos)
+    // console.log(scrollPos/100)
   return (
-        // <div style={{ transform:`scale(${1-scrollPos/1500})` }} className="landing">
-         <div style={ scrollPos < 1580 ? { transform:`scale(${1-scrollPos/1000}) `} : { transform:`scale(.05)` } } className="landing"> 
-         {/* translateY(${scrollPos/25}) */}
+         <div style={ 
+                scrollPos < 550 
+                ? { transform:`scale(${1-scrollPos/550})`,
+                    // top: -scrollPos/5 
+                  } 
+                : { display:`none` } } 
+              className="landing"> 
+                    {/* { transform:`scale(.0)` } */}
+
           {/* <h1 className="title-3">&</h1> */}
           <h1 className="title-1">Out of this World</h1>
           <h1 className="title-2">Digital Spaces.</h1>

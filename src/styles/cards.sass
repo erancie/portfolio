@@ -5,7 +5,6 @@
   position: relative
   margin-top: 600px
 
-
 // SVG backgrounds 
 .proj-bg-container
   position: -webkit-sticky
@@ -40,157 +39,154 @@
   transform: translateX(-50%)
   // transition: all .2s ease
 
-
 // projects
 .projects-list
   position: relative
   height: 100%
   width: 80%
   margin: 2rem auto 0
-  // top: 800px
+  background: #101018db
   padding-bottom: 12rem
   display: flex
   flex-wrap: wrap
   align-items: flex-start
 
   .project-thumb
-    background: linear-gradient(25deg, #1f1f1f9b 28%, #1f1f1f9d 100%)
-    // background: linear-gradient(25deg, #1c1c299b 28%, #4b4b639d 100%)
-    // background: linear-gradient(25deg, $fore 28%, #4b4b63 100%)
+    text-align: center
     color: white
     margin: 4rem auto
-    box-shadow: 0px 3px 4px $shadow
     border-radius: 4px
     position: relative
     transform: translateY(20px)
     opacity: 0
-    //jagged on mobile
-    // margin-left: -1rem
-    // &:nth-of-type(2n)
-    //   margin-left: 1rem
+    // background: linear-gradient(25deg, #1f1f1f9b 28%, #1f1f1f9d 100%)
+    // box-shadow: 0px 3px 4px $shadow
+
 
 @media (min-width: 768px) 
   .projects-list
     width: 100%
-    // margin: 0 auto
-    // margin-top: -200px
     display: grid
     grid-template-columns: repeat(12, 8.333%)
-    // grid-template-rows: 50vh
-    // grid-template-rows: repeat(24, 50vh)
     row-gap: 10rem
     .project-thumb
       margin: 0 auto
-      &:nth-of-type(1)
-        grid-column: 3/9
-        // grid-row: 1
-      &:nth-of-type(2)
-        grid-column: 6/12
-        // grid-row: 4
-      &:nth-of-type(3)
-        grid-column: 2/8
-        // grid-row: 7
-      &:nth-of-type(4)
-        grid-column: 5/11
-        // grid-row: 11
-      &:nth-of-type(5)
-        grid-column: 3/9
-        // grid-row: 15
-      &:nth-of-type(6)
-        grid-column: 6/12
-        // grid-row: 19
-      &:nth-of-type(7)
-        grid-column: 2/8
-        // grid-row: 22
-      &:nth-of-type(8)
-        grid-column: 5/11
-        // grid-row: 25
-    
-//grid is good for more specific alignment
-  //also col&row boundaries act as container 
+      grid-column: 3/11
+      // &:nth-of-type(1)
+      //   grid-column: 2/11
+      // &:nth-of-type(2)
+      //   grid-column: 3/12
+      // &:nth-of-type(3)
+      //   grid-column: 2/11
+      // &:nth-of-type(4)
+      //   grid-column: 3/12
+      // &:nth-of-type(5)
+      //   grid-column: 2/11
+      // &:nth-of-type(6)
+      //   grid-column: 3/12
+      // &:nth-of-type(7)
+      //   grid-column: 2/11
+      // &:nth-of-type(8)
+      //   grid-column: 3/12
+
 
 .project-title
+  font-size: 3rem
+  font-weight: 700
 
 
 .project-imgs-wrapper
-  // display: flex
+  display: flex
+  align-items: flex-end
 
-.card-img
-  position: absolute
-  left: 50%
-  transform: translateX(-50%)
+// .project-thumb:nth-of-type(even)
+//   text-align: right
+//   .project-imgs-wrapper
+//     flex-direction: row-reverse 
 
-//IMGs
-.img-desktop 
-  width: 402px
-  top: 8px
-.img-laptop 
-  width: 286px
-  top: 6px
-.img-tablet 
-  width: 162px
-  top: 2.5%
-.img-mobile 
-  width: 76px
-  top: 3.8%
+    
 
-//wrappers
 .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
   margin: 50px auto
   position: relative
-.wrapper-desktop
-  width: 428px
-.wrapper-laptop
-  width: 316px
+// .wrapper-desktop
+//   // width: 400px
+//   width: 600px
+// .wrapper-laptop
+//   // width: 284px
+//   width: 406px
 .wrapper-tablet
-  width: 170px
-.wrapper-mobile
-  width: 81px
+  z-index: 1
+//   // width: 160px
+//   width: 240px
+// .wrapper-mobile
+//   // width: 75px
+//   width: 112px
 
-//SVGs
+
+.card-img
+
+// //IMGs 
+// .img-desktop 
+//   // width: 400px
+//   width: 600px
+// .img-laptop 
+//   // width: 284px
+//   width: 406px
+.img-tablet 
+  // z-index: 1
+  // width: 160px
+  // width: 240px
+// .img-mobile 
+//   // width: 75px
+//   width: 112px
+
+//SVGs -
 .svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet 
-  margin: auto
+  position: absolute
+  top: 0
+  left: 0
+  overflow: visible
+.svg-desktop 
   path
-    fill: rgb(100, 125, 157)
+    fill: rgb(44, 44, 58)
+.svg-mobile 
+  path
+    fill: rgb(46, 66, 80)
+.svg-laptop
+  path
+    fill: rgb(73, 95, 88)
+.svg-tablet 
+  // z-index: 1
+  path
+    fill: rgb(37, 72, 81)
+    // fill-opacity: .9
 
-@media (max-width: 1200px)
-  .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
-    transform: scale(.85)
-  .svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet
-    transform: scale(.85)
-  .card-img
-    transform: translateX(-50%) scale(.85)
-  .img-desktop
-    top: 9px
-  // .img-laptop
-  //   top: 5px
-  // .img-tablet
-  //   top: 5px
-  // .img-mobile
-  //   top: 5px
+// @media (max-width: 1200px)
+//   .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
+//     transform: scale(.85)
+//   .svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet
+//     transform: scale(.85)
+//   .card-img
+//     transform: translateX(-50%) scale(.85)
+
 
 @media (max-width: 800px)
-  .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
-    transform: scale(.7)
-  .svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet
-    transform: scale(.7)
-  .card-img
-    transform: translateX(-50%) scale(.7)
-  .img-desktop
-    top: 11px
-  // .img-laptop
-  //   top: 5px
-  // .img-tablet
-  //   top: 5px
-  // .img-mobile
-  //   top: 5px
+  .project-imgs-wrapper
+    flex-direction: column
 
+//   .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
+//     transform: scale(.7)
+//   .svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet
+//     transform: scale(.7)
+//   .card-img
+//     transform: translateX(-50%) scale(.7)
 
 
 .project-desc
   padding-top: 1.2rem
-  margin: 0 1.2rem  
-  font-weight: 100
+  // margin: 0 1.2rem  
+  // font-weight: 100
   font-size: 1.1rem
 
 // @media (min-width: 768px) 
@@ -201,35 +197,40 @@
 .project-tools
   padding-top: 1rem
   padding-bottom: 2.5rem
-  margin-left: 1.2rem
+  // margin-left: 1.2rem
   color: lightgrey
 
 .project-links
-  margin-left: 1.2rem
+  // margin-left: 1.2rem
   padding-bottom: 2rem
+  font-size: 1.2rem
+    
+    
 
 .project-link
   border: 1px solid $font
   color: $font
   border-radius: 5px
-  padding: .3rem .6rem .5rem
+  padding: .4rem .8rem .7rem
   // padding-bottom: .5rem
-  margin-right: 2rem
+  // margin-right: 2rem
   &:hover
     background: $font
     color: black
+  &:nth-of-type(1)
+    margin-right: 1.5rem
   &:nth-of-type(2)
     color: $orange
     border: 2px solid $orange
     &:hover
       background: $orange
       color: black
-  &:nth-of-type(3)
-    color: $light-purple
-    border: 2px solid $light-purple
-    &:hover
-      background: $light-purple
-      color: black
+  // &:nth-of-type(3)
+  //   color: $light-purple
+  //   border: 2px solid $light-purple
+  //   &:hover
+  //     background: $light-purple
+  //     color: black
 
       
 //media queries
@@ -244,37 +245,3 @@
     width: 80%
   .project-thumb2
     width: 30%
-
-
-//old card 
-
-// .project-title
-//   margin-top: -1px
-//   font-size: 2rem
-//   font-weight: 500
-//   color: white
-//   z-index: 10
-//   position: absolute
-//   top: 0
-//   left: 0
-//   background: $fore
-//   text-transform: uppercase
-//   // background: linear-gradient(60deg, $fore 70%, #4b4b63 100%)
-//   border-radius: 5px 0 24px 0
-//   padding: .2rem 1.5rem .5rem 1rem
-
-// .project-img-wrapper
-//   position: relative
-//   // height: 80%
-//   top: 0
-//   left: 0
-//   overflow: hidden
-
-// .project-img
-//   width: 100%
-//   background: white
-//   margin: 0 auto
-//   position: relative
-//   top: 0
-//   left: 0
-//   border-radius: 8px 8px 0 0
