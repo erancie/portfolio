@@ -21,7 +21,8 @@ const Controls = () => {
       maxPolarAngle={Math.PI / 3}
       minPolarAngle={Math.PI / 3}
       args={[camera, gl.domElement]}
-      ref={orbitRef} />
+      ref={orbitRef}
+    />
   )
 }
 
@@ -37,13 +38,15 @@ const Sphere = () => {
   //get Z coord according to scroll position
   const positionZ = useMemo(() => {
     const thold = 800
-    if(scrollPos < thold) 
+    if(scrollPos < thold)
       return 4.4-scrollPos/300
-    return  4.4-thold/300
+    return 4.4-thold/300 
   }, [scrollPos])
 
   //animate changes in scale/position w/ spring
-  const position = useSpring({ position: [0, 1.4, positionZ] })
+  const { position } = useSpring({ 
+    position: [0, 1.4, positionZ]
+  })
 
   useFrame(() => {
     innerRef.current.rotation.x += .0002
@@ -80,15 +83,20 @@ const Sphere = () => {
       >   
         <sphereGeometry args={[1, 80, 80]} />
         <meshBasicMaterial
+          // transparent
+          // opacity={opacity}
           ref={matRef} 
+          // map={innerDayMap}
           map={innerNightMap}
+          // map={surface}
           color="#fff"
-        />
+          />
       </animated.mesh>
 
       <animated.mesh
         ref={outterRef}
         scale={[1, 1, 1]}
+        // scale={scale}
         position={position} 
         rotation={[0, 0, Math.PI/2]}
       >   
@@ -96,10 +104,12 @@ const Sphere = () => {
         <meshStandardMaterial
           transparent
           opacity={.15}
+          // map={outterMap}
           alphaMap={outterMap} 
+          // emissiveMap={outterMap}
           emissive={"white"}
           emissiveIntensity={.4}
-        />
+          />
       </animated.mesh>
     </>
     // ) 
@@ -139,6 +149,7 @@ const Globe = () => {
 export default Globe
 
 
+
 //on dep change useCallback returns cb ref --> call once, apply for all dimensions
 // const scaling = useCallback(() => {
 //   if(scrollPos < 1800)
@@ -149,10 +160,12 @@ export default Globe
 // console.log(`scaling(): ${s}`)
 
 
+
 // onPointerOver={() => setHovered(true)}
 // onPointerOut={() => setHovered(false)}
 // const [hovered, setHovered] = useState(false)
 // const [active, setActive] = useState(false)
+
 
 
 //use memo returns a value from a function when its dependencies change
