@@ -105,21 +105,43 @@
 //     flex-direction: row-reverse 
 
     
-
-.wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
+// .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
+.wrapper
   margin: 50px auto
   position: relative
-// .wrapper-desktop
+  transition: all .22s ease-in
+  &:hover
+    transform: scale(1.2) translateY(-15px)
+    // z-index: 2
+    &~.wrapper
+      transform: translateX(30px)
+      // opacity: .5
+        
+
+.wrapper-desktop
+    &:hover
+      transform: scale(1.2) translate(40px, -15px)
 //   // width: 400px
 //   width: 600px
-// .wrapper-laptop
+.wrapper-laptop
+  &:hover
+    // z-index: 2
 //   // width: 284px
 //   width: 406px
 .wrapper-tablet
+  top: 12px
+  left: 5px
   z-index: 1
 //   // width: 160px
 //   width: 240px
-// .wrapper-mobile
+.wrapper-mobile
+  right: 10px
+  bottom: -40px
+  z-index: 1
+  margin-right: -50px
+  &:hover
+    transform: scale(1.35) translateY(-15px)
+
 //   // width: 75px
 //   width: 112px
 
@@ -149,17 +171,25 @@
   overflow: visible
 .svg-desktop 
   path
-    fill: rgb(44, 44, 58)
+    // fill: #1b1b1b
+    fill: #9496ad
+    // fill: #646b9c
 .svg-mobile 
   path
-    fill: rgb(46, 66, 80)
+    // fill: #000000
+    fill: rgb(104, 118, 131)
+    // fill: rgb(193, 135, 73)
 .svg-laptop
   path
-    fill: rgb(73, 95, 88)
+    // fill: #333333
+    fill: rgb(164, 180, 187)
+    // fill: rgb(128, 166, 153)
 .svg-tablet 
   // z-index: 1
   path
-    fill: rgb(37, 72, 81)
+    // fill: #343333
+    fill: rgb(144, 133, 148)
+    // fill: rgb(155, 128, 163)
     // fill-opacity: .9
 
 // @media (max-width: 1200px)
