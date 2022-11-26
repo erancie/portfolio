@@ -47,6 +47,8 @@ export function ProjectThumb({project}) {
     <div ref={cardRef} key={project.name} className='project-thumb col-12 col-lg-10 col-xl-9 col-xxl-8'>
       <h1 className='project-title'>{project.title}</h1>
 
+      <p className='project-desc'>{project.desc}</p>
+
       <div className="project-imgs-wrapper">
 
         <div className="wrapper-laptop wrapper">
@@ -82,12 +84,22 @@ export function ProjectThumb({project}) {
         
       </div>
 
-      <p className='project-desc'>{project.desc}</p>
+
+      <div class="project-mosaic">
+        <div id="mosaic-0">&nbsp;</div>
+        <div id="mosaic-1">&nbsp;</div>
+        <div id="mosaic-2">&nbsp;</div>
+        <div id="mosaic-3">&nbsp;</div>
+      </div> 
+
       <div className='project-tools'>{project.tools.map((t)=>t+' ')}</div>
+
       <div className='project-links'>
-        <Link className='project-link' to={`/projects/${project.name}`}>Info</Link>
+        {/* <Link className='project-link' to={`/projects/${project.name}`}>Info</Link> */}
         <a className='project-link' target="_blank" href={`${project.link}`}>Visit</a>
-      </div>     
+      </div>    
+
+      <hr className='ruling'/>
     </div>
   ) 
 }

@@ -98,6 +98,7 @@
 .project-imgs-wrapper
   display: flex
   align-items: flex-end
+  margin: 3rem 0
 
 // .project-thumb:nth-of-type(even)
 //   text-align: right
@@ -214,10 +215,10 @@
 
 
 .project-desc
-  padding-top: 1.2rem
+  margin: 3rem 0
   // margin: 0 1.2rem  
   // font-weight: 100
-  font-size: 1.1rem
+  font-size: 1.3rem
 
 // @media (min-width: 768px) 
 // @media (min-width: 992px)
@@ -225,14 +226,16 @@
 // @media (min-width: 1400px)
 
 .project-tools
-  padding-top: 1rem
-  padding-bottom: 2.5rem
+  margin: 3rem 0 4rem
+  // padding-top: 1rem
+  // padding-bottom: 2.5rem
   // margin-left: 1.2rem
   color: lightgrey
 
 .project-links
   // margin-left: 1.2rem
-  padding-bottom: 2rem
+  margin: 5rem 0 2rem
+  // padding-bottom: 2rem
   font-size: 1.2rem
     
     
@@ -247,8 +250,8 @@
   &:hover
     background: $font
     color: black
-  &:nth-of-type(1)
-    margin-right: 1.5rem
+  // &:nth-of-type(1)
+  //   margin-right: 1.5rem
   &:nth-of-type(2)
     color: $orange
     border: 2px solid $orange
@@ -261,7 +264,39 @@
   //   &:hover
   //     background: $light-purple
   //     color: black
+.project-mosaic 
+   display: grid
+   grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr
+   gap: 5px
+   height: 400px
+   margin: 2rem
 
+  
+#mosaic-0 
+   background-color: #eceaea
+   grid-row: 1 / 4
+   grid-column: 1 / 5
+
+#mosaic-1 
+   background-color: #9a9a9a
+   grid-row: 1 / 4
+   grid-column: 5 / 7
+   
+#mosaic-2 
+   background-color: #e3e3e3
+   grid-row: 4 / 6
+   grid-column: 1 / 3
+  
+#mosaic-3 
+   background-color: #dbdbdb
+   grid-row: 4 / 6
+   grid-column: 3 / 7
+
+.ruling
+  // color: #101018db
+  border-color: #3f3f4edb
+  width: 40%
+  margin: 8rem auto 0
       
 //media queries
 @media (max-width: 900px)  
@@ -275,3 +310,5 @@
     width: 80%
   .project-thumb2
     width: 30%
+
+
