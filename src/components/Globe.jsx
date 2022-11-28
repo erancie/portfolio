@@ -6,7 +6,7 @@ import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import { animated, useSpring, useTransition, config } from "@react-spring/three"
 import "../styles/box.module.css"
 import { ScrollProvider, useScrollContext } from './utils/useScrollContext'
-import { useScrollStore } from './../store'
+import Grid from '../components/Grid'
 
 extend({ OrbitControls })
 
@@ -27,30 +27,36 @@ const Controls = () => {
 }
 
 const Sphere = () => {
-
+  const groupRef = React.useRef()
   const outterRef = React.useRef()
   const innerRef = React.useRef()
   const matRef = React.useRef()
   const outterMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-20/earth-clouds-2k-lossless_Fx89Vwggc.jpg')
   const innerNightMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-90/earth-night-2k-lossless_HedixKXNh.jpg')
   const scrollPos = useScrollContext()
-  
-  //get Z coord according to scroll position
-  const positionZ = useMemo(() => {
+
+  //get Z pos and rotation according to scroll position
+  const [ positionZ, rotationZ ] = useMemo(() => {
     const thold = 800
     if(scrollPos < thold)
-      return 4.4-scrollPos/300
-    return 4.4-thold/300 
+      return [ 4.4-scrollPos/300, Math.PI/2-scrollPos*((Math.PI/2)/thold) ]
+    return [ 4.4-thold/300, 0 ] 
   }, [scrollPos])
 
-  //animate changes in scale/position w/ spring
-  const { position } = useSpring({ 
-    position: [0, 1.4, positionZ]
+  //animate changes in scale & position w/ spring
+  const { position, rotation } = useSpring({ 
+    position: [0, 1.4, positionZ],
+    rotation: [0, 0, rotationZ]
   })
 
   useFrame(() => {
-    innerRef.current.rotation.x += .0002
-    outterRef.current.rotation.x += .0002
+    innerRef.current.rotation.y -= .0003 
+    outterRef.current.rotation.y -= .0003 
+    // groupRef.current.rotation.y -= .0003 
+      //every time scroll changes it sets new rotation transform, map is put back at beginning
+      //then useframe restarts rotation from start new rotation setting 
+      //have to use group container that transforms its rotation on scroll
+      //then have inner mesh that will keep rotating via useFrame relative to its parent group's no matter its transformed rotation
   })
 
   //TODO:-------- globe to fade in when loaded --------
@@ -71,22 +77,22 @@ const Sphere = () => {
   // item && <>
 
   return ( <>
+    <animated.group
+      ref={groupRef}
+      position={position} 
+      rotation={rotation}
+      scale={[1, 1, 1]}
+    >
+      {/* <Grid size={5} /> */}
 
       <animated.mesh
         ref={innerRef}
         scale={[1, 1, 1]}
-        transparent
-        // opacity={opacity}
-        // opacity={ opacity.to({ range: [0.0, 1.0], output: [0, 1] }) }
-        position={position} 
-        rotation={[2*Math.PI, 0, Math.PI/2]}
       >   
+        {/* <Grid size={5} /> */}
         <sphereGeometry args={[1, 80, 80]} />
         <meshBasicMaterial
-          // transparent
-          // opacity={opacity}
           ref={matRef} 
-          // map={innerDayMap}
           map={innerNightMap}
           // map={surface}
           color="#fff"
@@ -97,8 +103,8 @@ const Sphere = () => {
         ref={outterRef}
         scale={[1, 1, 1]}
         // scale={scale}
-        position={position} 
-        rotation={[0, 0, Math.PI/2]}
+        // position={position} 
+        // rotation={rotation}
       >   
         <sphereGeometry args={[1.03, 80, 80]} />
         <meshStandardMaterial
@@ -111,8 +117,8 @@ const Sphere = () => {
           emissiveIntensity={.4}
           />
       </animated.mesh>
+    </animated.group>      
     </>
-    // ) 
   )
 }
 
@@ -125,18 +131,23 @@ const Globe = () => {
     <>
       {isBrowser && (
         <Canvas
+          resize={{ scroll: false }}
           camera={{ position: [0, 0, 5.1] }}
           onCreated={({ gl }) => {
             gl.shadowMap.enabled = true
             gl.shadowMap.type = THREE.PCFSoftShadowMap
           }}
         >
+          
           <ScrollProvider value={scroll}>
+              {/* <Grid size={5} /> */}
               {/* <ambientLight intensity={.03} /> */}
               <pointLight color="white" intensity={.8} position={[-1, .6, -8]} />
               <fog attach="fog" args={["black", 10, 25]} />
               <Controls />
+              
               <Suspense>
+                
                 <Sphere />
               </Suspense>
           </ScrollProvider>
@@ -173,3 +184,21 @@ export default Globe
 
 
 
+  //change degree of rotation of x and y based on scroll position
+      //dont need to do this - just wrap in group to change rotation from scroll
+        // & constantly change rotation of inner mesh w useframe
+  // let rotateX = .0002 - scrollPos*(.0002/thold)
+  // let rotateY = 0 + scrollPos*(.0002/thold)
+
+  // useFrame(() => {
+    // if(scrollPos < 800){
+    //   innerRef.current.rotation.x += rotateX
+    //   outterRef.current.rotation.x += rotateX
+    //   innerRef.current.rotation.y -= rotateY
+    //   outterRef.current.rotation.y -= rotateY
+    // }
+    // else{
+    //   innerRef.current.rotation.y -= .0002
+    //   outterRef.current.rotation.y -= .0002
+    // }
+  // })

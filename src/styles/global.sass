@@ -133,7 +133,7 @@ html, body
       width: 100%
   .title-1
     grid-column: 4/10
-    grid-row: 2
+    // grid-row: 
     font-size: 5rem
     text-align: center
 
@@ -237,14 +237,32 @@ html, body
   left: 0
   width: 100%
   height: 100%
+  // background: rgb(0, 0, 0)
+  // background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('https://ik.imagekit.io/kv4ohthhz/tr:q-96/milkyway-square-8k_rdtI2Ci4c'), rgb(0, 0, 0)
+  // // background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('../../static/milky-way-8k-square-lossless.jpg'), rgb(0, 0, 0)
+  //   // https://www.solarsystemscope.com/textures/
+  // background-size: 320%
+  // background-position: center center
+  // background-repeat: no-repeat
+  // transition: all 100ms ease-out
+  transition: transform 300ms ease-out
+
+
+.landing-bg::before
+  content: ""
+  position: absolute
+  width: 200%
+  height: 200%
+  // width: 200%
+  // height: 200%
+  top: -50%
+  left: -50%
+  z-index: -1
   background: rgb(0, 0, 0)
   background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('https://ik.imagekit.io/kv4ohthhz/tr:q-96/milkyway-square-8k_rdtI2Ci4c'), rgb(0, 0, 0)
-  // background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('../../static/milky-way-8k-square-lossless.jpg'), rgb(0, 0, 0)
-    // https://www.solarsystemscope.com/textures/
   background-size: 320%
   background-position: center center
   background-repeat: no-repeat
-  // transition: background-size 100ms ease-out
 
 
 //globe

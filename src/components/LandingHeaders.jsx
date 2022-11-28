@@ -5,7 +5,7 @@ import { useScrollStore } from '../store'
 export default function LandingHeaders() {
 
   const scrollPos = useScrollContext()
-    console.log(scrollPos)
+    // console.log(scrollPos)
     // console.log(scrollPos/100)
   return (
          <div style={ 
