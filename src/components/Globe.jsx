@@ -3,10 +3,15 @@ import * as THREE from "three"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import { Canvas, extend, useLoader, useThree, useFrame } from "react-three-fiber"
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
+
 import { animated, useSpring, useTransition, config } from "@react-spring/three"
-import "../styles/box.module.css"
+// import "../styles/box.module.css"
 import { ScrollProvider, useScrollContext } from './utils/useScrollContext'
 import Grid from '../components/Grid'
+
+// import { useGLTF } from '@react-three/drei'
 
 extend({ OrbitControls })
 
@@ -35,23 +40,26 @@ const Sphere = () => {
   const innerNightMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-90/earth-night-2k-lossless_HedixKXNh.jpg')
   const scrollPos = useScrollContext()
 
+
+
+
   //get Z pos and rotation according to scroll position
   const [ positionZ, rotationZ ] = useMemo(() => {
     const thold = 800
     if(scrollPos < thold)
-      return [ 4.4-scrollPos/300, Math.PI/2-scrollPos*((Math.PI/2)/thold) ]
-    return [ 4.4-thold/300, 0 ] 
+      return [ 4.1-scrollPos/300, Math.PI/2-scrollPos*((Math.PI/2)/thold) ]
+    return [ 4.1-thold/300, 0 ] 
   }, [scrollPos])
 
   //animate changes in scale & position w/ spring
   const { position, rotation } = useSpring({ 
-    position: [0, 1.4, positionZ],
+    position: [0, 1.55, positionZ],
     rotation: [0, 0, rotationZ]
   })
 
   useFrame(() => {
     innerRef.current.rotation.y -= .0003 
-    outterRef.current.rotation.y -= .0003 
+    // outterRef.current.rotation.y -= .0003 
     // groupRef.current.rotation.y -= .0003 
       //every time scroll changes it sets new rotation transform, map is put back at beginning
       //then useframe restarts rotation from start new rotation setting 
@@ -76,20 +84,35 @@ const Sphere = () => {
   // return transition( ({ opacity }, item) => (    
   // item && <>
 
+  const obj = useLoader(OBJLoader, '/models/scene.obj')
+  const gltf = useLoader(GLTFLoader, '/models/gemer/scene.gltf')
+
+  const orange = new THREE.Color(0xffa500);
+  const crimson = new THREE.Color(0xdc143c);
+  const teal = new THREE.Color(0x008080);
+  const steelblue = new THREE.Color(0x4682b4);
+  
   return ( <>
     <animated.group
       ref={groupRef}
       position={position} 
       rotation={rotation}
-      scale={[1, 1, 1]}
+      scale={[.2, .2, .2]}
     >
+        <animated.group 
+        // args={[.1]} 
+        ref={innerRef} >
+          <Suspense fallback={null}>
+            <primitive object={gltf.scene} color={orange}/>
+          </Suspense>
+        </animated.group>
+
       {/* <Grid size={5} /> */}
 
-      <animated.mesh
+      {/* <animated.mesh
         ref={innerRef}
         scale={[1, 1, 1]}
       >   
-        {/* <Grid size={5} /> */}
         <sphereGeometry args={[1, 80, 80]} />
         <meshBasicMaterial
           ref={matRef} 
@@ -116,7 +139,7 @@ const Sphere = () => {
           emissive={"white"}
           emissiveIntensity={.4}
           />
-      </animated.mesh>
+      </animated.mesh> */}
     </animated.group>      
     </>
   )
@@ -141,8 +164,8 @@ const Globe = () => {
           
           <ScrollProvider value={scroll}>
               {/* <Grid size={5} /> */}
-              {/* <ambientLight intensity={.03} /> */}
-              <pointLight color="white" intensity={.8} position={[-1, .6, -8]} />
+              <ambientLight intensity={.3} />
+              <pointLight color="white" intensity={50} position={[-5, 8, 6]} />
               <fog attach="fog" args={["black", 10, 25]} />
               <Controls />
               
@@ -158,6 +181,10 @@ const Globe = () => {
 }
 
 export default Globe
+
+
+// controls sandbox
+// https://codesandbox.io/s/react-three-fiber-lighting-essentials-qwxb8?file=/src/App.js
 
 
 

@@ -36,7 +36,7 @@ export function ProjectThumb({project}) {
       duration: .8,
       scrollTrigger: {
         trigger: cardRef.current, // make .panel2 the trigger
-        start: "70% bottom", // 70% of .panel2 enters the bottom of the viewport
+        start: "30% bottom", // 70% of .panel2 enters the bottom of the viewport
         // end: "botttom bottom",
         // markers: true
       }
