@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef, useEffect, useCallback, createContext, useContext, Suspense } from "react"
+import React, { useState, useMemo, useRef, useEffect, useCallback, createContext, useContext, Suspense, useLayoutEffect } from "react"
 import * as THREE from "three"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import { Canvas, extend, useLoader, useThree, useFrame } from "react-three-fiber"
@@ -11,7 +11,7 @@ import { animated, useSpring, useTransition, config } from "@react-spring/three"
 import { ScrollProvider, useScrollContext } from './utils/useScrollContext'
 import Grid from '../components/Grid'
 
-// import { useGLTF } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 
 extend({ OrbitControls })
 
@@ -31,7 +31,11 @@ const Controls = () => {
   )
 }
 
+//make this a wrapper for several globes - pass in position and rotation rate from app scene
+//make wrapper for previous meshs?
 const Sphere = () => {
+
+
   const groupRef = React.useRef()
   const outterRef = React.useRef()
   const innerRef = React.useRef()
@@ -58,6 +62,7 @@ const Sphere = () => {
   })
 
   useFrame(() => {
+    // rotation rate - could try increasing with scroll?
     innerRef.current.rotation.y -= .0003 
     // outterRef.current.rotation.y -= .0003 
     // groupRef.current.rotation.y -= .0003 
@@ -84,14 +89,29 @@ const Sphere = () => {
   // return transition( ({ opacity }, item) => (    
   // item && <>
 
-  const obj = useLoader(OBJLoader, '/models/scene.obj')
-  const gltf = useLoader(GLTFLoader, '/models/gemer/scene.gltf')
+  // const obj = useLoader(OBJLoader, '/models/scene.obj')
+  // const gltf = useLoader(GLTFLoader, '/models/gemer/scene.gltf')
+
+  const { scene, nodes, materials } = useGLTF('/models/gemer/scene.gltf')
+  const { scene: scene2, nodes2, materials2 } = useGLTF('/models/gemer/scene.gltf')
+
 
   const orange = new THREE.Color(0xffa500);
   const crimson = new THREE.Color(0xdc143c);
   const teal = new THREE.Color(0x008080);
   const steelblue = new THREE.Color(0x4682b4);
   
+  // useLayoutEffect(() => {
+  //   Object.assign(materials.Material, { 
+  //     roughness: 5, 
+  //     metalness: .25,
+  //     emissive: new THREE.Color(0x000000),
+  //     color: orange,
+  //     envMapIntensity: 0.5 })
+  // }, [scene, materials]); 
+  
+  //find out how to change gltf materials - colors, roughness etc..
+
   return ( <>
     <animated.group
       ref={groupRef}
@@ -103,7 +123,10 @@ const Sphere = () => {
         // args={[.1]} 
         ref={innerRef} >
           <Suspense fallback={null}>
-            <primitive object={gltf.scene} color={orange}/>
+            <primitive object={scene} 
+                // materials={{roughness: .5}} //nope
+                      //  color={orange}  //nope
+            />
           </Suspense>
         </animated.group>
 
@@ -140,7 +163,24 @@ const Sphere = () => {
           emissiveIntensity={.4}
           />
       </animated.mesh> */}
-    </animated.group>      
+    </animated.group>    
+
+    {/* <animated.group
+      // ref={groupRef}
+      position={[0, 0, -1]} 
+      rotation={rotation}
+      scale={[.2, .2, .2]}
+    >
+        <animated.group 
+        // args={[.1]} 
+        // ref={innerRef} 
+        >
+          <Suspense fallback={null}>
+            <primitive object={scene2} 
+            />
+          </Suspense>
+        </animated.group>
+    </animated.group>       */}
     </>
   )
 }
