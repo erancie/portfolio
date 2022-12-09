@@ -239,49 +239,6 @@ html, body
   top: 600px
   transform: translateY()
 
-.landing-bg 
-  // overflow: hidden
-  position: absolute
-  top: 0
-  left: 0
-  width: 100vw
-  height: 100vh
-  // background: rgb(0, 0, 0)
-  // background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('https://ik.imagekit.io/kv4ohthhz/tr:q-96/milkyway-square-8k_rdtI2Ci4c'), rgb(0, 0, 0)
-  // // background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('../../static/milky-way-8k-square-lossless.jpg'), rgb(0, 0, 0)
-  //   // https://www.solarsystemscope.com/textures/
-  // background-size: 320%
-  // background-position: center center
-  // background-repeat: no-repeat
-  // transition: all 100ms ease-out
-  transition: transform 300ms ease-out
-
-
-.landing-bg::before
-  overflow: hidden
-  display: block
-  content: ""
-  position: absolute
-  // width: 200vw
-  // height: 200vw
-  // top: -50vw
-  // left: -50vw
-  width: 200vw
-  height: 200vh
-  top: -50vw
-  left: -50vw
-
-  z-index: -1
-  background: rgb(0, 0, 0)
-  // background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('../../static/stars.svg'), rgb(0, 0, 0)
-  // background-size: 50%
-  // background-size: 100%
-  background-size: 320%
-  background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('https://ik.imagekit.io/kv4ohthhz/tr:q-96/milkyway-square-8k_rdtI2Ci4c'), rgb(0, 0, 0)
-  // background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('https://ik.imagekit.io/kv4ohthhz/tr:w-2236,tr:q-100/milkyway-square-8k_rdtI2Ci4c'), rgb(0, 0, 0)
-  background-position: center center
-  background-repeat: no-repeat
-
 @media ( max-width: 800px )
   .landing-bg::before
     background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('https://ik.imagekit.io/kv4ohthhz/tr:w-1118,tr:q-100/milkyway-square-8k_rdtI2Ci4c'), rgb(0, 0, 0)
@@ -294,8 +251,7 @@ html, body
   height: 100%
   top: 0
   left: 0
-  // z-index: -1
-  // z-index: 10
+
 
 // .landing-svg-fore, .landing-svg-back, .landing-svg-back-bot
 //   fill:#141418
@@ -333,7 +289,6 @@ html, body
 //   left: 50%
 //   transform: translateX(-50%)
 //   // top: 110vh
-
 
 
 //project list cards
@@ -383,14 +338,10 @@ html, body
 .project-item-desc
   margin: 2rem auto
 
-// .layout-img2
-//   margin: auto
-//   width: 480px
 
 @media (min-width: 800px) 
   .layout-img2
     width: 800px
-
 
 
 .layout-img
