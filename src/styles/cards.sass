@@ -114,28 +114,16 @@
   transition: all .31s ease-in
   &:hover
     transform: scale(1.2) translateY(-15px)
-    // z-index: 2
     &~.wrapper
       transform: translateX(30px)
-      // opacity: .5
 
 
-.wrapper-desktop
-    &:hover
-      transform: scale(1.2) translate(40px, -15px)
-//   // width: 400px
-//   width: 600px
 .wrapper-laptop
   &:hover
-    // z-index: 2
-//   // width: 284px
-//   width: 406px
+
 .wrapper-tablet
   top: 12px
   left: 5px
-  z-index: 1
-//   // width: 160px
-//   width: 240px
 .wrapper-mobile
   right: 10px
   bottom: -40px
@@ -143,27 +131,10 @@
   margin-right: -50px
   &:hover
     transform: scale(1.35) translateY(-15px)
+.wrapper-desktop
+    &:hover
+      transform: scale(1.2) translate(40px, -15px)
 
-//   // width: 75px
-//   width: 112px
-
-
-.card-img
-
-// //IMGs 
-// .img-desktop 
-//   // width: 400px
-//   width: 600px
-// .img-laptop 
-//   // width: 284px
-//   width: 406px
-.img-tablet 
-  // z-index: 1
-  // width: 160px
-  // width: 240px
-// .img-mobile 
-//   // width: 75px
-//   width: 112px
 
 //SVGs -
 .svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet 
@@ -186,18 +157,40 @@
   // path
 
 
-// @media (max-width: 1200px)
-//   .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
-//     transform: scale(.85)
-//   .svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet
-//     transform: scale(.85)
-//   .card-img
-//     transform: translateX(-50%) scale(.85)
-
-
 @media (max-width: 800px)
   .project-imgs-wrapper
     flex-direction: column
+  .wrapper
+    &:hover
+      transform: scale(1.2) translateY(0px)
+      &~.wrapper
+        transform: translateX(0px)
+
+  .wrapper-laptop
+    width: 256px
+  .wrapper-tablet
+    // transform: scale(.7)
+    width: 144px
+
+    left: 0px
+  .wrapper-mobile
+    // transform: scale(.7)
+    width: 75px
+    margin: 50px auto
+    right: 0
+    bottom: -10px
+    &:hover
+      transform: scale(1.2) translateY(0px)
+
+  .wrapper-desktop
+    width: 300px
+    margin: 50px auto
+    // transform: scale(.7)
+
+    &:hover
+      transform: scale(1.2) translate(40px, 0px)
+
+    
 
 //   .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
 //     transform: scale(.7)
