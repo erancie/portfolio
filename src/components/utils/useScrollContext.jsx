@@ -11,6 +11,8 @@ export function ScrollContextProvider({children}) {
     //how does this return value ^^ auto update other comps? (can update not just context)
     //doesn't run useScrollPosition() again..?
 
+  // console.log('scrollposZZ: '+scrollPos)
+
   return (
     <ScrollContext.Provider value={scrollPos}>
       {children}

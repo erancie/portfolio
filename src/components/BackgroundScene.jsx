@@ -2,6 +2,7 @@ import React from "react"
 import Globe from "./Globe"
 import { useScrollContext } from "./utils/useScrollContext"
 import styled from 'styled-components'
+import { useMemo } from "react"
 
 
 const LandingBg = styled.div`
@@ -37,7 +38,7 @@ const LandingBg = styled.div`
   }
 `
 
-const BackgroundScene = () => {
+const BackgroundScene = React.memo(() => {
 
   const scrollPos = useScrollContext()
 
@@ -52,5 +53,6 @@ const BackgroundScene = () => {
       <div className="bg-overlay"></div>
     </div>
   )
-}
+})
+
 export default BackgroundScene

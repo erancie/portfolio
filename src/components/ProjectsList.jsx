@@ -150,17 +150,17 @@ export function ProjectThumb({project}) {
 }
 
 
-export default function ProjectsList() {  
+function ProjectsList() {  
 
   const scrollPos = useScrollContext()
   const bgContainer = useRef()
   const landingRef = useRef()
 
-  const handleScroll = useCallback(()=>{    
-    let scrollY = window.scrollY  
-    // if(scrollY > 1600) 
-      landingRef.current.style.top = `${800-scrollY/8}px` //500 offset for window.scrollY
-  }, [landingRef])
+  // const handleScroll = useCallback(()=>{    
+  //   let scrollY = window.scrollY  
+  //   // if(scrollY > 1600) 
+  //     landingRef.current.style.top = `${800-scrollY/8}px` //500 offset for window.scrollY
+  // }, [landingRef])
 
           
   return (
@@ -273,6 +273,7 @@ export default function ProjectsList() {
   )
 }
 
+export default React.memo(ProjectsList)
 
 //SRCSET & SIZES
 

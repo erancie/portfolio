@@ -187,7 +187,7 @@ const Sphere = () => {
 
 const Globe = () => {
 
-  const scroll = useScrollContext()
+  // const scroll = useScrollContext()
 
   const isBrowser = typeof window !== "undefined"
   return (
@@ -201,8 +201,8 @@ const Globe = () => {
             gl.shadowMap.type = THREE.PCFSoftShadowMap
           }}
         >
-          
-          <ScrollProvider value={scroll}>
+          {/* works without bridge now??? */}
+          {/* <ScrollProvider value={scroll}> */}
               {/* <Grid size={5} /> */}
               <ambientLight intensity={.3} />
               <pointLight color="white" intensity={50} position={[-5, 8, 6]} />
@@ -213,14 +213,14 @@ const Globe = () => {
                 
                 <Sphere />
               </Suspense>
-          </ScrollProvider>
+          {/* </ScrollProvider> */}
         </Canvas>
       )}
     </>
   )
 }
 
-export default Globe
+export default React.memo(Globe)
 
 
 // controls sandbox
