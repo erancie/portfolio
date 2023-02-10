@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useCallback } from 'react'
-import { Link } from 'gatsby'
 import projects from '../../content/projectsData'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -128,14 +127,12 @@ export function ProjectThumb({project}) {
 
       </div>
 
-
-
-      <div class="project-mosaic">
+      {/* <div class="project-mosaic">
         <div id="mosaic-0"></div>
         <div id="mosaic-1"></div>
         <div id="mosaic-2"></div>
         <div id="mosaic-3"></div>
-      </div> 
+      </div>  */}
 
       <div className='project-tools'>{project.tools.map((t)=>t+' ')}</div>
 
@@ -155,18 +152,9 @@ function ProjectsList() {
   const scrollPos = useScrollContext()
   const bgContainer = useRef()
   const landingRef = useRef()
-
-  // const handleScroll = useCallback(()=>{    
-  //   let scrollY = window.scrollY  
-  //   // if(scrollY > 1600) 
-  //     landingRef.current.style.top = `${800-scrollY/8}px` //500 offset for window.scrollY
-  // }, [landingRef])
-
-          
+        
   return (
     <div  className='projects-container'>
-      {/* TODO: apply bg overlay here
-        ie. linear gradient background at landing into: rgb(0 0 0 / 50%); at projects*/}
 
       <div className="proj-bg-container" ref={bgContainer}>
 

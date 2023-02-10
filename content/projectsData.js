@@ -13,7 +13,47 @@ const honeyLaptop = '/honey-laptop_UGfEzF1Hw'
 const honeyTablet = '/honey-tablet_VX5Yrl8EH'
 const honeyMobile = '/honey-mobile_BJW5P7JcQ'
 
+const psgDesktop = '/psg-desktop_iUe4PJHEC.PNG'
+const psgLaptop = '/psg-laptop_o0fPjWkZl.PNG'
+const psgTablet = '/psg-tablet_nbD2CNwVi.PNG'
+const psgMobile = '/psg-mobile-2_F7MRd90mr.PNG'
+
+const circularDesktop = '/circular-desktop_O2p2xyWdK.PNG'
+const circularLaptop = '/circular-laptop_cOy72qQILd.PNG'
+const circularTablet = '/circular-tablet_cNLvk29I5.PNG'
+const circularMobile = '/circular-mobile_zxQx1vTbI.PNG'
+
 const projects = [
+  {
+    name: 'circular',
+    title: 'Circular Banking',
+    imgRoot: IKRoot,
+    imgSrc: {
+      desktop: circularDesktop,
+      laptop: circularLaptop,
+      tablet: circularTablet,
+      mobile: circularMobile
+    },
+    desc: 'A crowd funding platform powered by AI and circular economics',
+    tools: [],
+    link: ''
+  },
+
+  {
+    name: 'psg',
+    title: 'PSG Sports',
+    imgRoot: IKRoot,
+    imgSrc: {
+      desktop: psgDesktop,
+      laptop: psgLaptop,
+      tablet: psgTablet,
+      mobile: psgMobile
+    },
+    desc: 'Professional Basketball Platform',
+    tools: [],
+    link: ''
+  },
+  
   {
     name:'mern',
     title: 'MERN Platform',
@@ -43,6 +83,8 @@ const projects = [
     tools: [],
     link: ''
   },
+
+
   // {
   //   name: 'gpt',
   //   title: 'GPT-3 App',
