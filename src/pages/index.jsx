@@ -18,6 +18,7 @@ export default function Home() {
                  urlEndpoint='https://ik.imagekit.io/kv4ohthhz'>
 
         <Layout >
+          
           <BackgroundScene />
           <div className="overlay"></div>
           <LandingHeaders />

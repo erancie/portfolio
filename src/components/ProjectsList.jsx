@@ -158,7 +158,11 @@ function ProjectsList() {
 
       <div className="proj-bg-container" ref={bgContainer}>
 
-        {/* <svg id="svg-proj-back"
+    {/* try moving these outside to scroll with thumbs / whole page */}
+        <svg id="svg-proj-back"
+                  ref={landingRef}
+
+          style={{top: `${800-scrollPos/8}px`}}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 4415 2223.58"
         >
@@ -190,6 +194,9 @@ function ProjectsList() {
         </svg>
         
         <svg id="svg-proj-back"
+                          ref={landingRef}
+
+                          style={{top: `${200-scrollPos/8}px`}}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 4415 2223.58"
         >
@@ -218,7 +225,7 @@ function ProjectsList() {
             class="landing-svg-back"
             points="4409 1774.26 4302.5 1712.77 4196 1774.26 4196 1897.24 4302.5 1958.72 4409 1897.24 4409 1774.26"
           />
-        </svg> */}
+        </svg>
 
         <svg id="svg-proj-fore" style={{top: `${800-scrollPos/8}px`}}
           ref={landingRef}
