@@ -16,38 +16,26 @@
 
 #svg-proj-back
   fill:#ffffff00
+  position: fixed 
   // stroke:#7d7d9289
-  stroke:#23588737
+  stroke:#23588769
   stroke-miterlimit:10
-  stroke-width: 3px
-  width: 80%
-  // position: -webkit-sticky
-  position: absolute
-  margin-top: -400px
-  // top: 0
-  left: 50%
-  transform: translateX(-50%)
-
-#svg-proj-fore
-  fill:#ffffff00
-  stroke:#23588737
-  stroke-miterlimit:10
-  stroke-width: 3px
-  width: 80%
-  // position: -webkit-sticky
-  position: absolute
-  // top: 
-  left: 55%
-  transform: translateX(-50%)
-  // transition: all .2s ease
-
+  stroke-width: 6px
+  width: 100vh
+  height: 100vh
+  top: 40vh
+  left: 0
+  transform: translateY(0)
+  z-index: 1
+  will-change: transform, scroll-position
+  transition: all 2.5s ease-out
 // projects
 .projects-list
   position: relative
   height: 100%
   width: 80%
   margin: 2rem auto 0
-  
+  z-index: 2
   padding-bottom: 12rem
   display: flex
   flex-wrap: wrap
@@ -73,39 +61,18 @@
     row-gap: 10rem
     .project-thumb
       margin: 0 auto
-      grid-column: 3/11
-      // &:nth-of-type(1)
-      //   grid-column: 2/11
-      // &:nth-of-type(2)
-      //   grid-column: 3/12
-      // &:nth-of-type(3)
-      //   grid-column: 2/11
-      // &:nth-of-type(4)
-      //   grid-column: 3/12
-      // &:nth-of-type(5)
-      //   grid-column: 2/11
-      // &:nth-of-type(6)
-      //   grid-column: 3/12
-      // &:nth-of-type(7)
-      //   grid-column: 2/11
-      // &:nth-of-type(8)
-      //   grid-column: 3/12
+      grid-column: 2/12
 
-
-.project-title
-  font-size: 3rem
-  font-weight: 700
+@media (min-width: 992px) 
+  .projects-list
+    .project-thumb
+      grid-column: 1/13
 
 
 .project-imgs-wrapper
   display: flex
   align-items: flex-end
   margin: 3rem 0
-
-// .project-thumb:nth-of-type(even)
-//   text-align: right
-//   .project-imgs-wrapper
-//     flex-direction: row-reverse 
 
     
 // .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
@@ -120,22 +87,28 @@
 
 
 .wrapper-laptop
+  left: 1.2rem
   &:hover
 
 .wrapper-tablet
   top: 12px
-  left: 5px
-.wrapper-mobile
-  right: 10px
-  bottom: -40px
+  left: 1.5rem
   z-index: 1
+.wrapper-mobile
+  // right: 10px
+  bottom: -40px
+  z-index: 2
   margin-right: -50px
   &:hover
     transform: scale(1.35) translateY(-15px)
 .wrapper-desktop
-    &:hover
-      transform: scale(1.2) translate(40px, -15px)
+  left: -1.7rem
+  &:hover
+    transform: scale(1.2) translate(40px, -15px)
 
+@media (max-width: 1200px) 
+  .wrapper-desktop
+    left: .7rem
 
 //SVGs -
 .svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet 
@@ -156,6 +129,8 @@
 
 .svg-tablet 
   // path
+
+
 
 
 @media (max-width: 800px)
@@ -191,6 +166,7 @@
     &:hover
       transform: scale(1.2) translate(40px, 0px)
 
+
     
 
 //   .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
@@ -200,12 +176,28 @@
 //   .card-img
 //     transform: translateX(-50%) scale(.7)
 
+.project-title
+  font-size: 3rem
+  font-weight: 700
+  color: #8d77e0
+  // color: #6e6e86
+  // color: #69dcd1
+  // color: #2D2D3D
+  // text-shadow: 0 0 1px #000
+
+
+
 
 .project-desc
   margin: 3rem 0
   // margin: 0 1.2rem  
   // font-weight: 100
   font-size: 1.3rem
+  color: #aea2dd
+  // color: #96e5dd
+
+  
+
 
 // @media (min-width: 768px) 
 // @media (min-width: 992px)

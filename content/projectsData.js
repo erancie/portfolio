@@ -8,9 +8,9 @@ const mernLaptop = '/mern-task-lap_3dZTcgxpi'
 const mernTablet = '/mern-new-tab_0nAsdBvUP'
 const mernMobile = '/mern-experts-mob_XYr5kcQMw'
 
-const honeyDesktop = '/honey-desktop_KU_SERKnt'
-const honeyLaptop = '/honey-laptop_UGfEzF1Hw'
-const honeyTablet = '/honey-tablet_VX5Yrl8EH'
+const honeyDesktop = '/honey-desk-2_nu764Oqyo.PNG'
+const honeyLaptop = '/honey-lap-2_T5x-T05rF.PNG'
+const honeyTablet = '/honey-tab-3_I7RMjjk18.PNG'
 const honeyMobile = '/honey-mobile_BJW5P7JcQ'
 
 const psgDesktop = '/psg-desktop_iUe4PJHEC.PNG'
@@ -51,7 +51,7 @@ const projects = [
     },
     desc: 'Professional Basketball Platform',
     tools: [],
-    link: ''
+    link: 'https://psgsports.co/'
   },
   
   {
@@ -81,7 +81,7 @@ const projects = [
     },
     desc: 'E-commerce website selling organic honey',
     tools: [],
-    link: ''
+    link: 'https://honey-8cd45.web.app/'
   },
 
 

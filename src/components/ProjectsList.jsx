@@ -60,9 +60,9 @@ export function ProjectThumb({project}) {
               <linearGradient id="laptop-gradient" 
                             x1="5.5" y1="95" x2="253.5" y2="195" 
                             gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#424456"/>
-                  <stop offset="0.49541" stop-color="#EFF2FF"/>
-                  <stop offset="1" stop-color="#424456"/>
+                  <stop stop-color="#2D2D3D"/>
+                  <stop offset="0.49541" stop-color="#6e6e86"/>
+                  <stop offset="1" stop-color="#2D2D3D"/>
               </linearGradient>
             </defs>
           </svg>
@@ -81,9 +81,9 @@ export function ProjectThumb({project}) {
               <linearGradient id="tablet-gradient" 
                             x1="10.5" y1="75" x2="183.5" y2="146" 
                             gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#424456"/>
-                  <stop offset="0.49541" stop-color="#EFF2FF"/>
-                  <stop offset="1" stop-color="#424456"/>
+                  <stop stop-color="#2D2D3D"/>
+                  <stop offset="0.49541" stop-color="#6e6e86"/>
+                  <stop offset="1" stop-color="#2D2D3D"/>
               </linearGradient>
             </defs>
           </svg>
@@ -98,9 +98,9 @@ export function ProjectThumb({project}) {
               <linearGradient id="mobile-gradient" 
                  x1="0" y1="84.5" x2="95.5" y2="118.5" 
                 gradientUnits="userSpaceOnUse">
-                <stop stop-color="#424456"/>
-                <stop offset="0.328855" stop-color="#EFF2FF"/>
-                <stop offset="1" stop-color="#424456"/>
+                <stop stop-color="#2D2D3D"/>
+                <stop offset="0.328855" stop-color="#6e6e86"/>
+                <stop offset="1" stop-color="#2D2D3D"/>
               </linearGradient>
             </defs>
           </svg>
@@ -117,9 +117,9 @@ export function ProjectThumb({project}) {
               <linearGradient id="desktop-gradient" 
                   x1="184" y1="165.5" x2="378" y2="236"               
                   gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#424456"/>
-                  <stop offset="0.49541" stop-color="#EFF2FF"/>
-                  <stop offset="1" stop-color="#424456"/>
+                  <stop stop-color="#2D2D3D"/>
+                  <stop offset="0.49541" stop-color="#6e6e86"/>
+                  <stop offset="1" stop-color="#2D2D3D"/>
               </linearGradient>
             </defs>
           </svg>
@@ -158,107 +158,6 @@ function ProjectsList() {
 
       <div className="proj-bg-container" ref={bgContainer}>
 
-    {/* try moving these outside to scroll with thumbs / whole page */}
-        <svg id="svg-proj-back"
-                  ref={landingRef}
-
-          style={{top: `${800-scrollPos/8}px`}}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 4415 2223.58"
-        >
-          <polygon
-            id="_YOUR_IMAGE_HERE_-3"
-            class="landing-svg-back"
-            points="907 437.73 746.5 345.07 586 437.73 586 623.06 746.5 715.72 907 623.06 907 437.73"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-4"
-            class="landing-svg-back"
-            points="214 2036.52 110 1976.47 6 2036.52 6 2156.61 110 2216.65 214 2156.61 214 2036.52"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-5"
-            class="landing-svg-back"
-            points="2296 958.52 2192 898.47 2088 958.52 2088 1078.61 2192 1138.65 2296 1078.61 2296 958.52"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-6"
-            class="landing-svg-back"
-            points="4354 1086.99 4196 995.77 4038 1086.99 4038 1269.43 4196 1360.65 4354 1269.43 4354 1086.99"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-7"
-            class="landing-svg-back"
-            points="4409 1774.26 4302.5 1712.77 4196 1774.26 4196 1897.24 4302.5 1958.72 4409 1897.24 4409 1774.26"
-          />
-        </svg>
-        
-        <svg id="svg-proj-back"
-                          ref={landingRef}
-
-                          style={{top: `${200-scrollPos/8}px`}}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 4415 2223.58"
-        >
-          <polygon
-            id="_YOUR_IMAGE_HERE_-3"
-            class="landing-svg-back"
-            points="907 437.73 746.5 345.07 586 437.73 586 623.06 746.5 715.72 907 623.06 907 437.73"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-4"
-            class="landing-svg-back"
-            points="214 2036.52 110 1976.47 6 2036.52 6 2156.61 110 2216.65 214 2156.61 214 2036.52"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-5"
-            class="landing-svg-back"
-            points="2296 958.52 2192 898.47 2088 958.52 2088 1078.61 2192 1138.65 2296 1078.61 2296 958.52"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-6"
-            class="landing-svg-back"
-            points="4354 1086.99 4196 995.77 4038 1086.99 4038 1269.43 4196 1360.65 4354 1269.43 4354 1086.99"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-7"
-            class="landing-svg-back"
-            points="4409 1774.26 4302.5 1712.77 4196 1774.26 4196 1897.24 4302.5 1958.72 4409 1897.24 4409 1774.26"
-          />
-        </svg>
-
-        <svg id="svg-proj-fore" style={{top: `${800-scrollPos/8}px`}}
-          ref={landingRef}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 4415 2223.58"
-        >
-          <polygon
-            id="_YOUR_IMAGE_HERE_-3"
-            class="landing-svg-back-bot"
-            points="907 437.73 746.5 345.07 586 437.73 586 623.06 746.5 715.72 907 623.06 907 437.73"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-4"
-            class="landing-svg-back-bot"
-            points="214 2036.52 110 1976.47 6 2036.52 6 2156.61 110 2216.65 214 2156.61 214 2036.52"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-5"
-            class="landing-svg-back-bot"
-            points="2296 958.52 2192 898.47 2088 958.52 2088 1078.61 2192 1138.65 2296 1078.61 2296 958.52"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-6"
-            class="landing-svg-back-bot"
-            points="4354 1086.99 4196 995.77 4038 1086.99 4038 1269.43 4196 1360.65 4354 1269.43 4354 1086.99"
-          />
-          <polygon
-            id="_YOUR_IMAGE_HERE_-7"
-            class="landing-svg-back-bot"
-            points="4409 1774.26 4302.5 1712.77 4196 1774.26 4196 1897.24 4302.5 1958.72 4409 1897.24 4409 1774.26"
-          />
-        </svg>
-
       </div>
 
       <div className='projects-list'>
@@ -281,12 +180,7 @@ src="https://ik.imagekit.io/kv4ohthhz/mern1_Fju_qVyiC.png"
 alt="mern stack site" 
 /> */}
 
-
-//GATHER ASSETS
-//DESIGN different responsive LAYOUTS 
-//OPTIMIZE with srcset and sizes in markup
-
-
+// image kit sdk
 {/* <IKImage style={{margin: 'auto', width: '200px'}} path="/mern1-1280_qH3SRTAhB" 
 transformation={[{
   // "height": "200",

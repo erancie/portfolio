@@ -6,8 +6,7 @@ import ProjectsList from "../components/ProjectsList"
 import { ScrollContextProvider } from "../components/utils/useScrollContext"
 import LandingHeaders from "../components/LandingHeaders"
 import { IKContext } from 'imagekitio-react'
-
-
+import Stars from "../components/Stars"
 
 export default function Home() {
  
@@ -18,15 +17,15 @@ export default function Home() {
                  urlEndpoint='https://ik.imagekit.io/kv4ohthhz'>
 
         <Layout >
-          
+        
           <BackgroundScene />
           <div className="overlay"></div>
           <LandingHeaders />
+          <Stars />
           <ProjectsList /> 
         </Layout> 
 
       </IKContext>
-
 
     </ScrollContextProvider>
   )
