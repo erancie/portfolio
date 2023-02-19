@@ -30,6 +30,7 @@
   will-change: transform, scroll-position
   transition: all 2.5s ease-out
 // projects
+
 .projects-list
   position: relative
   height: 100%
@@ -173,7 +174,7 @@
 
 .projects-list
   font-family: 'Raleway'
-  font-family: 'Kanit'
+  // font-family: 'Kanit'
   // font-family: 'Poppins'
   // font-family: 'Phudu'
 
@@ -193,8 +194,36 @@
   font-weight: 200
   color: #4b92ad
   color: #6c749f
+  color: #5c93a7
+  // width: 45%
+  // background: #565e8814
+  border-radius: 0px 35px 40px 45px
+  border-radius: 0px 15px 15px 15px
+  border-radius: 5px
+  border-right: 1.5px solid rgb(62 84 115 / 7%)
+  padding: 4rem 2rem 4rem 4rem
+  border-bottom: 1.5px solid rgb(77 67 109 / 23%)
+  background: rgb(86,94,136)
+  background: linear-gradient(289deg, rgb(96 105 150 / 0%) 26%, rgb(67 76 121 / 10%) 47%, rgb(86 98 159 / 0%) 76%)
+  // text-align: left
 
-  width: 45%
+
+.desc-container
+  position: relative
+  width: 50%
+  margin: auto
+
+.exclaim
+  font-size: 8rem
+  position: absolute
+  top: -10px
+  right: -70px
+  color: #3fd4bb45
+  color: #5c93a7
+  color: #bb8c31
+
+  transform: rotateZ(10deg)
+  font-family: 'Katin'
 
 .project-tools
   margin: 3rem 0 4rem
@@ -206,19 +235,32 @@
     
 
 .project-link
-  border: 0.5px solid rgba(63, 63, 78, 0.8588235294)
-  // border: 0.5px solid #222627
-  // border-top: 0px solid 
-  // border-left: 0px solid 
-  // border-right: 0px solid 
-  background: #181c2dab
   color: $font
+
+  //////////////////////// 1
+  border: 0.5px solid rgba(63, 63, 78, 0.6)
   border-radius: 5px
+  background: #181c2dab
   padding: .4rem .8rem .7rem
+  transition: background .2s ease
+
+  /////////////////////// 2
+  // border-right: 1.5px solid rgb(62 84 115 / 7%)
+  // padding: 6rem 2rem 4rem
+  // border-bottom: 1.5px solid rgb(77 67 109 / 23%)
+  // background: rgb(86,94,136)
+  background: linear-gradient(289deg, rgba(96, 105, 150, 0) 19%, rgba(67, 76, 121, 0.17) 45%, rgba(86, 98, 159, 0) 76%)
+  // background: linear-gradient(116deg, rgba(96, 105, 150, 0.03) 14%, rgb(177 177 58 / 6%) 37%, rgb(11 41 192 / 13%) 47%, rgba(137, 146, 193, 0.14) 63%, rgba(86, 98, 159, 0.08) 85%)
+  
   &:hover
     background: $font
     background: #70b4cd
     color: black
+
+    // background: linear-gradient(289deg, rgba(96, 105, 150, 0) 19%, rgba(67, 76, 121, 0.17) 45%, rgba(86, 98, 159, 0) 76%)
+    // background: linear-gradient(116deg, rgba(96, 105, 150, 0.03) 14%, rgb(177 177 58 / 6%) 37%, rgb(11 41 192 / 13%) 47%, rgba(137, 146, 193, 0.14) 63%, rgba(86, 98, 159, 0.08) 85%)
+    
+
 
 
 @media (min-width: 768px) 

@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 export function ProjectThumb({project}) {
 
-  const scrollRef = useRef() 
+  const exclaimRef = useRef(null) 
 
   const cardRef = useRef(null)
 
@@ -26,6 +26,7 @@ export function ProjectThumb({project}) {
   //     })
   //   });
   // },[])
+  const scrollPos = useScrollContext()
 
   useEffect(()=> {
     gsap.to(cardRef.current, { 
@@ -42,6 +43,26 @@ export function ProjectThumb({project}) {
     });
   }, [cardRef])
 
+
+  //Move exclamation position up from bottom to top as scrollPos increases 
+
+  // get top of exclaim 
+  // console.log('rect().top: ', exclaimRef.current.getBoundingClientRect().top)
+  // get top of window
+  // console.log('window height ', window.innerHeight)
+  // get height of window
+  // get scroll position from top of body
+
+  // You can calculate the space between your element and bottom of the page by
+  
+  // const space = window.innerHeight - exclaimRef.current.offsetTop
+  // console.log(space)
+  // const top = window.innerHeight - exclaimRef.current.getBoundingClientRect().top
+  // console.log(top)
+  // console.log(exclaimRef)
+  // console.log(exclaimRef.current)
+  // console.log(exclaimRef.current.offsetTop)
+      
   return (
     <div ref={cardRef} key={project.name} className='project-thumb col-12 col-lg-10 col-xl-10 '>
       <h1 className='project-title'>{project.title}</h1>
@@ -133,7 +154,16 @@ export function ProjectThumb({project}) {
         <div id="mosaic-3"></div>
       </div>  */}
 
-      <p className='project-desc'>{project.desc}</p>
+      <div className='desc-container' >
+        <div className='exclaim'
+        ref={exclaimRef}
+        // style={ 
+        //   space > 0
+        //   ? { top:`(-${space/50})` } 
+        //   : { display:`none` } } 
+          > ! </div>
+        <p className='project-desc'>{project.desc}</p>
+      </div>
 
       <div className='project-tools'>{project.tools.map((t)=>t+' ')}</div>
 
