@@ -4,7 +4,7 @@
   height: 100%
   position: relative
   margin-top: 600px
-  background: #101018db 
+  background: #101018ec 
 
 // SVG backgrounds 
 .proj-bg-container
@@ -40,6 +40,9 @@
   display: flex
   flex-wrap: wrap
   align-items: flex-start
+  
+  // font-family: 'Raleway'
+  // font-family: 'Kanit'
 
   .project-thumb
     text-align: center
@@ -52,6 +55,9 @@
     // background: linear-gradient(25deg, #1f1f1f9b 28%, #1f1f1f9d 100%)
     // box-shadow: 0px 3px 4px $shadow
 
+@media (min-width: 1600px) 
+  .project-thumb
+    max-width: 1200px
 
 @media (min-width: 768px) 
   .projects-list
@@ -161,88 +167,108 @@
   .wrapper-desktop
     width: 300px
     margin: 50px auto
-    // transform: scale(.7)
 
     &:hover
       transform: scale(1.2) translate(40px, 0px)
 
-
-    
-
-//   .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
-//     transform: scale(.7)
-//   .svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet
-//     transform: scale(.7)
-//   .card-img
-//     transform: translateX(-50%) scale(.7)
+.projects-list
+  font-family: 'Raleway'
+  font-family: 'Kanit'
+  // font-family: 'Poppins'
+  // font-family: 'Phudu'
 
 .project-title
-  font-size: 3rem
-  font-weight: 700
-  color: #8d77e0
-  // color: #6e6e86
-  // color: #69dcd1
-  // color: #2D2D3D
-  // text-shadow: 0 0 1px #000
-
-
-
+  // font-family: 'Kanit'
+  font-size: 2.5rem
+  font-weight: 400
+  // text-transform: uppercase
+  color: #4b92ad
+  color: #909be7
+  margin: 2rem auto 3rem
 
 .project-desc
-  margin: 3rem 0
-  // margin: 0 1.2rem  
-  // font-weight: 100
-  font-size: 1.3rem
-  color: #aea2dd
-  // color: #96e5dd
+  // font-family: 'Kanit'
+  margin: 3rem auto
+  font-size: 1.4rem
+  font-weight: 200
+  color: #4b92ad
+  color: #9f9dec
 
-  
-
-
-// @media (min-width: 768px) 
-// @media (min-width: 992px)
-// @media (min-width: 1200px) 
-// @media (min-width: 1400px)
+  width: 45%
 
 .project-tools
   margin: 3rem 0 4rem
-  // padding-top: 1rem
-  // padding-bottom: 2.5rem
-  // margin-left: 1.2rem
   color: lightgrey
 
 .project-links
-  // margin-left: 1.2rem
-  margin: 5rem 0 2rem
-  // padding-bottom: 2rem
+  margin: 8rem 0 0rem
   font-size: 1.2rem
-    
     
 
 .project-link
-  border: 1px solid $font
+  border: 0.5px solid rgba(63, 63, 78, 0.8588235294)
+  // border: 0.5px solid #222627
+  // border-top: 0px solid 
+  // border-left: 0px solid 
+  // border-right: 0px solid 
+  background: #181c2dab
   color: $font
   border-radius: 5px
   padding: .4rem .8rem .7rem
-  // padding-bottom: .5rem
-  // margin-right: 2rem
   &:hover
     background: $font
+    background: #70b4cd
     color: black
-  // &:nth-of-type(1)
-  //   margin-right: 1.5rem
-  &:nth-of-type(2)
-    color: $orange
-    border: 2px solid $orange
-    &:hover
-      background: $orange
-      color: black
-  // &:nth-of-type(3)
-  //   color: $light-purple
-  //   border: 2px solid $light-purple
-  //   &:hover
-  //     background: $light-purple
-  //     color: black
+
+
+@media (min-width: 768px) 
+  .project-title
+    font-size: 3.5rem
+    margin: 2rem auto 3rem
+  .project-desc
+    margin: 5rem auto
+    font-size: 1.5rem
+  .project-link
+    padding: .6rem 1.2rem .9rem
+
+@media (min-width: 992px)
+  .project-title
+    font-size: 4.8rem
+    margin: 2rem auto 5rem
+  .project-desc
+    margin: 7rem auto
+    font-size: 1.6rem
+  .project-link
+    padding: .9rem 1.6rem 1.2rem
+    font-size: 1.5rem
+
+@media (min-width: 1200px)
+  .project-title
+    font-size: 5.2rem
+    margin: 2rem auto 6rem
+  .project-desc
+    margin: 7rem auto
+    font-size: 1.8rem
+  .project-link
+    padding: 1.2rem 2rem 1.4rem
+    font-size: 1.8rem
+
+@media (min-width: 1400px)
+  .project-title
+    font-size: 6.5rem
+    margin: 2rem auto 7rem
+  .project-desc
+    margin: 8rem auto
+    font-size: 2.2rem
+  .project-link
+    padding: 1.4rem 2.5rem 1.6rem
+    font-size: 2rem
+
+
+
+
+
+
 .project-mosaic 
    display: grid
    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr
@@ -275,7 +301,7 @@
   // color: #101018db
   border-color: #3f3f4edb
   width: 40%
-  margin: 8rem auto 0
+  margin: 12rem auto
       
 //media queries
 @media (max-width: 900px)  
