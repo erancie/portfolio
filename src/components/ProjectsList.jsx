@@ -181,9 +181,7 @@ export function ProjectThumb({project}) {
         <p className='project-desc'>{project.desc}</p>
       </div>
 
-
       <div className='project-links'>
-        {/* <Link className='project-link' to={`/projects/${project.name}`}>Info</Link> */}
         <a className='project-link' target="_blank" href={`${project.link}`}>Visit</a>
       </div>    
 

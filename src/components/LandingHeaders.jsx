@@ -10,9 +10,7 @@ export default function LandingHeaders() {
   return (
          <div style={ 
                 scrollPos < 550 
-                ? { transform:`scale(${1-scrollPos/550})`,
-                    // top: -scrollPos/5 
-                  } 
+                ? { transform:`scale(${1-scrollPos/550})` } 
                 : { display:`none` } } 
               className="landing"> 
                     {/* { transform:`scale(.0)` } */}
