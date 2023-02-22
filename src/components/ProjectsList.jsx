@@ -44,7 +44,23 @@ export function ProjectThumb({project}) {
   }, [cardRef])
 
 
-  //Move exclamation position up from bottom to top as scrollPos increases 
+
+    //options
+    //bounding
+    //intersection
+    //gsap
+
+  //on scroll get space b/w element and window-bottom
+  //As exclamation element enters window
+  //change position up from bottom to top of window
+  //as space between element and window-bottom increases 
+
+  //if space > 0 && < 1200?
+    //position -= space * 0.2 (posIncrement)
+
+
+  //Get working and then move to - use state? - use scroll listener? - use context?
+
 
   // get top of exclaim 
   // console.log('rect().top: ', exclaimRef.current.getBoundingClientRect().top)
@@ -155,28 +171,30 @@ export function ProjectThumb({project}) {
       </div>  */}
 
       <div className='desc-container' >
-        <div className='exclaim'
+        {/* <div className='exclaim'
         ref={exclaimRef}
         // style={ 
         //   space > 0
         //   ? { top:`(-${space/50})` } 
         //   : { display:`none` } } 
-          > ! </div>
+          > ! </div> */}
         <p className='project-desc'>{project.desc}</p>
       </div>
 
-      <div className='project-tools'>{project.tools.map((t)=>t+' ')}</div>
 
       <div className='project-links'>
         {/* <Link className='project-link' to={`/projects/${project.name}`}>Info</Link> */}
         <a className='project-link' target="_blank" href={`${project.link}`}>Visit</a>
       </div>    
 
+      <div className='project-tools'>{project.tools.map((t)=>t+' ')}</div>
+
       <hr className='ruling'/>
+
+      
     </div>
   ) 
 }
-
 
 function ProjectsList() {  
 
@@ -199,6 +217,8 @@ function ProjectsList() {
 }
 
 export default React.memo(ProjectsList)
+
+
 
 //SRCSET & SIZES
 
