@@ -96,9 +96,9 @@ export function ProjectThumb({project}) {
               <linearGradient id="laptop-gradient" 
                             x1="5.5" y1="95" x2="253.5" y2="195" 
                             gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#2D2D3D"/>
-                  <stop offset="0.49541" stop-color="#6e6e86"/>
-                  <stop offset="1" stop-color="#2D2D3D"/>
+                  <stop stop-color="rgba(38,38,59,0.91)"/>
+                  <stop offset="0.49541" stop-color="rgba(110,110,134,0.85)"/>
+                  <stop offset="1" stop-color="rgba(38,38,59,0.91)"/>
               </linearGradient>
             </defs>
           </svg>
@@ -117,9 +117,9 @@ export function ProjectThumb({project}) {
               <linearGradient id="tablet-gradient" 
                             x1="10.5" y1="75" x2="183.5" y2="146" 
                             gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#2D2D3D"/>
-                  <stop offset="0.49541" stop-color="#6e6e86"/>
-                  <stop offset="1" stop-color="#2D2D3D"/>
+                  <stop stop-color="rgba(38,38,59,0.91)"/>
+                  <stop offset="0.49541" stop-color="rgba(110,110,134,0.85)"/>
+                  <stop offset="1" stop-color="rgba(38,38,59,0.91)"/>
               </linearGradient>
             </defs>
           </svg>
@@ -134,9 +134,9 @@ export function ProjectThumb({project}) {
               <linearGradient id="mobile-gradient" 
                  x1="0" y1="84.5" x2="95.5" y2="118.5" 
                 gradientUnits="userSpaceOnUse">
-                <stop stop-color="#2D2D3D"/>
-                <stop offset="0.328855" stop-color="#6e6e86"/>
-                <stop offset="1" stop-color="#2D2D3D"/>
+                <stop stop-color="rgba(38,38,59,0.91)"/>
+                <stop offset="0.328855" stop-color="rgba(110,110,134,0.85)"/>
+                <stop offset="1" stop-color="rgba(38,38,59,0.91)"/>
               </linearGradient>
             </defs>
           </svg>
@@ -153,9 +153,9 @@ export function ProjectThumb({project}) {
               <linearGradient id="desktop-gradient" 
                   x1="184" y1="165.5" x2="378" y2="236"               
                   gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#2D2D3D"/>
-                  <stop offset="0.49541" stop-color="#6e6e86"/>
-                  <stop offset="1" stop-color="#2D2D3D"/>
+                  <stop stop-color="rgba(38,38,59,0.91)"/>
+                  <stop offset="0.49541" stop-color="rgba(110,110,134,0.85)"/>
+                  <stop offset="1" stop-color="rgba(38,38,59,0.91)"/>
               </linearGradient>
             </defs>
           </svg>
