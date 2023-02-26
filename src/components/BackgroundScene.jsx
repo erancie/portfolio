@@ -10,7 +10,7 @@ const LandingBg = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   transition: transform 300ms ease-out;
   &::before {

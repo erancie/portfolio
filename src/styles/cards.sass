@@ -3,8 +3,9 @@
   width: 100%
   height: 100%
   position: relative
-  margin-top: 600px
-  background: #101018ec 
+  // margin-top: 600px
+  // background: #101018ec 
+    
 
 // SVG backgrounds 
 .proj-bg-container
@@ -32,10 +33,11 @@
 // projects
 
 .projects-list
+  padding-top: 2rem
   position: relative
   height: 100%
   width: 80%
-  margin: 2rem auto 0
+  margin: auto
   z-index: 2
   padding-bottom: 12rem
   display: flex
@@ -45,16 +47,29 @@
   // font-family: 'Raleway'
   // font-family: 'Kanit'
 
-  .project-thumb
-    text-align: center
-    color: white
-    margin: 4rem auto
-    border-radius: 4px
-    position: relative
-    transform: translateY(20px)
-    opacity: 0
-    // background: linear-gradient(25deg, #1f1f1f9b 28%, #1f1f1f9d 100%)
-    // box-shadow: 0px 3px 4px $shadow
+.project-thumb-container
+  width: 100%
+  // background: #101018ec 
+  margin: auto
+  position: relative
+
+.project-thumb-wrapper
+  background: #101018ec 
+  width: 100%
+
+
+.project-thumb
+  text-align: center
+  color: white
+  margin: 0 auto
+  border-radius: 4px
+  position: relative
+  transform: translateY(20px)
+  opacity: 0
+  // padding-top: 6rem
+
+  // background: linear-gradient(25deg, #1f1f1f9b 28%, #1f1f1f9d 100%)
+  // box-shadow: 0px 3px 4px $shadow
 
 @media (min-width: 1600px) 
   .project-thumb
@@ -62,18 +77,20 @@
 
 @media (min-width: 768px) 
   .projects-list
-    width: 100%
-    display: grid
-    grid-template-columns: repeat(12, 8.333%)
-    row-gap: 10rem
+    // width: 100%
+    // display: grid
+    // grid-template-columns: repeat(12, 8.333%)
+    // row-gap: 10rem
     .project-thumb
       margin: 0 auto
-      grid-column: 2/12
+      width: 83.33%
+      // grid-column: 2/12
 
 @media (min-width: 992px) 
   .projects-list
     .project-thumb
-      grid-column: 1/13
+      // width: 83.33%
+      // grid-column: 1/13
 
 
 .project-imgs-wrapper
@@ -174,6 +191,7 @@
       transform: scale(1.2) translate(40px, 0px)
 
 .projects-list
+  width: 100%
   font-family: 'Raleway'
   // font-family: 'Kanit'
   // font-family: 'Poppins'
@@ -184,18 +202,16 @@
   font-size: 2.5rem
   font-weight: 400
   // text-transform: uppercase
-  color: #4b92ad
-  color: #565e88
-  margin: 2rem auto 3rem
+
+  color: #81dffb
+  margin: 2rem auto 5rem
 
 .project-desc
   // font-family: 'Kanit'
   margin: 3rem auto
   font-size: 1.4rem
   font-weight: 200
-  color: #4b92ad
-  color: #6c749f
-  color: #5c93a7
+  color: #81dffb
   border-radius: 0px 35px 40px 45px
   border-radius: 0px 15px 15px 15px
   border-radius: 5px
@@ -265,7 +281,7 @@
 @media (min-width: 768px) 
   .project-title
     font-size: 3.5rem
-    margin: 2rem auto 3rem
+    margin: 2rem auto 5rem
   .project-desc
     margin: 5rem auto
     font-size: 1.5rem
@@ -275,7 +291,7 @@
 @media (min-width: 992px)
   .project-title
     font-size: 4.8rem
-    margin: 2rem auto 5rem
+    margin: 2rem auto 6rem
   .project-desc
     margin: 7rem auto
     font-size: 1.6rem
@@ -286,7 +302,7 @@
 @media (min-width: 1200px)
   .project-title
     font-size: 5.2rem
-    margin: 2rem auto 6rem
+    margin: 2rem auto 7rem
   .project-desc
     margin: 7rem auto
     font-size: 1.8rem
@@ -297,7 +313,7 @@
 @media (min-width: 1400px)
   .project-title
     font-size: 6.5rem
-    margin: 2rem auto 7rem
+    margin: 2rem auto 8rem
   .project-desc
     margin: 8rem auto
     font-size: 2.2rem
@@ -308,39 +324,37 @@
 
 
 
-
-
-.project-mosaic 
-   display: grid
-   grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr
-   gap: 5px
-   height: 400px
-   margin: 2rem
+// .project-mosaic 
+//    display: grid
+//    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr
+//    gap: 5px
+//    height: 400px
+//    margin: 2rem
 
   
-#mosaic-0 
-   background-color: #eceaea
-   grid-row: 1 / 4
-   grid-column: 1 / 5
+// #mosaic-0 
+//    background-color: #eceaea
+//    grid-row: 1 / 4
+//    grid-column: 1 / 5
 
-#mosaic-1 
-   background-color: #9a9a9a
-   grid-row: 1 / 4
-   grid-column: 5 / 7
+// #mosaic-1 
+//    background-color: #9a9a9a
+//    grid-row: 1 / 4
+//    grid-column: 5 / 7
    
-#mosaic-2 
-   background-color: #e3e3e3
-   grid-row: 4 / 6
-   grid-column: 1 / 3
+// #mosaic-2 
+//    background-color: #e3e3e3
+//    grid-row: 4 / 6
+//    grid-column: 1 / 3
   
-#mosaic-3 
-   background-color: #dbdbdb
-   grid-row: 4 / 6
-   grid-column: 3 / 7
+// #mosaic-3 
+//    background-color: #dbdbdb
+//    grid-row: 4 / 6
+//    grid-column: 3 / 7
 
 .ruling
   // color: #101018db
-  border-color: #3f3f4edb
+  border-color: rgba(16, 16, 24, 0.9254901961)
   width: 20%
   margin: 12rem auto
       
