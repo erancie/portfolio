@@ -4,6 +4,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useScrollContext } from "./utils/useScrollContext"
 import { IKImage } from 'imagekitio-react'
+import Stars from "../components/Stars"
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -204,6 +206,43 @@ export function ProjectThumb({project}) {
         <div className='thumb-overlay-bottom'></div>
       </div>
 
+      {/* //thumb-overlay clip-path SVGs */}
+      <svg style={{position: 'absolute'}} 
+      id="clip-wrapper" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            {/* referencing custom SVG path from HTML id in CSS   
+              - need to include 1.- object bounding box 2.- and scale */}
+            {/* https://stackoverflow.com/questions/40099553/clip-path-width-doesnt-100-width */}
+          <clipPath id="clip"    
+                    viewBox="0 0 800 427" 
+                    clipPathUnits="objectBoundingBox"
+          >
+<path d="M0.000176519 80L0 70.6498L800 0V80H0.000176519Z" 
+                transform="scale(0.00125, 0.0125)"
+          />
+          </clipPath>
+        </defs>
+      </svg>
+
+
+      <svg style={{position: 'absolute'}} 
+      id="clip-wrapper" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            {/* referencing custom SVG path from HTML id in CSS   
+              - need to include 1.- object bounding box 2.- and scale */}
+            {/* https://stackoverflow.com/questions/40099553/clip-path-width-doesnt-100-width */}
+          <clipPath id="clip-2"    
+                    viewBox="0 0 800 427" 
+                    clipPathUnits="objectBoundingBox"
+          >
+<path d="M800 1.05993e-06L800 9.35016L-1.33514e-05 80V1.05993e-06H800Z" 
+                transform="scale(0.00125, 0.0125)"
+          />
+          </clipPath>
+        </defs>
+      </svg>
+      
+
     </div>
 
   ) 
@@ -217,14 +256,12 @@ function ProjectsList() {
         
   return (
     <div  className='projects-container'>
-
-      <div className="proj-bg-container" ref={bgContainer}>
-
-      </div>
-
+      <div className="proj-bg-container" ref={bgContainer}></div>
       <div className='projects-list'>
+        <Stars />
         {projects.map( p=> <ProjectThumb project={p}/> )}
       </div>
+
     </div>
   )
 }

@@ -103,14 +103,18 @@ $title-color: #81dffb
   position: fixed
   top: 0
   left: 0
-  // transition: transform 100ms ease-out
+  transition: transform 100ms ease-out
   text-align: center
+  height: 100vh
 
 .title-container
   position: relative
   margin: auto
-  // top: 0
-  // left: 0
+  height: 50%
+
+.title-2-container
+  position: relative
+  height: 50%
 
 .title-2
   width: 70%
@@ -121,47 +125,31 @@ $title-color: #81dffb
   font-family: 'Homemade Apple'
   letter-spacing: 1px
   font-size: 2rem
-  margin: 1.6rem auto 0
-
-  top: 50vh
-  position: absolute
-  left: 50%
-  transform: translateX(-50%)
-
+  margin: 2rem auto
+  position: relative
 
 
 .title-1, .title-1b, .title-1c, .title-1d
   position: absolute
-  top: 0
+  bottom: 0
   left: 50%
   transform: translateX(-50%)
-  // font-family: 'Phudu'
   font-family: 'Kanit'
   font-style: black
-  // color: #3fd4bb
-  // text-shadow: -1px 1px 1px #a1ffef
   text-align: center
   font-weight: 800
-  font-size: 5rem
-  margin: 10rem auto 0
+  font-size: 3.5rem
+  margin: 0rem auto 0
   width: 70%
   letter-spacing: 3px
-  // animation-name: title
-  // animation-duration: 8s
-  // animation-iteration-count: infinite
-  // background: -webkit-slinear-gradient(127deg, #15658b 0%, #000000 14%, $title-color 27%)
-  // background: linear-gradient(127deg, #257b8a 0%,#000000  14%, $title-color 27%)
   background: $title-color
-
   -webkit-text-fill-color: transparent
-
-  // background: linear-gradient(127deg, rgba(37,145,194,1) 25%, rgba(0,168,180,1) 43%, rgba(77,76,176,1) 65%)
-  
   -webkit-background-clip: text
   -moz-background-clip: text
   transition: scale .3s ease 
 
-
+.title-1
+  // position: relative
 
 .title-1b
   animation: title-1b 9s ease-in-out infinite 
@@ -245,97 +233,40 @@ $title-color: #81dffb
   100%
     opacity: 0
 
-  //quick flash animation
-// @keyframes title-1b
-//   0%
-//     opacity: 0
-//   18%
-//     opacity: .35
-//   18.75%
-//     opacity: 1
-//   20%
-//     opacity: .2
-//   21.5%
-//     opacity: 0
-
-// @keyframes title-1c
-//   15.5%
-//     opacity: 0
-//   19%
-//     opacity: .2
-//   19.25%
-//     opacity: 1
-//   21%
-//     opacity: .2
-//   22.5%
-//     opacity: 0
-
-// @keyframes title-1d
-//   18%
-//     opacity: 0
-//   20%
-//     opacity: .2
-//   21.25%
-//     opacity: 1
-//   26.5%
-//     opacity: .2
-//   46%
-//     opacity: 0
-
-
-
-
-
-
-
-
-
 
 
 @media (min-width: 768px) 
   .landing
     .title-1, .title-1b, .title-1c, .title-1d
-      font-size: 6rem
-      // margin: 12rem auto 0
-
+      font-size: 4.5rem
     .title-2
-      font-size: 2.4rem
-      margin: 2rem auto 0
+      // font-size: 2.4rem
 
 @media (min-width: 992px)
   .landing
     .title-1, .title-1b, .title-1c, .title-1d
-      font-size: 7rem
-      // margin: 14rem auto 0
-
+      font-size: 5.2rem
     .title-2
       font-size: 2.8rem
-      margin: 2.5rem auto 0
 
 @media (min-width: 1200px) 
   .landing
     .title-1, .title-1b, .title-1c, .title-1d
-      font-size: 8rem
-      margin: 8rem auto 0
-
+      font-size: 6rem
     .title-2
       font-size: 3.2rem
-      // margin: 3rem auto 0
 
 @media (min-width: 1400px)
   .landing
     .title-1, .title-1b, .title-1c, .title-1d
-      font-size: 9rem
-      // margin: 8rem auto 0
-
+      font-size: 7rem
     .title-2
       font-size: 4rem
-      // margin: 3.5rem auto 0
-
+    
 @media (min-width: 1640px)
   .landing
     .title-1, .title-1b, .title-1c, .title-1d
-      margin: 16rem auto 0
+      margin: 0 auto 3rem
 
 
 .back-scene
@@ -353,45 +284,9 @@ $title-color: #81dffb
   position: absolute
 
 
-.thumb-overlay-wrapper
-  position: relative
-  height: 30vh
-  width: 100%
-  // bottom: -33px
-
-.thumb-overlay
-  background: (linear-gradient(to bottom, rgba(16, 16, 24, .8) 36%, rgba(16, 16, 24, 0.9254901961)  100%))
-  width: 100%
-  height: 100%
-  position: absolute
-  transform: translateY()
-  -webkit-clip-path: url(#clip)
-  clip-path: url(#clip)
-  bottom: -33px
-
-
-.thumb-overlay-bottom-wrapper
-  position: relative
-  height: 30vh
-  width: 100%
-  top: -193px
-
-.thumb-overlay-bottom
-  background: (linear-gradient(to top, rgba(16, 16, 24, .8) 36%, rgba(16, 16, 24, 0.9254901961)  100%))
-  width: 100%
-  height: 100%
-  position: absolute
-  transform: translateY()
-  -webkit-clip-path: url(#clip-2)
-  clip-path: url(#clip-2)
-  top: 0
-
-
-
 @media ( max-width: 800px )
   .landing-bg::before
     background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('https://ik.imagekit.io/kv4ohthhz/tr:w-1118,tr:q-100/milkyway-square-8k_rdtI2Ci4c'), rgb(0, 0, 0)
-
   
 //globe
 .globe
@@ -402,63 +297,10 @@ $title-color: #81dffb
   left: 0
 
 
-// .landing-svg-fore, .landing-svg-back, .landing-svg-back-bot
-//   fill:#141418
-//   stroke:#3c3c54
-//   stroke-miterlimit:10
-//   stroke-width: 1.5px
-  
-// .landing-svg-fore
-//   // fill: #12121e
-//   fill: #12121d
-
-// .landing-svg-fore
-  
-//   stroke-width: 5px
-//   // width: 80%
-  
-
-// #svg-back
-//   width: 80%
-//   position: absolute
-//   top: 100vh
-//   left: 50%
-//   transform: translateX(-50%)
-
-// #svg-back-bot
-//   width: 80%
-//   position: absolute
-//   bottom: 10vh
-//   left: 50%
-//   transform: translateX(-50%)
-
-// #svg-fore
-//   max-width: 96%
-//   position: absolute
-//   left: 50%
-//   transform: translateX(-50%)
-//   // top: 110vh
-
-
 //project list cards
 @import "cards.sass"
 @import "trick-cards.sass"
 
-
-// $b: #101018
-// $fore: #1c1c29
-// $shadow: #0a0a0abf
-
-// $light-teal: #81dffb
-// $teal: #00d4ff
-// $dark-teal: #00d4ff33
-
-// $purple: #6d498c
-// $light-purple: #b17fdc
-// $opac-purple: #1c1cc333
-// $dark-purple: #02002433
-
-// $orange: #dda345
 
 //project page
 .project-container
@@ -539,6 +381,23 @@ $fore-more: #383155
   .overlay-link
     font-size: 2.4rem
     padding: 2.2rem 4rem 2.4rem
+
+
+
+#svg-proj-back
+  fill:#ffffff00
+  position: fixed 
+  stroke:#23588769
+  stroke-miterlimit:10
+  stroke-width: 6px
+  width: 100vh
+  height: 100vh
+  top: 40vh
+  left: 0
+  transform: translateY(0)
+  z-index: 1
+  will-change: transform, scroll-position
+  transition: all 2.5s ease-out
 
 
 
