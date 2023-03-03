@@ -84,10 +84,6 @@ export function ProjectThumb({project}) {
   return (
     <div className='project-thumb-container'>
 
-      <div className="thumb-overlay-wrapper">
-        <div className='thumb-overlay'></div>
-      </div>
-
       <div className="project-thumb-wrapper">
         <div ref={cardRef} key={project.name} className='project-thumb col-12 col-lg-10 col-xl-10 '>
           <h1 className='project-title'>{project.title}</h1>
@@ -172,13 +168,6 @@ export function ProjectThumb({project}) {
 
           </div>
 
-          {/* <div class="project-mosaic">
-            <div id="mosaic-0"></div>
-            <div id="mosaic-1"></div>
-            <div id="mosaic-2"></div>
-            <div id="mosaic-3"></div>
-          </div>  */}
-
           <div className='desc-container' >
             {/* <div className='exclaim'
             ref={exclaimRef}
@@ -202,28 +191,9 @@ export function ProjectThumb({project}) {
         </div>
       </div>
 
-      <div className="thumb-overlay-bottom-wrapper">
-        <div className='thumb-overlay-bottom'></div>
+      <div className="thumb-svg-window-wrapper">
+        <div className='thumb-svg-window'></div>
       </div>
-
-      {/* //thumb-overlay clip-path SVGs */}
-      <svg style={{position: 'absolute'}} 
-      id="clip-wrapper" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            {/* referencing custom SVG path from HTML id in CSS   
-              - need to include 1.- object bounding box 2.- and scale */}
-            {/* https://stackoverflow.com/questions/40099553/clip-path-width-doesnt-100-width */}
-          <clipPath id="clip"    
-                    viewBox="0 0 800 427" 
-                    clipPathUnits="objectBoundingBox"
-          >
-<path d="M0.000176519 80L0 70.6498L800 0V80H0.000176519Z" 
-                transform="scale(0.00125, 0.0125)"
-          />
-          </clipPath>
-        </defs>
-      </svg>
-
 
       <svg style={{position: 'absolute'}} 
       id="clip-wrapper" xmlns="http://www.w3.org/2000/svg">
@@ -232,21 +202,23 @@ export function ProjectThumb({project}) {
               - need to include 1.- object bounding box 2.- and scale */}
             {/* https://stackoverflow.com/questions/40099553/clip-path-width-doesnt-100-width */}
           <clipPath id="clip-2"    
-                    viewBox="0 0 800 427" 
+                    viewBox="0 0 800 400" 
                     clipPathUnits="objectBoundingBox"
           >
-<path d="M800 1.05993e-06L800 9.35016L-1.33514e-05 80V1.05993e-06H800Z" 
-                transform="scale(0.00125, 0.0125)"
-          />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H800V400H0V0ZM102.074 71.2313C105.198 63.8191 112.46 59 120.503 59H216.756L311.659 359H120.503C112.46 359 105.198 354.181 102.074 346.769L47.2747 216.769C45.1808 211.801 45.1808 206.199 47.2747 201.231L102.074 71.2313ZM478.501 365.491L476.284 369.963C473.753 375.071 468.545 378.302 462.844 378.302H399.949H336.737C331.081 378.302 325.906 375.121 323.353 370.074L320.322 364.082L224.884 58.2619L254.249 10.5211C256.979 6.08336 261.815 3.37988 267.025 3.37988H398.956H533.506C538.74 3.37988 543.596 6.1081 546.318 10.5785L575.515 58.527L478.501 365.491ZM487.084 359H678.52C686.52 359 693.751 354.232 696.903 346.879L752.623 216.879C754.779 211.848 754.779 206.152 752.623 201.121L696.903 71.1209C693.751 63.7676 686.52 59 678.52 59H583.116L487.084 359Z" 
+
+                  transform="scale(0.00125, 0.0025)"
+          />        
           </clipPath>
         </defs>
       </svg>
-      
+
 
     </div>
 
   ) 
 }
+
 
 function ProjectsList() {  
 
@@ -256,7 +228,22 @@ function ProjectsList() {
         
   return (
     <div  className='projects-container'>
-      <div className="proj-bg-container" ref={bgContainer}></div>
+      <div className="svg-window-top-wrapper">
+        <div className='svg-window-top'></div>
+        <svg style={{position: 'absolute'}} id="clip-wrapper" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="window-top"    
+                      viewBox="0 0 800 80" 
+                      clipPathUnits="objectBoundingBox"
+            >
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M100.811 36.2227C98.4381 36.2227 96.288 34.8239 95.3262 32.6543L82.4318 3.56832C81.47 1.39878 79.3198 0 76.9466 0H6C2.68629 0 0 2.68629 0 6V68.8889V74V80H6H794H800V74V68.8889V6C800 2.68629 797.314 0 794 0H717.198C714.833 0 712.689 1.3893 711.722 3.54777L698.679 32.6749C697.712 34.8334 695.568 36.2227 693.203 36.2227H564.699C562.334 36.2227 560.189 37.6124 559.223 39.7713L553.832 51.8151C552.865 53.9741 550.721 55.3638 548.355 55.3638H401.187H251.166C248.792 55.3638 246.642 53.9646 245.68 51.7946L240.362 39.7919C239.4 37.6218 237.25 36.2227 234.876 36.2227H100.811Z" 
+                    transform="scale(0.00125, 0.0125)"
+              />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      {/* <div className="proj-bg-container" ref={bgContainer}></div> */}
       <div className='projects-list'>
         <Stars />
         {projects.map( p=> <ProjectThumb project={p}/> )}

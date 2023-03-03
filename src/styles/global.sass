@@ -400,6 +400,53 @@ $fore-more: #383155
   transition: all 2.5s ease-out
 
 
+.stars-container
+  width: 100%
+  z-index: 1
+  position: fixed 
+  transition: all 2.5s ease-out
+  height: 100vh
+  top: 0
+
+.stars-left, .stars-right
+  position: absolute
+  top: 0
+  // fill:rgba(255, 255, 255, .5)
+  stroke:#23588769
+  // stroke-miterlimit:10
+  stroke-width: .7px
+.stars-left
+  left: -25%
+.stars-right
+  right: -25%
+  // bottom: 150px
+
+@media (min-width: 768px) 
+  .stars-left, .stars-right
+    transform: scale(1.5)
+    stroke-width: .5px
+  .stars-left
+    left: 0%
+  .stars-right
+    right: 0%
+
+
+@media (min-width: 992px)
+  .stars-left, .stars-right
+
+  .stars-left
+    left: 10%
+  .stars-right
+    right: 10%
+
+@media (min-width: 1200px) 
+  .stars-left, .stars-right
+    transform: scale(2)
+    stroke-width: .3px
+
+@media (min-width: 1400px)
+  .stars-left, .stars-right
+
 
 
 
