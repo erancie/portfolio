@@ -39,12 +39,13 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   margin: auto
   position: relative
   // margin-bottom: -20rem
-  margin-bottom: -226px ///////////
+  margin-bottom: -226px 
 
 
 
 .project-thumb-wrapper
   background: $thumb-bg-color 
+  background: linear-gradient(to bottom, rgb(18 25 42) 16%, rgb(15 39 56) 72%)
   width: 100%
 
 
@@ -59,7 +60,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   z-index: 2
 
 
-.svg-window-top-wrapper ///////////////
+.svg-window-top-wrapper 
   margin-top: 20rem
   position: relative
   height: 8vh
@@ -69,6 +70,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 .svg-window-top
   // background: (linear-gradient(to bottom, rgba(16, 16, 24, .8) 36%, rgba(16, 16, 24, 0.9254901961)  100%))
   background: $thumb-bg-color
+  background: rgb(15 39 56)
   width: 100%
   height: 100%
   position: absolute
@@ -78,15 +80,15 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   bottom: 0
 
 
-.thumb-svg-window-wrapper //////////////
+.thumb-svg-window-wrapper 
   position: relative
   height: 33vh
   width: 100%
   top: -193px
 
 .thumb-svg-window
-  // background: (linear-gradient(to top, rgba(16, 16, 24, .8) 36%, rgba(16, 16, 24, 0.9254901961)  100%))
   background: $thumb-bg-color
+  background: linear-gradient(to top, rgb(18 25 42) 16%, rgb(15 39 56) 72%)
   width: 100%
   height: 100%
   position: absolute
@@ -145,39 +147,60 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   display: flex
   align-items: flex-end
   margin: 3rem 0
+  transform: translateX(-5rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+  transition: all .5s ease-in-out
+  &:hover
+   transform: translateX(-3rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+  
+@media (min-width: 1200px) 
+  .project-imgs-wrapper
+    transform: translateX(-9rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
 
-  color: #fffff 
-    
+
+.project-imgs-wrapper:hover > .wrapper
+  box-shadow:   1px 1px 0 1px rgba(255, 255, 255, 0.7)
+
 // .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
 .wrapper
   margin: 50px auto
   position: relative
-  transition: all .31s ease-in
+  transition: all .5s ease-in
+  // transition-delay: .2s
+  // transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+  box-shadow:   1px 1px 0 1px #f9f9fb, -30px 60px 2px 0 rgba(255, 255, 255, 0.03), 40px -60px 2px -10px rgba(255, 255, 255, 0.03)
+  // box-shadow:  rgba(255,255,255, 0.054) 0px 0px 0px 1px, rgba(255,255,255, 0.15) 0px 1px 0px 0px, rgba(255,255,255, 0.13) 0px 0px 8px 0px, rgba(255,255,255, 0.2) 0px 20px 30px 0px
+  // box-shadow: 0 50px 100px -20px rgb(50 50 93 / 30%), 0 30px 60px -30px rgb(0 0 0 / 50%), -10px 10px 60px -10px rgb(103 178 111 / 30%)
   &:hover
-    transform: scale(1.2) translateY(-15px)
-    &~.wrapper
-      transform: translateX(30px)
+    transform: scale(1.2) translateY(-15px) 
+    // box-shadow:   1px 1px 0 1px rgba(255, 255, 255, 0.7)
 
+    &~.wrapper
+      transform: translateX(30px) 
 
 .wrapper-laptop
-  left: 1.2rem
+  left: -1.2rem
   &:hover
-
+    transform: scale(1.2) translate(2rem, -15px)
+    // z-index: 2
 .wrapper-tablet
   top: 12px
-  left: 1.5rem
+  // left: 1.5rem
   z-index: 1
+  &:hover
+    // z-index: 3
 .wrapper-mobile
-  // right: 10px
+  right: 1rem
   bottom: -40px
   z-index: 2
   margin-right: -50px
+  box-shadow:   1px 1px 0 1px #f9f9fb, -20px 60px 2px 0 rgba(255, 255, 255, 0.02), 20px -200px 2px 0 rgba(255, 255, 255, 0.02)
   &:hover
-    transform: scale(1.35) translateY(-15px)
+    transform: scale(1.35) translateY(-15px) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
 .wrapper-desktop
   left: -1.7rem
   &:hover
-    transform: scale(1.2) translate(40px, -15px)
+    transform: scale(1.2) translate(40px, -15px) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+    // z-index: 2
 
 @media (max-width: 1200px) 
   .wrapper-desktop
@@ -189,54 +212,60 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   top: 0
   left: 0
   overflow: visible
-.svg-desktop 
-  // path
-    // fill: #cfdee7
-    // fill: #3e4253
-    // fill: #d2daff
-.svg-mobile 
-  // path
-
-.svg-laptop
-  // path
-
-.svg-tablet 
-  // path
-
-
 
 
 @media (max-width: 800px)
   .project-imgs-wrapper
-    flex-direction: column
+    flex-wrap: wrap
+    margin: 0 2rem
+    transform: translateX(0rem) perspective(1000px) rotateX(8deg) rotateY(-22deg) rotate(2deg)
+    &:hover
+      transform: translateX(0rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
   .wrapper
     &:hover
-      transform: scale(1.2) translateY(0px)
+      // transform: scale(1.6) translateY(0px) 
       &~.wrapper
         transform: translateX(0px)
 
-  .wrapper-laptop
-    width: 256px
-  .wrapper-tablet
-    // transform: scale(.7)
-    width: 144px
-
-    left: 0px
   .wrapper-mobile
-    // transform: scale(.7)
-    width: 75px
-    margin: 50px auto
-    right: 0
-    bottom: -10px
+    order: 1
+    width: 18%
+    // margin: 50px auto
+    right: -4.5rem
+    bottom: 3.7rem
+    z-index: 2
+    // transform: translateX(0rem) perspective(1000px) rotateX(12deg) rotateY(-20deg) rotate(2deg)
+    box-shadow:   1px 1px 0 1px #f9f9fb, -20px 60px 2px 0 rgba(255, 255, 255, 0.02), 20px -30px 2px 0 rgba(255, 255, 255, 0.02)
     &:hover
-      transform: scale(1.2) translateY(0px)
+      transform: scale(2.2) translate(0px, 2rem)
+      z-index: 2
+  .wrapper-laptop
+    width: 50%
+    order: 2
+    top: 2rem
+    left: 1rem
+    z-index: 1
+    &:hover
+      z-index: 2
+      transform: scale(1.8) translate(-1.2rem, 0px)
 
   .wrapper-desktop
-    width: 300px
-    margin: 50px auto
-
+    width: 70%
+    top: -4rem
+    // margin: 50px auto
+    z-index: 2
+    order: 3
     &:hover
-      transform: scale(1.2) translate(40px, 0px)
+      transform: scale(1.4) translate(1.5rem, 0px)
+      z-index: 4
+  .wrapper-tablet
+    width: 28%
+    order: 4
+    left: -4rem
+    top: 3rem
+    z-index: 3
+    &:hover
+      transform: scale(2) translate(-1rem, -3rem)
 
 .projects-list
   width: 100%
@@ -245,42 +274,45 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   // font-family: 'Poppins'
   // font-family: 'Phudu'
 
-$font-color: #81dffb
-// $font-color: #44A595
-
+$font-color2: #81dffb
+$font-color: #44A595
+$font-color2: #6bc4b5
 
 .project-title
-  // font-family: 'Kanit'
-  font-size: 2.5rem
-  font-weight: 400
-  padding-top: 16rem
-
-  // text-transform: uppercase
-
+  text-transform: uppercase
+  font-size: 3.5rem
+  font-weight: 600
+  padding: 14rem 0 4rem
   color: $font-color
-  margin: 2rem auto 5rem
+  margin: 2rem 1rem 5rem
+  line-height: 4.5rem
+  // border-radius: 0px 35px 40px 45px
+  // border-radius: 0px 15px 15px 15px
+  // border-radius: 5px
+  // border-right: 1.5px solid rgb(62 84 115 / 7%)
+  // // padding: 2rem 2rem 2rem 2rem
+  border-top: 1.5px solid rgb(77 67 109 / 23%)
+
 
 .project-desc
-  // font-family: 'Kanit'
   margin: 3rem auto
-  font-size: 1.4rem
+  font-size: 1.8rem
   font-weight: 200
-  color: $font-color
+  color: $font-color2
   border-radius: 0px 35px 40px 45px
   border-radius: 0px 15px 15px 15px
   border-radius: 5px
   // border-right: 1.5px solid rgb(62 84 115 / 7%)
-  padding: 2rem 2rem 2rem 2rem
+  padding: 1rem 0 1rem
   border-bottom: 1.5px solid rgb(77 67 109 / 23%)
   background: rgb(86,94,136)
   // background: linear-gradient(289deg, rgb(96 105 150 / 0%) 26%, rgb(67 76 121 / 10%) 47%, rgb(86 98 159 / 0%) 76%)
   background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47108421005120793) 15%, rgba(51,58,91,0) 52%)
 
-
 .desc-container
   position: relative
-  width: 50%
-  margin: auto
+  width: 80%
+  margin: 8rem auto
 
 .exclaim
   font-size: 8rem
@@ -290,7 +322,6 @@ $font-color: #81dffb
   color: #3fd4bb45
   color: #5c93a7
   color: #bb8c31
-
   transform: rotateZ(10deg)
   font-family: 'Katin'
 
@@ -299,80 +330,67 @@ $font-color: #81dffb
   color: lightgrey
 
 .project-links
-  margin: 6rem 0 0rem
-  font-size: 1.2rem
-    
+  margin: -2rem 0 12rem
 
 .project-link
+  text-transform: uppercase
+  font-size: 1.6rem
   color: $font
-
-  //////////////////////// 1
   border: 0.5px solid rgba(63, 63, 78, 0.6)
   border-radius: 5px
   background: #181c2dab
-  padding: .4rem .8rem .7rem
+  padding: 1.4rem 1.8rem 1.7rem
   transition: background .2s ease
-
-  /////////////////////// 2
-  // border-right: 1.5px solid rgb(62 84 115 / 7%)
-  // padding: 6rem 2rem 4rem
-  // border-bottom: 1.5px solid rgb(77 67 109 / 23%)
-  // background: rgb(86,94,136)
   background: linear-gradient(289deg, rgba(96, 105, 150, 0) 19%, rgba(67, 76, 121, 0.17) 45%, rgba(86, 98, 159, 0) 76%)
-  // background: linear-gradient(116deg, rgba(96, 105, 150, 0.03) 14%, rgb(177 177 58 / 6%) 37%, rgb(11 41 192 / 13%) 47%, rgba(137, 146, 193, 0.14) 63%, rgba(86, 98, 159, 0.08) 85%)
-  
   &:hover
     background: $font
     background: #70b4cd
     color: black
 
-    // background: linear-gradient(289deg, rgba(96, 105, 150, 0) 19%, rgba(67, 76, 121, 0.17) 45%, rgba(86, 98, 159, 0) 76%)
-    // background: linear-gradient(116deg, rgba(96, 105, 150, 0.03) 14%, rgb(177 177 58 / 6%) 37%, rgb(11 41 192 / 13%) 47%, rgba(137, 146, 193, 0.14) 63%, rgba(86, 98, 159, 0.08) 85%)
-    
-
-
 
 @media (min-width: 768px) 
   .project-title
-    font-size: 3.5rem
+    font-size: 4.2rem
     margin: 2rem auto 5rem
   .project-desc
-    margin: 5rem auto
+    margin: 6rem auto
     font-size: 1.5rem
   .project-link
-    padding: .6rem 1.2rem .9rem
+    padding: 1.6rem 2.2rem 1.9rem
+    font-size: 1.8rem
+
 
 @media (min-width: 992px)
   .project-title
     font-size: 4.8rem
     margin: 2rem auto 6rem
   .project-desc
-    margin: 7rem auto
+    margin: 8rem auto
     font-size: 1.6rem
   .project-link
-    padding: .9rem 1.6rem 1.2rem
-    font-size: 1.5rem
+    padding: 1.9rem 2.6rem 2.2rem
+    font-size: 2rem
 
 @media (min-width: 1200px)
   .project-title
     font-size: 5.2rem
     margin: 2rem auto 7rem
   .project-desc
-    margin: 7rem auto
+    margin: 8rem auto
     font-size: 1.8rem
   .project-link
-    padding: 1.2rem 2rem 1.4rem
-    font-size: 1.8rem
+    padding: 2.2rem 3rem 2.4rem
+    font-size: 2.2rem
 
 @media (min-width: 1400px)
   .project-title
     font-size: 6.5rem
     margin: 2rem auto 8rem
   .project-desc
-    margin: 8rem auto
+    margin: 9rem auto
     font-size: 2.2rem
   .project-link
-    padding: 1.4rem 2.5rem 1.6rem
+    padding: 2.4rem 3.5rem 2.6rem
     font-size: 2rem
 
 
@@ -409,8 +427,18 @@ $font-color: #81dffb
 .ruling
   // color: #101018db
   border-color: rgba(16, 16, 24, 0)
-  width: 20%
-  margin: 16rem auto 12rem
+  border-color: rgba(77, 67, 109, 0.73)
+  width: 70%
+  margin: 6rem auto 12rem
+  border-radius: 0px 35px 40px 45px
+  border-radius: 0px 15px 15px 15px
+  border-radius: 5px
+  // border-right: 1.5px solid rgb(62 84 115 / 7%)
+  padding: 2rem 0 0rem
+  // border-bottom: 1.5px solid rgb(77 67 109 / 23%)
+  background: rgb(86,94,136)
+  // background: linear-gradient(289deg, rgb(96 105 150 / 0%) 26%, rgb(67 76 121 / 10%) 47%, rgb(86 98 159 / 0%) 76%)
+  background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47108421005120793) 15%, rgba(51,58,91,0) 52%)
       
 //media queries
 @media (max-width: 900px)  

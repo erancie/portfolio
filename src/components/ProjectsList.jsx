@@ -90,24 +90,24 @@ export function ProjectThumb({project}) {
 
           <div className="project-imgs-wrapper">
 
-            <div className="wrapper-laptop wrapper">
-              <img className='img-laptop card-img' src={`${project.imgRoot}/tr:w-560,tr:q-100${project.imgSrc.laptop}`} />
-              <svg className='svg-laptop' viewBox="16 6 284 160" xmlns="http://www.w3.org/2000/svg">
-                <path 
-                    fill='url(#laptop-gradient)' 
-                    fill-rule="evenodd" clip-rule="evenodd" d="M9 3C9 1.34315 10.3431 0 12 0H304C305.657 0 307 1.34315 307 3V168.099C307 169.753 305.662 171.094 304.01 171.099H314C315.105 171.099 316 171.994 316 173.099V178C316 179.105 315.105 180 314 180H2C0.895432 180 0 179.105 0 178V173.099C0 171.994 0.895431 171.099 2 171.099H11.9903C10.3379 171.094 9 169.753 9 168.099V3ZM16 5.93406H300V165.165H16V5.93406Z" 
-                />
-                <defs>
-                  <linearGradient id="laptop-gradient" 
-                                x1="5.5" y1="95" x2="253.5" y2="195" 
-                                gradientUnits="userSpaceOnUse">
+          <div className="wrapper-desktop wrapper">
+              <img className='img-desktop card-img' src={`${project.imgRoot}/tr:w-800,tr:q-100${project.imgSrc.desktop}`} />
+              <svg className='svg-desktop' viewBox="14 8 400 225" xmlns="http://www.w3.org/2000/svg">
+                  <path 
+                  // fill={`url(#${gradient})`}
+                  fill="url(#desktop-gradient)" 
+                  fill-rule="evenodd" clip-rule="evenodd" d="M4 0C1.79086 0 0 1.79086 0 4V237.073C0 239.282 1.79085 241.073 3.99999 241.073H201V249.034C201 250.139 201.895 251.034 203 251.034H151C149.895 251.034 149 251.93 149 253.034V258C149 259.105 149.895 260 151 260H277C278.105 260 279 259.105 279 258V253.034C279 251.93 278.105 251.034 277 251.034H225C226.105 251.034 227 250.139 227 249.034V241.073H424C426.209 241.073 428 239.282 428 237.073V4C428 1.79086 426.209 0 424 0H4ZM225 233.103L414 233.103V7.96935H14V233.103L203 233.103H225Z" />
+                  <defs>
+                  <linearGradient id="desktop-gradient" 
+                      x1="184" y1="165.5" x2="378" y2="236"               
+                      gradientUnits="userSpaceOnUse">
                       <stop stop-color="rgba(38,38,59,0.91)"/>
                       <stop offset="0.49541" stop-color="rgba(110,110,134,0.85)"/>
                       <stop offset="1" stop-color="rgba(38,38,59,0.91)"/>
                   </linearGradient>
                 </defs>
               </svg>
-            </div> 
+            </div>
 
             <div className="wrapper-tablet wrapper">
               <img className='img-tablet card-img' src={`${project.imgRoot}/tr:w-320,tr:q-100${project.imgSrc.tablet}`} 
@@ -147,24 +147,26 @@ export function ProjectThumb({project}) {
               </svg>
             </div>
 
-            <div className="wrapper-desktop wrapper">
-              <img className='img-desktop card-img' src={`${project.imgRoot}/tr:w-800,tr:q-100${project.imgSrc.desktop}`} />
-              <svg className='svg-desktop' viewBox="14 8 400 225" xmlns="http://www.w3.org/2000/svg">
-                  <path 
-                  // fill={`url(#${gradient})`}
-                  fill="url(#desktop-gradient)" 
-                  fill-rule="evenodd" clip-rule="evenodd" d="M4 0C1.79086 0 0 1.79086 0 4V237.073C0 239.282 1.79085 241.073 3.99999 241.073H201V249.034C201 250.139 201.895 251.034 203 251.034H151C149.895 251.034 149 251.93 149 253.034V258C149 259.105 149.895 260 151 260H277C278.105 260 279 259.105 279 258V253.034C279 251.93 278.105 251.034 277 251.034H225C226.105 251.034 227 250.139 227 249.034V241.073H424C426.209 241.073 428 239.282 428 237.073V4C428 1.79086 426.209 0 424 0H4ZM225 233.103L414 233.103V7.96935H14V233.103L203 233.103H225Z" />
-                  <defs>
-                  <linearGradient id="desktop-gradient" 
-                      x1="184" y1="165.5" x2="378" y2="236"               
-                      gradientUnits="userSpaceOnUse">
+            <div className="wrapper-laptop wrapper">
+              <img className='img-laptop card-img' src={`${project.imgRoot}/tr:w-560,tr:q-100${project.imgSrc.laptop}`} />
+              <svg className='svg-laptop' viewBox="16 6 284 160" xmlns="http://www.w3.org/2000/svg">
+                <path 
+                    fill='url(#laptop-gradient)' 
+                    fill-rule="evenodd" clip-rule="evenodd" d="M9 3C9 1.34315 10.3431 0 12 0H304C305.657 0 307 1.34315 307 3V168.099C307 169.753 305.662 171.094 304.01 171.099H314C315.105 171.099 316 171.994 316 173.099V178C316 179.105 315.105 180 314 180H2C0.895432 180 0 179.105 0 178V173.099C0 171.994 0.895431 171.099 2 171.099H11.9903C10.3379 171.094 9 169.753 9 168.099V3ZM16 5.93406H300V165.165H16V5.93406Z" 
+                />
+                <defs>
+                  <linearGradient id="laptop-gradient" 
+                                x1="5.5" y1="95" x2="253.5" y2="195" 
+                                gradientUnits="userSpaceOnUse">
                       <stop stop-color="rgba(38,38,59,0.91)"/>
                       <stop offset="0.49541" stop-color="rgba(110,110,134,0.85)"/>
                       <stop offset="1" stop-color="rgba(38,38,59,0.91)"/>
                   </linearGradient>
                 </defs>
               </svg>
-            </div>
+            </div> 
+
+
 
           </div>
 
@@ -183,7 +185,7 @@ export function ProjectThumb({project}) {
             <a className='project-link' target="_blank" href={`${project.link}`}>Visit</a>
           </div>    
 
-          <div className='project-tools'>{project.tools.map((t)=>t+' ')}</div>
+          {/* <div className='project-tools'>{project.tools.map((t)=>t+' ')}</div> */}
 
           <hr className='ruling'/>
           {/* get rid of this and fix bottom - margi/padding? */}

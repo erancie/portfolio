@@ -34,7 +34,7 @@ const projects = [
       tablet: circularTablet,
       mobile: circularMobile
     },
-    desc: 'A crowd funding platform powered by AI and circular economics',
+    desc: 'A crowd funding platform powered by AI and circular economics.',
     tools: [],
     link: ''
   },
@@ -49,7 +49,7 @@ const projects = [
       tablet: psgTablet,
       mobile: psgMobile
     },
-    desc: 'Professional Basketball Platform',
+    desc: 'Professional Basketball Platform.',
     tools: [],
     link: 'https://psgsports.co/'
   },
@@ -79,7 +79,7 @@ const projects = [
       tablet: honeyTablet,
       mobile: honeyMobile
     },
-    desc: 'E-commerce website selling organic honey',
+    desc: 'E-commerce website selling organic honey.',
     tools: [],
     link: 'https://honey-8cd45.web.app/'
   },
