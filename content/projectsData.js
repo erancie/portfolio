@@ -26,7 +26,7 @@ const circularMobile = '/circular-mobile_zxQx1vTbI.PNG'
 const projects = [
   {
     name: 'circular',
-    title: 'Circular Banking',
+    title: 'Circular Economies',
     imgRoot: IKRoot,
     imgSrc: {
       desktop: circularDesktop,
