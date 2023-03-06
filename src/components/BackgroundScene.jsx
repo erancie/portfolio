@@ -44,13 +44,13 @@ const BackgroundScene = React.memo(() => {
 
   return(
     <div className="back-scene" >
-          <LandingBg scale={scrollPos < 800 ? 1-scrollPos/(800/.1) : .9} 
-                     rotate={scrollPos < 800 ? scrollPos*(30/800) : 30}>
-          </LandingBg>
+      <LandingBg scale={scrollPos < 800 ? 1-scrollPos/(800/.1) : .9} 
+                 rotate={scrollPos < 800 ? scrollPos*(30/800) : 30}>
+      </LandingBg>
       <div className="globe">
         <Globe />
       </div>
-      <div className="bg-overlay"></div>
+      {/* <div className="bg-overlay"></div> */}
     </div>
   )
 })

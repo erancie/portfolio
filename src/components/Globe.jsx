@@ -5,13 +5,11 @@ import { Canvas, extend, useLoader, useThree, useFrame } from "react-three-fiber
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
-
+import { useGLTF } from '@react-three/drei'
 import { animated, useSpring, useTransition, config } from "@react-spring/three"
-// import "../styles/box.module.css"
 import { ScrollProvider, useScrollContext } from './utils/useScrollContext'
 import Grid from '../components/Grid'
 
-import { useGLTF } from '@react-three/drei'
 
 extend({ OrbitControls })
 
@@ -35,7 +33,6 @@ const Controls = () => {
 //make wrapper for previous meshs?
 const Sphere = () => {
 
-
   const groupRef = React.useRef()
   const outterRef = React.useRef()
   const innerRef = React.useRef()
@@ -43,9 +40,6 @@ const Sphere = () => {
   const outterMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-20/earth-clouds-2k-lossless_Fx89Vwggc.jpg')
   const innerNightMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-90/earth-night-2k-lossless_HedixKXNh.jpg')
   const scrollPos = useScrollContext()
-
-
-
 
   //get Z pos and rotation according to scroll position
   const [ positionZ, rotationZ ] = useMemo(() => {
@@ -61,16 +55,7 @@ const Sphere = () => {
     rotation: [0, 0, rotationZ]
   })
 
-  useFrame(() => {
-    // rotation rate - could try increasing with scroll?
-    innerRef.current.rotation.y -= .0003 
-    // outterRef.current.rotation.y -= .0003 
-    // groupRef.current.rotation.y -= .0003 
-      //every time scroll changes it sets new rotation transform, map is put back at beginning
-      //then useframe restarts rotation from start new rotation setting 
-      //have to use group container that transforms its rotation on scroll
-      //then have inner mesh that will keep rotating via useFrame relative to its parent group's no matter its transformed rotation
-  })
+  useFrame(() => { innerRef.current.rotation.y -= .0003 })
 
   //TODO:-------- globe to fade in when loaded --------
 
@@ -89,17 +74,17 @@ const Sphere = () => {
   // return transition( ({ opacity }, item) => (    
   // item && <>
 
-  // const obj = useLoader(OBJLoader, '/models/scene.obj')
+  const obj = useLoader(OBJLoader, '/models/wire-globe.obj')
   // const gltf = useLoader(GLTFLoader, '/models/gemer/scene.gltf')
 
   const { scene, nodes, materials } = useGLTF('/models/gemer/scene.gltf')
   const { scene: scene2, nodes2, materials2 } = useGLTF('/models/gemer/scene.gltf')
 
 
-  const orange = new THREE.Color(0xffa500);
-  const crimson = new THREE.Color(0xdc143c);
-  const teal = new THREE.Color(0x008080);
-  const steelblue = new THREE.Color(0x4682b4);
+  // const orange = new THREE.Color(0xffa500);
+  // const crimson = new THREE.Color(0xdc143c);
+  // const teal = new THREE.Color(0x008080);
+  // const steelblue = new THREE.Color(0x4682b4);
   
   // useLayoutEffect(() => {
   //   Object.assign(materials.Material, { 
@@ -117,13 +102,13 @@ const Sphere = () => {
       ref={groupRef}
       position={position} 
       rotation={rotation}
-      scale={[.2, .2, .2]}
+      scale={[.012, .012, .012]}
     >
         <animated.group 
         // args={[.1]} 
         ref={innerRef} >
           <Suspense fallback={null}>
-            <primitive object={scene} 
+            <primitive object={obj} 
                 // materials={{roughness: .5}} //nope
                       //  color={orange}  //nope
             />

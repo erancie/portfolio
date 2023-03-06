@@ -244,7 +244,7 @@ function ProjectsList() {
       </div>
       {/* <div className="proj-bg-container" ref={bgContainer}></div> */}
       <div className='projects-list'>
-        {/* <Stars /> */}
+        <Stars />
         {projects.map( p=> <ProjectThumb project={p}/> )}
       </div>
 
