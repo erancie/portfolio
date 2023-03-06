@@ -10,6 +10,10 @@ Title: Low Poly Planet Earth
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
+
+// {/* how to change colors on this earth poly? */}
+
+
 export function Earth(props) {
   const { nodes, materials } = useGLTF('/models/earth/scene.gltf')
   return (
