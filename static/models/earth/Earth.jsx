@@ -21,8 +21,9 @@ export function Earth(props) {
       <mesh geometry={nodes.Object_Planet_0.geometry} 
             material={materials.Planet} 
             // position={[-0.05, 1.25, 0.07]} 
-            position={[0, 0, 0]} 
-            rotation={[Math.PI, 0, Math.PI]} />
+            position={[0, .1, 0]} 
+            // rotation={[Math.PI, 0, Math.PI]} 
+            />
     </group>
   )
 }

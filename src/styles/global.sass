@@ -108,27 +108,14 @@ $title-color: #44A595
   text-align: center
   height: 100vh
 
-.title-container
+.titles-wrapper
+  position: relative
+
+.title-1-container
   position: relative
   margin: auto
-  height: 50%
-
-.title-2-container
-  position: relative
-  height: 50%
-
-.title-2
-  width: 70%
-  text-align: center
-  font-weight: 400
-  color: $title-color
-  font-family: 'Calligraffitti'
-  font-family: 'Homemade Apple'
-  letter-spacing: 1px
-  font-size: 2rem
-  margin: 2rem auto
-  position: relative
-
+  height: 40%
+  min-height: 220px
 
 .title-1, .title-1b, .title-1c, .title-1d
   position: absolute
@@ -144,37 +131,55 @@ $title-color: #44A595
   width: 70%
   letter-spacing: 3px
   background: $title-color
+  background: #a193dc
+  background: #7b77de
   -webkit-text-fill-color: transparent
   -webkit-background-clip: text
   -moz-background-clip: text
   transition: scale .3s ease 
 
-.title-1
-  // position: relative
+.title-2-container
+  position: relative
 
-.title-1b
+.title-2, .title-2b, .title-2c, .title-2d
+  width: 80%
+  text-align: center
+  font-weight: 300
+  font-family: 'Kanit'
+  letter-spacing: 1px
+  font-size: 2.5rem
+  margin: .6rem auto
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  background: #7b77de
+  -webkit-text-fill-color: transparent
+  -webkit-background-clip: text
+  -moz-background-clip: text
+
+  // will a background clip work from a parent?
+
+
+.title-1b, .title-2b
   animation: title-1b 9s ease-in-out infinite 
-  // background: -webkit-linear-gradient(127deg, $title-color 0%, #FFF 30%, $title-color 53%)
   background: linear-gradient(127deg, $title-color 12%,#FFF  30%, $title-color 53%)
   -webkit-text-fill-color: transparent
   -webkit-background-clip: text
-  opacity: 0
+  opacity: .2
 
-.title-1c
+.title-1c, .title-2c
   animation: title-1c 9s ease-in-out infinite 
-  // background: -webkit-linear-gradient(127deg, $title-color 10%, #FFF 52%, $title-color 72%)
   background: linear-gradient(127deg, $title-color 30%,#FFF  52%, $title-color 72%)
   -webkit-text-fill-color: transparent
   -webkit-background-clip: text
-  opacity: 0
+  opacity: .2
 
-.title-1d
+.title-1d, .title-2d
   animation: title-1d 9s ease-in-out infinite 
-  // background: -webkit-slinear-gradient(127deg, $title-color 30%, #FFF 72%, $title-color 94%)
   background: linear-gradient(127deg, $title-color 50%,#FFF 72%, $title-color 94%)
   -webkit-text-fill-color: transparent
   -webkit-background-clip: text
-  opacity: 0
+  opacity: .2
 
   //slow burn with quick flash animation
 @keyframes title-1b
@@ -188,13 +193,13 @@ $title-color: #44A595
   25%
     opacity: 0
   68%
-    opacity: .35
+    opacity: .4
   68.75%
     opacity: 1
   70%
-    opacity: .2
+    opacity: .4
   71.5%
-    opacity: 0
+    opacity: .2
 
 @keyframes title-1c
   8%
@@ -206,18 +211,18 @@ $title-color: #44A595
 
   65%
     opacity: 0
-  69%
-    opacity: .2
+  // 69%
+  //   opacity: .4
   69.25%
     opacity: 1
   81%
     opacity: .2
   82.5%
-    opacity: 0
+    opacity: .2
 
 @keyframes title-1d
   18%
-    opacity: 0
+    opacity: .1
   46%
     opacity: 1
   64%
@@ -225,14 +230,14 @@ $title-color: #44A595
 
   68%
     opacity: 0
-  70%
-    opacity: .2
+  // 70%
+  //   opacity: .4
   71.25%
     opacity: 1
   76.5%
+    opacity: .2
+  84%
     opacity: .1
-  100%
-    opacity: 0
 
 
 
@@ -247,22 +252,22 @@ $title-color: #44A595
   .landing
     .title-1, .title-1b, .title-1c, .title-1d
       font-size: 5.2rem
-    .title-2
-      font-size: 2.8rem
+    .title-2, .title-2b,  .title-2c, .title-2d
+      font-size: 3rem
 
 @media (min-width: 1200px) 
   .landing
     .title-1, .title-1b, .title-1c, .title-1d
       font-size: 6rem
-    .title-2
-      font-size: 3.2rem
+    .title-2, .title-2b,  .title-2c, .title-2d
+      font-size: 3.6rem
 
 @media (min-width: 1400px)
   .landing
     .title-1, .title-1b, .title-1c, .title-1d
       font-size: 7rem
-    .title-2
-      font-size: 4rem
+    .title-2, .title-2b,  .title-2c, .title-2d
+      font-size: 4.5rem
     
 @media (min-width: 1640px)
   .landing

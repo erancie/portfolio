@@ -14,25 +14,27 @@ export default function LandingHeaders() {
                 : { display:`none` } } 
               className="landing"> 
                     {/* { transform:`scale(.0)` } */}
+          
+          {/* <div className="titles-wrapper"> */}
 
-          {/* <h1 className="title-3">&</h1> */}
-          <div className='title-container'>
-            <h1 className="title-1">OUT OF THIS WORLD</h1>
-            <h1 className="title-1b">OUT OF THIS WORLD</h1>
-            <h1 className="title-1c">OUT OF THIS WORLD</h1>
-            <h1 className="title-1d">OUT OF THIS WORLD</h1>
+            <div className='title-1-container'>
+              <h1 className="title-1">OUT OF THIS WORLD</h1>
+              <h1 className="title-1b">OUT OF THIS WORLD</h1>
+              <h1 className="title-1c">OUT OF THIS WORLD</h1>
+              <h1 className="title-1d">OUT OF THIS WORLD</h1>
 
-            {/* <h1 className="title-2">..experiences on the web.</h1> */}
 
-          </div>
+            </div>
 
-          {/* change to inside of container ? make relative to titles-1bcd*/}
-          <div className="title-2-container">
-            <h1 className="title-2">..experiences on the web.</h1>
-          </div>
-      
-          {/* unique user experiences for brands on the web. </h3> */}
-          {/* & compelling stories */}
+            <div className="title-2-container">
+              <h1 className="title-2">experiences on the web</h1>
+              <h1 className="title-2b">experiences on the web</h1>
+              <h1 className="title-2c">experiences on the web</h1>
+              <h1 className="title-2d">experiences on the web</h1>
+            </div>
+
+          {/* </div> */}
+          {/* compelling user experiences for brands on the web. </h3> */}
 
         </div>
   )

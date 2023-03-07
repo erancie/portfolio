@@ -57,7 +57,7 @@ const BackgroundScene = React.memo(() => {
       <div className="globe">
         <Globe />
       </div>
-      {/* <div className="bg-overlay"></div> */}
+      <div className="bg-overlay"></div>
     </div>
   )
 })

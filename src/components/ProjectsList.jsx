@@ -245,7 +245,7 @@ function ProjectsList() {
             </defs>
           </svg>
         </div>
-        <Stars />
+        {/* <Stars /> */}
         {projects.map( p=> <ProjectThumb project={p}/> )}
       </div>
 

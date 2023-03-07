@@ -12,6 +12,7 @@ import Grid from '../components/Grid'
 import { Model } from "../../static/models/blue-globe/Scene"
 import { Earth } from "../../static/models/earth/Earth"
 import EarthRaster from ".//EarthRaster"
+import { PolyEarth } from "../../static/models/gltf-models/PolyEarth"
 
 extend({ OrbitControls })
 
@@ -42,7 +43,7 @@ const Sphere = () => {
 
   //get Z pos and rotation according to scroll position
   const [ positionZ, rotationZ ] = useMemo(() => {
-    const thold = 1600
+    const thold = 1200
     if(scrollPos < thold)
       return [ 4.1-scrollPos/300, Math.PI/2-scrollPos*((Math.PI/2)/thold) ]
     return [ 4.1-thold/300, 0 ] 
@@ -50,13 +51,11 @@ const Sphere = () => {
 
   //animate changes in scale & position w/ spring
   const { position, rotation } = useSpring({ 
-    position: [0, .6, positionZ],
+    position: [0, .7, positionZ],
     rotation: [0, 0, rotationZ]
   })
 
-  useFrame(() => { 
-    rotationRef.current.rotation.y -= .0003 
-  })
+  useFrame(() => { rotationRef.current.rotation.y -= .0003 })
 
   //TODO:-------- globe to fade in when loaded -------- //////////////////////////
   // const [show, setShow] = useState(false)
@@ -93,19 +92,20 @@ const Sphere = () => {
       ref={groupRef}
       position={position} 
       rotation={rotation}
-      // scale={[1.3, 1.3, 1.3]}
-      scale={[.4, .4, .4]}
+      scale={[1.3, 1.3, 1.3]}
+      // scale={[.4, .4, .4]}
     >
         <animated.group 
         // args={[.1]} 
         ref={rotationRef} >
           <Suspense fallback={null}>
-                {/* <EarthRaster /> */}
 
+                {/* <EarthRaster /> */}
+                <PolyEarth />
     {/* how to change colors on this earth poly? */}
                 {/* <Earth/> */}
                 
-                <primitive object={scene} />
+                {/* <primitive object={scene} /> */}
           </Suspense>
         </animated.group>
 
@@ -136,9 +136,9 @@ const Globe = () => {
           {/* works without bridge now??? */}
           {/* <ScrollProvider value={scroll}> */}
               {/* <Grid size={5} /> */}
-              <ambientLight intensity={.1} />
-              <pointLight color="white" intensity={50} position={[-5, 8, 6]} />
-              {/* <pointLight color="white" intensity={.3} position={[-12, 10, 6]} /> */}
+              {/* <ambientLight intensity={.1} /> */}
+              <pointLight color="white" intensity={7} position={[-8, 15, 13]} />
+              {/* <pointLight color="white" intensity={.3} position={[-6, 12, 6]} /> */}
               <fog attach="fog" args={["black", 10, 25]} />
               <Controls />
               
