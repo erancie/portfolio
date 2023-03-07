@@ -22,8 +22,9 @@ const LandingBg = styled.div`
     left: -50vw;
     top: -50vh;
     z-index: -1;
-    background: rgb(0, 0, 0);
-    background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('https://ik.imagekit.io/kv4ohthhz/tr:q-96/milkyway-square-8k_rdtI2Ci4c'), rgb(0, 0, 0);
+    // background: rgb(0, 0, 0);
+    background: radial-gradient(circle, #00d5ff45 0%, #1c1cc345 38%, #02002414 60%), url('https://ik.imagekit.io/kv4ohthhz/tr:q-92/milkyway-square-8k_rdtI2Ci4c'), rgb(0, 0, 0);
+    // background:  url('https://ik.imagekit.io/kv4ohthhz/tr:q-92/milkyway-square-8k_rdtI2Ci4c');
     background-position: center center;
     background-repeat: no-repeat;
     transform: scale(${props => props.scale}) rotate(${props =>props.rotate}deg);
@@ -44,9 +45,15 @@ const BackgroundScene = React.memo(() => {
 
   return(
     <div className="back-scene" >
-      <LandingBg scale={scrollPos < 800 ? 1-scrollPos/(800/.1) : .9} 
-                 rotate={scrollPos < 800 ? scrollPos*(30/800) : 30}>
+      <LandingBg scale={ scrollPos < 800 
+                         ? 1-scrollPos/(800/.1) 
+                         : .9} 
+                 rotate={scrollPos < 800 
+                         ? scrollPos*(30/800) 
+                         : 30}>
       </LandingBg>
+      {/* <div className="landing-bg" 
+           style={{transform: `scale(${scrollPos < 800 ? 1-scrollPos/(800/.1) : .9}) rotate(${scrollPos < 800 ? scrollPos*(30/800) : 30}})`}} ></div> */}
       <div className="globe">
         <Globe />
       </div>

@@ -9,7 +9,9 @@ import { useGLTF } from '@react-three/drei'
 import { animated, useSpring, useTransition, config } from "@react-spring/three"
 import { ScrollProvider, useScrollContext } from './utils/useScrollContext'
 import Grid from '../components/Grid'
-
+import { Model } from "../../static/models/blue-globe/Scene"
+import { Earth } from "../../static/models/earth/Earth"
+import EarthRaster from ".//EarthRaster"
 
 extend({ OrbitControls })
 
@@ -34,16 +36,13 @@ const Controls = () => {
 const Sphere = () => {
 
   const groupRef = React.useRef()
-  const outterRef = React.useRef()
-  const innerRef = React.useRef()
-  const matRef = React.useRef()
-  const outterMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-20/earth-clouds-2k-lossless_Fx89Vwggc.jpg')
-  const innerNightMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-90/earth-night-2k-lossless_HedixKXNh.jpg')
+  const rotationRef = React.useRef()
+ 
   const scrollPos = useScrollContext()
 
   //get Z pos and rotation according to scroll position
   const [ positionZ, rotationZ ] = useMemo(() => {
-    const thold = 800
+    const thold = 1600
     if(scrollPos < thold)
       return [ 4.1-scrollPos/300, Math.PI/2-scrollPos*((Math.PI/2)/thold) ]
     return [ 4.1-thold/300, 0 ] 
@@ -51,16 +50,16 @@ const Sphere = () => {
 
   //animate changes in scale & position w/ spring
   const { position, rotation } = useSpring({ 
-    position: [0, 1.55, positionZ],
+    position: [0, .6, positionZ],
     rotation: [0, 0, rotationZ]
   })
 
-  useFrame(() => { innerRef.current.rotation.y -= .0003 })
+  useFrame(() => { 
+    rotationRef.current.rotation.y -= .0003 
+  })
 
-  //TODO:-------- globe to fade in when loaded --------
-
+  //TODO:-------- globe to fade in when loaded -------- //////////////////////////
   // const [show, setShow] = useState(false)
-
   // const transition = useTransition(show, {
   //   from: { opacity: 0 },
   //   enter: { opacity: 1 },
@@ -70,102 +69,50 @@ const Sphere = () => {
   //   onRest: () => setShow((pre)=>!pre),
   //   trail: 100
   // })
-
   // return transition( ({ opacity }, item) => (    
   // item && <>
 
-  const obj = useLoader(OBJLoader, '/models/wire-globe.obj')
-  // const gltf = useLoader(GLTFLoader, '/models/gemer/scene.gltf')
-
+  // const obj = useLoader(OBJLoader, '/models/wire-globe.obj')
   const { scene, nodes, materials } = useGLTF('/models/gemer/scene.gltf')
-  const { scene: scene2, nodes2, materials2 } = useGLTF('/models/gemer/scene.gltf')
-
 
   // const orange = new THREE.Color(0xffa500);
-  // const crimson = new THREE.Color(0xdc143c);
-  // const teal = new THREE.Color(0x008080);
-  // const steelblue = new THREE.Color(0x4682b4);
   
-  // useLayoutEffect(() => {
-  //   Object.assign(materials.Material, { 
-  //     roughness: 5, 
-  //     metalness: .25,
-  //     emissive: new THREE.Color(0x000000),
-  //     color: orange,
-  //     envMapIntensity: 0.5 })
-  // }, [scene, materials]); 
   
   //find out how to change gltf materials - colors, roughness etc..
+  
+  // 3 ways to use 3D model mesh objects (Geometry nodes & Materials) 
+  //  -use three mesh of gemoetry and a material
+  //  -import obj or gltf file and pass into primitive as 'object' 
+  //  -use gltfjsx to convert nodes and materials from gltf into R3F mesh JSX
+
+  //gltf files house nodes - can refer to texture files
 
   return ( <>
+
     <animated.group
       ref={groupRef}
       position={position} 
       rotation={rotation}
-      scale={[.012, .012, .012]}
+      // scale={[1.3, 1.3, 1.3]}
+      scale={[.4, .4, .4]}
     >
         <animated.group 
         // args={[.1]} 
-        ref={innerRef} >
+        ref={rotationRef} >
           <Suspense fallback={null}>
-            <primitive object={obj} 
-                // materials={{roughness: .5}} //nope
-                      //  color={orange}  //nope
-            />
+                {/* <EarthRaster /> */}
+
+    {/* how to change colors on this earth poly? */}
+                {/* <Earth/> */}
+                
+                <primitive object={scene} />
           </Suspense>
         </animated.group>
 
       {/* <Grid size={5} /> */}
 
-      {/* <animated.mesh
-        ref={innerRef}
-        scale={[1, 1, 1]}
-      >   
-        <sphereGeometry args={[1, 80, 80]} />
-        <meshBasicMaterial
-          ref={matRef} 
-          map={innerNightMap}
-          // map={surface}
-          color="#fff"
-          />
-      </animated.mesh>
-
-      <animated.mesh
-        ref={outterRef}
-        scale={[1, 1, 1]}
-        // scale={scale}
-        // position={position} 
-        // rotation={rotation}
-      >   
-        <sphereGeometry args={[1.03, 80, 80]} />
-        <meshStandardMaterial
-          transparent
-          opacity={.15}
-          // map={outterMap}
-          alphaMap={outterMap} 
-          // emissiveMap={outterMap}
-          emissive={"white"}
-          emissiveIntensity={.4}
-          />
-      </animated.mesh> */}
     </animated.group>    
 
-    {/* <animated.group
-      // ref={groupRef}
-      position={[0, 0, -1]} 
-      rotation={rotation}
-      scale={[.2, .2, .2]}
-    >
-        <animated.group 
-        // args={[.1]} 
-        // ref={innerRef} 
-        >
-          <Suspense fallback={null}>
-            <primitive object={scene2} 
-            />
-          </Suspense>
-        </animated.group>
-    </animated.group>       */}
     </>
   )
 }
@@ -189,8 +136,9 @@ const Globe = () => {
           {/* works without bridge now??? */}
           {/* <ScrollProvider value={scroll}> */}
               {/* <Grid size={5} /> */}
-              <ambientLight intensity={.3} />
+              <ambientLight intensity={.1} />
               <pointLight color="white" intensity={50} position={[-5, 8, 6]} />
+              {/* <pointLight color="white" intensity={.3} position={[-12, 10, 6]} /> */}
               <fog attach="fog" args={["black", 10, 25]} />
               <Controls />
               
@@ -211,46 +159,3 @@ export default React.memo(Globe)
 // controls sandbox
 // https://codesandbox.io/s/react-three-fiber-lighting-essentials-qwxb8?file=/src/App.js
 
-
-
-//on dep change useCallback returns cb ref --> call once, apply for all dimensions
-// const scaling = useCallback(() => {
-//   if(scrollPos < 1800)
-//     return 1-scrollPos/2500
-// }, [scrollPos])
-// const s = scaling() 
-// console.log(`scaling w/ useCallback: ${scaling}`)
-// console.log(`scaling(): ${s}`)
-
-
-
-// onPointerOver={() => setHovered(true)}
-// onPointerOut={() => setHovered(false)}
-// const [hovered, setHovered] = useState(false)
-// const [active, setActive] = useState(false)
-
-
-
-//use memo returns a value from a function when its dependencies change
-//are props these dependencies when memoizing functional components?
-
-
-
-  //change degree of rotation of x and y based on scroll position
-      //dont need to do this - just wrap in group to change rotation from scroll
-        // & constantly change rotation of inner mesh w useframe
-  // let rotateX = .0002 - scrollPos*(.0002/thold)
-  // let rotateY = 0 + scrollPos*(.0002/thold)
-
-  // useFrame(() => {
-    // if(scrollPos < 800){
-    //   innerRef.current.rotation.x += rotateX
-    //   outterRef.current.rotation.x += rotateX
-    //   innerRef.current.rotation.y -= rotateY
-    //   outterRef.current.rotation.y -= rotateY
-    // }
-    // else{
-    //   innerRef.current.rotation.y -= .0002
-    //   outterRef.current.rotation.y -= .0002
-    // }
-  // })

@@ -227,23 +227,24 @@ function ProjectsList() {
         
   return (
     <div  className='projects-container'>
-      <div className="svg-window-top-wrapper">
-        <div className='svg-window-top'></div>
-        <svg style={{position: 'absolute'}} id="clip-wrapper" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <clipPath id="window-top"    
-                      viewBox="0 0 800 80" 
-                      clipPathUnits="objectBoundingBox"
-            >
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M100.811 31.2227C98.4381 31.2227 96.288 29.8239 95.3262 27.6543L84.6484 3.56833C83.6866 1.39879 81.5364 0 79.1632 0H6C2.68629 0 0 2.68629 0 6V68.8889V74V80H6H794H800V74V68.8889V6C800 2.68629 797.314 0 794 0H714.959C712.594 0 710.45 1.3893 709.483 3.54777L698.679 27.6749C697.712 29.8334 695.568 31.2227 693.203 31.2227H610.052C607.686 31.2227 605.541 32.6129 604.575 34.7725L600.693 43.4502C599.727 45.6098 597.582 47 595.216 47H401H203.038C200.664 47 198.514 45.6003 197.552 43.4297L193.727 34.793C192.766 32.6224 190.615 31.2227 188.241 31.2227H100.811Z"
-                    transform="scale(0.00125, 0.0125)"
-              />
-            </clipPath>
-          </defs>
-        </svg>
-      </div>
+
       {/* <div className="proj-bg-container" ref={bgContainer}></div> */}
       <div className='projects-list'>
+        <div className="svg-window-top-wrapper">
+          <div className='svg-window-top'></div>
+          <svg style={{position: 'absolute'}} id="clip-wrapper" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <clipPath id="window-top"    
+                        viewBox="0 0 800 80" 
+                        clipPathUnits="objectBoundingBox"
+              >
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M100.811 31.2227C98.4381 31.2227 96.288 29.8239 95.3262 27.6543L84.6484 3.56833C83.6866 1.39879 81.5364 0 79.1632 0H6C2.68629 0 0 2.68629 0 6V68.8889V74V80H6H794H800V74V68.8889V6C800 2.68629 797.314 0 794 0H714.959C712.594 0 710.45 1.3893 709.483 3.54777L698.679 27.6749C697.712 29.8334 695.568 31.2227 693.203 31.2227H610.052C607.686 31.2227 605.541 32.6129 604.575 34.7725L600.693 43.4502C599.727 45.6098 597.582 47 595.216 47H401H203.038C200.664 47 198.514 45.6003 197.552 43.4297L193.727 34.793C192.766 32.6224 190.615 31.2227 188.241 31.2227H100.811Z"
+                      transform="scale(0.00125, 0.0125)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
         <Stars />
         {projects.map( p=> <ProjectThumb project={p}/> )}
       </div>

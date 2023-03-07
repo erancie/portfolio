@@ -3,7 +3,7 @@
   width: 100%
   height: 100%
   position: relative 
-  margin-top: 40rem
+  margin-top: 50rem
 
 
 
@@ -48,10 +48,15 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 
 .project-thumb-wrapper
   background: $thumb-bg-color 
-  background: linear-gradient(to bottom, rgb(18 25 42) 26%, rgb(15 39 56) 100%)
+  background: linear-gradient(to bottom, rgb(3 10 21) 26%, rgb(15 39 56) 100%)
+  background: linear-gradient(to bottom, rgb(3 10 21) 10%, rgb(15 39 56) 55%, rgb(3 10 21) 100%)
+
   //TODO: 2nd overlapping bg gradient - horizon/light streak using alpha 
   // background: linear-gradient(to bottom, rgb(8 25 42) 26%,rgb(18 25 42) 26%, rgb(15 39 56) 100%)
   width: 100%
+  // box-shadow: 150px -32px 40px rgba(65, 207, 254, 0.132),  -150px 2px 40px rgba(137, 253, 232, 0.388), 0px -20px 120px rgba(253, 253, 225, 0.082),
+  box-shadow: 0 -3rem 3rem rgba(65, 207, 254, 0.094),  0 1rem 2rem rgba(115, 242, 249, 0.103), 0px -2rem 8rem rgba(253, 253, 225, 0.057),
+
 
 
 .project-thumb
@@ -62,7 +67,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   position: relative
   transform: translateY(20px)
   opacity: 0
-  z-index: 2
+  z-index: 3
 
 
 .svg-window-top-wrapper 
@@ -71,11 +76,12 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   height: 8vh
   width: 100%
   bottom: -32.5px
+  z-index: 3
 
 .svg-window-top
   // background: (linear-gradient(to bottom, rgba(16, 16, 24, .8) 36%, rgba(16, 16, 24, 0.9254901961)  100%))
   background: $thumb-bg-color
-  background: rgb(18 25 42) 
+  background: rgb(3 10 21)
   width: 100%
   height: 100%
   position: absolute
@@ -90,10 +96,16 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   height: 33vh
   width: 100%
   top: -193px
+  z-index: 1
+  background: linear-gradient(44deg, rgba(3, 10, 21, 0.144) 16%, rgba(15, 39, 56, 0.409) 72%)
+  // background: linear-gradient(44deg, rgba(28, 47, 78, 0.3) 16%, rgba(67, 106, 134, 0.5) 72%)
+  // background: linear-gradient(134deg,rgba(15, 39, 56, 0.5) 30%, rgba(35, 51, 77, 0.5) 36%, rgba(15, 39, 56, 0.5) 40%, rgba(35, 51, 77, 0.5) 66%, rgba(15, 39, 56, 0.5) 70%)
+  // background: linear-gradient(134deg,rgba(3, 10, 21, 0.155) 52%, rgba(40, 68, 113, 0.16) 60%, rgba(15, 39, 56, 0.155) 63%)
 
 .thumb-svg-window
   background: $thumb-bg-color
-  background: linear-gradient(to top, rgb(18 25 42) 16%, rgb(15 39 56) 72%)
+  background: linear-gradient(to top, rgb(3 10 21) 16%, rgb(15 39 56) 72%)
+  background: rgb(3 10 21) 
   width: 100%
   height: 100%
   position: absolute
@@ -281,6 +293,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 
 $font-color2: #81dffb
 $font-color: #44A595
+$font-color: #6094a7
 $font-color2: #6bc4b5
 
 .project-title
@@ -305,6 +318,7 @@ $font-color2: #6bc4b5
   font-weight: 400
   color: $font-color2
   color: #4e7b8e
+  color: $font-color
   border-radius: 0px 35px 40px 45px
   border-radius: 0px 15px 15px 15px
   border-radius: 5px
@@ -342,6 +356,9 @@ $font-color2: #6bc4b5
   text-transform: uppercase
   font-size: 1.6rem
   color: $font
+  // color: #9470f1
+  // color: #be871f
+  color: #22b973
   border: 0.5px solid rgba(63, 63, 78, 0.6)
   border-radius: 5px
   background: #181c2dab
@@ -351,6 +368,9 @@ $font-color2: #6bc4b5
   &:hover
     background: $font
     background: #70b4cd
+    // background: #897cea
+    // background: #c0871e
+    background: #22b973
     color: black
 
 
