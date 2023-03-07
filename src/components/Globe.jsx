@@ -72,7 +72,7 @@ const Sphere = () => {
   // item && <>
 
   // const obj = useLoader(OBJLoader, '/models/wire-globe.obj')
-  const { scene, nodes, materials } = useGLTF('/models/gemer/scene.gltf')
+  // const { scene, nodes, materials } = useGLTF('/models/gemer/scene.gltf')
 
   // const orange = new THREE.Color(0xffa500);
   

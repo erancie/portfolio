@@ -7,6 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { Canvas, extend, useLoader, useThree, useFrame } from "react-three-fiber"
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
+import { MeshStandardMaterial } from "three"
 
 
 export function PolyEarth(props) {
@@ -27,15 +28,28 @@ export function PolyEarth(props) {
       <mesh geometry={nodes.Sphere004.geometry} 
             material={materials.water} 
             material-color={darkblue}
+            material-transparent
+            // material-opacity={.8}
+            // material-map={outterMap}
             // material-color={teal}
       >
       </mesh>
       <mesh geometry={nodes.Sphere004_1.geometry} 
-            material={materials.earth} 
-            material-color={green}
+            // material={materials.earth} 
+            // material-color={green}
             // material-color={orange}
             // material-color={brown}
+            // transparent
+            // material-opacity={.3}
+
       >
+        <meshStandardMaterial 
+          material={materials.earth} 
+          color={green}
+          // normalMap={outterMap}
+          transparent
+          // opacity={0.8}
+        />
       </mesh>
     </group>
   )

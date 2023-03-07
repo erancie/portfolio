@@ -30,11 +30,11 @@ export default function Nav() {
     <nav className={`nav ${hide.current && 'hide'} ${bgColor && 'bgColor'}`}>
       <div className='logo'><Link to='/'>LOGO</Link></div>
       <div className='nav-links'>
-        <div><Link to='/#projects'>Work</Link></div>
+        {/* <div><Link to='/#projects'>Work</Link></div> */}
         <div><a href='/'>Contact</a></div>
-        <div><a href='/'>Resume</a></div>
+        {/* <div><a href='/'>Resume</a></div> */}
         <div><a href='/'>GitLogo</a></div>
-        <div><a href='/'>LiLogo</a></div>
+        <div><a href='/www.linkedin.com/in/elliot-rancie'>LiLogo</a></div>
       </div>
       {/* <Toggle /> */}
     </nav>
