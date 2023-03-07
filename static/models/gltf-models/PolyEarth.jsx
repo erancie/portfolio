@@ -11,18 +11,19 @@ import { MeshStandardMaterial } from "three"
 
 
 export function PolyEarth(props) {
+
   const { nodes, materials } = useGLTF('/models/gltf-models/low_poly_earth.gltf')
   
-    const orange = new THREE.Color(0xb87c26);
-    const green = new THREE.Color(0x0f613e);
-    const darkblue = new THREE.Color(0x19374c);
-    const teal = new THREE.Color(0x1d868a);
-    const light = new THREE.Color(0x749c8d);
-    const brown = new THREE.Color(0x989260);
+  const orange = new THREE.Color(0xb87c26);
+  const green = new THREE.Color(0x0f613e);
+  const darkblue = new THREE.Color(0x19374c);
+  const teal = new THREE.Color(0x1d868a);
+  const light = new THREE.Color(0x749c8d);
+  const brown = new THREE.Color(0x989260);
 
-    const outterMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-60/earth-clouds-2k-lossless_Fx89Vwggc.jpg')
-    const innerNightMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-80/earth-night-8k_dMIDkPbA_.jpg')
-  
+  // const outterMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-60/earth-clouds-2k-lossless_Fx89Vwggc.jpg')
+  // const innerNightMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-80/earth-night-8k_dMIDkPbA_.jpg')
+
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Sphere004.geometry} 
