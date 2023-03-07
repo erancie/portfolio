@@ -1,0 +1,47 @@
+.container {
+  margin: auto;
+  color: white;
+  width: 250px;
+  display: -ms-grid;
+  display: grid;
+}
+
+.container .info {
+  margin: auto;
+  border-radius: 30px;
+  width: 250px;
+  height: 100px;
+  text-align: center;
+  background: purple;
+  -webkit-clip-path: circle(10% at 90% 20%);
+          clip-path: circle(10% at 90% 20%);
+  -webkit-transition: -webkit-clip-path .5s ease-in;
+  transition: -webkit-clip-path .5s ease-in;
+  transition: clip-path .5s ease-in;
+  transition: clip-path .5s ease-in, -webkit-clip-path .5s ease-in;
+  cursor: pointer;
+}
+
+.container .info:hover {
+  -webkit-clip-path: circle(75%);
+          clip-path: circle(75%);
+}
+
+.container .info:hover span {
+  color: purple;
+}
+
+.container .info h1 {
+  padding: 2rem;
+}
+
+.container .info span {
+  float: right;
+  position: relative;
+  color: white;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+  margin-top: 5px;
+  margin-right: 15px;
+}
+/*# sourceMappingURL=clip.module.css.map */

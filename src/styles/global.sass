@@ -55,9 +55,9 @@ html, body
   align-items: center
   max-width: 100vw
   width: 100%
-  height: 2.8rem
-  padding-left: 2rem
-  padding-right: 2rem
+  height: 3.7rem
+  padding-left: 4.5rem
+  padding-right: 4rem
   z-index: 99
 
 .hide
@@ -68,7 +68,11 @@ html, body
   box-shadow: 0px 3px 4px $shadow
 
 .logo
-  color: white
+  // color: white
+  font-family: 'Kanit'
+  color: #44a595
+  font-size: 2rem
+
 
 .nav-links
   // color: $purple
@@ -76,21 +80,84 @@ html, body
   color: #44a595
   font-weight: 600
   display: flex
-  padding: .5rem 3rem 0 0
-  width: 50%
+  // padding: .2rem 0
+  width: 100%
   margin: auto
-  justify-content: space-evenly
+  justify-content: flex-end
   align-items: center
   text-align: center
   div
-    width: 8rem
+    width: 4rem
     height: 2rem
     transition: all .15s ease-in
+    // position: relative
+    // a
+    //   position: relative
+    //   top: 50%
+    //   transform: translateY(-50%)
 
-.nav-links div:hover
-  font-size: 1.08rem
-  color: white
-  transform: translateY(2px)
+// .nav-links div:hover
+  // font-size: 1.08rem
+  // color: white
+  // transform: translateY(5px)
+
+
+
+.link-git, .link-li, .link-contact
+  display: inline-block
+  width: 30px
+  height: 30px
+  svg
+    fill: #44a595
+    transition: all .3s ease
+    &:hover
+      fill: #fff
+      transform: translateY(5px)
+
+
+.link-contact svg
+  position: relative
+  top: 15%
+  // transform: translateY(-50%)
+
+.to-top
+  position: fixed
+  bottom: 50%
+  right: 3rem
+  height: 60px
+  width: 60px
+  z-index: 3
+  transition: all .3s ease
+  opacity: .5
+  path
+    fill: #44a595
+    transition: fill .3s ease
+    &:hover
+      fill: #fff
+
+.space-walk
+  position: fixed
+  bottom: 60%
+  right: 3rem
+  height: 60px
+  width: 60px
+  z-index: 3
+  transition: all .3s ease
+  opacity: .5
+  path
+    fill: $orange
+    transition: fill .3s ease
+    &:hover
+      fill: #fff
+
+
+@media (max-width: 768px) 
+  .to-top
+    bottom: 4rem
+    right: 1.5rem
+  .space-walk
+    bottom: 6rem
+    right: 1.5rem
 
 $title-color2: #81dffb
 $title-color: #44A595
@@ -130,6 +197,7 @@ $title-color: #44A595
   margin: 0rem auto 0
   width: 70%
   letter-spacing: 3px
+  line-height: 4rem
   background: $title-color
   background: #a193dc
   background: #7b77de
@@ -147,8 +215,8 @@ $title-color: #44A595
   font-weight: 300
   font-family: 'Kanit'
   letter-spacing: 1px
-  font-size: 2.5rem
-  margin: .6rem auto
+  font-size: 2rem
+  // margin: 0rem auto
   position: absolute
   left: 50%
   transform: translateX(-50%)
@@ -245,6 +313,7 @@ $title-color: #44A595
   .landing
     .title-1, .title-1b, .title-1c, .title-1d
       font-size: 4.5rem
+      line-height: 5rem
     .title-2
       // font-size: 2.4rem
 
@@ -252,6 +321,8 @@ $title-color: #44A595
   .landing
     .title-1, .title-1b, .title-1c, .title-1d
       font-size: 5.2rem
+      line-height: 6rem
+
     .title-2, .title-2b,  .title-2c, .title-2d
       font-size: 3rem
 
@@ -259,6 +330,8 @@ $title-color: #44A595
   .landing
     .title-1, .title-1b, .title-1c, .title-1d
       font-size: 6rem
+      line-height: 7rem
+
     .title-2, .title-2b,  .title-2c, .title-2d
       font-size: 3.6rem
 
@@ -266,13 +339,15 @@ $title-color: #44A595
   .landing
     .title-1, .title-1b, .title-1c, .title-1d
       font-size: 7rem
+      // line-height: 8rem
+
     .title-2, .title-2b,  .title-2c, .title-2d
       font-size: 4.5rem
     
 @media (min-width: 1640px)
   .landing
     .title-1, .title-1b, .title-1c, .title-1d
-      margin: 0 auto 3rem
+      margin: 0 auto 
 
 
 .back-scene
@@ -477,7 +552,6 @@ $fore-more: #383155
 
 @media (min-width: 1400px)
   .stars-left, .stars-right
-
 
 
 
