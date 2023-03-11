@@ -2,6 +2,8 @@ import React, { useState, useCallback, useRef } from 'react'
 import { Link } from 'gatsby'
 import { useEffect } from 'react'
 import { useScrollContext } from './utils/useScrollContext'
+import toTop from '/static/svg/to-top.svg'
+
 
 export default function Nav() {
 
@@ -20,7 +22,10 @@ export default function Nav() {
     <nav className={`nav ${hide.current && 'hide'} ${scrollPos > 80 && 'bgColor'}`}>
       <div className='logo'><Link to='/'>ER</Link></div>
       <div className='nav-links'>
-        {/* <div><Link to='/#projects'>Work</Link></div> */}
+        {/* <div><Link to='/#projects'>
+          <img src={toTop} />
+          </Link>
+        </div> */}
         <div>
           <a className='link-contact' href='/'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 88.86">
@@ -66,11 +71,6 @@ export default function Nav() {
       </a>
     </div>
 
-    {/* <div className="space-walk" style={{right: (hide.current || scrollPos < 1200) && '-5rem'}}>
-        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-          <path d="M40.0711 0L54.0887 13.7868L54.0886 13.7869L78.5591 37.8544C80.5279 39.7908 80.5279 42.9302 78.5591 44.8666L71.671 51.6412C69.7022 53.5776 66.5102 53.5776 64.5415 51.6412L40.071 27.5737L12.0358 55.1472L1.58299 44.8664C-0.385776 42.9301 -0.385776 39.7907 1.58299 37.8543L40.0711 0ZM59.588 62.5552C61.5568 60.6189 61.5568 57.4794 59.588 55.5431L43.354 39.5764C41.3853 37.64 38.1933 37.64 36.2245 39.5764L16.4258 59.0491L36.2245 78.5219C38.1933 80.4582 41.3853 80.4582 43.354 78.5219L59.588 62.5552Z" />
-        </svg>
-    </div> */}
   </>
   )
 }

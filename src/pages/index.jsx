@@ -16,9 +16,12 @@ export default function Home() {
 
         <Layout >
           
-          <BackgroundScene />      
+          <BackgroundScene />
+
+      
           <LandingHeaders />
           <ProjectsList /> 
+          
         </Layout> 
 
       </IKContext>

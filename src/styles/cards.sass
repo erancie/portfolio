@@ -119,8 +119,10 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   height: 100%
   position: absolute
   transform: translateY()
-  -webkit-clip-path: url(#clip-2)
-  clip-path: url(#clip-2)
+  -webkit-clip-path: url('#window-clip')
+  clip-path: url('#window-clip')
+  // -webkit-clip-path: url('/static/svg/window.svg#window-clip')
+  // clip-path: url('/static/svg/window.svg#window-clip')
   top: 0
   transition: all 1s ease-out
 
@@ -358,6 +360,12 @@ $font-color2: #6bc4b5
 .project-tools
   margin: 3rem 0 4rem
   color: lightgrey
+
+.tool-icon
+  display: inline-block
+  width: 100px
+  height: 100px
+  padding: 10px
 
 .project-links
   margin: -2rem 0 12rem
