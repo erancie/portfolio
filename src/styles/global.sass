@@ -34,7 +34,10 @@ html, body
 *, *:before, *:after 
   box-sizing: inherit
 
-
+canvas 
+  position: relative
+  z-index: -1
+  
 .container
   max-width: 100%
   height: 100%
@@ -75,12 +78,10 @@ html, body
 
 
 .nav-links
-  // color: $purple
   color: #aea2dd
   color: #44a595
   font-weight: 600
   display: flex
-  // padding: .2rem 0
   width: 100%
   margin: auto
   justify-content: flex-end
@@ -90,17 +91,6 @@ html, body
     width: 4rem
     height: 2rem
     transition: all .15s ease-in
-    // position: relative
-    // a
-    //   position: relative
-    //   top: 50%
-    //   transform: translateY(-50%)
-
-// .nav-links div:hover
-  // font-size: 1.08rem
-  // color: white
-  // transform: translateY(5px)
-
 
 
 .link-git, .link-li, .link-contact
@@ -122,7 +112,7 @@ html, body
 
 .to-top
   position: fixed
-  bottom: 50%
+  bottom: 20%
   right: 3rem
   height: 60px
   width: 60px
@@ -137,7 +127,7 @@ html, body
 
 .space-walk
   position: fixed
-  bottom: 60%
+  bottom: 10%
   right: 3rem
   height: 60px
   width: 60px
@@ -352,8 +342,6 @@ $title-color: #44A595
 
 .back-scene
   height: 100vh
-  // height: 220vh //for longer scene also see .projects-continer { margin-top: ...}
-  // would need changes to globe position(higher) & scroll listener, 
   width: 100%
   top: 0
   left: 0
@@ -365,32 +353,6 @@ $title-color: #44A595
   position: absolute
   top: 0
   background: linear-gradient(180deg, rgb(0 0 0 / 34%) 0, rgba(0, 0, 0, 0) 100%)
-
-// //try
-// .landing-bg
-//   overflow: hidden
-//   position: absolute
-//   top: 0
-//   left: 0
-//   width: 100%
-//   height: 100vh
-//   transition: transform 300ms ease-out
-//   &::before 
-//     display: block
-//     content: ""
-//     position: absolute
-//     width: 200vw
-//     height: 200vh
-//     left: -50vw
-//     top: -50vh
-//     z-index: -1
-//     background: rgb(0, 0, 0)
-//     background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('https://ik.imagekit.io/kv4ohthhz/tr:q-96/milkyway-square-8k_rdtI2Ci4c'), rgb(0, 0, 0)
-//     background-position: center center
-//     background-repeat: no-repeat
-//     // transform: scale(${props => props.scale}) rotate(${props =>props.rotate}deg)
-//     transition: transform 300ms ease-out
-
 
 @media ( max-width: 800px )
   .landing-bg::before
@@ -556,7 +518,26 @@ $fore-more: #383155
   .stars-left, .stars-right
 
 
+.contact
+  position: relative
+  z-index: 0
+  background: rgb(3, 10, 21)
+  padding: 4rem 0 5rem
+  // border: 1px solid white
 
+.contact-form
+  margin: auto
+  width: 85%
+  // background: grey
+  border: 1px solid white
+  color: white
+  text-align: center
+  padding: 2rem
+
+footer
+  position: relative
+  background: rgb(3, 10, 21)
+  color: white
 
 
 

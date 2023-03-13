@@ -21,7 +21,12 @@ export default function Home() {
       
           <LandingHeaders />
           <ProjectsList /> 
-          
+          <div className="contact">
+            {/* <div className="contact-wrapper"> */}
+              {/* <div className="contact-bg"></div> */}
+              <div className="contact-form">Contact Form</div>
+            {/* </div> */}
+          </div>
         </Layout> 
 
       </IKContext>

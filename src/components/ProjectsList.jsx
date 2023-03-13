@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useCallback, useState } from 'react'
-import projects from '../../content/projectsData'
+import projects, { thisSite } from '../../content/projectsData'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useScrollContext } from "./utils/useScrollContext"
@@ -57,8 +57,13 @@ export function ProjectThumb({project, hatchIsOpen}) {
                     opacity: hatchIsOpen && '.2'
                   }}>
         </div>
+
         <div ref={cardRef} key={project.name} className='project-thumb col-12 col-lg-10 col-xl-10 '>
-          <h1 className='project-title'>{project.title}</h1>
+          
+          <div className='project-title-wrapper'>
+            <h1 className='project-title'>{project.title}</h1>
+            <p className='project-desc'>{project.desc}</p>
+          </div>
 
           <div className="project-imgs-wrapper">
 
@@ -138,32 +143,22 @@ export function ProjectThumb({project, hatchIsOpen}) {
               </svg>
             </div> 
 
-
-
           </div>
 
-          <div className='desc-container' >
-            {/* <div className='exclaim'
-            ref={exclaimRef}
-            // style={ 
-            //   space > 0
-            //   ? { top:`(-${space/50})` } 
-            //   : { display:`none` } } 
-              > ! </div> */}
-            <p className='project-desc'>{project.desc}</p>
+          <div className='project-tools'>
+            {project.tools.map((t)=>(
+              <div className="tool-container">
+                <img src={t.icon} className='tool-icon' />
+                <p className="tool-label">{t.label}</p>
+              </div>
+            ))} 
           </div>
 
-          <div className='project-links'>
-            <a className='project-link' target="_blank" href={`${project.link}`}>Visit</a>
-          </div>    
-
-          <div className='project-tools'>{project.tools.map((t)=>(<img src={t} className='tool-icon' />))} </div>
-
-          {/* get rid of this ruling and fix bottom - margi/padding? */}
-          <hr className='ruling'/>
+          <a className='project-link' target="_blank" href={`${project.link}`}>Visit</a>
 
         </div>
       </div>
+
       <div className="thumb-svg-window-wrapper" 
            style={{
                     // transform: hatchIsOpen && 'translateX(-50%) perspective(2400px) rotateY(90deg)', 
@@ -189,12 +184,12 @@ function ProjectsList() {
   const bgContainer = useRef()
   const landingRef = useRef()
 
+  //move this to a useContext
   const [hatchIsOpen, setHatchIsOpen] = useState(false)
-  
+
   //passdown if space hatch is open 
   const handleSpaceWalk = () => {
-    if (!hatchIsOpen) setHatchIsOpen(true)
-    else setHatchIsOpen(false)
+    (!hatchIsOpen) ? setHatchIsOpen(true) : setHatchIsOpen(false)
   }
 
   return (
@@ -203,6 +198,10 @@ function ProjectsList() {
       {/* <div className="proj-bg-container" ref={bgContainer}></div> */}
       <div className='projects-list'>
         <div className="svg-window-top-wrapper">
+
+          {/* try class approach to style all elements affected by theme */}
+          {/* //make classes for hatchOpen/closed   */}
+          {/* //some for all elements affected? some for each?   */}
           <div className='svg-window-top' style={{
                                                   // transform: hatchIsOpen && 'translateX(-100%)',
                                                   opacity: hatchIsOpen && '.2' 
@@ -210,10 +209,34 @@ function ProjectsList() {
                                                  }}></div>
 
         </div>
-        <Stars />
+        {/* <Stars /> */}
         {projects.map( p=> <ProjectThumb project={p} hatchIsOpen={hatchIsOpen} /> )}
+      
       </div>
 
+      <div className="site-tools">
+        <div className="site-tools-bg" 
+              style={{
+                      // transform: hatchIsOpen && 'translateX(-100%)',
+                      opacity: hatchIsOpen && '.2'
+                    }}>
+        </div>
+        <div className="site-tools-wrapper">
+          <div className="site-desc">Tools used for this site..</div>
+
+          {thisSite.tools.map((tool)=>(
+            <div className="tool-container">
+              <img src={tool.icon} className='tool-icon' />
+              <p className="tool-label">{tool.label}</p>
+            </div>
+          ))}
+        </div>
+
+
+      </div>
+
+
+      {/* move this to layout/menu when hatchIsOpen context is created */}
       {/* <div className="space-walk" style={{right: (hide.current || scrollPos < 1200) && '-5rem'}}> */}
       <div onClick={handleSpaceWalk} className="space-walk" style={{right: ( scrollPos < 1200) && '-5rem'}}>
         <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
@@ -223,12 +246,11 @@ function ProjectsList() {
 
 
       {/* clip-path svgs */}
-      <svg style={{position: 'absolute'}} id="clip-wrapper" xmlns="http://www.w3.org/2000/svg">
+      <svg id="window-top-clip-wrapper" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <clipPath id="window-top"    
+          <clipPath id="window-top-clip"    
                     viewBox="0 0 800 80" 
-                    clipPathUnits="objectBoundingBox"
-          >
+                    clipPathUnits="objectBoundingBox" >
             <path fill-rule="evenodd" clip-rule="evenodd" d="M100.811 31.2227C98.4381 31.2227 96.288 29.8239 95.3262 27.6543L84.6484 3.56833C83.6866 1.39879 81.5364 0 79.1632 0H6C2.68629 0 0 2.68629 0 6V68.8889V74V80H6H794H800V74V68.8889V6C800 2.68629 797.314 0 794 0H714.959C712.594 0 710.45 1.3893 709.483 3.54777L698.679 27.6749C697.712 29.8334 695.568 31.2227 693.203 31.2227H610.052C607.686 31.2227 605.541 32.6129 604.575 34.7725L600.693 43.4502C599.727 45.6098 597.582 47 595.216 47H401H203.038C200.664 47 198.514 45.6003 197.552 43.4297L193.727 34.793C192.766 32.6224 190.615 31.2227 188.241 31.2227H100.811Z"
                   transform="scale(0.00125, 0.0125)"
             />
@@ -236,24 +258,16 @@ function ProjectsList() {
         </defs>
       </svg>
 
-      <svg style={{position: 'absolute'}}
-        viewBox="0 0 800 400" 
-        id="window" 
-        xmlns="http://www.w3.org/2000/svg">
+      <svg id="window-clip-wrapper" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <clipPath id="window-clip"    
                     viewBox="0 0 800 400" 
-                    clipPathUnits="objectBoundingBox">
+                    clipPathUnits="objectBoundingBox" >
             <path fill-rule="evenodd" clip-rule="evenodd" d="M-0.000976562 -0.000488281H799.999V59.1057C799.32 59.0357 798.634 59 797.943 59H764.758L753.096 79.1085L755.144 82.873L768.41 60L768.843 60.2509L755.424 83.3872L786.176 139.904L785.824 140.096L755.189 83.7922L750.751 91.4435L750.318 91.1927L754.909 83.278L752.861 79.5136L747.594 88.594L746.902 88.1927L752.413 78.6909L748.824 72.0956L749.176 71.9044L752.648 78.2858L763.834 59H684.112L535.113 359H732.499C739.5 359 745.992 355.339 749.614 349.348L799.999 266.011V400H-0.000976562V267.505L48.651 349.231C52.2572 355.288 58.7864 359 65.8363 359H262.935L115.687 59H-0.000976562V-0.000488281ZM126.404 54.3505L228.489 265.184L331.401 87.7491L332.266 88.2509L229.015 266.271L230.969 270.307L334.47 91.8569L334.902 92.1078L231.232 270.85L276.374 364.082L283.031 372.563C285.875 376.186 290.225 378.302 294.831 378.302H399.921H479.918L504.768 335.458L461.44 250.429L412.741 334.393L412.309 334.142L461.17 249.899L458.443 244.547L408.865 330.026L408 329.525L457.902 243.486L410.822 151.091L411.178 150.91L458.141 243.074L593.324 9.99961H398.933H243.312L217.068 55.2471L245.176 106.904L244.824 107.096L216.833 55.6521L205.434 75.3064L205.001 75.0555L216.553 55.138L215.527 53.2513L203.779 73.5066L203 73.055L215.023 52.3257L207.824 39.0956L208.176 38.9044L215.258 51.9206L239.572 9.99961H162.403C155.073 9.99961 148.331 14.0089 144.831 20.4487L126.404 54.3505ZM461.679 250.017L505.007 335.046L514.313 319L514.745 319.251L505.277 335.577L507.148 339.249L518.312 320L519.091 320.452L507.634 340.203L515.507 355.653L515.15 355.834L507.395 340.615L485.537 378.302H504.557C509.215 378.302 513.609 376.138 516.448 372.445L521.797 365.49L674.686 53.6976L657.666 20.8076C654.23 14.1685 647.379 9.99961 639.903 9.99961H600.89L461.679 250.017ZM600.312 9.99961L461.409 249.487L458.682 244.135L594.48 9.99961H600.312ZM505.038 335.989L480.496 378.302H484.497L506.909 339.661L505.038 335.989ZM240.613 9.99961H242.734L216.788 54.7329L215.762 52.8462L240.613 9.99961ZM76.9633 322.325L75.0074 318.73L81.5783 307.401L80.8862 307L74.5598 317.908L45.1757 263.904L44.8243 264.096L74.3248 318.313L62.0001 339.562L62.6922 339.964L74.7725 319.135L76.7283 322.73L64.9718 343L65.4043 343.251L77.0081 323.244L81.8243 332.096L82.1757 331.904L77.243 322.839L84.2904 310.688L83.8579 310.438L76.9633 322.325Z"
                   transform="scale(0.00125, 0.0025)" />        
           </clipPath>
         </defs>
       </svg>
-
-      {/* external svg not working (even w gatsby plugin)*/}
-      {/* <svg viewBox='0 0 800'>
-        <use xlinkHref='/static/svg/window.svg#window-clip'></use>
-      </svg> */}
 
     </div>
   )
@@ -318,3 +332,15 @@ loading="lazy" /> */}
   // console.log(exclaimRef)
   // console.log(exclaimRef.current)
   // console.log(exclaimRef.current.offsetTop)
+
+
+  //parallax up screen according to space from bottom 
+          {/* <div className='desc-container' > */}
+            {/* <div className='exclaim'
+            ref={exclaimRef}
+            // style={ 
+            //   space > 0
+            //   ? { top:`(-${space/50})` } 
+            //   : { display:`none` } } 
+              > ! </div> */}
+          {/* </div> */}

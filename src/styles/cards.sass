@@ -25,7 +25,7 @@
   width: 80%
   margin: auto
   z-index: 2
-  padding-bottom: 12rem
+  // padding-bottom: 12rem
   display: flex
   flex-wrap: wrap
   align-items: flex-start
@@ -41,8 +41,9 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   width: 100%
   margin: auto
   position: relative
+  // top: -.5px
   // margin-bottom: -20rem
-  margin-bottom: -226px 
+  // margin-bottom: -226px 
 
 .project-thumb-bg-wrapper
   position: relative
@@ -57,15 +58,11 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   height: 100%
   //maybe 2nd overlapping bg gradient - horizon/light streak using alpha 
   background: linear-gradient(to bottom, rgb(3 10 21) 10%, rgb(15 39 56) 55%, rgb(3 10 21) 100%)
-  // background:  rgb(3 10 21) 
-  // transition: opacity 1s ease
   transition: all 2.2s cubic-bezier(0.34, 0.53, 0.48, 0.83)
-  // transition: all 1s ease-out
   transition-delay: .4s
 
-
-
 .project-thumb
+  padding: 10rem 0 
   text-align: center
   color: white
   margin: 0 auto
@@ -75,41 +72,34 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   opacity: 0
   z-index: 3
 
-
 .svg-window-top-wrapper 
   margin-top: 20rem
   position: relative
   height: 8vh
   width: 100%
-  bottom: -32.5px
+  // bottom: -.5px
   z-index: 3
 
 .svg-window-top
-  // background: (linear-gradient(to bottom, rgba(16, 16, 24, .8) 36%, rgba(16, 16, 24, 0.9254901961)  100%))
   background: $thumb-bg-color
   background: rgb(3 10 21)
   width: 100%
   height: 100%
   position: absolute
   transform: translateY()
-  -webkit-clip-path: url(#window-top)
-  clip-path: url(#window-top)
+  -webkit-clip-path: url(#window-top-clip)
+  clip-path: url(#window-top-clip)
   bottom: 0
   transition: all 1s ease-out
 
-
 .thumb-svg-window-wrapper 
+  margin: -.8px auto -.5px
   position: relative
   height: 33vh
   width: 100%
-  top: -193px
   z-index: 1
   background: linear-gradient(44deg, rgba(3, 10, 21, 0.144) 16%, rgba(15, 39, 56, 0.409) 72%)
-  // background: linear-gradient(44deg, rgba(28, 47, 78, 0.3) 16%, rgba(67, 106, 134, 0.5) 72%)
-  // background: linear-gradient(134deg,rgba(15, 39, 56, 0.5) 30%, rgba(35, 51, 77, 0.5) 36%, rgba(15, 39, 56, 0.5) 40%, rgba(35, 51, 77, 0.5) 66%, rgba(15, 39, 56, 0.5) 70%)
-  // background: linear-gradient(134deg,rgba(3, 10, 21, 0.155) 52%, rgba(40, 68, 113, 0.16) 60%, rgba(15, 39, 56, 0.155) 63%)
   transition: all 1.6s cubic-bezier(0.34, 0.53, 0.48, 0.83)
-
 
 .thumb-svg-window
   background: $thumb-bg-color
@@ -121,10 +111,13 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   transform: translateY()
   -webkit-clip-path: url('#window-clip')
   clip-path: url('#window-clip')
-  // -webkit-clip-path: url('/static/svg/window.svg#window-clip')
-  // clip-path: url('/static/svg/window.svg#window-clip')
   top: 0
   transition: all 1s ease-out
+
+#window-clip-wrapper, #window-top-clip-wrapper
+  position: absolute
+  top: 0
+
 
 @media (min-width: 768px) 
   .svg-window-top-wrapper /////////////
@@ -171,20 +164,37 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
       // width: 83.33%
       // grid-column: 1/13
 
-
+// 768px - 992px
 .project-imgs-wrapper
   display: flex
   align-items: flex-end
-  margin: 3rem 0
-  transform: translateX(-5rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+  margin: 3rem auto
+  transform: translateX(-2.5rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
   transition: all .5s ease-in-out
   &:hover
-   transform: translateX(-3rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+   transform: translateX(-.5rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
   
+@media (min-width: 992px) 
+  .project-imgs-wrapper
+    width: 90%
+    transform: translateX(-4rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+    &:hover
+      transform: translateX(-3.2rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+      
 @media (min-width: 1200px) 
   .project-imgs-wrapper
-    transform: translateX(-9rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
-
+    width: 82%
+    transform: translateX(-4.7rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+    &:hover
+      transform: translateX(-4.2rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+      
+@media (min-width: 1400px) 
+  .project-imgs-wrapper
+    width: 75%
+    transform: translateX(-5.2rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+    &:hover
+      transform: translateX(-3.8rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+      
 
 .project-imgs-wrapper:hover > .wrapper
   box-shadow:   1px 1px 0 1px rgba(255, 255, 255, 0.7)
@@ -226,14 +236,17 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   &:hover
     transform: scale(1.35) translateY(-15px) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
 .wrapper-desktop
-  left: -1.7rem
+  box-shadow:   1px 1px 0 1px #f9f9fb, -70px 60px 2px 0 rgba(255, 255, 255, 0.03), 40px -60px 2px -10px rgba(255, 255, 255, 0.03)
+
+  // left: -1.7rem
+  left: .7rem
   &:hover
-    transform: scale(1.2) translate(40px, -15px) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+    transform: scale(1.2) translate(10px, -15px) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
     // z-index: 2
 
 @media (max-width: 1200px) 
   .wrapper-desktop
-    left: .7rem
+    // left: .7rem
 
 //SVGs -
 .svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet 
@@ -243,10 +256,11 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   overflow: visible
 
 
-@media (max-width: 800px)
+@media (max-width: 768px)
   .project-imgs-wrapper
+    width: 80%
     flex-wrap: wrap
-    margin: 0 2rem
+    margin: 0 auto
     transform: translateX(0rem) perspective(1000px) rotateX(8deg) rotateY(-22deg) rotate(2deg)
     &:hover
       transform: translateX(0rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
@@ -281,7 +295,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   .wrapper-desktop
     width: 70%
     top: -4rem
-    // margin: 50px auto
+    box-shadow:   1px 1px 0 1px #f9f9fb, -30px 60px 2px 0 rgba(255, 255, 255, 0.03), 40px -60px 2px -10px rgba(255, 255, 255, 0.03)
     z-index: 2
     order: 3
     &:hover
@@ -308,25 +322,28 @@ $font-color: #44A595
 $font-color: #6094a7
 $font-color2: #6bc4b5
 
-.project-title
-  text-transform: uppercase
-  font-size: 3.5rem
-  font-weight: 600
-  padding: 14rem 0 4rem
-  color: $font-color
-  margin: 2rem 1rem 5rem
-  line-height: 4.5rem
-  // border-radius: 0px 35px 40px 45px
-  // border-radius: 0px 15px 15px 15px
-  // border-radius: 5px
-  // border-right: 1.5px solid rgb(62 84 115 / 7%)
-  // // padding: 2rem 2rem 2rem 2rem
-  border-top: 1.5px solid rgb(77 67 109 / 23%)
+.project-title-wrapper
+  margin: 4rem auto 4rem
+  width: 85%
+  
 
+.project-title
+  // text-transform: uppercase
+  font-size: 3rem
+  font-weight: 600
+  // padding: 6rem 0 0rem
+  color: $font-color
+  width: 90%
+  margin: auto
+  padding: 0 0 .5rem
+  line-height: 3.8rem
+  border-bottom: 1.5px solid rgb(77 67 109 / 23%)
+  background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47108421005120793) 15%, rgba(51,58,91,0) 52%)
 
 .project-desc
-  margin: 3rem auto
-  font-size: 1.8rem
+  // width: 85%
+  margin: auto
+  font-size: 1.3rem
   font-weight: 400
   color: $font-color2
   color: #4e7b8e
@@ -335,112 +352,196 @@ $font-color2: #6bc4b5
   border-radius: 0px 15px 15px 15px
   border-radius: 5px
   // border-right: 1.5px solid rgb(62 84 115 / 7%)
-  padding: 1rem 0 1rem
-  border-bottom: 1.5px solid rgb(77 67 109 / 23%)
-  background: rgb(86,94,136)
+  padding: .6rem 0 1rem
+  // border-bottom: 1.5px solid rgb(77 67 109 / 23%)
+  // background: rgb(86,94,136)
   // background: linear-gradient(289deg, rgb(96 105 150 / 0%) 26%, rgb(67 76 121 / 10%) 47%, rgb(86 98 159 / 0%) 76%)
-  background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47108421005120793) 15%, rgba(51,58,91,0) 52%)
+  // background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47108421005120793) 15%, rgba(51,58,91,0) 52%)
 
-.desc-container
-  position: relative
-  width: 80%
-  margin: 8rem auto
-
-.exclaim
-  font-size: 8rem
-  position: absolute
-  top: -10px
-  right: -70px
-  color: #3fd4bb45
-  color: #5c93a7
-  color: #bb8c31
-  transform: rotateZ(10deg)
-  font-family: 'Katin'
+// .desc-container
+//   position: relative
+//   width: 80%
+//   margin: auto
 
 .project-tools
-  margin: 3rem 0 4rem
+  width: 85%
+  margin: 6.5rem auto 0rem
+  padding: .3rem .3rem .6rem
   color: lightgrey
+
+.tools-wrapper
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+
+.tool-container
+  display: inline-block
+  padding: .5rem
+  text-align: center
+  // width: 100px
+  // height: 100px
+  // z-index: 2
 
 .tool-icon
   display: inline-block
-  width: 100px
-  height: 100px
-  padding: 10px
+  width: 40px
+  height: 40px
+  // padding: 1rem 0 .5rem
 
-.project-links
-  margin: -2rem 0 12rem
+.tool-label
+  color: #6393b1
+  width: 5rem
+  margin: auto
+
+// .project-links
+//   margin: -2rem 0 12rem
 
 .project-link
-  text-transform: uppercase
-  font-size: 1.6rem
+  display: inline-block
+  margin: 3rem auto 6rem
+  // text-transform: uppercase
+  font-size: 1.4rem
   color: $font
-  color: #7158fe
-  // color: #be871f
-  // color: #22b973
   border: 0.5px solid rgba(63, 63, 78, 0.6)
   border-radius: 5px
   background: #181c2dab
-  padding: 1.4rem 1.8rem 1.7rem
+  padding: 1rem 1.8rem 1.1rem
   transition: background .2s ease
   background: linear-gradient(289deg, rgba(96, 105, 150, 0) 19%, rgba(67, 76, 121, 0.17) 45%, rgba(86, 98, 159, 0) 76%)
   &:hover
     background: $font
     background: #70b4cd
-    background: #5542e9
-    // background: #c0871e
-    // background: #22b973
     color: black
 
+.site-tools
+  color: lightgrey
+  margin: auto
+  // margin: 0 auto -1.4rem 
+  position: relative
+  z-index: 0
+  text-align: center
+  padding: 7rem 0 5rem
+
+.site-tools-bg
+  background: rgb(3, 10, 21)
+  position: absolute
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: -1
+  transition: opacity 1s ease
+
+.site-tools-wrapper
+  width: 90%
+  margin: auto
+  padding: 2rem
+
+.site-desc
+  // width: 85%
+  margin: 0 auto 2rem
+  font-size: 1.5rem
+  font-weight: 300
+  color: $font-color
 
 @media (min-width: 768px) 
   .project-title
     font-size: 4.2rem
-    margin: 2rem auto 5rem
+    line-height: 4.6rem
+    padding: 0 0 .8rem
   .project-desc
-    margin: 6rem auto
     font-size: 1.5rem
+  .tool-icon
+    width: 50px
+    height: 50px
   .project-link
-    padding: 1.6rem 2.2rem 1.9rem
-    font-size: 1.8rem
+    // padding: 1.4rem 2.2rem 1.6rem
+    // font-size: 1.8rem
 
 
 @media (min-width: 992px)
   .project-title
-    font-size: 4.8rem
-    margin: 2rem auto 6rem
+    // font-size: 4.8rem
+    // padding: 0 0 1.2rem
   .project-desc
-    margin: 8rem auto
-    font-size: 1.6rem
+    // font-size: 1.6rem
+    padding: .6rem 0 2.5rem
+  .project-tools
+    margin: 7rem auto .5rem
+  .tool-icon
+    // width: 60px
+    // height: 60px
   .project-link
-    padding: 1.9rem 2.6rem 2.2rem
-    font-size: 2rem
+    // padding: 1.9rem 2.6rem 2.2rem
+    // font-size: 2rem
 
 @media (min-width: 1200px)
   .project-title
-    font-size: 5.2rem
-    margin: 2rem auto 7rem
+    // font-size: 5.2rem
   .project-desc
-    margin: 8rem auto
-    font-size: 1.8rem
+    // font-size: 1.7rem
+  .project-tools
+    margin: 9rem auto .5rem
   .project-link
-    padding: 2.2rem 3rem 2.4rem
-    font-size: 2.2rem
+    // padding: 2.2rem 3rem 2.4rem
+    font-size: 1.8rem
 
 @media (min-width: 1400px)
   .project-title
-    font-size: 6.5rem
-    margin: 2rem auto 8rem
+    // font-size: 6.5rem
+    // margin: 2rem auto 8rem
   .project-desc
-    margin: 9rem auto
-    font-size: 2.2rem
+    // margin: 9rem auto
+    // font-size: 2.2rem
+  .project-tools
+    margin: 9rem auto 1rem
   .project-link
-    padding: 2.4rem 3.5rem 2.6rem
-    font-size: 2rem
+    // padding: 2.4rem 3.5rem 2.6rem
+    // font-size: 2rem
 
 
+//media queries
+// @media (max-width: 900px)  
+//   .project-list2
+//     width: 100%
+//   .project-thumb2
+//     width: 90%
+
+// @media (min-width: 1600px)  
+//   .project-list2
+//     width: 80%
+//   .project-thumb2
+//     width: 30%
+
+// .ruling
+//   // color: #101018db
+//   border-color: rgba(16, 16, 24, 0)
+//   border-color: rgba(77, 67, 109, 0.73)
+//   width: 70%
+//   margin: 6rem auto 12rem
+//   border-radius: 0px 35px 40px 45px
+//   border-radius: 0px 15px 15px 15px
+//   border-radius: 5px
+//   // border-right: 1.5px solid rgb(62 84 115 / 7%)
+//   padding: 2rem 0 0rem
+//   // border-bottom: 1.5px solid rgb(77 67 109 / 23%)
+//   background: rgb(86,94,136)
+//   // background: linear-gradient(289deg, rgb(96 105 150 / 0%) 26%, rgb(67 76 121 / 10%) 47%, rgb(86 98 159 / 0%) 76%)
+//   background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47108421005120793) 15%, rgba(51,58,91,0) 52%)
+      
+
+// .exclaim
+//   font-size: 8rem
+//   position: absolute
+//   top: -10px
+//   right: -70px
+//   color: #3fd4bb45
+//   color: #5c93a7
+//   color: #bb8c31
+//   transform: rotateZ(10deg)
+//   font-family: 'Katin'
 
 
-// .project-mosaic 
+  // .project-mosaic 
 //    display: grid
 //    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr
 //    gap: 5px
@@ -467,34 +568,3 @@ $font-color2: #6bc4b5
 //    background-color: #dbdbdb
 //    grid-row: 4 / 6
 //    grid-column: 3 / 7
-
-.ruling
-  // color: #101018db
-  border-color: rgba(16, 16, 24, 0)
-  border-color: rgba(77, 67, 109, 0.73)
-  width: 70%
-  margin: 6rem auto 12rem
-  border-radius: 0px 35px 40px 45px
-  border-radius: 0px 15px 15px 15px
-  border-radius: 5px
-  // border-right: 1.5px solid rgb(62 84 115 / 7%)
-  padding: 2rem 0 0rem
-  // border-bottom: 1.5px solid rgb(77 67 109 / 23%)
-  background: rgb(86,94,136)
-  // background: linear-gradient(289deg, rgb(96 105 150 / 0%) 26%, rgb(67 76 121 / 10%) 47%, rgb(86 98 159 / 0%) 76%)
-  background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47108421005120793) 15%, rgba(51,58,91,0) 52%)
-      
-//media queries
-@media (max-width: 900px)  
-  .project-list2
-    width: 100%
-  .project-thumb2
-    width: 90%
-
-@media (min-width: 1600px)  
-  .project-list2
-    width: 80%
-  .project-thumb2
-    width: 30%
-
-
