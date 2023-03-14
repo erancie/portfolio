@@ -54,13 +54,21 @@ export function ProjectThumb({project, hatchIsOpen}) {
         <div className="project-thumb-bg" 
              style={{
                     // transform: hatchIsOpen && 'translateX(-100%)',
-                    opacity: hatchIsOpen && '.2'
+                    opacity: hatchIsOpen && '0'
+                  }}>
+        </div>
+        <div className="project-thumb-bg-fore" 
+             style={{
+                    // transform: hatchIsOpen && 'translateX(-100%)',
+                    opacity: hatchIsOpen ? '.5' : '.5'
                   }}>
         </div>
 
         <div ref={cardRef} key={project.name} className='project-thumb col-12 col-lg-10 col-xl-10 '>
           
-          <div className='project-title-wrapper'>
+          <div className='project-titles-wrapper' style={{
+              // background: hatchIsOpen && 'rgb(3,10,21)' 
+          }}>
             <h1 className='project-title'>{project.title}</h1>
             <p className='project-desc'>{project.desc}</p>
           </div>
@@ -143,7 +151,16 @@ export function ProjectThumb({project, hatchIsOpen}) {
               </svg>
             </div> 
 
+            <div className="project-imgs-shadow"
+                         style={{
+                          // transform: hatchIsOpen && 'translateX(-100%)',
+                          opacity: hatchIsOpen && '0'
+                        }}>
+            </div>
+
           </div>
+
+
 
           <div className='project-tools'>
             {project.tools.map((t)=>(
@@ -163,7 +180,7 @@ export function ProjectThumb({project, hatchIsOpen}) {
            style={{
                     // transform: hatchIsOpen && 'translateX(-50%) perspective(2400px) rotateY(90deg)', 
                     // transform: hatchIsOpen && 'translateX(-100%)',
-                    opacity: hatchIsOpen && '.2'
+                    opacity: hatchIsOpen && '0'
                     // background: hatchIsOpen && 'none' 
                   }}>
         <div className='thumb-svg-window' 
@@ -204,7 +221,7 @@ function ProjectsList() {
           {/* //some for all elements affected? some for each?   */}
           <div className='svg-window-top' style={{
                                                   // transform: hatchIsOpen && 'translateX(-100%)',
-                                                  opacity: hatchIsOpen && '.2' 
+                                                  opacity: hatchIsOpen && '0' 
                                                 // background: hatchIsOpen && 'none'
                                                  }}></div>
 
@@ -218,7 +235,7 @@ function ProjectsList() {
         <div className="site-tools-bg" 
               style={{
                       // transform: hatchIsOpen && 'translateX(-100%)',
-                      opacity: hatchIsOpen && '.2'
+                      opacity: hatchIsOpen && '0'
                     }}>
         </div>
         <div className="site-tools-wrapper">
@@ -268,6 +285,36 @@ function ProjectsList() {
           </clipPath>
         </defs>
       </svg>
+
+
+      
+
+      <svg id="thumb-titles-clip-wrapper"  xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="thumb-titles-clip"    
+                    viewBox="0 0 800 400" 
+                    clipPathUnits="objectBoundingBox" >
+
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M64.3949 53.0736C67.5507 45.729 74.7767 40.969 82.7705 40.969H244.732L265.63 7.11999C268.363 2.69435 273.193 0 278.394 0H398.99H521.991C527.216 0 532.065 2.71909 534.79 7.17747L555.443 40.969H716.175C724.124 40.969 731.319 45.6772 734.502 52.962L798.327 199.053C800.558 204.158 800.558 209.962 798.327 215.067L734.502 361.158C731.319 368.443 724.124 373.151 716.175 373.151H495.34L486.687 391.421C484.205 396.66 478.927 400 473.13 400H399.836H326.284C320.482 400 315.201 396.654 312.722 391.408L304.095 373.151H82.7705C74.7767 373.151 67.5507 368.391 64.3949 361.047L1.6244 214.955C-0.541468 209.915 -0.541464 204.206 1.6244 199.165L64.3949 53.0736Z"
+            ////////////
+                  transform="scale(0.00125, 0.0025)" />        
+          </clipPath>
+        </defs>
+      </svg>
+
+      <svg id="tools-clip-wrapper" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="tools-clip"    
+                    viewBox="0 0 800 400" 
+                    clipPathUnits="objectBoundingBox" >
+
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M64.3949 53.0736C67.5507 45.729 74.7767 40.969 82.7705 40.969H244.732L265.63 7.11999C268.363 2.69435 273.193 0 278.394 0H398.99H521.991C527.216 0 532.065 2.71909 534.79 7.17747L555.443 40.969H716.175C724.124 40.969 731.319 45.6772 734.502 52.962L798.327 199.053C800.558 204.158 800.558 209.962 798.327 215.067L734.502 361.158C731.319 368.443 724.124 373.151 716.175 373.151H495.34L486.687 391.421C484.205 396.66 478.927 400 473.13 400H399.836H326.284C320.482 400 315.201 396.654 312.722 391.408L304.095 373.151H82.7705C74.7767 373.151 67.5507 368.391 64.3949 361.047L1.6244 214.955C-0.541468 209.915 -0.541464 204.206 1.6244 199.165L64.3949 53.0736Z"
+            /////////////
+                  transform="scale(0.00125, 0.0025)" />        
+          </clipPath>
+        </defs>
+      </svg>
+
 
     </div>
   )

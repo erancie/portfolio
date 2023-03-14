@@ -1,3 +1,5 @@
+$theme-transition: all 2.2s cubic-bezier(0.34, 0.53, 0.48, 0.83)
+
 // projects section 
 .projects-container
   width: 100%
@@ -57,9 +59,46 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   width: 100%
   height: 100%
   //maybe 2nd overlapping bg gradient - horizon/light streak using alpha 
-  background: linear-gradient(to bottom, rgb(3 10 21) 10%, rgb(15 39 56) 55%, rgb(3 10 21) 100%)
   transition: all 2.2s cubic-bezier(0.34, 0.53, 0.48, 0.83)
   transition-delay: .4s
+
+  background: rgb(3, 10, 21)
+
+  // background: linear-gradient(to bottom, rgb(3 10 21) 10%, rgb(5, 32, 50) 50%, rgb(3 10 21) 100%)
+  
+.project-thumb-bg-fore
+  position: absolute
+  width: 100%
+  height: 100%
+  background: linear-gradient(to bottom, rgba(3, 10, 21, 0) 10%, rgb(5, 32, 50) 50%, rgba(3, 10, 21, 0) 100%)
+  transition: all 2.2s cubic-bezier(0.34, 0.53, 0.48, 0.83)
+  opacity: .5
+
+
+
+
+  // background: radial-gradient(ellipse at center, rgba(38, 101, 126, 0.436) -10%, rgb(3, 10, 21) 70%), rgb(3, 10, 21)
+  // background-size: 50% 40%
+  // background-repeat: no-repeat
+  // background-position: 50% 40%
+
+// @media (min-width: 768px) 
+//   .project-thumb-bg
+
+// @media (min-width: 992px)
+//   .project-thumb-bg
+//     background: radial-gradient(ellipse at center, rgba(22, 105, 138, 0.425) -10%, rgb(3, 10, 21) 50%), rgb(3, 10, 21)
+//     background-size: 80% 8%
+//     background-repeat: no-repeat
+//     background-position: 50% 60%
+
+// @media (min-width: 1200px) 
+//   .project-thumb-bg
+
+// @media (min-width: 1400px)
+//   .project-thumb-bg
+
+
 
 .project-thumb
   padding: 10rem 0 
@@ -114,7 +153,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   top: 0
   transition: all 1s ease-out
 
-#window-clip-wrapper, #window-top-clip-wrapper
+#window-clip-wrapper, #window-top-clip-wrapper, #tools-clip-wrapper, #thumb-titles-clip-wrapper
   position: absolute
   top: 0
 
@@ -168,12 +207,27 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 .project-imgs-wrapper
   display: flex
   align-items: flex-end
-  margin: 3rem auto
+  margin: 3rem auto 10rem
   transform: translateX(-2.5rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
   transition: all .5s ease-in-out
   &:hover
    transform: translateX(-.5rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+
+.project-imgs-shadow
+  height: 30%
+  width: 80%
+  transform: translateX(-50%)
+  left: 55%
+  bottom: -6rem
+  // margin: auto
+  position: absolute
+  background: radial-gradient(ellipse at center, rgba(23, 67, 90, .6) 0%, rgba(0, 0, 0, 0) 70%), rgba(0, 0, 0, 0)
+  // background-size: 40% 40%
+  background-repeat: no-repeat
+  // background-position: 50% 50%
+  transition: $theme-transition
   
+
 @media (min-width: 992px) 
   .project-imgs-wrapper
     width: 90%
@@ -313,9 +367,23 @@ $font-color: #44A595
 $font-color: #6094a7
 $font-color2: #6bc4b5
 
-.project-title-wrapper
+
+.project-titles-wrapper
   margin: 4rem auto 4rem
-  width: 85%
+  width: 90%
+  background: rgb(3,10,21)
+  // background: linear-gradient(289deg, rgb(96 105 150 / 28%) 19%, rgb(67 76 121) 45%, rgb(86 98 159 / 27%) 76%)
+  opacity: .8
+
+  // border-top: 1.5px solid rgba(77, 67, 109, 0.23)
+  // border-bottom: 1.5px solid rgba(77, 67, 109, 0.23)
+  // background: radial-gradient(ellipse at 50% 100%, rgba(40, 40, 71, 0.4710842101) 15%, rgba(51, 58, 91, 0) 52%)
+  padding: 3rem 2rem 0
+  // border-radius: 0px 0px 50px 50px
+  -webkit-clip-path: url('#thumb-titles-clip')
+  clip-path: url('#thumb-titles-clip')
+// .project-titles-wrapper-dark
+
   
 
 .project-title
@@ -324,12 +392,15 @@ $font-color2: #6bc4b5
   font-weight: 600
   // padding: 6rem 0 0rem
   color: $font-color
+  color: white
   width: 90%
   margin: auto
   padding: 0 0 .5rem
   line-height: 3.8rem
   border-bottom: 1.5px solid rgb(77 67 109 / 23%)
-  background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47108421005120793) 15%, rgba(51,58,91,0) 52%)
+  // background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47) 15%, rgba(51,58,91,0) 52%)
+  // border-radius: 20px
+
 
 .project-desc
   // width: 85%
@@ -339,6 +410,7 @@ $font-color2: #6bc4b5
   color: $font-color2
   color: #4e7b8e
   color: $font-color
+  color: white
   border-radius: 0px 35px 40px 45px
   border-radius: 0px 15px 15px 15px
   border-radius: 5px
@@ -355,15 +427,24 @@ $font-color2: #6bc4b5
 //   margin: auto
 
 .project-tools
-  width: 85%
+  width: 60%
   margin: 6.5rem auto 0rem
   padding: .3rem .3rem .6rem
   color: lightgrey
+
+  -webkit-clip-path: url('#tools-clip')
+  clip-path: url('#tools-clip')
+  background: rgb(3,10,21)
+  padding: 2.5rem
+  opacity: .9
+// .project-tools-dark  
+
 
 .tools-wrapper
   display: flex
   justify-content: center
   flex-wrap: wrap
+
 
 .tool-container
   display: inline-block
