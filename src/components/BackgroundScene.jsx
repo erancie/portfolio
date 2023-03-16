@@ -47,11 +47,11 @@ const BackgroundScene = React.memo(() => {
 
   return(
     <div className="back-scene" >
-      <LandingBg scale={ scrollPos < 800 
-                         ? 1-scrollPos/(800/.1) 
+      <LandingBg scale={ scrollPos < 1200 
+                         ? 1-scrollPos/(1200/.1) 
                          : .9} 
-                 rotate={scrollPos < 800 
-                         ? scrollPos*(30/800) 
+                 rotate={scrollPos < 1200 
+                         ? scrollPos*(30/1200) 
                          : 30}>
       </LandingBg>
       
