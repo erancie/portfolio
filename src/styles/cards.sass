@@ -52,7 +52,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   width: 100%
   box-shadow: 0 -3rem 3rem rgba(65, 207, 254, 0.094),  0 1rem 2rem rgba(115, 242, 249, 0.103), 0px -2rem 8rem rgba(253, 253, 225, 0.057),
   transition: box-shadow 1s ease-out
-  // transition-delay: 1s
+
 
 .project-thumb-bg
   position: absolute
@@ -63,8 +63,8 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   transition-delay: .4s
 
   background: rgb(3, 10, 21)
-  background: linear-gradient(180deg,#030a15 10%,#0c2130 51%,#030a15)
-
+  // background: linear-gradient(180deg,#030a15 10%,#0c2130 51%,#030a15)
+  background: linear-gradient(180deg, #030a15 10%, #041423 51%, #030a15)
 
   // background: linear-gradient(to bottom, rgb(3 10 21) 10%, rgb(5, 32, 50) 50%, rgb(3 10 21) 100%)
   
@@ -221,11 +221,11 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   height: 30%
   width: 80%
   transform: translateX(-50%)
-  left: 50%
+  left: 55%
   bottom: -6rem
   // margin: auto
   position: absolute
-  background: radial-gradient(ellipse at center, rgba(23, 67, 90, 0.4) 0%, rgba(0, 0, 0, 0) 70%), rgba(0, 0, 0, 0)  // background-size: 40% 40%
+  background: radial-gradient(ellipse at center, rgb(158 205 208 / 8%) 0%, rgba(0, 0, 0, 0) 70%), rgba(0, 0, 0, 0)  // background-size: 40% 40%
   background-repeat: no-repeat
   // background-position: 50% 50%
   transition: $theme-transition
@@ -234,23 +234,23 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 @media (min-width: 992px) 
   .project-imgs-wrapper
     width: 90%
-    transform: translateX(-4rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+    transform: translateX(-3.8rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
     &:hover
-      transform: translateX(-3.2rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+      transform: translateX(-2.5rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
       
 @media (min-width: 1200px) 
   .project-imgs-wrapper
     width: 82%
-    transform: translateX(-4.7rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+    transform: translateX(-4.2rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
     &:hover
-      transform: translateX(-4.2rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+      transform: translateX(-3.2rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
       
 @media (min-width: 1400px) 
   .project-imgs-wrapper
     width: 75%
-    transform: translateX(-5.2rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+    transform: translateX(-4.8rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
     &:hover
-      transform: translateX(-3.8rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+      transform: translateX(-3.6rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
       
 
 .project-imgs-wrapper:hover > .wrapper
@@ -263,7 +263,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   transition: all .5s ease-in
   // transition-delay: .2s
   // transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
-  box-shadow:   1px 1px 0 1px #f9f9fb, -30px 60px 2px 0 rgba(255, 255, 255, 0.03), 40px -60px 2px -10px rgba(255, 255, 255, 0.03)
+  box-shadow: 1px 1px 0 1px #f9f9fb, -30px 60px 2px 0 rgba(255, 255, 255, 0.06), 40px -60px 2px -10px rgba(255, 255, 255, 0.06)
   // box-shadow:  rgba(255,255,255, 0.054) 0px 0px 0px 1px, rgba(255,255,255, 0.15) 0px 1px 0px 0px, rgba(255,255,255, 0.13) 0px 0px 8px 0px, rgba(255,255,255, 0.2) 0px 20px 30px 0px
   // box-shadow: 0 50px 100px -20px rgb(50 50 93 / 30%), 0 30px 60px -30px rgb(0 0 0 / 50%), -10px 10px 60px -10px rgb(103 178 111 / 30%)
   &:hover
@@ -286,11 +286,11 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   bottom: -40px
   z-index: 2
   margin-right: -50px
-  box-shadow:   1px 1px 0 1px #f9f9fb, 10px 60px 2px 0 rgba(255, 255, 255, 0.02), 55px -180px 2px 0 rgba(255, 255, 255, 0.02)
+  box-shadow:   1px 1px 0 1px #f9f9fb, 10px 60px 2px 0 rgba(255, 255, 255, 0.06), 55px -180px 2px 0 rgba(255, 255, 255, 0.06)
   &:hover
     transform: scale(1.35) translateY(-15px) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
 .wrapper-desktop
-  box-shadow:   1px 1px 0 1px #f9f9fb, -70px 60px 2px 0 rgba(255, 255, 255, 0.03), 40px -60px 2px -10px rgba(255, 255, 255, 0.03)
+  box-shadow:   1px 1px 0 1px #f9f9fb, -70px 60px 2px 0 rgba(255, 255, 255, 0.06), 40px -60px 2px -10px rgba(255, 255, 255, 0.06)
   left: .7rem
   &:hover
     transform: scale(1.2) translate(10px, -15px) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
@@ -370,25 +370,6 @@ $font-color: #44A595
 $font-color: #6094a7
 $font-color2: #6bc4b5
 
-
-.project-titles-wrapper
-  margin: 0rem auto 4rem
-  width: 100%
-  position: relative
-  // transform: translateX(-5%)
-  // background: rgb(3,10,21)
-  // background: linear-gradient(289deg, rgb(96 105 150 / 28%) 19%, rgb(67 76 121) 45%, rgb(86 98 159 / 27%) 76%)
-  opacity: .8
-
-  // border-top: 1.5px solid rgba(77, 67, 109, 0.23)
-  // border-bottom: 1.5px solid rgba(77, 67, 109, 0.23)
-  // background: radial-gradient(ellipse at 50% 100%, rgba(40, 40, 71, 0.4710842101) 15%, rgba(51, 58, 91, 0) 52%)
-  padding: 3rem 2rem 0
-  // border-radius: 0px 0px 50px 50px
-  // -webkit-clip-path: url('#thumb-titles-clip')
-  // clip-path: url('#thumb-titles-clip')
-// .project-titles-wrapper-dark
-
 .titles-svg
   position: absolute
   z-index: -1
@@ -401,6 +382,20 @@ $font-color2: #6bc4b5
   clip-path: url('#thumb-titles-clip')
   background: rgb(14,37,53)
 
+.project-titles-wrapper
+  margin: 0rem auto 4rem
+  padding: 3rem 2rem 0
+  width: 100%
+  position: relative
+  background: radial-gradient(ellipse at 50% 54%, #0c2130bd 0%, rgba(51, 58, 91, 0) 62%)
+  background-repeat: no-repeat
+  background-size: 120% 80%
+  background-position: 50% 50%
+
+  
+  // background: linear-gradient(289deg, rgba(96, 105, 150, 0) 19%, rgba(67, 76, 121, 0.17) 45%, rgba(86, 98, 159, 0) 76%)
+  // background-size: 32% 80%
+  // background-position: 52% 72%
 
 .project-title
   font-size: 3rem
@@ -413,9 +408,10 @@ $font-color2: #6bc4b5
   margin: auto
   padding: 4rem 0 .5rem
   line-height: 3.8rem
-  border-bottom: 1.5px solid rgb(77 67 109 / 23%)
-  background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47) 15%, rgba(51,58,91,0) 52%)
+  // border-bottom: 1.5px solid rgb(77 67 109 / 23%)
+  // background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47108421005120793) 15%, rgba(51,58,91,0) 52%)
 
+  // background: radial-gradient(ellipse at 50% 40%, rgba(40,40,71,0.47) 15%, rgba(51,58,91,0) 52%)
 
 .project-desc
   width: 85%
@@ -424,24 +420,16 @@ $font-color2: #6bc4b5
   font-weight: 400
   color: $font-color2
   color: #4e7b8e
-  color: $font-color
+  // color: $font-color
   // color: white
   // color: #dda345
-
   border-radius: 0px 35px 40px 45px
   border-radius: 0px 15px 15px 15px
   border-radius: 5px
-  // border-right: 1.5px solid rgb(62 84 115 / 7%)
   padding: .6rem 0 6rem
   // border-bottom: 1.5px solid rgb(77 67 109 / 23%)
-  // background: rgb(86,94,136)
-  // background: linear-gradient(289deg, rgb(96 105 150 / 0%) 26%, rgb(67 76 121 / 10%) 47%, rgb(86 98 159 / 0%) 76%)
-  // background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47108421005120793) 15%, rgba(51,58,91,0) 52%)
+  // background: radial-gradient(ellipse at 50% 40%, rgba(40, 40, 71, 0.47) 0%, rgba(51, 58, 91, 0) 32%)
 
-// .desc-container
-//   position: relative
-//   width: 80%
-//   margin: auto
 
 .project-tools
   position: relative
