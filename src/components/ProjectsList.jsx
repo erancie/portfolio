@@ -233,7 +233,9 @@ function ProjectsList() {
                                                  }}></div>
 
         </div>
-        {/* <Stars /> */}
+        
+        <Stars />
+
         {projects.map( p=> <ProjectThumb project={p} hatchIsOpen={hatchIsOpen} /> )}
       
       </div>
