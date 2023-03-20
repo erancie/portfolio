@@ -1,5 +1,5 @@
 import React from "react"
-import Globe from "./Globe"
+import Scene from "./Scene"
 import { useScrollContext } from "./utils/useScrollContext"
 import styled from 'styled-components'
 import { useMemo } from "react"
@@ -60,7 +60,7 @@ const BackgroundScene = React.memo(() => {
       {/* <div className="landing-bg" 
            style={{transform: `scale(${scrollPos < 800 ? 1-scrollPos/(800/.1) : .9}) rotate(${scrollPos < 800 ? scrollPos*(30/800) : 30}})`}} ></div> */}
       <div className="globe">
-        <Globe />
+        <Scene />
       </div>
       {/* <div className="bg-overlay"></div> */}
     </div>

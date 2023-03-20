@@ -8,10 +8,10 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { useGLTF } from '@react-three/drei'
 import { animated, useSpring, useTransition, config } from "@react-spring/three"
 import { ScrollProvider, useScrollContext } from './utils/useScrollContext'
-import Grid from '../components/Grid'
+import Grid from './Grid'
 import { Model } from "../../static/models/blue-globe/Scene"
 import { Earth } from "../../static/models/earth/Earth"
-import EarthRaster from ".//EarthRaster"
+import EarthRaster from "./EarthRaster"
 import { PolyEarth } from "../../static/models/gltf-models/PolyEarth"
 
 extend({ OrbitControls })
@@ -51,7 +51,7 @@ const Sphere = () => {
 
   //animate changes in scale & position w/ spring
   const { position, rotation } = useSpring({ 
-    position: [0, .7, positionZ],
+    position: [0, .55, positionZ],
     rotation: [0, 0, rotationZ]
   })
 
@@ -86,38 +86,30 @@ const Sphere = () => {
 
   //gltf files house nodes - can refer to texture files
 
-  return ( <>
-
-    <animated.group
-      ref={groupRef}
-      position={position} 
-      rotation={rotation}
-      scale={[1.3, 1.3, 1.3]}
-      // scale={[.4, .4, .4]}
-    >
-        <animated.group 
-        // args={[.1]} 
-        ref={rotationRef} >
-          <Suspense fallback={null}>
-
-                {/* <EarthRaster /> */}
-                <PolyEarth />
-    {/* how to change colors on this earth poly? */}
-                {/* <Earth/> */}
-                
-                {/* <primitive object={scene} /> */}
-          </Suspense>
-        </animated.group>
-
-      {/* <Grid size={5} /> */}
-
-    </animated.group>    
-
+  return ( 
+    <>
+      <animated.group
+        ref={groupRef}
+        position={position} 
+        rotation={rotation}
+        scale={[1.35, 1.35, 1.35]}
+      >
+          <animated.group 
+          ref={rotationRef} >
+            <Suspense fallback={null}>
+                  {/* <EarthRaster /> */}
+                  <PolyEarth />
+                  {/* <Earth/> */}
+                  {/* <primitive object={scene} /> */}
+            </Suspense>
+          </animated.group>
+        {/* <Grid size={5} /> */}
+      </animated.group>    
     </>
   )
 }
 
-const Globe = () => {
+const Scene = () => {
 
   // const scroll = useScrollContext()
 
@@ -141,9 +133,7 @@ const Globe = () => {
               {/* <pointLight color="white" intensity={.3} position={[-6, 12, 6]} /> */}
               <fog attach="fog" args={["black", 10, 25]} />
               <Controls />
-              
               <Suspense>
-                
                 <Sphere />
               </Suspense>
           {/* </ScrollProvider> */}
@@ -153,7 +143,7 @@ const Globe = () => {
   )
 }
 
-export default React.memo(Globe)
+export default React.memo(Scene)
 
 
 // controls sandbox
