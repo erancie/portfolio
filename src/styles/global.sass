@@ -265,15 +265,60 @@ $title-color: #44A595
   fill: #44a595
 
 
-.logo-landing
-  position: absolute
-  margin: auto
-  width: 300px
-  fill: white
-  fill: #7b77de
-  top: -18vh
+.logo-wrapper
+  position: relative
+  top: -8vh
   left: 50%
   transform: translateX(-50%) scale(.8)
+  width: 300px
+
+
+.logo-landing
+  position: absolute
+  top: 0
+  margin: auto
+  width: 100%
+  fill: white
+  fill: #7b77de
+
+  // top: -13vh
+  // left: 50%
+  // transform: translateX(-50%) scale(.8)
+
+.sparkle-1
+  position: absolute
+  top: 0
+  left: 1%
+  width: 100%
+  animation: sparkles-1 9s infinite
+  // opacity: 1
+
+.sparkle-2
+  position: absolute
+  top: 2%
+  width: 100%
+  left: -4%
+  animation: sparkles-2 9s infinite
+  opacity: 0
+  // opacity: 1
+
+
+@keyframes sparkles-1
+  0%
+    opacity: 1
+  30%
+    opacity: 0
+  85%
+    opacity: 0
+
+@keyframes sparkles-2
+  30%
+    opacity: 0
+  50%
+    opacity: 1
+  85%
+    opacity: 0
+    
 
 .logo-landing-b, .logo-landing-f
   opacity: .2
