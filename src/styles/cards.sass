@@ -1,24 +1,10 @@
 $theme-transition: all 2.2s cubic-bezier(0.34, 0.53, 0.48, 0.83)
 
-// projects section 
 .projects-container
   width: 100%
   height: 100%
   position: relative 
   margin-top: 50rem
-
-
-
-// // SVG backgrounds 
-
-// .proj-bg-container
-//   position: -webkit-sticky
-//   position: sticky
-//   max-width: 100%
-//   top: 0
-
-
-// projects
 
 .projects-list
   margin-top: 20rem
@@ -27,16 +13,12 @@ $theme-transition: all 2.2s cubic-bezier(0.34, 0.53, 0.48, 0.83)
   width: 80%
   margin: auto
   z-index: 2
-  // padding-bottom: 12rem
   display: flex
   flex-wrap: wrap
   align-items: flex-start
-  
-  // font-family: 'Raleway'
+    // font-family: 'Raleway'
   // font-family: 'Kanit'
 
-//PROJECT ITEMS
-//TODO: include 'body' in thumb names
 $thumb-bg-color: rgb(17 23 45 / 95%)
 
 .project-thumb-container
@@ -44,8 +26,6 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   margin: auto
   position: relative
   // top: -.5px
-  // margin-bottom: -20rem
-  // margin-bottom: -226px 
 
 .project-thumb-bg-wrapper
   position: relative
@@ -53,51 +33,15 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   box-shadow: 0 -6rem 3rem rgba(65, 207, 254, 0.094),  0 8rem 8rem rgba(115, 242, 249, 0.103), 0px -2rem 8rem rgba(253, 253, 225, 0.057),
   transition: box-shadow 1s ease-out
 
-
 .project-thumb-bg
   position: absolute
   width: 100%
   height: 100%
-  //maybe 2nd overlapping bg gradient - horizon/light streak using alpha 
   transition: all 2.2s cubic-bezier(0.34, 0.53, 0.48, 0.83)
   transition-delay: .4s
-
   background: rgb(3, 10, 21)
   // background: linear-gradient(180deg, #030a15 10%, #041423 51%, #030a15)
   background: linear-gradient(180deg, #041423 10%, #030a15 51%, #041423)
-
-  // background: linear-gradient(to bottom, rgb(3 10 21) 10%, rgb(5, 32, 50) 50%, rgb(3 10 21) 100%)
-  
-// .project-thumb-bg-fore
-//   position: absolute
-//   width: 100%
-//   height: 100%
-//   // background: linear-gradient(180deg,#030a1500 10%,#0f2738 55%,#030a1500)
-//   transition: all 2.2s cubic-bezier(0.34, 0.53, 0.48, 0.83)
-//   // opacity: .5
-//   background: radial-gradient(ellipse at center, rgb(13 28 34 / 44%) 40%, rgba(3, 10, 21, 0) 70%)
-//   background-size: 50% 50%
-//   background-repeat: no-repeat
-//   background-position: 50% 55%
-  
-
-// @media (min-width: 768px) 
-//   .project-thumb-bg
-
-// @media (min-width: 992px)
-//   .project-thumb-bg
-//     background: radial-gradient(ellipse at center, rgba(22, 105, 138, 0.425) -10%, rgb(3, 10, 21) 50%), rgb(3, 10, 21)
-//     background-size: 80% 8%
-//     background-repeat: no-repeat
-//     background-position: 50% 60%
-
-// @media (min-width: 1200px) 
-//   .project-thumb-bg
-
-// @media (min-width: 1400px)
-//   .project-thumb-bg
-
-
 
 .project-thumb
   padding: 2rem 0 
@@ -116,8 +60,6 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   height: 8vh
   width: 100%
   margin-bottom: -1px
-
-  // bottom: -.5px
   z-index: 3
 
 .svg-window-top
@@ -160,28 +102,16 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 
 
 @media (min-width: 768px) 
-  .svg-window-top-wrapper /////////////
-    // bottom: -32px
+
 @media (min-width: 992px)
   .thumb-svg-window-wrapper
     height: 44vh
-  .svg-window-top-wrapper ////////////
-    // bottom: -32px
-    // height: 50vh
+
 @media (min-width: 1200px) 
 
 @media (min-width: 1400px)
   .thumb-svg-window-wrapper
     height: 60vh
-  .svg-window-top-wrapper
-    // top: -192.5px
-    // height: 60vh
-  .project-thumb-container
-    // margin-bottom: -224.5px /////////////
-
-
-
-
 
 @media (min-width: 1600px) 
   .project-thumb
@@ -189,35 +119,13 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 
 @media (min-width: 768px) 
   .projects-list
-    // width: 100%
-    // display: grid
-    // grid-template-columns: repeat(12, 8.333%)
-    // row-gap: 10rem
     .project-thumb
       margin: 0 auto
       width: 83.33%
-      // grid-column: 2/12
-
-@media (min-width: 992px) 
-  .projects-list
-    .project-thumb
-      // width: 83.33%
-      // grid-column: 1/13
-
-// 768px - 992px
-.project-imgs-wrapper
-  width: 100%
-  display: flex
-  align-items: flex-end
-  margin: 3rem auto 10rem
-  transform: translateX(-2.5rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
-  transition: all .5s ease-in-out
-  &:hover
-   transform: translateX(-.5rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
 
 
 
-.project-imgs-shadow
+.project-imgs-shadow  
   height: 30%
   width: 80%
   transform: translateX(-50%)
@@ -231,45 +139,16 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   transition: $theme-transition
   
 
-@media (min-width: 992px) 
-  .project-imgs-wrapper
-    width: 90%
-    transform: translateX(-3.8rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
-    &:hover
-      transform: translateX(-2.5rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
-      
-@media (min-width: 1200px) 
-  .project-imgs-wrapper
-    width: 82%
-    transform: translateX(-4.2rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
-    &:hover
-      transform: translateX(-3.2rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
-      
-@media (min-width: 1400px) 
-  .project-imgs-wrapper
-    width: 75%
-    transform: translateX(-4.8rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
-    &:hover
-      transform: translateX(-3.6rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
-      
-
 .project-imgs-wrapper:hover > .wrapper
   box-shadow:   1px 1px 0 1px rgba(255, 255, 255, 0.7)
 
-// .wrapper-desktop, .wrapper-laptop, .wrapper-tablet, .wrapper-mobile
 .wrapper
   margin: 50px auto
   position: relative
   transition: all .5s ease-in
-  // transition-delay: .2s
-  // transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
   box-shadow: 1px 1px 0 1px #f9f9fb, -30px 60px 2px 0 rgba(255, 255, 255, 0.06), 40px -60px 2px -10px rgba(255, 255, 255, 0.06)
-  // box-shadow:  rgba(255,255,255, 0.054) 0px 0px 0px 1px, rgba(255,255,255, 0.15) 0px 1px 0px 0px, rgba(255,255,255, 0.13) 0px 0px 8px 0px, rgba(255,255,255, 0.2) 0px 20px 30px 0px
-  // box-shadow: 0 50px 100px -20px rgb(50 50 93 / 30%), 0 30px 60px -30px rgb(0 0 0 / 50%), -10px 10px 60px -10px rgb(103 178 111 / 30%)
   &:hover
     transform: scale(1.2) translateY(-15px) 
-    // box-shadow:   1px 1px 0 1px rgba(255, 255, 255, 0.7)
-
     &~.wrapper
       transform: translateX(30px) 
 
@@ -303,15 +182,50 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   left: 0
   overflow: visible
 
+.project-imgs-wrapper
+  width: 80%
+  flex-wrap: wrap
+  margin: -6rem auto 8rem
+  display: flex
+  align-items: flex-end
+  transition: all .5s ease-in-out
+  transform: translateX(0rem) perspective(1000px) rotateX(8deg) rotateY(-22deg) rotate(2deg)
+  &:hover
+    transform: translateX(0rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
 
-@media (max-width: 768px)
+@media (min-width: 768px) 
   .project-imgs-wrapper
-    width: 80%
-    flex-wrap: wrap
-    margin: 0 auto
-    transform: translateX(0rem) perspective(1000px) rotateX(8deg) rotateY(-22deg) rotate(2deg)
+    flex-wrap: nowrap
+    width: 100%
+    margin: 3rem auto 10rem
+    transform: translateX(-2.5rem)  perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
     &:hover
-      transform: translateX(0rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+    transform: translateX(-.5rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+
+@media (min-width: 992px) 
+  .project-imgs-wrapper
+    width: 90%
+    transform: translateX(-3.8rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+    &:hover
+      transform: translateX(-2.5rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+      
+@media (min-width: 1200px) 
+  .project-imgs-wrapper
+    width: 82%
+    transform: translateX(-4.2rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+    &:hover
+      transform: translateX(-3.2rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+      
+@media (min-width: 1400px) 
+  .project-imgs-wrapper
+    width: 75%
+    transform: translateX(-4.8rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+    &:hover
+      transform: translateX(-3.6rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+
+
+//Note: desktop first styling here for device wrappers
+@media (max-width: 768px)
   .wrapper
     &:hover
       // transform: scale(1.6) translateY(0px) 
@@ -370,20 +284,21 @@ $font-color: #44A595
 $font-color: #6094a7
 $font-color2: #6bc4b5
 
+
+
 .titles-svg
   position: absolute
   z-index: -1
-  top: 5rem
+  top: 6rem
   left: 0
   width: 100%
   height: 20%
-  // z-index: -1
   -webkit-clip-path: url('#thumb-titles-clip')
   clip-path: url('#thumb-titles-clip')
   background: rgb(14,37,53)
 
 .project-titles-wrapper
-  margin: 0rem auto 4rem
+  margin: 0rem auto 8rem
   padding: 3rem 2rem 0
   width: 100%
   position: relative
@@ -391,11 +306,28 @@ $font-color2: #6bc4b5
   background-repeat: no-repeat
   background-size: 120% 80%
   background-position: 50% 50%
-
-  
   // background: linear-gradient(289deg, rgba(96, 105, 150, 0) 19%, rgba(67, 76, 121, 0.17) 45%, rgba(86, 98, 159, 0) 76%)
   // background-size: 32% 80%
   // background-position: 52% 72%
+
+@media (min-width: 568px) 
+  .titles-svg
+    height: 15%
+  .project-titles-wrapper
+    margin: 0 auto 8rem
+
+@media (min-width: 768px) 
+  .titles-svg
+    height: 20%
+  .project-titles-wrapper
+    margin: 0 auto 2rem
+
+@media (min-width: 992px)
+  .titles-svg
+
+  .project-titles-wrapper
+    margin: 1rem auto 5rem
+
 
 .project-title
   font-size: 3rem
@@ -410,7 +342,6 @@ $font-color2: #6bc4b5
   line-height: 3.8rem
   // border-bottom: 1.5px solid rgb(77 67 109 / 23%)
   // background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47108421005120793) 15%, rgba(51,58,91,0) 52%)
-
   // background: radial-gradient(ellipse at 50% 40%, rgba(40,40,71,0.47) 15%, rgba(51,58,91,0) 52%)
 
 .project-desc
@@ -430,20 +361,17 @@ $font-color2: #6bc4b5
   // border-bottom: 1.5px solid rgb(77 67 109 / 23%)
   // background: radial-gradient(ellipse at 50% 40%, rgba(40, 40, 71, 0.47) 0%, rgba(51, 58, 91, 0) 32%)
 
-
 .project-tools
   position: relative
   width: 80%
   margin: 0rem auto 0rem
   padding: .3rem .3rem .6rem
   color: lightgrey
-
-  // -webkit-clip-path: url('#tools-clip')
-  // clip-path: url('#tools-clip')
-  // background: rgb(3,10,21)
   padding: 0rem 0rem 5rem
   opacity: .9
-// .project-tools-dark  
+
+// .project-tools-dark  (theme naming convention? - class approach)
+
 
 .case-svg
   position: absolute
@@ -471,43 +399,30 @@ $font-color2: #6bc4b5
   .tools-svg
     height: 26%
 
+// @media (min-width: 992px)
+//   .tools-svg
 
-@media (min-width: 992px)
-  .tools-svg
-    // height: 12%
+// @media (min-width: 1200px)
+//   .tools-svg
 
-
-@media (min-width: 1200px)
-  .tools-svg
-
-@media (min-width: 1400px)
-  .tools-svg
-
-
-
+// @media (min-width: 1400px)
+//   .tools-svg
 
 
 .tool-container
   display: inline-block
   padding: .5rem
   text-align: center
-  // width: 100px
-  // height: 100px
-  // z-index: 2
 
 .tool-icon
   display: inline-block
   width: 40px
   height: 40px
-  // padding: 1rem 0 .5rem
 
 .tool-label
   color: #6393b1
   width: 5rem
   margin: auto
-
-// .project-links
-//   margin: -2rem 0 12rem
 
 .project-link
   display: inline-block
@@ -612,72 +527,3 @@ $font-color2: #6bc4b5
     // font-size: 2rem
 
 
-//media queries
-// @media (max-width: 900px)  
-//   .project-list2
-//     width: 100%
-//   .project-thumb2
-//     width: 90%
-
-// @media (min-width: 1600px)  
-//   .project-list2
-//     width: 80%
-//   .project-thumb2
-//     width: 30%
-
-// .ruling
-//   // color: #101018db
-//   border-color: rgba(16, 16, 24, 0)
-//   border-color: rgba(77, 67, 109, 0.73)
-//   width: 70%
-//   margin: 6rem auto 12rem
-//   border-radius: 0px 35px 40px 45px
-//   border-radius: 0px 15px 15px 15px
-//   border-radius: 5px
-//   // border-right: 1.5px solid rgb(62 84 115 / 7%)
-//   padding: 2rem 0 0rem
-//   // border-bottom: 1.5px solid rgb(77 67 109 / 23%)
-//   background: rgb(86,94,136)
-//   // background: linear-gradient(289deg, rgb(96 105 150 / 0%) 26%, rgb(67 76 121 / 10%) 47%, rgb(86 98 159 / 0%) 76%)
-//   background: radial-gradient(ellipse at 50% 136%, rgba(40,40,71,0.47108421005120793) 15%, rgba(51,58,91,0) 52%)
-      
-
-// .exclaim
-//   font-size: 8rem
-//   position: absolute
-//   top: -10px
-//   right: -70px
-//   color: #3fd4bb45
-//   color: #5c93a7
-//   color: #bb8c31
-//   transform: rotateZ(10deg)
-//   font-family: 'Katin'
-
-
-  // .project-mosaic 
-//    display: grid
-//    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr
-//    gap: 5px
-//    height: 400px
-//    margin: 2rem
-
-  
-// #mosaic-0 
-//    background-color: #eceaea
-//    grid-row: 1 / 4
-//    grid-column: 1 / 5
-
-// #mosaic-1 
-//    background-color: #9a9a9a
-//    grid-row: 1 / 4
-//    grid-column: 5 / 7
-   
-// #mosaic-2 
-//    background-color: #e3e3e3
-//    grid-row: 4 / 6
-//    grid-column: 1 / 3
-  
-// #mosaic-3 
-//    background-color: #dbdbdb
-//    grid-row: 4 / 6
-//    grid-column: 3 / 7
