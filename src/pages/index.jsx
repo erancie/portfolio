@@ -6,6 +6,7 @@ import ProjectsList from "../components/ProjectsList"
 import { ScrollContextProvider } from "../components/utils/useScrollContext"
 import LandingHeaders from "../components/LandingHeaders"
 import { IKContext } from 'imagekitio-react'
+import Contact from "../components/Contact"
 
 export default function Home() {
 
@@ -13,22 +14,13 @@ export default function Home() {
     <ScrollContextProvider>
       <IKContext publicKey={process.env.GATSBY_IK_PUBLIC_KEY}
                  urlEndpoint='https://ik.imagekit.io/kv4ohthhz'>
-
         <Layout >
-          
           <BackgroundScene />
-
-      
           <LandingHeaders />
           <ProjectsList /> 
-          <div className="contact">
-              <div className="contact-form">Contact Form</div>
-            {/* </div> */}
-          </div>
+          <Contact />
         </Layout> 
-
       </IKContext>
-
     </ScrollContextProvider>
   )
 }

@@ -9,16 +9,12 @@ module.exports = {
     `gatsby-plugin-mdx`,
     `gatsby-plugin-sass`,
     'gatsby-plugin-postcss',
-    // {
-    //   resolve: 'gatsby-plugin-svg-sprites'
-    // },
-    // {
-    //   resolve: "gatsby-plugin-react-svg",
-    //   options: {
-    //     rule: {
-    //       include: /\.static\.svg$/ // See below to configure properly
-    //     }
-    //   }
-    // }
+    {
+      resolve: 'gatsby-plugin-mailchimp', //https://www.gatsbyjs.com/plugins/gatsby-plugin-mailchimp/
+      options: {
+          endpoint: process.env.MAILCHIMP_ENDPOINT,
+          timeout: 3500,
+      },
+    },
   ],
 }
