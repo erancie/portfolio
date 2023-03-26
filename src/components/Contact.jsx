@@ -1,22 +1,27 @@
 import React, { useState, useRef, useEffect } from 'react'
+import FadeInOut from './utils/FadeInOut'
 // import addToMailchimp from 'gatsby-plugin-mailchimp'
 
       
 export default function Contact() {
 
-  
-
-  const [ form, setForm ] = useState({ email: 'email',
-                                       firstName: 'First Name',
-                                       lastName: 'Last Name', 
-                                       message: 'message' })
+    const [ form, setForm ] = useState({ email: '',
+                                       firstName: '',
+                                       lastName: '', 
+                                       message: '' })
   
   const [success, setSuccess] = useState(true)
 
   //put these in effect
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setSuccess('error') 
+
+    //fix gatsby build error for 'gatsby-plugin-mailchimp'
+
+    setSuccess('success') //remove when fixed
+    setSuccess('error') //remove when fixed
+    // setForm({ email: 'email', firstName: 'First Name', lastName: 'Last Name', message: 'message' });//remove when fixed
+
     // const result = await addToMailchimp(form.email, {
     //   FNAME: form.firstName,
     //   LNAME: form.lastName,
@@ -24,7 +29,7 @@ export default function Contact() {
     // })
     // if(result.result==='success'){
     //   setSuccess('success')
-    //   setForm({ email: 'email', firstName: 'First Name', lastName: 'Last Name', message: 'message' });
+    //   setForm({ email: '', firstName: '', lastName: '', message: '' });
     // }
     // if(result.result==='error') {
     //   setSuccess('error') 
@@ -43,90 +48,94 @@ export default function Contact() {
     })
   }
 
-
-
-
-
-  //implementing hook for detecting clicks outside an element
-  //https://stackoverflow.com/questions/32553158/detect-click-outside-react-component
-
-
   const FormSent=()=>{
     
     const ref = useRef(null)
 
-    //put this in effect   //move this to hook for reuse with all popups?
-    const handleOutsideClick=(e)=> {
-      if (ref.current && !ref.current.contains(e.target)) {
-        // ref.current.style.display='none'
-        setSuccess(null)
-      }
-    }
-    useEffect(()=>{
-      document.addEventListener("mousedown", handleOutsideClick);
-    }, [])
-      // useEffect(()=>{
-  //   return document.removeEventListener("mousedown", handleOutsideClick)
-  // }, [ref])
-  
     if(success==='success') {
       return (
-        <div className="popup-container" 
-          >
-          <div className='form-success' ref={ref} onClick={handleOutsideClick} >
+        <FadeInOut show={success==='success'} duration={200}>
+        <div className="popup-container" onClick={(e)=>setSuccess(null)} >
+          <div className="popup-bg"></div>
+          <div className='form-success' ref={ref} onClick={(e)=>e.stopPropagation()} >
             <p>Thanks for reaching out!</p>
             <span className='dismiss' onClick={(e)=>setSuccess(null)}
             >X</span>
           </div>
-         </div>
+        </div>
+        </FadeInOut>
       )
     }
     if(success==='error'){
       return (
-        <div className="popup-container" >
-          <div className='form-fail' ref={ref} onClick={handleOutsideClick}>
-            <p>Please try sending again</p>
-            <span className='dismiss' onClick={(e)=>setSuccess(null)}
-              >X</span>
+        <FadeInOut show={success==='error'} duration={200}>
+          <div className="popup-container" onClick={(e)=>setSuccess(null)} >
+            <div className="popup-bg"></div>
+            <div className='form-fail' ref={ref} 
+              onClick={(e)=>e.stopPropagation()} >
+              <p>We didn't get that.. <br/> Try sending your message again. <br/>Be sure to include all fields.</p>
+              <span className='dismiss' onClick={(e)=>setSuccess(null)}
+                >X</span>
+            </div>
           </div>
-        </div>
+        </FadeInOut>
       )
     }
   }
 
+  //for implementing fade out..
+  //need to delay removing from dom until fade transition has finished
+  //(2nd answer?) https://stackoverflow.com/questions/42733986/how-to-wait-and-fade-an-element-out
+
   return (
     <div className="contact">
 
-      {/* {success===true?<div>Thanks for reaching out!</div>} */}
-
       {FormSent()}
-      {/* <div className='form-success'>Thanks for reaching out!</div> */}
+
+      <h1 className="contact-header">CONTACT</h1>
 
       <form className="contact-form" onSubmit={handleSubmit} >
-
-        <label>
+    
+        <label for='firstname'>
           First Name
-          <input type="text" name='firstName' onChange={handleChange} value={form.firstName} />
         </label>
+        <input id='firstname' type="text" name='firstName' onChange={handleChange} value={form.firstName} />
 
-        <label>
+        <label for='lastname'>
           Last Name
-          <input type="text" name='lastName' onChange={handleChange} value={form.lastName} />
         </label>
+        <input id='lastname' type="text" name='lastName' onChange={handleChange} value={form.lastName} />
 
-        <label>
+        <label for='email'>
           Email
-          <input type="email" name='email' onChange={handleChange} value={form.email} />
         </label>
+        <input id='email' type="email" name='email' onChange={handleChange} value={form.email} />
 
-        <label>
+        <label for='message'>
           Message
-          <textarea type="text" name='message' onChange={handleChange} value={form.message} />
         </label>
+        <textarea id='message' type="text" name='message' onChange={handleChange} value={form.message} />
 
-        <input type="submit" value="Submit" />
+        <button className='form-submit-btn' type='submit'>SEND</button>
         
       </form>
     </div>
   )
 }
+
+
+  //can use for many popups by implementing hook for detecting clicks outside an element
+  //https://stackoverflow.com/questions/32553158/detect-click-outside-react-component
+
+
+    // //detect click outside of element
+    // const handleOutsideClick=(e)=> {
+    //   if (ref.current && !ref.current.contains(e.target)) {
+    //     setSuccess(null)
+    //   }
+    // }
+    // //event needs to be added to document too.. (?)
+    // useEffect(()=>{
+    //   document.addEventListener("mousedown", handleOutsideClick);
+    //     // return document.removeEventListener("mousedown", handleOutsideClick) //why does action not work with cleanup added
+    // }, [ref])
