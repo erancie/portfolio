@@ -24,14 +24,15 @@ input, textarea
   // padding: 4rem //?
 
 
-// .popup-container
-//   position: fixed
-//   top: 0
-//   left: 0
-//   width: 100vw
-//   height: 100vh
-//   background: white
-//   opacity: .2
+.popup-container
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background: black
+  opacity: .8
+  z-index: 1
 
 
 .form-success, .form-fail
@@ -42,14 +43,15 @@ input, textarea
   margin: auto
   // width: 50%
   // height: 50%
-  position: fixed
+  position: absolute
   top: 50vh
   left: 50vw
   transform: translateX(-50%)
   // transform: translateY(50%)
   padding: 5rem
   transition: all 1.5s ease
-  // z-index: 1
+  z-index: 1
+  // opacity: 1
   .dismiss
     position: absolute
     bottom: 0
