@@ -18,12 +18,13 @@ export default function Home() {
           <BackgroundScene />
           <LandingHeaders />
           <ProjectsList /> 
-          
           <Contact />
-          
-
         </Layout> 
       </IKContext>
     </ScrollContextProvider>
   )
 }
+
+// MAILCHIMP_ENDPOINT="https://gmail.us5.list-manage.com/subscribe/post?u=82817274083b671def9ba7956&id=5f7ec9e7d7&f_id=009c71ebf0"
+// MAILCHIMP_ENDPOINT="https://gmail.us21.list-manage.com/subscribe/post?u=cd80895d46a1bb056f5130051&amp;id=c068134b5e&amp;f_id=006a85e1f0"
+
