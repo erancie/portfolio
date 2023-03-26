@@ -9,12 +9,12 @@ module.exports = {
     `gatsby-plugin-mdx`,
     `gatsby-plugin-sass`,
     'gatsby-plugin-postcss',
-    {
-      resolve: 'gatsby-plugin-mailchimp', //https://www.gatsbyjs.com/plugins/gatsby-plugin-mailchimp/
-      options: {
-          endpoint: process.env.MAILCHIMP_ENDPOINT,
-          timeout: 3500,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-mailchimp', //https://www.gatsbyjs.com/plugins/gatsby-plugin-mailchimp/
+    //   options: {
+    //       endpoint: process.env.MAILCHIMP_ENDPOINT,
+    //       timeout: 3500,
+    //   },
+    // },
   ],
 }
