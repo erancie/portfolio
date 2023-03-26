@@ -18,7 +18,9 @@ export default function Home() {
           <BackgroundScene />
           <LandingHeaders />
           <ProjectsList /> 
+          
           <Contact />
+
         </Layout> 
       </IKContext>
     </ScrollContextProvider>
