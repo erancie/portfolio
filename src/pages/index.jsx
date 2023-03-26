@@ -20,6 +20,7 @@ export default function Home() {
           <ProjectsList /> 
           
           <Contact />
+          
 
         </Layout> 
       </IKContext>
