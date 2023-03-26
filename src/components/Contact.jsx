@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import addToMailchimp from 'gatsby-plugin-mailchimp'
+// import addToMailchimp from 'gatsby-plugin-mailchimp'
 
       
 export default function Contact() {
@@ -15,23 +15,23 @@ export default function Contact() {
 
   //put these in effect
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const result = await addToMailchimp(form.email, {
-      FNAME: form.firstName,
-      LNAME: form.lastName,
-      MESSAGE: form.message
-    })
-    if(result.result==='success'){
-      setSuccess('success')
-      setForm({ email: 'email', firstName: 'First Name', lastName: 'Last Name', message: 'message' });
-    }
-    if(result.result==='error') {
-      setSuccess('error') 
-      //leave form with details
-    }
-    console.log(result)
-  }
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const result = await addToMailchimp(form.email, {
+  //     FNAME: form.firstName,
+  //     LNAME: form.lastName,
+  //     MESSAGE: form.message
+  //   })
+  //   if(result.result==='success'){
+  //     setSuccess('success')
+  //     setForm({ email: 'email', firstName: 'First Name', lastName: 'Last Name', message: 'message' });
+  //   }
+  //   if(result.result==='error') {
+  //     setSuccess('error') 
+  //     //leave form with details
+  //   }
+  //   console.log(result)
+  // }
 
   const handleChange = (event)=>{
     const {name, value} = event.target
@@ -73,10 +73,7 @@ export default function Contact() {
         //   >
           <div className='form-success' ref={ref} onClick={handleOutsideClick} >
             <p>Thanks for reaching out!</p>
-            <span className='dismiss' 
-            // onClick={(e)=>e.target.parentElement.parentElement.style.display='none'}
-            onClick={(e)=>setSuccess(null)}
-
+            <span className='dismiss' onClick={(e)=>setSuccess(null)}
             >X</span>
           </div>
         // </div>
@@ -86,10 +83,7 @@ export default function Contact() {
       return (
         <div className='form-fail' ref={ref} onClick={handleOutsideClick}>
           <p>Please try sending again</p>
-          <span className='dismiss' 
-            // onClick={(e)=>e.target.parentElement.parentElement.style.display='none'}
-            onClick={(e)=>setSuccess(null)}
-
+          <span className='dismiss' onClick={(e)=>setSuccess(null)}
             >X</span>
         </div>
       )
