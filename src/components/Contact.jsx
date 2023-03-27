@@ -19,7 +19,7 @@ export default function Contact() {
     //fix gatsby build error for 'gatsby-plugin-mailchimp'
 
     setSuccess('success') //remove when fixed
-    setSuccess('error') //remove when fixed
+    // setSuccess('error') //remove when fixed
     // setForm({ email: 'email', firstName: 'First Name', lastName: 'Last Name', message: 'message' });//remove when fixed
 
     // const result = await addToMailchimp(form.email, {
@@ -54,7 +54,7 @@ export default function Contact() {
 
     if(success==='success') {
       return (
-        <FadeInOut show={success==='success'} duration={200}>
+        // <FadeInOut show={success==='success'} duration={200}>
         <div className="popup-container" onClick={(e)=>setSuccess(null)} >
           <div className="popup-bg"></div>
           <div className='form-success' ref={ref} onClick={(e)=>e.stopPropagation()} >
@@ -63,22 +63,22 @@ export default function Contact() {
             >X</span>
           </div>
         </div>
-        </FadeInOut>
+        // {/* </FadeInOut> */}
       )
     }
     if(success==='error'){
       return (
-        <FadeInOut show={success==='error'} duration={200}>
+        // <FadeInOut show={success==='error'} duration={200}>
           <div className="popup-container" onClick={(e)=>setSuccess(null)} >
             <div className="popup-bg"></div>
             <div className='form-fail' ref={ref} 
               onClick={(e)=>e.stopPropagation()} >
-              <p>We didn't get that.. <br/> Try sending your message again. <br/>Be sure to include all fields.</p>
+              <p>We didn't get that.. <br/><br/> Try sending your message again. Be sure to include all fields.</p>
               <span className='dismiss' onClick={(e)=>setSuccess(null)}
                 >X</span>
             </div>
           </div>
-        </FadeInOut>
+        // {/* </FadeInOut> */}
       )
     }
   }
@@ -90,35 +90,53 @@ export default function Contact() {
   return (
     <div className="contact">
 
+      <div className="contact-bg"></div>
+
+      <div className="contact-top-svg"></div>
+
       {FormSent()}
 
-      <h1 className="contact-header">CONTACT</h1>
+      <div className="form-wrapper">
 
-      <form className="contact-form" onSubmit={handleSubmit} >
-    
-        <label for='firstname'>
-          First Name
-        </label>
-        <input id='firstname' type="text" name='firstName' onChange={handleChange} value={form.firstName} />
+        <h1 className="contact-header">CONTACT</h1>
 
-        <label for='lastname'>
-          Last Name
-        </label>
-        <input id='lastname' type="text" name='lastName' onChange={handleChange} value={form.lastName} />
+        <form className="contact-form" onSubmit={handleSubmit} >
+          <div className="firstname col-md-5">
+            <label for='firstname'>
+              First Name
+            </label>
+            <input id='firstname' type="text" name='firstName' onChange={handleChange} value={form.firstName} />
+          </div>
 
-        <label for='email'>
-          Email
-        </label>
-        <input id='email' type="email" name='email' onChange={handleChange} value={form.email} />
+          <div className="lastname col-md-5">
+            <label for='lastname'>
+              Last Name
+            </label>
+            <input id='lastname' type="text" name='lastName' onChange={handleChange} value={form.lastName} />
+          </div>
 
-        <label for='message'>
-          Message
-        </label>
-        <textarea id='message' type="text" name='message' onChange={handleChange} value={form.message} />
+          <div className="email col-md-8">
+            <label for='email'>
+              Email
+            </label>
+            <input id='email' type="email" name='email' onChange={handleChange} value={form.email} />
+          </div>
 
-        <button className='form-submit-btn' type='submit'>SEND</button>
-        
-      </form>
+          <div className="message col-12">
+            <label for='message'>
+              Message
+            </label>
+            <textarea id='message' type="text" name='message' onChange={handleChange} value={form.message} />
+          </div>
+
+          <button className='form-submit-btn' type='submit'>SEND</button>
+          
+        </form>
+
+      </div>
+
+      <div className="contact-bottom-svg"></div>
+
     </div>
   )
 }

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Coda&family=Homemade+Apple&family=Kanit:wght@100;200;300;400;500;600;800;900&family=Niconne&family=Phudu:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:wght@100;200;400;600;800&family=Rubik+Mono+One&family=Sonsie+One&display=swap')
 @import './just-grid.css'
 
-@import "contact.sass"
+
 
   
 @tailwind base
@@ -26,6 +26,8 @@ $on-dark-shadow: -6px 4px 4px $shadow
 //project list cards
 @import "cards.sass"
 @import "trick-cards.sass"
+@import "contact.sass"
+@import "tools.sass"
 
 // @media (min-width: 768px) 
 // @media (min-width: 992px)
@@ -49,6 +51,7 @@ canvas
   position: relative
   background: $b
   // z-index: 1
+  // overflow: hidden
 
   // z-index stacking context is relevant to an element's nearest parent with a z-index (always infront) - otherwise it's on the global z-index (can be behind)
   //https://web.dev/learn/css/z-index/ 

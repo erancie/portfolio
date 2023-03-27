@@ -5,6 +5,7 @@ $theme-transition: all 2.2s cubic-bezier(0.34, 0.53, 0.48, 0.83)
   height: 100%
   position: relative 
   margin-top: 50rem
+  overflow: hidden
 
 .projects-list
   margin-top: 20rem
@@ -290,9 +291,9 @@ $font-color2: #6bc4b5
   position: absolute
   z-index: -1
   top: 6rem
-  left: 0
-  width: 100%
-  height: 20%
+  left: -10%
+  width: 120%
+  height: 8%
   -webkit-clip-path: url('#thumb-titles-clip')
   clip-path: url('#thumb-titles-clip')
   background: rgb(14,37,53)
@@ -369,21 +370,23 @@ $font-color2: #6bc4b5
   color: lightgrey
   padding: 0rem 0rem 5rem
   opacity: .9
-
+  
 // .project-tools-dark  (theme naming convention? - class approach)
 
 
 .case-svg
   position: absolute
-  top: 29rem
-  transform: translateX(-50%)
-  left: 50%
-  z-index: -1
-  width: 90vw
-  height: 30%
   -webkit-clip-path: url('#case-clip')
   clip-path: url('#case-clip')
   background: rgb(14,37,53)
+  transform: translateX(-50%)
+  left: 50%
+  z-index: -1
+  width: 140vw
+  height: 30%
+  top: 29rem
+  display: none
+
 
 .tools-svg
   position: absolute
@@ -399,14 +402,31 @@ $font-color2: #6bc4b5
   .tools-svg
     height: 26%
 
-// @media (min-width: 992px)
-//   .tools-svg
+@media (min-width: 768px) 
+  .case-svg
+    // width: 140vw
+    // height: 25%
+    display: block
+    // top: 33rem
 
-// @media (min-width: 1200px)
-//   .tools-svg
+@media (min-width: 992px)
+  .case-svg
+    // width: 110vw
+    // height: 15%
+    // top: 33rem
 
-// @media (min-width: 1400px)
-//   .tools-svg
+@media (min-width: 1200px) 
+  .case-svg
+    // width: 110vw
+    // height: 25%
+    // top: 33rem
+
+@media (min-width: 1800px)
+  .case-svg
+    width: 90vw
+    // height: 15%
+    // top: 33rem
+
 
 
 .tool-container
@@ -441,35 +461,7 @@ $font-color2: #6bc4b5
     background: #70b4cd
     color: black
 
-.site-tools
-  color: lightgrey
-  margin: auto
-  // margin: 0 auto -1.4rem 
-  position: relative
-  z-index: 0
-  text-align: center
-  padding: 7rem 0 5rem
 
-.site-tools-bg
-  background: rgb(3, 10, 21)
-  position: absolute
-  top: 0
-  width: 100%
-  height: 100%
-  z-index: -1
-  transition: opacity 1s ease
-
-.site-tools-wrapper
-  width: 90%
-  margin: auto
-  padding: 2rem
-
-.site-desc
-  // width: 85%
-  margin: 0 auto 2rem
-  font-size: 1.5rem
-  font-weight: 300
-  color: $font-color
 
 @media (min-width: 768px) 
   .project-title
