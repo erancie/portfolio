@@ -6,9 +6,8 @@ import FadeInOut from './utils/FadeInOut'
 export default function Contact() {
 
     const [ form, setForm ] = useState({ email: '',
-                                       firstName: '',
-                                       lastName: '', 
-                                       message: '' })
+                                         name: '',
+                                         message: '' })
   
   const [success, setSuccess] = useState(true)
 
@@ -40,9 +39,9 @@ export default function Contact() {
 
   const handleChange = (event)=>{
     const {name, value} = event.target
-    setForm ((preValue)=>{  
+    setForm ((current)=>{  
       return {
-        ...preValue,
+        ...current,
         [name]: value
       }
     })
@@ -89,33 +88,23 @@ export default function Contact() {
 
   return (
     <div className="contact">
-
       <div className="contact-bg"></div>
-
       <div className="contact-top-svg"></div>
-
       {FormSent()}
 
       <div className="form-wrapper">
-
-        <h1 className="contact-header">CONTACT</h1>
-
+        <h1 className="contact-header">Contact</h1>
+        <p className="contact-desc">Need help on a project? Tell me what your are working on. Let's work together!</p>
+        
         <form className="contact-form" onSubmit={handleSubmit} >
-          <div className="firstname col-md-5">
-            <label for='firstname'>
-              First Name
+          <div className="name col-12">
+            <label for='name'>
+              Name
             </label>
-            <input id='firstname' type="text" name='firstName' onChange={handleChange} value={form.firstName} />
+            <input id='name' type="text" name='firstName' onChange={handleChange} value={form.firstName} />
           </div>
 
-          <div className="lastname col-md-5">
-            <label for='lastname'>
-              Last Name
-            </label>
-            <input id='lastname' type="text" name='lastName' onChange={handleChange} value={form.lastName} />
-          </div>
-
-          <div className="email col-md-8">
+          <div className="email col-12">
             <label for='email'>
               Email
             </label>
@@ -130,13 +119,9 @@ export default function Contact() {
           </div>
 
           <button className='form-submit-btn' type='submit'>SEND</button>
-          
         </form>
-
       </div>
-
       <div className="contact-bottom-svg"></div>
-
     </div>
   )
 }
