@@ -94,7 +94,7 @@ export default function Contact() {
 
       <div className="form-wrapper">
         <h1 className="contact-header">Contact</h1>
-        <p className="contact-desc">Need help on a project? Tell me what your are working on. Let's work together!</p>
+        <p className="contact-desc">Need help with a project? Tell me about it. Let's work together!</p>
         
         <form className="contact-form" onSubmit={handleSubmit} >
           <div className="name col-12">
