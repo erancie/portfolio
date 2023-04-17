@@ -7,6 +7,7 @@ export default function LandingHeaders() {
   const scrollPos = useScrollContext()
     // console.log(scrollPos)
     // console.log(scrollPos/100)
+    const fillColor = '#ffffff88'
   return (
          <div style={ 
                 scrollPos < 550 
@@ -16,27 +17,132 @@ export default function LandingHeaders() {
                     {/* { transform:`scale(.0)` } */}
 
 
-
-
-
           <div className="logo-wrapper">
 
+          <svg className='logo-landing' viewBox="0 0 101 166" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M77.9963 39.7322C77.683 52.9144 79.8427 63.2601 79.8427 63.2601C79.8427 63.2601 63.7386 50.1241 62.1369 46.1802C60.5353 42.2364 62.7872 37.5958 67.1666 35.8152C71.5461 34.0346 76.3947 35.7883 77.9963 39.7322Z" fill="url(#paint0_linear_103_19)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M61.3083 0.903367L43.9696 12.2752C39.5991 15.1416 36.029 18.6263 33.2593 22.7294C30.8477 26.2143 29.1675 29.9343 28.2186 33.8894L28.2207 33.8906C28.2207 33.8906 27.1549 39.1805 26.8702 42.5837C26.6461 45.2618 26.8824 50.9006 26.8824 50.9006C26.4656 52.4093 25.865 52.5682 25.0729 52.7777C24.5325 52.9207 23.9028 53.0872 23.1815 53.7223L67.3697 98.8475L72.2292 104.146C72.9972 105.288 73.6785 106.493 74.2731 107.761C75.2483 109.883 75.9444 112.1 76.3613 114.413C76.7782 116.726 76.8634 119.064 76.617 121.427C76.5185 122.372 76.3906 123.311 76.2334 124.245C76.0176 125.167 75.7139 126.071 75.3223 126.959L26.2522 71.3849C24.2705 68.7966 19.2454 63.6351 19.2454 63.6351C19.2454 63.6351 22.0267 68.5623 18.3981 73.7415C16.8121 76.0054 15.6294 77.5001 14.8006 78.4654C12.6031 80.5289 10.6544 82.7973 8.95472 85.2704C6.84504 88.29 5.12414 91.5974 3.792 95.1925C2.45986 98.7877 1.58744 102.564 1.17472 106.522C0.478645 113.197 1.02429 119.725 2.81167 126.107C4.6052 132.43 7.43986 138.235 11.3157 143.522C15.1976 148.75 20.0836 153.242 25.9737 156.998C31.8638 160.754 38.5311 163.368 45.9757 164.839C53.2444 166.275 60.0594 166.325 66.4206 164.989C72.7232 163.642 78.3007 161.217 83.1529 157.715C88.0113 154.153 91.9764 149.692 95.0482 144.33C98.1262 138.909 100.013 132.862 100.709 126.187C101.122 122.229 101.053 118.297 100.504 114.39C100.019 110.436 99.0724 106.602 97.6649 102.887C96.2636 99.1137 94.4536 95.5308 92.2349 92.1383L92.1603 92.0224L83.9322 82.1817L57.3998 53.2503C55.6937 51.3899 54.4752 49.3829 53.7444 47.2292C53.0137 45.0756 52.7726 42.9471 53.0214 40.8439C53.2701 38.7407 53.9997 36.7379 55.2101 34.8354C56.4206 32.9329 58.0699 31.2969 60.158 29.9274L62.9382 28.104C62.2608 24.3804 60.9389 16.4688 60.8162 10.8175C60.7515 7.83657 60.9927 4.20615 61.3083 0.903367ZM25.9698 107.984C26.2041 106.885 26.5849 105.815 27.1123 104.774L61.2797 140.281C60.4097 140.591 59.4318 140.79 58.3459 140.877C57.2599 140.964 56.1478 141.015 55.0094 141.032C53.8185 140.977 52.66 140.899 51.534 140.797C50.4141 140.636 49.4145 140.469 48.5352 140.295C44.6077 139.519 41.1553 138.204 38.1778 136.35C35.1418 134.484 32.6209 132.268 30.6151 129.701C28.6155 127.075 27.1805 124.199 26.3099 121.073C25.3869 117.877 25.0979 114.624 25.4429 111.316C25.5661 110.135 25.7417 109.024 25.9698 107.984Z" fill="url(#paint1_linear_103_19)"/>
+<defs>
+<linearGradient id="paint0_linear_103_19" x1="59.6331" y1="199.328" x2="57.9829" y2="-9.57601" gradientUnits="userSpaceOnUse">
+<stop offset="0.321607" stop-color={fillColor}/>
+<stop offset="1" stop-color={fillColor} stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_103_19" x1="59.6331" y1="199.328" x2="57.9829" y2="-9.57601" gradientUnits="userSpaceOnUse">
+<stop offset="0.321607" stop-color={fillColor}/>
+<stop offset="1" stop-color={fillColor} stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>
 
 
-            <svg className='logo-landing'  viewBox="0 0 458 479" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill="url(#paint0_linear_12_2208)" fill-opacity="0.25" d="M302.931 79.4067C313.743 79.5716 323.688 85.3581 329.173 94.6763L403.716 221.299C409.335 230.843 409.435 242.66 403.979 252.298L331.831 379.742C326.375 389.38 316.192 395.375 305.117 395.468L158.674 396.709C147.599 396.803 137.315 390.981 131.697 381.437L57.24 254.96C51.7078 245.563 51.52 233.95 56.7453 224.379L128.302 93.3075C133.818 83.2052 144.476 76.9901 155.984 77.1656L302.931 79.4067Z" />
-              <path fill='black' fill-opacity="0.25" d="M165.862 405.715C148.355 405.654 132.801 396.228 125.057 381.664C102.755 339.721 76.4248 298.041 51.7313 255.937C51.7313 255.937 105.174 241.141 208.993 226.062C312.811 210.983 408.506 235.02 408.506 235.02C415.073 248.187 406.428 245.67 333.476 380.902C325.177 396.287 308.363 406.214 290.327 406.151L165.862 405.715Z" />
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M301.15 77.0027C315.23 76.8086 328.322 84.2198 335.401 96.3926L406.685 218.966C413.653 230.947 413.739 245.725 406.911 257.786L336.005 383.037C329.177 395.098 316.461 402.629 302.603 402.82L160.822 404.775C146.742 404.969 133.651 397.558 126.571 385.385L55.2872 262.811C48.3197 250.831 48.2338 236.052 55.0616 223.992L119.085 110.898L57.9575 222.866C52.7321 232.437 52.92 244.05 58.4521 253.447L131.886 378.187C137.505 387.731 147.788 393.552 158.863 393.459L303.291 392.235C314.366 392.141 324.549 386.146 330.005 376.508L401.159 250.819C406.616 241.181 406.516 229.364 400.897 219.82L327.377 94.9343C321.891 85.6161 311.947 79.8296 301.135 79.6648L209.469 78.2668L301.15 77.0027ZM264.432 266.8L257.325 258.965C256.575 258.353 255.799 257.773 254.998 257.224L255.451 256.898L181.843 175.749L188.179 171.655L206.676 176.937C207.796 170.785 210.217 165.06 213.938 159.761C217.607 154.405 222.322 149.866 228.083 146.144L251.222 131.194L272.329 154.464L249.19 169.414C246.438 171.192 244.26 173.324 242.655 175.808C241.051 178.292 240.077 180.911 239.733 183.666C239.389 186.421 239.688 189.213 240.63 192.042C241.572 194.871 243.155 197.512 245.38 199.964L280.621 238.816L280.741 238.73C283.075 241.041 285.233 243.493 287.215 246.086L291.164 250.439L290.547 250.838C290.629 250.965 290.711 251.093 290.792 251.222C293.677 255.687 296.024 260.398 297.833 265.356C299.65 270.236 300.861 275.27 301.466 280.457C302.156 285.582 302.214 290.737 301.64 295.922C300.671 304.666 298.145 312.578 294.06 319.659C289.984 326.662 284.742 332.478 278.336 337.107C271.937 341.659 264.596 344.793 256.311 346.508C247.95 348.207 239.004 348.086 229.473 346.145C219.713 344.156 210.981 340.677 203.28 335.705C195.578 330.734 189.201 324.806 184.147 317.922C179.102 310.96 175.429 303.327 173.126 295.025C170.831 286.645 170.168 278.083 171.136 269.339C171.71 264.154 172.886 259.211 174.665 254.509C176.443 249.807 178.729 245.486 181.523 241.545C184.325 237.526 187.632 233.927 191.442 230.747C195.175 227.551 199.28 224.906 203.756 222.811L268.307 296.728C268.828 295.568 269.234 294.385 269.525 293.178C269.739 291.956 269.914 290.726 270.051 289.487C270.394 286.392 270.301 283.327 269.773 280.292C269.244 277.256 268.349 274.344 267.086 271.555C266.315 269.887 265.431 268.302 264.432 266.8ZM205.2 267.257C204.499 268.618 203.991 270.018 203.674 271.456C203.366 272.818 203.127 274.273 202.955 275.82C202.475 280.153 202.828 284.419 204.014 288.617C205.131 292.722 206.992 296.503 209.595 299.961C212.207 303.342 215.499 306.267 219.469 308.737C223.362 311.192 227.884 312.944 233.033 313.993C234.186 314.228 235.497 314.455 236.966 314.675C238.443 314.818 239.963 314.93 241.526 315.011C243.021 314.999 244.481 314.94 245.907 314.835C247.334 314.73 248.619 314.477 249.764 314.078L205.2 267.257ZM269.368 179.653C262.574 182.687 260.125 190.2 263.898 196.434L265.954 199.83C269.727 206.063 278.293 208.656 285.087 205.622C291.88 202.587 294.329 195.074 290.556 188.841L288.5 185.445C284.727 179.211 276.161 176.618 269.368 179.653Z" />
-              <defs>
-                <linearGradient id="paint0_linear_12_2208" x1="220.5" y1="220.5" x2="160" y2="87" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#45A496"/>
-                    <stop offset="1" stop-color="#45A496" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-            </svg>
+
+<svg className='sparkle-1' viewBox="0 0 113 113" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="48.6686" cy="1.52876" rx="48.6686" ry="1.52876" transform="matrix(-0.0354564 0.957761 -1.02227 -0.0793697 60.0352 10.2891)" fill="url(#paint0_radial_44_520)" fill-opacity="0.4"/>
+<ellipse cx="37.6174" cy="1.56853" rx="37.6174" ry="1.56853" transform="matrix(-0.982636 -0.222909 0.292943 -0.94235 93.252 66.6445)" fill="url(#paint1_radial_44_520)" fill-opacity="0.4"/>
+<ellipse cx="19.0872" cy="1.94018" rx="19.0872" ry="1.94018" transform="matrix(-0.90382 0.550918 -0.711096 -0.633367 75.3789 47.4961)" fill="url(#paint2_radial_44_520)" fill-opacity="0.4"/>
+<defs>
+<radialGradient id="paint0_radial_44_520" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.6686 1.52876) rotate(90) scale(1.52876 48.6686)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint1_radial_44_520" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(37.6174 1.56853) rotate(90) scale(1.56853 37.6174)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint2_radial_44_520" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(19.0872 1.94018) rotate(90) scale(1.94018 19.0872)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
+
+<svg className='sparkle-2' viewBox="0 0 113 113" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="48.6686" cy="1.52876" rx="48.6686" ry="1.52876" transform="matrix(-0.0354564 0.957761 -1.02227 -0.0793697 60.0352 10.2891)" fill="url(#paint0_radial_44_520)" fill-opacity="0.4"/>
+<ellipse cx="37.6174" cy="1.56853" rx="37.6174" ry="1.56853" transform="matrix(-0.982636 -0.222909 0.292943 -0.94235 93.252 66.6445)" fill="url(#paint1_radial_44_520)" fill-opacity="0.4"/>
+<ellipse cx="19.0872" cy="1.94018" rx="19.0872" ry="1.94018" transform="matrix(-0.90382 0.550918 -0.711096 -0.633367 75.3789 47.4961)" fill="url(#paint2_radial_44_520)" fill-opacity="0.4"/>
+</svg>
+
+<svg className='sparkle-3' viewBox="0 0 113 113" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="48.6686" cy="1.52876" rx="48.6686" ry="1.52876" transform="matrix(-0.0354564 0.957761 -1.02227 -0.0793697 60.0352 10.2891)" fill="url(#paint0_radial_44_520)" fill-opacity="0.4"/>
+<ellipse cx="37.6174" cy="1.56853" rx="37.6174" ry="1.56853" transform="matrix(-0.982636 -0.222909 0.292943 -0.94235 93.252 66.6445)" fill="url(#paint1_radial_44_520)" fill-opacity="0.4"/>
+<ellipse cx="19.0872" cy="1.94018" rx="19.0872" ry="1.94018" transform="matrix(-0.90382 0.550918 -0.711096 -0.633367 75.3789 47.4961)" fill="url(#paint2_radial_44_520)" fill-opacity="0.4"/>
+</svg>
 
 
-            <svg className='sparkle-1'  viewBox="0 0 457 497" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+
+  {/* <svg  className='sparkle-1'  viewBox="0 0 205 238" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="112.032" cy="121.098" rx="99.594" ry="2.48393" transform="rotate(93.4515 112.032 121.098)" fill="url(#paint0_radial_0_1)" fill-opacity="0.4"/>
+<ellipse cx="112.033" cy="121.102" rx="60.2318" ry="3.28828" transform="rotate(-165.299 112.033 121.102)" fill="url(#paint1_radial_0_1)" fill-opacity="0.4"/>
+<ellipse cx="112.032" cy="121.102" rx="36.7705" ry="3.28828" transform="rotate(140.068 112.032 121.102)" fill="url(#paint2_radial_0_1)" fill-opacity="0.4"/>
+<ellipse cx="45.3193" cy="57.265" rx="49.2432" ry="1.22815" transform="rotate(93.1846 45.3193 57.265)" fill="url(#paint3_radial_0_1)" fill-opacity="0.4"/>
+<ellipse cx="45.3196" cy="57.2676" rx="29.781" ry="2.08565" transform="rotate(-165.566 45.3196 57.2676)" fill="url(#paint4_radial_0_1)" fill-opacity="0.4"/>
+<ellipse cx="45.3188" cy="57.2673" rx="20.0846" ry="2.08565" transform="rotate(-34.9469 45.3188 57.2673)" fill="url(#paint5_radial_0_1)" fill-opacity="0.4"/>
+<defs>
+<radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(112.032 121.098) rotate(90) scale(2.48393 99.594)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint1_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(112.033 121.102) rotate(90) scale(3.28828 60.2318)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint2_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(112.032 121.102) rotate(90) scale(3.28828 36.7705)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint3_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(45.3193 57.265) rotate(90) scale(1.22815 49.2432)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint4_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(45.3196 57.2676) rotate(90) scale(2.08565 29.781)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint5_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(45.3188 57.2673) rotate(90) scale(2.08565 20.0846)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg> */}
+
+
+{/* <svg className='sparkle-2'  viewBox="0 0 166 278" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="77.962" cy="179.098" rx="84.3681" ry="2.10419" transform="rotate(93.4515 77.962 179.098)" fill="url(#paint10_radial_0_1)" fill-opacity="0.4"/>
+<ellipse cx="77.9621" cy="179.101" rx="51.0236" ry="2.78557" transform="rotate(-165.299 77.9621 179.101)" fill="url(#paint11_radial_0_1)" fill-opacity="0.4"/>
+<ellipse cx="77.9624" cy="179.102" rx="31.149" ry="2.78557" transform="rotate(140.068 77.9624 179.102)" fill="url(#paint12_radial_0_1)" fill-opacity="0.4"/>
+<ellipse cx="120.249" cy="57.265" rx="49.2432" ry="1.22815" transform="rotate(93.1846 120.249 57.265)" fill="url(#paint13_radial_0_1)" fill-opacity="0.4"/>
+<ellipse cx="120.249" cy="57.2676" rx="29.781" ry="2.08565" transform="rotate(-165.566 120.249 57.2676)" fill="url(#paint14_radial_0_1)" fill-opacity="0.4"/>
+<ellipse cx="120.249" cy="57.2673" rx="20.0846" ry="2.08565" transform="rotate(-34.9469 120.249 57.2673)" fill="url(#paint15_radial_0_1)" fill-opacity="0.4"/>
+<defs>
+<radialGradient id="paint10_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(77.962 179.098) rotate(90) scale(2.10419 84.3681)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint11_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(77.9621 179.101) rotate(90) scale(2.78557 51.0236)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint12_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(77.9624 179.102) rotate(90) scale(2.78557 31.149)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint13_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(120.249 57.265) rotate(90) scale(1.22815 49.2432)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint14_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(120.249 57.2676) rotate(90) scale(2.08565 29.781)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint15_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(120.249 57.2673) rotate(90) scale(2.08565 20.0846)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg> */}
+
+            {/* <svg className='sparkle-1'  viewBox="0 0 457 497" fill="none" xmlns="http://www.w3.org/2000/svg">
               <ellipse cx="354.418" cy="372.803" rx="74.5659" ry="2.10721" transform="rotate(-143.324 354.418 372.803)" fill="url(#paint0_radial_0_1)" fill-opacity="0.7"/>
               <ellipse cx="346.455" cy="366.873" rx="51.0971" ry="3.57846" transform="rotate(-42.0747 346.455 366.873)" fill="url(#paint1_radial_0_1)" fill-opacity="0.7"/>
               <ellipse cx="346.455" cy="366.873" rx="34.4603" ry="3.57846" transform="rotate(88.544 346.455 366.873)" fill="url(#paint2_radial_0_1)" fill-opacity="0.7"/>
@@ -84,8 +190,9 @@ export default function LandingHeaders() {
                   <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
                 </radialGradient>
               </defs>
-            </svg>
-            <svg className='sparkle-2'  viewBox="0 0 463 515" xmlns="http://www.w3.org/2000/svg">
+            </svg> */}
+
+            {/* <svg className='sparkle-2'  viewBox="0 0 463 515" xmlns="http://www.w3.org/2000/svg">
               <ellipse cx="149.908" cy="133.135" rx="99.594" ry="2.48393" transform="rotate(-129.568 149.908 133.135)" fill="url(#paint10_radial_0_1)" fill-opacity="0.35"/>
               <ellipse cx="149.905" cy="133.132" rx="60.2318" ry="3.28828" transform="rotate(-28.3179 149.905 133.132)" fill="url(#paint11_radial_0_1)" fill-opacity="0.35"/>
               <ellipse cx="149.906" cy="133.132" rx="36.7705" ry="3.28828" transform="rotate(-82.951 149.906 133.132)" fill="url(#paint12_radial_0_1)" fill-opacity="0.35"/>
@@ -128,8 +235,11 @@ export default function LandingHeaders() {
                   <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
                 </radialGradient>
               </defs>
-            </svg>
+            </svg> */}
+
           </div>
+
+
 
           <div className="titles-wrapper">
             <div className='title-1-container'>
