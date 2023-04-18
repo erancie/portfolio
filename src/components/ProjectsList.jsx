@@ -264,10 +264,11 @@ function ProjectsList() {
 
       {/* move this to layout/menu when hatchIsOpen context is created */}
       {/* <div className="space-walk" style={{right: (hide.current || scrollPos < 1200) && '-5rem'}}> */}
-      <div onClick={handleSpaceWalk} className="space-walk" style={{right: ( scrollPos < 1200) && '-5rem'}}>
-        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-          <path d="M40.0711 0L54.0887 13.7868L54.0886 13.7869L78.5591 37.8544C80.5279 39.7908 80.5279 42.9302 78.5591 44.8666L71.671 51.6412C69.7022 53.5776 66.5102 53.5776 64.5415 51.6412L40.071 27.5737L12.0358 55.1472L1.58299 44.8664C-0.385776 42.9301 -0.385776 39.7907 1.58299 37.8543L40.0711 0ZM59.588 62.5552C61.5568 60.6189 61.5568 57.4794 59.588 55.5431L43.354 39.5764C41.3853 37.64 38.1933 37.64 36.2245 39.5764L16.4258 59.0491L36.2245 78.5219C38.1933 80.4582 41.3853 80.4582 43.354 78.5219L59.588 62.5552Z" />
+      <div onClick={handleSpaceWalk} className="space-walk" style={{right: ( scrollPos < 1300) && '-5rem'}}>
+        <svg viewBox="0 0 50 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M49.9999 29.9854L25.1514 0L21.1301 4.8382L0 30L14.4274 28.0786C14.7991 28.0292 15.1489 27.8422 15.4286 27.5435L25.1961 17.1134L35.0244 27.5492C35.3023 27.8443 35.6489 28.0295 36.0172 28.0797L49.9999 29.9854Z" fill="#727272"/>
         </svg>
+
       </div>
 
 

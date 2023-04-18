@@ -85,8 +85,6 @@ canvas
   font-size: 2rem
 
 
-
-
 .nav-links
   color: #aea2dd
   color: #44a595
@@ -120,9 +118,31 @@ canvas
   top: 15%
   // transform: translateY(-50%)
 
+.go-down
+  position: fixed
+  right: 4%
+  width: 50px
+  transform: translate(-50%, 0)
+  bottom: 15%
+  animation: 3s go-down 4s infinite ease-in-out
+  z-index: 3
+  fill: #ffffff50
+  stroke: #ffffff75
+  stroke-width: .5px
+  transition: all .3s ease
+  
+
+@keyframes go-down
+  20%
+    transform: translate(-50%, 0)
+  50%
+    transform: translate(-50%, 20px)
+  80%
+    transform: translate(-50%, 0)  
+
 .to-top
   position: fixed
-  bottom: 20%
+  bottom: 30%
   right: 3rem
   height: 60px
   width: 60px
@@ -153,10 +173,10 @@ canvas
 
 @media (max-width: 768px) 
   .to-top
-    bottom: 4rem
+    bottom: 6rem
     right: 1.5rem
   .space-walk
-    bottom: 6rem
+    bottom: 4rem
     right: 1.5rem
 
 $title-color2: #81dffb
