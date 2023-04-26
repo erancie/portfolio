@@ -64,7 +64,7 @@ export function ProjectThumb({project, hatchIsOpen}) {
                   }}>
         </div> */}
 
-        <div ref={cardRef} key={project.name} className='project-thumb col-12 col-lg-10 col-xl-10 '>
+        <div ref={cardRef} id={`${project.name}`} key={project.name} className='project-thumb col-12 col-lg-10 col-xl-10 '>
           
           <div className='project-titles-wrapper' style={{
               // background: hatchIsOpen && 'rgb(3,10,21)' 
