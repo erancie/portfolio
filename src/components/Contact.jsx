@@ -51,6 +51,7 @@ export default function Contact() {
     
     const ref = useRef(null)
 
+    
     if(success==='success') {
       return (
         // <FadeInOut show={success==='success'} duration={200}>

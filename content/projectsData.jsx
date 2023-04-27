@@ -160,24 +160,24 @@ const projects = [
      ],       
      link: 'https://honey-8cd45.web.app/'
   },
-  {
-    name: 'gpt',
-    title: 'GPT-3 App',
-    imgRoot: IKRoot,
-    imgSrc: {
-      desktop: null,
-      laptop: null,
-      tablet: null,
-      mobile: null
-    },
-    desc: 'A front end implementation using the GPT-3 API',
-    tools: [
-      { label: 'openai', icon: openai },
-      { label: 'react', icon: react },
-      { label: 'speech recognition', icon: speechRec },
-    ],
-    link: ''
-  },
+  // {
+  //   name: 'gpt',
+  //   title: 'GPT-3 App',
+  //   imgRoot: IKRoot,
+  //   imgSrc: {
+  //     desktop: null,
+  //     laptop: null,
+  //     tablet: null,
+  //     mobile: null
+  //   },
+  //   desc: 'A front end implementation using the GPT-3 API',
+  //   tools: [
+  //     { label: 'openai', icon: openai },
+  //     { label: 'react', icon: react },
+  //     { label: 'speech recognition', icon: speechRec },
+  //   ],
+  //   link: ''
+  // },
 
 ]
 
