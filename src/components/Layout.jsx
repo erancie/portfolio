@@ -7,7 +7,7 @@ function Layout(props) {
       <Nav />
       {props.children}
       <footer>
-        Copywright Vangaurd Creative 2022
+        Copywright &#169; 2023, Elliot Rancie. All rights reserved.
       </footer>
     </div>
   )

@@ -11,14 +11,15 @@ $theme-transition: all 2.2s cubic-bezier(0.34, 0.53, 0.48, 0.83)
   margin-top: 20rem
   position: relative
   height: 100%
-  width: 80%
   margin: auto
   z-index: 2
   display: flex
   flex-wrap: wrap
   align-items: flex-start
-  // font-family: 'Raleway'
-  // font-family: 'Kanit'
+  width: 80%
+  width: 100%
+  font-family: $main-font
+
 
 $thumb-bg-color: rgb(17 23 45 / 95%)
 
@@ -32,6 +33,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   position: relative
   width: 100%
   box-shadow: 0 -6rem 3rem rgba(65, 207, 254, 0.094),  0 8rem 8rem rgba(115, 242, 249, 0.103), 0px -2rem 8rem rgba(253, 253, 225, 0.057),
+  // box-shadow: 0 -5rem 2rem rgba(65, 207, 254, 0.094),  0 2rem 2rem rgba(115, 242, 249, 0.103), 0px -1rem 2rem rgba(253, 253, 225, 0.057),
   transition: box-shadow 1s ease-out
 
 .project-thumb-bg
@@ -43,6 +45,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   background: rgb(3, 10, 21)
   // background: linear-gradient(180deg, #030a15 10%, #041423 51%, #030a15)
   background: linear-gradient(180deg, #041423 10%, #030a15 51%, #041423)
+  // background: linear-gradient(180deg, #04142380 10%, #030a1580 51%, #04142380)
 
 .project-thumb
   padding: 2rem 0 
@@ -101,8 +104,11 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   position: absolute
   top: 0
 
-
 @media (min-width: 568px)
+  .thumb-svg-window-wrapper
+    height: 52vh
+
+@media (min-width: 768px)
   .thumb-svg-window-wrapper
     height: 66vh
 
@@ -179,7 +185,8 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   left: .7rem
   &:hover
     transform: scale(1.2) translate(10px, -15px) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
-
+  img
+    scale: 1.01
 
 //SVGs -
 .svg-desktop, .svg-mobile, .svg-laptop, .svg-tablet 
@@ -198,6 +205,10 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   transform: translateX(0rem) perspective(1000px) rotateX(8deg) rotateY(-22deg) rotate(2deg)
   &:hover
     transform: translateX(0rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+
+@media (min-width: 568px) 
+  .project-imgs-wrapper
+    margin: -6rem auto 10rem
 
 @media (min-width: 768px) 
   .project-imgs-wrapper
@@ -266,6 +277,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
     box-shadow:   1px 1px 0 1px #f9f9fb, -30px 60px 2px 0 rgba(255, 255, 255, 0.03), 40px -60px 2px -10px rgba(255, 255, 255, 0.03)
     z-index: 2
     order: 3
+    // transform: scale(1.12)
     &:hover
       transform: scale(1.4) translate(1.5rem, 0px)
       z-index: 4
@@ -278,12 +290,6 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
     &:hover
       transform: scale(2) translate(-1rem, -3rem)
 
-.projects-list
-  width: 100%
-  font-family: 'Raleway'
-  // font-family: 'Kanit'
-  // font-family: 'Poppins'
-  // font-family: 'Phudu'
 
 $font-color2: #81dffb
 $font-color: #44A595
@@ -337,7 +343,7 @@ $font-color2: #6bc4b5
 
 .project-title
   font-size: 3rem
-  font-weight: 600
+  font-weight: 400
   // padding: 6rem 0 0rem
   color: $font-color
   // color: white
@@ -354,7 +360,7 @@ $font-color2: #6bc4b5
   width: 85%
   margin: auto
   font-size: 1.3rem
-  font-weight: 400
+  font-weight: 300
   color: $font-color2
   color: #4e7b8e
   // color: $font-color

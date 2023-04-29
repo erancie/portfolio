@@ -44,7 +44,7 @@ export function ProjectThumb({project, hatchIsOpen}) {
   }, [cardRef])
 
   return (
-    <div className='project-thumb-container'>
+    <div id='projects' className='project-thumb-container'>
       
       <div className="project-thumb-bg-wrapper" style={hatchIsOpen ? { 
                                                             boxShadow: 'none', 
@@ -88,9 +88,9 @@ export function ProjectThumb({project, hatchIsOpen}) {
                   <linearGradient id="desktop-gradient" 
                       x1="184" y1="165.5" x2="378" y2="236"               
                       gradientUnits="userSpaceOnUse">
-                      <stop stop-color="rgba(38,38,59,0.91)"/>
-                      <stop offset="0.49541" stop-color="rgba(110,110,134,0.85)"/>
-                      <stop offset="1" stop-color="rgba(38,38,59,0.91)"/>
+                      <stop stop-color="rgba(38,38,59)"/>
+                      <stop offset="0.49541" stop-color="rgba(110,110,134)"/>
+                      <stop offset="1" stop-color="rgba(38,38,59)"/>
                   </linearGradient>
                 </defs>
               </svg>
@@ -109,9 +109,9 @@ export function ProjectThumb({project, hatchIsOpen}) {
                   <linearGradient id="tablet-gradient" 
                                 x1="10.5" y1="75" x2="183.5" y2="146" 
                                 gradientUnits="userSpaceOnUse">
-                      <stop stop-color="rgba(38,38,59,0.91)"/>
-                      <stop offset="0.49541" stop-color="rgba(110,110,134,0.85)"/>
-                      <stop offset="1" stop-color="rgba(38,38,59,0.91)"/>
+                      <stop stop-color="rgba(38,38,59)"/>
+                      <stop offset="0.49541" stop-color="rgba(110,110,134)"/>
+                      <stop offset="1" stop-color="rgba(38,38,59)"/>
                   </linearGradient>
                 </defs>
               </svg>
@@ -126,9 +126,9 @@ export function ProjectThumb({project, hatchIsOpen}) {
                   <linearGradient id="mobile-gradient" 
                     x1="0" y1="84.5" x2="95.5" y2="118.5" 
                     gradientUnits="userSpaceOnUse">
-                    <stop stop-color="rgba(38,38,59,0.91)"/>
-                    <stop offset="0.328855" stop-color="rgba(110,110,134,0.85)"/>
-                    <stop offset="1" stop-color="rgba(38,38,59,0.91)"/>
+                    <stop stop-color="rgba(38,38,59)"/>
+                    <stop offset="0.328855" stop-color="rgba(110,110,134)"/>
+                    <stop offset="1" stop-color="rgba(38,38,59)"/>
                   </linearGradient>
                 </defs>
               </svg>
@@ -145,9 +145,9 @@ export function ProjectThumb({project, hatchIsOpen}) {
                   <linearGradient id="laptop-gradient" 
                                 x1="5.5" y1="95" x2="253.5" y2="195" 
                                 gradientUnits="userSpaceOnUse">
-                      <stop stop-color="rgba(38,38,59,0.91)"/>
-                      <stop offset="0.49541" stop-color="rgba(110,110,134,0.85)"/>
-                      <stop offset="1" stop-color="rgba(38,38,59,0.91)"/>
+                      <stop stop-color="rgba(38,38,59)"/>
+                      <stop offset="0.49541" stop-color="rgba(110,110,134)"/>
+                      <stop offset="1" stop-color="rgba(38,38,59)"/>
                   </linearGradient>
                 </defs>
               </svg>
@@ -264,12 +264,12 @@ function ProjectsList() {
 
       {/* move this to layout/menu when hatchIsOpen context is created */}
       {/* <div className="space-walk" style={{right: (hide.current || scrollPos < 1200) && '-5rem'}}> */}
-      <div onClick={handleSpaceWalk} className="space-walk" style={{right: ( scrollPos < 1300) && '-5rem'}}>
+      {/* <div onClick={handleSpaceWalk} className="space-walk" style={{right: ( scrollPos < 1300) && '-5rem'}}>
         <svg viewBox="0 0 50 30" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M49.9999 29.9854L25.1514 0L21.1301 4.8382L0 30L14.4274 28.0786C14.7991 28.0292 15.1489 27.8422 15.4286 27.5435L25.1961 17.1134L35.0244 27.5492C35.3023 27.8443 35.6489 28.0295 36.0172 28.0797L49.9999 29.9854Z" fill="#727272"/>
         </svg>
 
-      </div>
+      </div> */}
 
 
       {/* clip-path svgs */}
