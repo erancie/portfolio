@@ -17,6 +17,7 @@ export default function Home() {
         <Layout >
           <BackgroundScene />
           <LandingHeaders />
+          {/* introduction here  */}
           <ProjectsList /> 
           <Contact />
         </Layout> 
