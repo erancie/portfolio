@@ -2,11 +2,13 @@ import React from "react"
 import '../styles/global.sass'
 import Layout from "../components/Layout"
 import BackgroundScene from "../components/BackgroundScene"
-import ProjectsList from "../components/ProjectsList"
-import { ScrollContextProvider } from "../components/utils/useScrollContext"
 import LandingHeaders from "../components/LandingHeaders"
-import { IKContext } from 'imagekitio-react'
+import Intro from "../components/Intro"
+import ProjectsList from "../components/ProjectsList"
 import Contact from "../components/Contact"
+import { ScrollContextProvider } from "../components/utils/useScrollContext"
+import { IKContext } from 'imagekitio-react'
+
 
 export default function Home() {
 
@@ -17,7 +19,7 @@ export default function Home() {
         <Layout >
           <BackgroundScene />
           <LandingHeaders />
-          {/* introduction here  */}
+          <Intro />
           <ProjectsList /> 
           <Contact />
         </Layout> 

@@ -94,7 +94,7 @@ export default function Contact() {
       {FormSent()}
 
       <div className="form-wrapper">
-        <h1 className="contact-header">Contact</h1>
+        <h1 className="contact-header">Message</h1>
         <p className="contact-desc">Need help with a project? Tell me about it. Let's work together!</p>
         
         <form className="contact-form" onSubmit={handleSubmit} >

@@ -122,7 +122,7 @@ const projects = [
   
   {
     name:'mern',
-    title: 'MERN Platform',
+    title: 'iService',
     imgRoot: IKRoot,
     imgSrc: {
       desktop: mernDesktop,

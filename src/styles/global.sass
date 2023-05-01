@@ -7,10 +7,6 @@
 @tailwind components
 @tailwind utilities
 
-$main-font: 'Poppins'
-$main-font: 'Kanit'
-$main-font: 'Raleway'
-$main-font: 'Nunito Sans'
 $nunito: 'Nunito Sans'
 $main-font: 'Work Sans'
 $work: 'Work Sans'
@@ -588,85 +584,174 @@ $title-color: #44A595
 
 
 
-//project page
-.project-container
+
+//Introduction 
+.introduction
+  margin: auto
+  margin-top: 55rem
+  padding: 2.3rem
+  padding-bottom: 3.2rem
+  border-radius: 12px
   position: relative
-  width: 100%
-  padding-top: 3rem
-  // background: $fore
-  color: white
-  font-family: Raleway
-  justify-content: center
+  color: #5cabc9
+  // color: #44a595
+  // width: 100%
+  width: 90%
+  max-width: 840px
+  font-weight: 300
+  font-size: 1.22rem
+  background: rgba(4,20,35,.95)
+  background: linear-gradient(127deg,  rgba(10,32,54,.95) 0%, rgba(4,20,35,.95) 100%)
+  // border-left: .1px solid #6094a7
+  // border-right: .1px solid #6094a7
+  // // border: .1px solid #6094a7
+  // box-shadow: 0 3px 2px #41727c40
+  // box-shadow: 0 3px 2px #6094a740
+  p
+    margin: auto
+    // max-width: 1000px
 
-.project
-  margin-bottom: 50px
-  height: 100vh
-  text-align: center
-
-.project-header
-  font-size: 2.4rem
-  margin: 2.2rem 0
-  padding: 1.2rem
-
-.project-icons
-  margin-bottom: 3.2rem
-  // margin: 1.2rem 0
-
-.project-item-desc
-  margin: 2rem auto
-
-
-@media (min-width: 800px) 
-  .layout-img2
-    width: 800px
-
-
-.layout-img
-  box-shadow: -2px 6px 6px $shadow
-  border-radius: 3px
-  position: relative
-  top: 0
-  left: 0
-
-$overlay-back: #8d49fbe5
-$overlay-fore: #ffe48c
-// $overlay-fore: white
-
-
-.layout-img-layover
-  opacity: 0
-  position: absolute
-  width: 100%
-  height: 100%
-  background: white
-  // background: linear-gradient(110deg, #865fc4ea 0%, #3d3795e8 50%)
-  background: radial-gradient(circle, #FFF 35%, #FFF00 100%)
-  // background: radial-gradient(circle,#4e3b7a 0%, #5432bba7 100%)
-
-$fore-more: #383155
-
-.overlay-link
+.highlight
+  font-weight: 600
   font-size: 1.6rem
-  font-weight: 800
-  border-top: 5px solid $fore-more
-  border-bottom: 5px solid $fore-more
-  color: $fore-more
-  padding: 1.2rem 2rem 1.4rem
-  position: relative
-  top: 50%
-  transform: translateY(-50%)
-  display: inline-block
-  transition: background .3s ease
-  //note: transform is ignored on inline elements!! pffwhat!
-  &:hover
-    background: $fore-more
-    color: white
-    font-weight: 800
+  color: #44a595
 
+.logo-intro
+  width: 10%
+  margin: auto
+  fill: #5cabc9
+  fill: #44a595
+  padding-bottom: 3rem
+
+.call-to-action
+  width: 90%
+  margin: auto
+  display: flex
+  justify-content: space-evenly
+
+.intro-actions-text
+  // position: relative
+  display: inline
+
+.intro-message, .intro-email
+  display: inline-block
+  width: 60px
+  height: 50px
+  margin: 0 1.6rem
+  svg
+    fill: #44a595
+    transition: all .3s ease
+    &:hover
+      fill: #fff
+      transform: translateY(5px)
+.intro-email
+  margin-right: 5rem
+
+@media (min-width: 768px) 
+  .introduction
+    border-radius: 20px
+    width: 80%
+    font-size: 1.4rem
+    padding: 2.8rem
+    padding-bottom: 4rem
+  p
+    width: 90%
+  .highlight
+    font-size: 1.8rem
+
+// @media (min-width: 992px)
 @media (min-width: 1200px) 
-  .overlay-link
-    font-size: 2.4rem
-    padding: 2.2rem 4rem 2.4rem
+  .introduction
+    padding: 3.5rem
+    padding-bottom: 4.5rem
+    font-size: 1.6rem
+
+
+
+
+
+
+
+// //old? move this////////////////////
+// //project page
+// .project-container
+//   position: relative
+//   width: 100%
+//   padding-top: 3rem
+//   // background: $fore
+//   color: white
+//   font-family: Raleway
+//   justify-content: center
+
+// .project
+//   margin-bottom: 50px
+//   height: 100vh
+//   text-align: center
+
+// .project-header
+//   font-size: 2.4rem
+//   margin: 2.2rem 0
+//   padding: 1.2rem
+
+// .project-icons
+//   margin-bottom: 3.2rem
+//   // margin: 1.2rem 0
+
+// .project-item-desc
+//   margin: 2rem auto
+
+
+// @media (min-width: 800px) 
+//   .layout-img2
+//     width: 800px
+
+  
+// .layout-img
+//   box-shadow: -2px 6px 6px $shadow
+//   border-radius: 3px
+//   position: relative
+//   top: 0
+//   left: 0
+
+// $overlay-back: #8d49fbe5
+// $overlay-fore: #ffe48c
+// // $overlay-fore: white
+
+
+// .layout-img-layover
+//   opacity: 0
+//   position: absolute
+//   width: 100%
+//   height: 100%
+//   background: white
+//   // background: linear-gradient(110deg, #865fc4ea 0%, #3d3795e8 50%)
+//   background: radial-gradient(circle, #FFF 35%, #FFF00 100%)
+//   // background: radial-gradient(circle,#4e3b7a 0%, #5432bba7 100%)
+
+// $fore-more: #383155
+
+// .overlay-link
+//   font-size: 1.6rem
+//   font-weight: 800
+//   border-top: 5px solid $fore-more
+//   border-bottom: 5px solid $fore-more
+//   color: $fore-more
+//   padding: 1.2rem 2rem 1.4rem
+//   position: relative
+//   top: 50%
+//   transform: translateY(-50%)
+//   display: inline-block
+//   transition: background .3s ease
+//   //note: transform is ignored on inline elements!! pffwhat!
+//   &:hover
+//     background: $fore-more
+//     color: white
+//     font-weight: 800
+
+// @media (min-width: 1200px) 
+//   .overlay-link
+//     font-size: 2.4rem
+//     padding: 2.2rem 4rem 2.4rem
 
 
 

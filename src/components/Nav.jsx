@@ -80,7 +80,7 @@ export default function Nav() {
 
 
             {/* Side NAV here  */}
-    <a href="#projects" className="go-down" style={{opacity: `${scrollPos > 1100 ? '0' : 1}`, animation: `${scrollPos > 1100 ? 'none' : '3s go-down 4s infinite ease-in-out'}`}}>
+    <a href="#projects" className="go-down" style={{opacity: `${scrollPos > 2200 ? '0' : 1}`, animation: `${scrollPos > 1100 ? 'none' : '3s go-down 4s infinite ease-in-out'}`}}>
       <svg viewBox="0 0 51 31"  xmlns="http://www.w3.org/2000/svg">
         {/* <svg className='go-down' style={{right: `${scrollPos > 1100 ? '-5rem' : '4%'}`, animation: `${scrollPos > 1100 ? 'none' : '3s go-down 4s infinite ease-in-out'}`}} viewBox="0 0 51 31"  xmlns="http://www.w3.org/2000/svg"> */}
         <path d="M0.00488281 0.434526L24.8534 30.4199L28.8746 25.5817L50.0047 0.419922L35.5774 2.34127C35.2057 2.39077 34.8559 2.57773 34.5762 2.8764L24.8087 13.3065L14.9803 2.87069C14.7024 2.57561 14.3558 2.39043 13.9875 2.34024L0.00488281 0.434526Z" />
@@ -88,7 +88,7 @@ export default function Nav() {
     </a>
 
 
-    <div className="to-top" style={{right: (scrollPos < 1300) && '-5rem'}}>
+    <div className="to-top" style={{right: (scrollPos < 2300) && '-5rem'}}>
       <a href='#top'>
         <svg  viewBox="0 0 50 30" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M49.9999 29.9854L25.1514 0L21.1301 4.8382L0 30L14.4274 28.0786C14.7991 28.0292 15.1489 27.8422 15.4286 27.5435L25.1961 17.1134L35.0244 27.5492C35.3023 27.8443 35.6489 28.0295 36.0172 28.0797L49.9999 29.9854Z" fill="#727272"/>
