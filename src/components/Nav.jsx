@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import { useEffect } from 'react'
 import { useScrollContext } from './utils/useScrollContext'
 import toTop from '/static/svg/to-top.svg'
+import projects from '../../content/projectsData'
 
 
 export default function Nav() {
@@ -79,8 +80,9 @@ export default function Nav() {
     </nav>
 
 
-            {/* Side NAV here  */}
-    <a href="#projects" className="go-down" style={{opacity: `${scrollPos > 2200 ? '0' : 1}`, animation: `${scrollPos > 1100 ? 'none' : '3s go-down 4s infinite ease-in-out'}`}}>
+        {/* Side NAV here  */}
+
+    <a href="#circular" className="go-down" style={{opacity: `${scrollPos > 2200 ? '0' : 1}`, animation: `${scrollPos > 1100 ? 'none' : '3s go-down 4s infinite ease-in-out'}`}}>
       <svg viewBox="0 0 51 31"  xmlns="http://www.w3.org/2000/svg">
         {/* <svg className='go-down' style={{right: `${scrollPos > 1100 ? '-5rem' : '4%'}`, animation: `${scrollPos > 1100 ? 'none' : '3s go-down 4s infinite ease-in-out'}`}} viewBox="0 0 51 31"  xmlns="http://www.w3.org/2000/svg"> */}
         <path d="M0.00488281 0.434526L24.8534 30.4199L28.8746 25.5817L50.0047 0.419922L35.5774 2.34127C35.2057 2.39077 34.8559 2.57773 34.5762 2.8764L24.8087 13.3065L14.9803 2.87069C14.7024 2.57561 14.3558 2.39043 13.9875 2.34024L0.00488281 0.434526Z" />
@@ -88,13 +90,25 @@ export default function Nav() {
     </a>
 
 
-    <div className="to-top" style={{right: (scrollPos < 2300) && '-5rem'}}>
-      <a href='#top'>
-        <svg  viewBox="0 0 50 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M49.9999 29.9854L25.1514 0L21.1301 4.8382L0 30L14.4274 28.0786C14.7991 28.0292 15.1489 27.8422 15.4286 27.5435L25.1961 17.1134L35.0244 27.5492C35.3023 27.8443 35.6489 28.0295 36.0172 28.0797L49.9999 29.9854Z" fill="#727272"/>
+    <div className="side-nav" style={{right: (scrollPos < 2300) && '-5rem'}}>
+
+      <a className='to-top' href='#top'>
+        <svg  viewBox="0 0 50 30" xmlns="http://www.w3.org/2000/svg">
+          <path d="M49.9999 29.9854L25.1514 0L21.1301 4.8382L0 30L14.4274 28.0786C14.7991 28.0292 15.1489 27.8422 15.4286 27.5435L25.1961 17.1134L35.0244 27.5492C35.3023 27.8443 35.6489 28.0295 36.0172 28.0797L49.9999 29.9854Z"/>
         </svg>
       </a>
+
+      <div className="side-bullets">
+        {projects.map((p) => <a href={`#${p.name}`} className="bullet">
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 12C9.31371 12 12 9.31348 12 6C12 2.68652 9.31371 0 6 0C2.68628 0 0 2.68652 0 6C0 9.31348 2.68628 12 6 12ZM10.2399 3.67285C10.4257 3.46826 10.245 3.00146 9.83636 2.62988C9.42775 2.25879 8.94589 2.12305 8.76012 2.32715C8.57436 2.53174 8.755 2.99854 9.16364 3.37012C9.57225 3.7417 10.0541 3.87695 10.2399 3.67285Z" />
+          </svg>
+        </a>)}
+      </div>
+
     </div>
+
+
 
   </>
   )

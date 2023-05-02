@@ -44,7 +44,7 @@ export function ProjectThumb({project, hatchIsOpen}) {
   }, [cardRef])
 
   return (
-    <div id='projects' className='project-thumb-container'>
+    <div className='project-thumb-container'>
       
       <div className="project-thumb-bg-wrapper" style={hatchIsOpen ? { 
                                                             boxShadow: 'none', 
@@ -217,7 +217,7 @@ function ProjectsList() {
   }
 
   return (
-    <div  className='projects-container'>
+    <div className='projects-container'>
 
       {/* <div className="proj-bg-container" ref={bgContainer}></div> */}
       <div className='projects-list'>
@@ -233,7 +233,7 @@ function ProjectsList() {
                                                  }}></div>
 
         </div>
-        
+
         {/* <Stars /> */}
 
         {projects.map( p=> <ProjectThumb project={p} hatchIsOpen={hatchIsOpen} /> )}

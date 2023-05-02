@@ -17,7 +17,7 @@ export default function Contact() {
 
     //fix gatsby build error for 'gatsby-plugin-mailchimp'
 
-    setSuccess('success') //remove when fixed
+    setSuccess('stand-in') //remove when fixed
     // setSuccess('error') //remove when fixed
     // setForm({ email: 'email', firstName: 'First Name', lastName: 'Last Name', message: 'message' });//remove when fixed
 
@@ -52,6 +52,20 @@ export default function Contact() {
     const ref = useRef(null)
 
     
+    if(success==='stand-in') {
+      return (
+        // <FadeInOut show={success==='success'} duration={200}>
+        <div className="popup-container" onClick={(e)=>setSuccess(null)} >
+          <div className="popup-bg"></div>
+          <div className='form-success' ref={ref} onClick={(e)=>e.stopPropagation()} >
+            <p>This feature is having a bad day :( Please make contact another way.</p>
+            <span className='dismiss' onClick={(e)=>setSuccess(null)}
+            >X</span>
+          </div>
+        </div>
+        // {/* </FadeInOut> */}
+      )
+    }
     if(success==='success') {
       return (
         // <FadeInOut show={success==='success'} duration={200}>
