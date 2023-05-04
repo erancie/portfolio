@@ -1,36 +1,29 @@
 
+#intro
+  scroll-margin-top: 120px
 
 //Introduction 
 .introduction
   margin: auto
   margin-top: 55rem
   padding: 2.3rem
-  padding-bottom: 3.2rem
+  padding-bottom: 10rem
   border-radius: 12px
   position: relative
   color: #5cabc9
-  // color: #44a595
-  // width: 100%
   width: 90%
   max-width: 840px
   font-weight: 300
   font-size: 1.22rem
   background: rgba(4,20,35,.95)
   background: linear-gradient(127deg,  rgba(10,32,54,.95) 0%, rgba(4,20,35,.95) 100%)
-  // border-left: .1px solid #6094a7
-  // border-right: .1px solid #6094a7
-  // // border: .1px solid #6094a7
-  // box-shadow: 0 3px 2px #41727c40
-  // box-shadow: 0 3px 2px #6094a740
   .intro-paras
     margin: auto
-    // max-width: 1000px
 
 .highlight
   font-weight: 600
   font-size: 1.6rem
   color: #44a595
-
 
 
 .logo-intro
@@ -42,12 +35,7 @@
 
 .call-to-action
   position: relative
-  width: 90%
   margin: auto
-  // display: flex
-  // flex-wrap: wrap
-  // // flex-direction: 
-  // justify-content: flex-start
 
 .intro-actions-text
   // position: relative
@@ -92,9 +80,23 @@
 
 
 .keep-scrolling
-  padding-top: 4rem
+  // padding-top: 4rem
   position: relative
   // text-align: right
+
+.go-down-intro
+  width: 50px
+  transform: translate(50%, 0)
+  animation: 3s go-down 4s infinite ease-in-out
+  z-index: 3
+  fill: #44a595
+  transition: all .3s ease
+  position: absolute
+  bottom: 65px
+  right: 50%
+  &:hover
+    fill: #fff
+
 
 @media (min-width: 768px) 
   .introduction
@@ -102,20 +104,30 @@
     width: 80%
     font-size: 1.4rem
     padding: 2.8rem
-    padding-bottom: 4rem
+    padding-bottom: 10rem
+
   .intro-paras
+    width: 90%
+  .call-to-action
     width: 90%
   .highlight
     font-size: 1.8rem
+  .go-down-intro
+    // right: 160px
+    bottom: 80px
+
 
 @media (min-width: 992px) 
   .call-to-action
     flex-wrap: nowrap
-  .keep-scrolling
-    // margin: 4rem 4rem 1rem !important
+  .introduction
+    padding-bottom: 6rem
+  .go-down-intro
+    right: 160px
+    bottom: 100px
 
 @media (min-width: 1200px) 
   .introduction
     padding: 3.5rem
-    padding-bottom: 4.5rem
+    padding-bottom: 6rem
     font-size: 1.6rem

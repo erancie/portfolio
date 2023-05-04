@@ -11,6 +11,8 @@ export default function Nav() {
   const scrollPos = useScrollContext()
   const hide = useRef(false)
   const lastPosition = useRef(0)
+  const [inView, setInView] = useState('')
+
 
   //hide nav on scroll down, show on scroll up 
   useEffect(()=>{
@@ -19,6 +21,28 @@ export default function Nav() {
     lastPosition.current = scrollPos  
   }, [scrollPos])
   
+  //white a function that checks if any of the projects are in view
+  const checkInView = useCallback(() => {
+    const projectElements = document.querySelectorAll('.side-viewing')
+    projectElements.forEach(project => {
+      const projectTop = project.getBoundingClientRect().top
+      const projectBottom = project.getBoundingClientRect().bottom
+      // const projectHeight = project.getBoundingClientRect().height
+      const windowHeight = window.innerHeight
+      if (projectTop < windowHeight && projectBottom > 0) {
+        setInView(project.id)
+        console.log('inView: ', inView)
+        console.log('project.id: ', project.id)
+      }
+    })
+  }, [])
+  useEffect(() => {
+    window.addEventListener('scroll', checkInView)
+    return () => {
+      window.removeEventListener('scroll', checkInView)
+    }
+  }, [checkInView])
+
 
   return ( 
     <>
@@ -80,9 +104,11 @@ export default function Nav() {
     </nav>
 
 
-        {/* Side NAV here  */}
 
-    <a href="#circular" className="go-down" style={{opacity: `${scrollPos > 2200 ? '0' : 1}`, animation: `${scrollPos > 1100 ? 'none' : '3s go-down 4s infinite ease-in-out'}`}}>
+    <a href="#intro" className="go-down" style={{bottom: `${scrollPos < 1000 ? '20%' : '-20%'}`, 
+                                                 right: `${scrollPos < 1000 ? '17%' : '27%'}`, 
+                                                 animation: `${scrollPos > 2200 ? 'none' : '3s go-down 4s infinite ease-in-out'}`}}>
+    {/* <a href="#intro" className="go-down" style={{opacity: `${scrollPos > 1000 ? '0' : 1}`, animation: `${scrollPos > 2200 ? 'none' : '3s go-down 4s infinite ease-in-out'}`}}> */}
       <svg viewBox="0 0 51 31"  xmlns="http://www.w3.org/2000/svg">
         {/* <svg className='go-down' style={{right: `${scrollPos > 1100 ? '-5rem' : '4%'}`, animation: `${scrollPos > 1100 ? 'none' : '3s go-down 4s infinite ease-in-out'}`}} viewBox="0 0 51 31"  xmlns="http://www.w3.org/2000/svg"> */}
         <path d="M0.00488281 0.434526L24.8534 30.4199L28.8746 25.5817L50.0047 0.419922L35.5774 2.34127C35.2057 2.39077 34.8559 2.57773 34.5762 2.8764L24.8087 13.3065L14.9803 2.87069C14.7024 2.57561 14.3558 2.39043 13.9875 2.34024L0.00488281 0.434526Z" />
@@ -90,28 +116,51 @@ export default function Nav() {
     </a>
 
 
-    <div className="side-nav" style={{right: (scrollPos < 2300) && '-5rem'}}>
+
+
+    {/* Side Nav */}
+    <div className="side-nav" style={{right: (scrollPos < 2400) && '-5rem'}}>
 
       <a className='to-top' href='#top'>
         <svg  viewBox="0 0 50 30" xmlns="http://www.w3.org/2000/svg">
           <path d="M49.9999 29.9854L25.1514 0L21.1301 4.8382L0 30L14.4274 28.0786C14.7991 28.0292 15.1489 27.8422 15.4286 27.5435L25.1961 17.1134L35.0244 27.5492C35.3023 27.8443 35.6489 28.0295 36.0172 28.0797L49.9999 29.9854Z"/>
         </svg>
       </a>
+      
+      <a href="#intro" className="side-intro">
+        <svg  viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.14459 1.40343C6.30754 1.52688 6.56554 1.5886 6.9186 1.5886C7.26487 1.5886 7.51948 1.52688 7.68243 1.40343C7.84538 1.27348 7.92686 1.07206 7.92686 0.799174C7.92686 0.519788 7.84538 0.31837 7.68243 0.19492C7.51948 0.0649735 7.26487 0 6.9186 0C6.56554 0 6.30754 0.0649735 6.14459 0.19492C5.98843 0.31837 5.91035 0.519788 5.91035 0.799174C5.91035 1.07206 5.98843 1.27348 6.14459 1.40343Z" />
+          <path d="M7.78428 7.02689V2.15387H6.05293V7.02689H7.78428Z" />
+          <path d="M10.8533 4.53201L10.6105 4.77921L12.6252 5.74016L7 10.4355L1.37476 5.74016L3.38947 4.77921L3.14672 4.53201L0.769371 5.66593L1.62646 6.38134L0 7.15712L7 13L14 7.15712L12.3735 6.38135L13.2306 5.66593L10.8533 4.53201Z" />
+        </svg>
+      </a>
 
-      {/* Intro Icon here  */}
+      <div className='side-divide'></div>
 
       <div className="side-bullets">
         {projects.map((p) => <a href={`#${p.name}`} className="bullet">
-          <svg viewBox="0 0 26 23" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 26 23" xmlns="http://www.w3.org/2000/svg"
+               style={(inView === p.name) ? {fill:'white', transform: 'scale(1.2)'} : {fill: '#22a595'}}
+          >
             <path fill-rule="evenodd" clip-rule="evenodd" d="M24.1514 9.09488L12.5256 14.6361L5.30466 4.1808L15.9866 2.0674L24.1514 9.09488ZM16.2818 0.995117L4.68861 3.28882L3.61222 3.50178L4.22827 4.39376L5.98435 6.9364L2.41741 8.66641L2.41162 8.66922L1.42883 9.14588L1.43265 9.14912L2.25647 9.84835L2.26029 9.8516L2.58986 10.1313L3.02029 10.4967L0 11.9615L13 22.9955L26 11.9615L23.2469 10.6263L24.9742 9.80302L25.966 9.33028L25.1433 8.62214L16.2818 0.995117ZM18.7667 12.7617L12.1769 15.9026L6.55809 7.76712L5.84324 8.11383L4.23165 8.89546L3.24886 9.37213L3.24308 9.37493L4.07072 10.0774L13 17.6563L13.0045 17.6524L18.7667 12.7617Z" />
           </svg>
         </a>)}
       </div>
 
-      {/* Message icon here?  */}
+      <div className='side-divide-bot'></div>
 
-      {/* TODO: bullet state changes for current project  in viewport */}
+      <a className='side-message' href='#contact'>
+        <svg viewBox="0 0 42 37" xmlns="http://www.w3.org/2000/svg"
+          style={(inView === 'contact') ? {fill:'white', transform: 'scale(1.2)'} : {fill: '#22a595'}}
+        >
+          <path d="M39.2489 0.712402H2.75109C1.23166 0.712402 0 2.00201 0 3.59292V27.7892C0 29.3801 1.23176 30.6698 2.75109 30.6698H14.8651L18.8947 35.686C19.4174 36.3367 20.188 36.7124 21.0001 36.7124C21.8122 36.7124 22.5827 36.3368 23.1055 35.686L27.1351 30.6698H39.2489C40.7682 30.6698 42 29.3801 42 27.7892V3.59292C42 2.00201 40.7682 0.712402 39.2489 0.712402ZM29.7041 23.7565H7.59796C6.8383 23.7565 6.22242 23.1117 6.22242 22.3163C6.22242 21.5209 6.8383 20.876 7.59796 20.876H29.7041C30.4638 20.876 31.0796 21.5209 31.0796 22.3163C31.0796 23.1117 30.4638 23.7565 29.7041 23.7565ZM6.22242 15.8083C6.22242 15.0129 6.8383 14.3681 7.59796 14.3681H24.5725C25.3321 14.3681 25.948 15.0129 25.948 15.8083C25.948 16.6037 25.3321 17.2486 24.5725 17.2486H7.59796C6.8383 17.2486 6.22242 16.6037 6.22242 15.8083ZM34.402 10.7404H7.59796C6.8383 10.7404 6.22242 10.0956 6.22242 9.30018C6.22242 8.50477 6.8383 7.85992 7.59796 7.85992H34.4019C35.1616 7.85992 35.7775 8.50477 35.7775 9.30018C35.7776 10.0956 35.1617 10.7404 34.402 10.7404Z" />
+        </svg>
+      </a>
+
+      {/* TODO: bullet state changes for current project in viewport */}
       
+      
+
       {/* IDEA: make a 'collect them all' game for the side bullets.
        bullet state permanently changes for visited project */}
 

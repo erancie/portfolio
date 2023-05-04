@@ -102,7 +102,7 @@ export default function Contact() {
   //(2nd answer?) https://stackoverflow.com/questions/42733986/how-to-wait-and-fade-an-element-out
 
   return (
-    <div id='contact' className="contact">
+    <div id='contact' className="contact side-viewing">
       <div className="contact-bg"></div>
       <div className="contact-top-svg"></div>
       {FormSent()}
