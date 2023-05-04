@@ -152,8 +152,8 @@ canvas
   bottom: 15%
   animation: 3s go-down 4s infinite ease-in-out
   z-index: 3
-  fill: #ffffff50
-  stroke: #ffffff75
+  fill: #44a595
+  // stroke: #fff
   stroke-width: .5px
   transition: all .3s ease
   
@@ -169,21 +169,38 @@ canvas
 .side-nav
   position: fixed
   bottom: 36%
-  right: 1.5rem
+  right: 0px
+  padding: 1.5rem
+  border-radius: 25px 0 0 25px
+  // box-shadow: -1px 0px 2px #ffffff20
   // height: 60px
-  width: 30px
+  // width: 30px
   z-index: 3
   transition: all .3s ease
-  opacity: .5
+  opacity: .2
+  background: linear-gradient(180deg, #04142340 10%, #030a1540 51%, #04142340)
+  &:hover
+    opacity: 1
+    box-shadow: -1px 0px 2px #ffffff20
+
+@media (min-width: 1400px) 
+  .side-nav
+    box-shadow: -1px 0px 2px #ffffff20
+    opacity: 1
+
+
 
 .to-top
-  // position: relative
-  margin-bottom: 1rem
   svg
     fill: #44a595
-    transition: fill .3s ease
+    transition: all .3s ease
+    width: 30px
+    margin: auto
+    margin-bottom: 2rem
+
     &:hover
       fill: #fff
+      transform: scale(1.1)
 
 .side-bullets
   // position: relative
@@ -195,12 +212,12 @@ canvas
     margin: .5rem auto
   svg
     fill: #44a595
-    width: 14px
+    width: 32px
     transition: all .3s ease
 
     &:hover
       fill: white
-      transform: scale(1.1) 
+      transform: scale(1.2) 
 
 
 .space-walk

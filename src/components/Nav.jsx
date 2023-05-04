@@ -98,17 +98,24 @@ export default function Nav() {
         </svg>
       </a>
 
+      {/* Intro Icon here  */}
+
       <div className="side-bullets">
         {projects.map((p) => <a href={`#${p.name}`} className="bullet">
-          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 12C9.31371 12 12 9.31348 12 6C12 2.68652 9.31371 0 6 0C2.68628 0 0 2.68652 0 6C0 9.31348 2.68628 12 6 12ZM10.2399 3.67285C10.4257 3.46826 10.245 3.00146 9.83636 2.62988C9.42775 2.25879 8.94589 2.12305 8.76012 2.32715C8.57436 2.53174 8.755 2.99854 9.16364 3.37012C9.57225 3.7417 10.0541 3.87695 10.2399 3.67285Z" />
+          <svg viewBox="0 0 26 23" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24.1514 9.09488L12.5256 14.6361L5.30466 4.1808L15.9866 2.0674L24.1514 9.09488ZM16.2818 0.995117L4.68861 3.28882L3.61222 3.50178L4.22827 4.39376L5.98435 6.9364L2.41741 8.66641L2.41162 8.66922L1.42883 9.14588L1.43265 9.14912L2.25647 9.84835L2.26029 9.8516L2.58986 10.1313L3.02029 10.4967L0 11.9615L13 22.9955L26 11.9615L23.2469 10.6263L24.9742 9.80302L25.966 9.33028L25.1433 8.62214L16.2818 0.995117ZM18.7667 12.7617L12.1769 15.9026L6.55809 7.76712L5.84324 8.11383L4.23165 8.89546L3.24886 9.37213L3.24308 9.37493L4.07072 10.0774L13 17.6563L13.0045 17.6524L18.7667 12.7617Z" />
           </svg>
         </a>)}
       </div>
 
+      {/* Message icon here?  */}
+
+      {/* TODO: bullet state changes for current project  in viewport */}
+      
+      {/* IDEA: make a 'collect them all' game for the side bullets.
+       bullet state permanently changes for visited project */}
+
     </div>
-
-
 
   </>
   )
