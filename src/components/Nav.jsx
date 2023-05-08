@@ -21,28 +21,30 @@ export default function Nav() {
     lastPosition.current = scrollPos  
   }, [scrollPos])
   
-  //white a function that checks if any of the projects are in view
+
+  //write a function that checks if any of the .side-weiwing elements are in view using intersection observer
   const checkInView = useCallback(() => {
+    //select all the .side-viewing elements
     const projectElements = document.querySelectorAll('.side-viewing')
+    //create an observer object and pass in a rule callback 
+    const observer = new IntersectionObserver(entries => { 
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setInView(entry.target.id)
+          console.log('inView: ', inView)
+          console.log('entry.target.id: ', entry.target.id)
+        }
+      })
+    }, { threshold: 0.1 })
+    //pass in entries to the observer
     projectElements.forEach(project => {
-      const projectTop = project.getBoundingClientRect().top
-      const projectBottom = project.getBoundingClientRect().bottom
-      // const projectHeight = project.getBoundingClientRect().height
-      const windowHeight = window.innerHeight
-      if (projectTop < windowHeight && projectBottom > 0) {
-        setInView(project.id)
-        console.log('inView: ', inView)
-        console.log('project.id: ', project.id)
-      }
+      observer.observe(project) 
     })
   }, [])
   useEffect(() => {
-    window.addEventListener('scroll', checkInView)
-    return () => {
-      window.removeEventListener('scroll', checkInView)
-    }
-  }, [checkInView])
-
+    checkInView() 
+  }, [])
+    
 
   return ( 
     <>
@@ -179,3 +181,26 @@ export default function Nav() {
 //         active ? 'active classes' : 'inactive classes')}>Text</button>
 
 //pretty cool - && and turnary expressions can be used to coniditonally include arguments in a function call
+
+
+  //white a function that checks if any of the projects are in view
+  // const checkInView = useCallback(() => {
+  //   const projectElements = document.querySelectorAll('.side-viewing')
+  //   projectElements.forEach(project => {
+  //     const projectTop = project.getBoundingClientRect().top
+  //     const projectBottom = project.getBoundingClientRect().bottom
+  //     // const projectHeight = project.getBoundingClientRect().height
+  //     const windowHeight = window.innerHeight
+  //     if (projectTop < windowHeight && projectBottom > 0) {
+  //       setInView(project.id)
+  //       console.log('inView: ', inView)
+  //       console.log('project.id: ', project.id)
+  //     }
+  //   })
+  // }, [])
+  // useEffect(() => {
+  //   window.addEventListener('scroll', checkInView)
+  //   return () => {
+  //     window.removeEventListener('scroll', checkInView)
+  //   }
+  // }, [checkInView])
