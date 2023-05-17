@@ -14,6 +14,9 @@ export function ProjectThumb({project, hatchIsOpen}) {
 
   const cardRef = useRef(null)
 
+  const [inView, setInView] = useState('')
+
+
   // useEffect(()=> {
   //   cardRef.current.addEventListener("mouseenter", () => {
   //     gsap.to(cardRef.current, {
@@ -28,20 +31,39 @@ export function ProjectThumb({project, hatchIsOpen}) {
   // },[])
   const scrollPos = useScrollContext()
 
-  useEffect(()=> {
-    gsap.to(cardRef.current, { 
-      translateY: 0,
-      opacity: 1,
-      ease: 'none',
-      duration: .8,
-      scrollTrigger: {
-        trigger: cardRef.current, // make .panel2 the trigger
-        start: "30% bottom", // 70% of .panel2 enters the bottom of the viewport
-        // end: "botttom bottom",
-        // markers: true
-      }
-    });
-  }, [cardRef])
+  // useEffect(()=> {
+  //   gsap.to(cardRef.current, { 
+  //     translateY: 0,
+  //     opacity: 1,
+  //     ease: 'none',
+  //     duration: .8,
+  //     scrollTrigger: {
+  //       trigger: cardRef.current, // make .panel2 the trigger
+  //       start: "30% bottom", // 70% of .panel2 enters the bottom of the viewport
+  //       // end: "botttom bottom",
+  //       // markers: true
+  //     }
+  //   });
+  // }, [cardRef])
+
+  const checkInView = useCallback(() => {
+    const projectElements = document.querySelectorAll('.fade-in')
+
+    const observer = new IntersectionObserver(entries => { 
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show')
+        }
+      })
+    }, { threshold: 1 })
+
+    projectElements.forEach(project => {
+      observer.observe(project) 
+    })
+  }, [])
+  useEffect(() => {
+    checkInView() 
+  }, [])
 
   return (
     <div className='project-thumb-container'>
@@ -69,15 +91,15 @@ export function ProjectThumb({project, hatchIsOpen}) {
           <div className='project-titles-wrapper' style={{
               // background: hatchIsOpen && 'rgb(3,10,21)' 
           }}>
-            <h1 className='project-title'>{project.title}</h1>
-            <p className='project-desc'>{project.desc}</p>
+            <h1 className='project-title fade-in'>{project.title}</h1>
+            <p className='project-desc fade-in'>{project.desc}</p>
           </div>
 
           <div className="titles-svg"></div>
 
           <div className="project-imgs-wrapper">
 
-          <div className="wrapper-desktop wrapper">
+          <div className="wrapper-desktop wrapper fade-in">
               <img className='img-desktop card-img' src={`${project.imgRoot}/tr:w-800,tr:q-100${project.imgSrc.desktop}`} />
               <svg className='svg-desktop' viewBox="14 8 400 225" xmlns="http://www.w3.org/2000/svg">
                   <path 
@@ -96,7 +118,7 @@ export function ProjectThumb({project, hatchIsOpen}) {
               </svg>
             </div>
 
-            <div className="wrapper-tablet wrapper">
+            <div className="wrapper-tablet wrapper fade-in">
               <img className='img-tablet card-img' src={`${project.imgRoot}/tr:w-320,tr:q-100${project.imgSrc.tablet}`} 
                 //  srcSet={} //furthey optimize images by providing different resolutions for different screen sizes
                 //  sizes={}
@@ -117,7 +139,7 @@ export function ProjectThumb({project, hatchIsOpen}) {
               </svg>
             </div>
 
-            <div className="wrapper-mobile wrapper">
+            <div className="wrapper-mobile wrapper fade-in">
               <img className='img-mobile card-img' src={`${project.imgRoot}/tr:w-150,tr:q-100${project.imgSrc.mobile}`} />
               <svg className='svg-mobile' viewBox="3 7 75 133" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 8C0 3.58173 3.58172 0 8 0H73C77.4183 0 81 3.58172 81 8V138C81 142.418 77.4183 146 73 146H8C3.58172 146 0 142.418 0 138V8ZM3 7.94558H78V135.041C78 137.802 75.7614 140.041 73 140.041H8C5.23858 140.041 3 137.802 3 135.041V7.94558ZM34.9932 2.97959C34.4447 2.97959 34 3.42426 34 3.97279C34 4.52132 34.4447 4.96599 34.9932 4.96599H47.0068C47.5553 4.96599 48 4.52132 48 3.97279C48 3.42426 47.5553 2.97959 47.0068 2.97959H34.9932Z" 
@@ -134,7 +156,7 @@ export function ProjectThumb({project, hatchIsOpen}) {
               </svg>
             </div>
 
-            <div className="wrapper-laptop wrapper">
+            <div className="wrapper-laptop wrapper fade-in">
               <img className='img-laptop card-img' src={`${project.imgRoot}/tr:w-560,tr:q-100${project.imgSrc.laptop}`} />
               <svg className='svg-laptop' viewBox="16 6 284 160" xmlns="http://www.w3.org/2000/svg">
                 <path 
@@ -164,7 +186,7 @@ export function ProjectThumb({project, hatchIsOpen}) {
           </div>
 
 
-          <div className='project-tools'>
+          <div className='project-tools fade-in'>
             {project.tools.map((t)=>(
               <div className="tool-container">
                 <img src={t.icon} className='tool-icon' />
@@ -173,7 +195,7 @@ export function ProjectThumb({project, hatchIsOpen}) {
             ))} 
           </div>
 
-          <a className='project-link' target="_blank" href={`${project.link}`}>Visit</a>
+          <a className='project-link fade-in' target="_blank" href={`${project.link}`}>Visit</a>
 
 
           <div className="case-svg"></div>

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import FadeInOut from './utils/FadeInOut'
-// import addToMailchimp from 'gatsby-plugin-mailchimp'
+import addToMailchimp from 'gatsby-plugin-mailchimp'
 
       
 export default function Contact() {
@@ -17,24 +17,24 @@ export default function Contact() {
 
     //fix gatsby build error for 'gatsby-plugin-mailchimp'
 
-    setSuccess('stand-in') //remove when fixed
+    // setSuccess('stand-in') //remove when fixed
     // setSuccess('error') //remove when fixed
     // setForm({ email: 'email', firstName: 'First Name', lastName: 'Last Name', message: 'message' });//remove when fixed
 
-    // const result = await addToMailchimp(form.email, {
-    //   FNAME: form.firstName,
-    //   LNAME: form.lastName,
-    //   MESSAGE: form.message
-    // })
-    // if(result.result==='success'){
-    //   setSuccess('success')
-    //   setForm({ email: '', firstName: '', lastName: '', message: '' });
-    // }
-    // if(result.result==='error') {
-    //   setSuccess('error') 
-    //   //leave form with details
-    // }
-    // console.log(result)
+    const result = await addToMailchimp(form.email, {
+      FNAME: form.name,
+      LNAME: form.name,
+      MESSAGE: form.message
+    })
+    if(result.result==='success'){
+      setSuccess('success')
+      setForm({ email: '', name: '', message: '' });
+    }
+    if(result.result==='error') {
+      setSuccess('error') 
+      //leave form with details
+    }
+    console.log(result)
   }
 
   const handleChange = (event)=>{
@@ -45,6 +45,7 @@ export default function Contact() {
         [name]: value
       }
     })
+    console.log(form)
   }
 
   const FormSent=()=>{
@@ -108,32 +109,32 @@ export default function Contact() {
       {FormSent()}
 
       <div className="form-wrapper">
-        <h1 className="contact-header">Message</h1>
-        <p className="contact-desc">Need help with a project? Tell me about it. Let's work together!</p>
+        <h1 className="contact-header fade-in">Message</h1>
+        <p className="contact-desc .fade-in">Need help with a project? Tell me about it. Let's work together!</p>
         
         <form className="contact-form" onSubmit={handleSubmit} >
-          <div className="name col-12">
+          <div className="name col-12 fade-in">
             <label for='name'>
               Name
             </label>
-            <input id='name' type="text" name='firstName' onChange={handleChange} value={form.firstName} />
+            <input id='name' type="text" name='name' onChange={handleChange} value={form.name} />
           </div>
 
-          <div className="email col-12">
+          <div className="email col-12 fade-in">
             <label for='email'>
               Email
             </label>
             <input id='email' type="email" name='email' onChange={handleChange} value={form.email} />
           </div>
 
-          <div className="message col-12">
+          <div className="message col-12 fade-in">
             <label for='message'>
               Message
             </label>
             <textarea id='message' type="text" name='message' onChange={handleChange} value={form.message} />
           </div>
 
-          <button className='form-submit-btn' type='submit'>SEND</button>
+          <button className='form-submit-btn fade-in' type='submit'>SEND</button>
         </form>
       </div>
       <div className="contact-bottom-svg"></div>
