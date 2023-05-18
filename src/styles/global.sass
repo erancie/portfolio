@@ -52,7 +52,14 @@ html, body
 canvas 
   position: relative
   z-index: -1
-  
+
+.fade-in
+  opacity: 0
+  transition: opacity .5s ease-in-out
+
+.show
+  opacity: 1 !important
+
 .container
   max-width: 100%
   height: 100%
@@ -196,6 +203,7 @@ canvas
   margin-bottom: 1.4rem
   margin-top: .8rem
 .side-intro svg
+  width: 5px
   margin-bottom: 2.4rem
 
 .side-divide, .side-divide-bot
@@ -254,7 +262,8 @@ canvas
     width: 30px
     margin-bottom: 2rem
   .side-intro svg
-    width: 30px
+    // width: 30px
+    width: 8px
   .side-bullets svg
     width: 32px
 

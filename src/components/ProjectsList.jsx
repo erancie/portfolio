@@ -10,45 +10,15 @@ gsap.registerPlugin(ScrollTrigger)
 
 export function ProjectThumb({project, hatchIsOpen}) {
 
-  // const exclaimRef = useRef(null) 
-
   const cardRef = useRef(null)
 
   const [inView, setInView] = useState('')
 
-
-  // useEffect(()=> {
-  //   cardRef.current.addEventListener("mouseenter", () => {
-  //     gsap.to(cardRef.current, {
-  //         translateY: -10, duration: .18, ease:'none', 
-  //     })
-  //   });
-  //   cardRef.current.addEventListener("mouseleave", () => {
-  //     gsap.to(cardRef.current, {
-  //         translateY: 0, duration: .18, ease:'none' 
-  //     })
-  //   });
-  // },[])
   const scrollPos = useScrollContext()
 
-  // useEffect(()=> {
-  //   gsap.to(cardRef.current, { 
-  //     translateY: 0,
-  //     opacity: 1,
-  //     ease: 'none',
-  //     duration: .8,
-  //     scrollTrigger: {
-  //       trigger: cardRef.current, // make .panel2 the trigger
-  //       start: "30% bottom", // 70% of .panel2 enters the bottom of the viewport
-  //       // end: "botttom bottom",
-  //       // markers: true
-  //     }
-  //   });
-  // }, [cardRef])
-
+  //make this a custom hook?
   const checkInView = useCallback(() => {
     const projectElements = document.querySelectorAll('.fade-in')
-
     const observer = new IntersectionObserver(entries => { 
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -56,11 +26,11 @@ export function ProjectThumb({project, hatchIsOpen}) {
         }
       })
     }, { threshold: 1 })
-
     projectElements.forEach(project => {
       observer.observe(project) 
     })
   }, [])
+
   useEffect(() => {
     checkInView() 
   }, [])

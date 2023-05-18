@@ -1,26 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react'
-import FadeInOut from './utils/FadeInOut'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 
-      
 export default function Contact() {
 
-    const [ form, setForm ] = useState({ email: '',
-                                         name: '',
-                                         message: '' }) 
+  const [ form, setForm ] = useState({ email: '',
+                                        name: '',
+                                        message: '' }) 
   
   const [success, setSuccess] = useState(true)
 
   //put these in effect
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    //fix gatsby build error for 'gatsby-plugin-mailchimp'
-
-    // setSuccess('stand-in') //remove when fixed
-    // setSuccess('error') //remove when fixed
-    // setForm({ email: 'email', firstName: 'First Name', lastName: 'Last Name', message: 'message' });//remove when fixed
-
+    // setSuccess('stand-in') //for maintenance
     const result = await addToMailchimp(form.email, {
       FNAME: form.name,
       LNAME: form.name,
@@ -49,27 +41,21 @@ export default function Contact() {
   }
 
   const FormSent=()=>{
-    
     const ref = useRef(null)
-
-    
-    if(success==='stand-in') {
-      return (
-        // <FadeInOut show={success==='success'} duration={200}>
-        <div className="popup-container" onClick={(e)=>setSuccess(null)} >
-          <div className="popup-bg"></div>
-          <div className='form-success' ref={ref} onClick={(e)=>e.stopPropagation()} >
-            <p>This feature is having a bad day :( Please make contact another way.</p>
-            <span className='dismiss' onClick={(e)=>setSuccess(null)}
-            >X</span>
-          </div>
-        </div>
-        // {/* </FadeInOut> */}
-      )
-    }
+    // if(success==='stand-in') {
+    //   return (
+    //     <div className="popup-container" onClick={(e)=>setSuccess(null)} >
+    //       <div className="popup-bg"></div>
+    //       <div className='form-success' ref={ref} onClick={(e)=>e.stopPropagation()} >
+    //         <p>This feature is having a bad day :( Please make contact another way.</p>
+    //         <span className='dismiss' onClick={(e)=>setSuccess(null)}
+    //         >X</span>
+    //       </div>
+    //     </div>
+    //   )
+    // }
     if(success==='success') {
       return (
-        // <FadeInOut show={success==='success'} duration={200}>
         <div className="popup-container" onClick={(e)=>setSuccess(null)} >
           <div className="popup-bg"></div>
           <div className='form-success' ref={ref} onClick={(e)=>e.stopPropagation()} >
@@ -78,22 +64,19 @@ export default function Contact() {
             >X</span>
           </div>
         </div>
-        // {/* </FadeInOut> */}
       )
     }
     if(success==='error'){
       return (
-        // <FadeInOut show={success==='error'} duration={200}>
           <div className="popup-container" onClick={(e)=>setSuccess(null)} >
             <div className="popup-bg"></div>
             <div className='form-fail' ref={ref} 
               onClick={(e)=>e.stopPropagation()} >
-              <p>We didn't get that.. <br/><br/> Try sending your message again. Be sure to include all fields.</p>
+              <p>I didn't get that.. <br/><br/> Try sending your message again. Be sure to include all fields.</p>
               <span className='dismiss' onClick={(e)=>setSuccess(null)}
                 >X</span>
             </div>
           </div>
-        // {/* </FadeInOut> */}
       )
     }
   }

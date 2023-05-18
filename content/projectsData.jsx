@@ -17,6 +17,8 @@ import gsap from '/static/svg/gsap.svg'
 import gatsby from '/static/svg/gatsby.svg'
 import firebase from '/static/svg/firebase.svg'
 import mailchimp from '/static/svg/mailchimp.svg'
+import imagekit from '/static/svg/imagekit.svg'
+import figma from '/static/svg/figma.svg'
 
 const url = 'https://ik.imagekit.io/kv4ohthhz/mern1-1280_qH3SRTAhB'
 
@@ -42,32 +44,34 @@ const circularLaptop = '/circular-laptop_cOy72qQILd.PNG'
 const circularTablet = '/circular-tablet_cNLvk29I5.PNG'
 const circularMobile = '/circular-mobile_zxQx1vTbI.PNG'
 
-const tools = {
-  html: html,
-  css: css,
-  js: js,
-  react: react,
-  node: node,
-  express: express,
-  mongodb: mongodb,
-  sass: sass,
-  svg: svg,
-  bootstrap: bootstrap,
-  gpt: openai,
-  speechRec: speechRec,
-  wordpress: wordpress,
-  webpack: webpack,
-  firebase: firebase,
-  three: three,
-  gsap: gsap,
-  gatsby: gatsby,            
-}
+// const tools = {
+//   html: html,
+//   css: css,
+//   js: js,
+//   react: react,
+//   node: node,
+//   express: express,
+//   mongodb: mongodb,
+//   sass: sass,
+//   svg: svg,
+//   bootstrap: bootstrap,
+//   gpt: openai,
+//   speechRec: speechRec,
+//   wordpress: wordpress,
+//   webpack: webpack,
+//   firebase: firebase,
+//   three: three,
+//   gsap: gsap,
+//   gatsby: gatsby,            
+// }
+
     //use this object schema and use obejcts for projects tools when figure out 'for in' for jsx {} error
     // const tools = {
     //           html: html ,
     //           css: css ,
     //           js: js ,
     //         },
+    
 export const thisSite = {
   tools: [
     { label: 'react', icon: react },
@@ -76,6 +80,8 @@ export const thisSite = {
     { label: 'sass', icon: sass },
     { label: 'gatsby', icon: gatsby },
     { label: 'mailchimp', icon: mailchimp },
+    { label: 'imagekit', icon: imagekit },
+    { label: 'figma', icon: figma },
   ]
 }
 
