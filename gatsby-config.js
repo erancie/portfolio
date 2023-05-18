@@ -4,6 +4,8 @@ require("dotenv").config({
 });
 
 module.exports = {
+  // pathPrefix: `/`,
+
   /* Your site config here */
   plugins: [
     `gatsby-plugin-mdx`,

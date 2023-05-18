@@ -16,6 +16,7 @@ import three from '/static/svg/three.svg'
 import gsap from '/static/svg/gsap.svg'
 import gatsby from '/static/svg/gatsby.svg'
 import firebase from '/static/svg/firebase.svg'
+import mailchimp from '/static/svg/mailchimp.svg'
 
 const url = 'https://ik.imagekit.io/kv4ohthhz/mern1-1280_qH3SRTAhB'
 
@@ -74,6 +75,7 @@ export const thisSite = {
     { label: 'gsap', icon: gsap },
     { label: 'sass', icon: sass },
     { label: 'gatsby', icon: gatsby },
+    { label: 'mailchimp', icon: mailchimp },
   ]
 }
 
