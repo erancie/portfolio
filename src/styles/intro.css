@@ -1,0 +1,139 @@
+#intro {
+  scroll-margin-top: 120px;
+}
+
+.introduction {
+  margin: auto;
+  margin-top: 55rem;
+  padding: 2.3rem;
+  padding-bottom: 10rem;
+  border-radius: 12px;
+  position: relative;
+  color: #5cabc9;
+  width: 90%;
+  max-width: 840px;
+  font-weight: 300;
+  font-size: 1.22rem;
+  background: rgba(4, 20, 35, 0.95);
+  background: linear-gradient(127deg, rgba(10, 32, 54, 0.95) 0%, rgba(4, 20, 35, 0.95) 100%);
+}
+.introduction .intro-paras {
+  margin: auto;
+}
+
+.highlight {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #44a595;
+}
+
+.logo-intro {
+  width: 10%;
+  margin: auto;
+  fill: #5cabc9;
+  fill: #44a595;
+  padding-bottom: 3rem;
+}
+
+.call-to-action {
+  position: relative;
+  margin: auto;
+}
+
+.intro-message, .intro-email, .intro-git, .intro-li {
+  position: relative;
+  top: 0;
+  transition: all 0.3s ease;
+}
+.intro-message:hover, .intro-email:hover, .intro-git:hover, .intro-li:hover {
+  color: white;
+  top: -5px;
+}
+.intro-message:hover svg, .intro-email:hover svg, .intro-git:hover svg, .intro-li:hover svg {
+  fill: white;
+}
+.intro-message svg, .intro-email svg, .intro-git svg, .intro-li svg {
+  display: inline-block;
+  fill: #44a595;
+  margin: 0 0.6rem 0 0.3rem;
+}
+
+.intro-message svg {
+  width: 38px;
+  transform: translateY(-2px);
+}
+
+.intro-email svg {
+  width: 36px;
+  transform: translateY(-4px);
+}
+
+.intro-git svg {
+  width: 40px;
+  transform: translateY(-4px);
+}
+
+.intro-li svg {
+  width: 37px;
+  transform: translateY(-4px);
+}
+
+.keep-scrolling {
+  position: relative;
+}
+
+.go-down-intro {
+  width: 50px;
+  transform: translate(50%, 0);
+  animation: 3s go-down 4s infinite ease-in-out;
+  z-index: 3;
+  fill: #44a595;
+  transition: all 0.3s ease;
+  position: absolute;
+  bottom: 65px;
+  right: 50%;
+}
+.go-down-intro:hover {
+  fill: #fff;
+}
+
+@media (min-width: 768px) {
+  .introduction {
+    border-radius: 20px;
+    width: 80%;
+    font-size: 1.4rem;
+    padding: 2.8rem;
+    padding-bottom: 10rem;
+  }
+  .intro-paras {
+    width: 90%;
+  }
+  .call-to-action {
+    width: 90%;
+  }
+  .highlight {
+    font-size: 1.8rem;
+  }
+  .go-down-intro {
+    bottom: 80px;
+  }
+}
+@media (min-width: 992px) {
+  .call-to-action {
+    flex-wrap: nowrap;
+  }
+  .introduction {
+    padding-bottom: 6rem;
+  }
+  .go-down-intro {
+    right: 160px;
+    bottom: 100px;
+  }
+}
+@media (min-width: 1200px) {
+  .introduction {
+    padding: 3.5rem;
+    padding-bottom: 6rem;
+    font-size: 1.6rem;
+  }
+}/*# sourceMappingURL=intro.css.map */

@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,KAAK,EAAE,KAAK;CAAG",
-    "sources": [
-        "styles.scoped.sass"
-    ],
-    "names": [],
-    "file": "styles.scoped.css"
-}
+{"version":3,"sources":["styles.scoped.sass","styles.scoped.css"],"names":[],"mappings":"AAAA;EACE,YAAA;ACCF","file":"styles.scoped.css"}
