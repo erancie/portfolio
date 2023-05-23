@@ -2,7 +2,7 @@
 .contact
   // font-family: 'Nunito Sans', sans-serif
   position: relative
-  z-index: 2
+  z-index: 1
   padding: 4rem 0 5rem
   color: #6094a7
   // text-align: center
@@ -22,6 +22,8 @@
   height: 100%
   // transform: translateX(-50%)
   background: rgba(3, 10, 21, 0.83)
+  // background: linear-gradient(to bottom, #041423 55%, rgba(3, 10, 21, 0.83) 100%)
+
 
 .contact-form
   position: relative
@@ -114,8 +116,9 @@ label:first-of-type
   position: absolute
   bottom: 3rem
   z-index: -1
-  width: 100%
-  height: 20%
+  width: 80%
+  transform: translateX(12.5%)
+  height: 42%
   -webkit-clip-path: url('#tools-clip')
   clip-path: url('#tools-clip')
   background: rgb(72, 130, 172)

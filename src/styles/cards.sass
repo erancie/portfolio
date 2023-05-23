@@ -61,10 +61,23 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 .svg-window-top-wrapper 
   margin-top: 20rem
   position: relative
-  height: 38vh
+  height: 52vh
   width: 100%
   margin-bottom: -1px
   z-index: 3
+
+.svg-window-top
+  background: $thumb-bg-color
+  background: #041423
+  background: linear-gradient(to top, #041423 55%, rgba(3, 10, 21, 0.83) 100%)
+  width: 100%
+  height: 100%
+  position: absolute
+  transform: translateY()
+  -webkit-clip-path: url(#window-top-clip)
+  clip-path: url(#window-top-clip)
+  bottom: 0
+  transition: all 1s ease-out
 
 .svg-window-top-lights
   position: absolute
@@ -77,17 +90,39 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   // rgba(115, 242, 249, 0.1) 0px 4rem 8rem, rgba(253, 253, 225, 0.06) 0px 0rem 8rem
   // z-index: -1
 
-.svg-window-top
+.svg-window-bottom-wrapper 
+  margin-top: -1px
+  position: relative
+  height: 38vh
+  width: 100%
+  margin-bottom: -6rem
+  z-index: 1
+
+.svg-window-bottom
   background: $thumb-bg-color
   background: #041423
+  background: linear-gradient(to bottom, #041423 55%, rgba(3, 10, 21, 0.83) 100%)
   width: 100%
   height: 100%
   position: absolute
   transform: translateY()
-  -webkit-clip-path: url(#window-top-clip)
-  clip-path: url(#window-top-clip)
+  -webkit-clip-path: url(#window-bottom-clip)
+  clip-path: url(#window-bottom-clip)
   bottom: 0
   transition: all 1s ease-out
+
+.svg-window-bottom-lights
+  position: absolute
+  width: 100%
+  height: 70%
+  transform: translate(-50%, -50%)
+  top: 50%
+  left: 50%
+  box-shadow: rgba(65, 207, 254, 0.094) 0px -15rem 3rem,  
+  // rgba(115, 242, 249, 0.1) 0px 4rem 8rem, rgba(253, 253, 225, 0.06) 0px 0rem 8rem
+  // z-index: -1
+
+
 
 .thumb-svg-window-wrapper 
   margin: -.8px auto -.5px
@@ -111,15 +146,14 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   top: 0
   transition: all 1s ease-out
 
-#window-clip-wrapper, #window-top-clip-wrapper, #tools-clip-wrapper, #thumb-titles-clip-wrapper, #case-clip-wrapper
+#window-clip-wrapper, #window-top-clip-wrapper, #window-bottom-clip-wrapper, #tools-clip-wrapper, #thumb-titles-clip-wrapper, #case-clip-wrapper
   position: absolute
   top: 0
 
 @media (min-width: 568px)
   .thumb-svg-window-wrapper
     height: 52vh
-  .svg-window-top-wrapper 
-    height: 60vh
+
 
 @media (min-width: 768px)
   .thumb-svg-window-wrapper
@@ -127,11 +161,15 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 
 
 @media (min-width: 992px)
-  .svg-window-top-wrapper 
+  .svg-window-top-wrapper
+    height: 100vh
+  .svg-window-bottom-wrapper
     height: 80vh
 
 @media (min-width: 1200px)
-  .svg-window-top-wrapper 
+  .svg-window-top-wrapper
+    height: 150vh
+  .svg-window-bottom-wrapper
     height: 100vh
 
 
@@ -325,10 +363,10 @@ $font-color2: #6bc4b5
 .titles-svg
   position: absolute
   z-index: -1
-  top: 6rem
-  left: -10%
-  width: 120%
-  height: 8%
+  top: 3rem
+  // left: -10%
+  width: 100%
+  height: 5%
   -webkit-clip-path: url('#thumb-titles-clip')
   clip-path: url('#thumb-titles-clip')
   background: rgb(14,37,53)
@@ -348,13 +386,13 @@ $font-color2: #6bc4b5
 
 @media (min-width: 568px) 
   .titles-svg
-    height: 15%
+    height: 8%
   .project-titles-wrapper
     margin: 0 auto 8rem
 
 @media (min-width: 768px) 
   .titles-svg
-    height: 20%
+    height: 12%
   .project-titles-wrapper
     margin: 0 auto 2rem
 
@@ -419,8 +457,8 @@ $font-color2: #6bc4b5
   left: 50%
   z-index: -1
   width: 140vw
-  height: 30%
-  top: 29rem
+  height: 40%
+  top: 24rem
   display: none
 
 
@@ -429,14 +467,14 @@ $font-color2: #6bc4b5
   bottom: 3rem
   z-index: -1
   width: 100%
-  height: 12%
+  height: 10%
   -webkit-clip-path: url('#tools-clip')
   clip-path: url('#tools-clip')
   background: rgb(14,37,53)
 
 @media (min-width: 768px) 
   .tools-svg
-    height: 26%
+    height: 22%
 
 @media (min-width: 768px) 
   .case-svg
