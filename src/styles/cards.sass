@@ -61,7 +61,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 .svg-window-top-wrapper 
   margin-top: 20rem
   position: relative
-  height: 52vh
+  height: 36vh
   width: 100%
   margin-bottom: -1px
   z-index: 3
@@ -69,7 +69,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 .svg-window-top
   background: $thumb-bg-color
   background: #041423
-  background: linear-gradient(to top, #041423 55%, rgba(3, 10, 21, 0.83) 100%)
+  // background: linear-gradient(to top, #041423 55%, rgba(3, 10, 21, 0.83) 100%)
   width: 100%
   height: 100%
   position: absolute
@@ -82,11 +82,12 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 .svg-window-top-lights
   position: absolute
   width: 100%
-  height: 70%
-  transform: translate(-50%, -50%)
-  top: 50%
+  height: 100%
+  transform: translate(-50%, -0%)
+  top: 100%
+  // bottom: 0
   left: 50%
-  box-shadow: rgba(65, 207, 254, 0.094) 0px -15rem 3rem,  
+  box-shadow: rgba(65, 207, 254, 0.064) 0px -30vh 3rem,  
   // rgba(115, 242, 249, 0.1) 0px 4rem 8rem, rgba(253, 253, 225, 0.06) 0px 0rem 8rem
   // z-index: -1
 
@@ -162,13 +163,17 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 
 @media (min-width: 992px)
   .svg-window-top-wrapper
-    height: 100vh
+    height: 60vh
+  .svg-window-top-lights
+    box-shadow: rgba(65, 207, 254, 0.064) 0px -50vh 3rem,
   .svg-window-bottom-wrapper
     height: 80vh
 
 @media (min-width: 1200px)
   .svg-window-top-wrapper
-    height: 150vh
+    height: 80vh
+  .svg-window-top-lights
+    box-shadow: rgba(65, 207, 254, 0.064) 0px -70vh 3rem,
   .svg-window-bottom-wrapper
     height: 100vh
 
