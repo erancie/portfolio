@@ -19,10 +19,13 @@
   font-size: 1.22rem
   background: rgba(4,20,35,.95)
   background: linear-gradient(127deg,  rgba(10,32,54,.95) 0%, rgba(4,20,35,.95) 100%)
-  -webkit-clip-path: url(#intro-clip)
-  clip-path: url(#intro-clip)
   .intro-paras
     margin: auto
+
+@media (min-width: 768px) 
+  .introduction
+    -webkit-clip-path: url(#intro-clip)
+    clip-path: url(#intro-clip)
 
 #intro-clip
   position: absolute
@@ -101,22 +104,18 @@
   transition: all .3s ease
   position: absolute
   bottom: 80px
-  // right: 50%
-  right: 15%
+  right: 23%
   &:hover
     fill: #fff
 
-
 @media (min-width: 768px) 
-  .introduction
-    border-radius: 20px
-    width: 80%
-    font-size: 1.4rem
-    padding: 2.8rem
-    padding-bottom: 10rem
-    padding-top: 6rem
-
-
+  .introduction 
+    border-radius: 0px 
+    width: 80% 
+    font-size: 1.4rem 
+    padding: 2.8rem 
+    padding-bottom: 10rem 
+    padding-top: 6rem 
   .intro-paras
     width: 90%
   .call-to-action
@@ -136,7 +135,7 @@
     padding-top: 6rem
 
   .go-down-intro
-    right: 160px
+    // right: 160px
     bottom: 120px
 
 @media (min-width: 1200px) 
