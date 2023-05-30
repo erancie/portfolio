@@ -4,8 +4,13 @@ $theme-transition: all 2.2s cubic-bezier(0.34, 0.53, 0.48, 0.83)
   width: 100%
   height: 100%
   position: relative 
-  margin-top: 6rem
+  margin-top: 12rem
   overflow: hidden
+
+@media (min-width: 568px)
+  .projects-container
+    margin-top: 24rem
+
 
 .projects-list
   margin-top: 20rem
@@ -27,7 +32,6 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   width: 100%
   margin: auto
   position: relative
-  // top: -.5px
 
 .project-thumb-bg-wrapper
   position: relative
@@ -57,11 +61,13 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   transform: translateY(20px)
   // opacity: 0
   z-index: 3
+@media (min-width: 768px)
+  .project-thumb
+    transform: scale(.9)
 
 .svg-window-top-wrapper 
-  margin-top: 20rem
   position: relative
-  height: 36vh
+  height: 24vh
   width: 100%
   margin-bottom: -1px
   z-index: 3
@@ -107,9 +113,9 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 .svg-window-bottom-wrapper 
   margin-top: -1px
   position: relative
-  height: 38vh
+  height: 32vh
   width: 100%
-  // margin-bottom: 0px
+  margin-bottom: -.1px
   z-index: 1
 
 .svg-window-bottom
@@ -140,7 +146,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 .thumb-svg-window-wrapper 
   margin: -.8px auto -.5px
   position: relative
-  height: 38vh
+  height: 36vh
   width: 100%
   z-index: 1
   background: linear-gradient(44deg, rgba(3, 10, 21, 0.144) 16%, rgba(15, 39, 56, 0.409) 72%)
@@ -166,16 +172,20 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 @media (min-width: 568px)
   .thumb-svg-window-wrapper
     height: 52vh
-
+  .svg-window-bottom-wrapper
+    height: 56vh
 
 @media (min-width: 768px)
+  .svg-window-top-wrapper
+    height: 40vh
   .thumb-svg-window-wrapper
     height: 66vh
-
+  .svg-window-bottom-wrapper
+    height: 66vh
 
 @media (min-width: 992px)
   .svg-window-top-wrapper
-    height: 60vh
+    height: 48vh
   .svg-window-top-lights
     box-shadow: rgba(65, 207, 254, 0.064) 0px -50vh 3rem,
   .svg-window-bottom-wrapper
@@ -183,7 +193,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 
 @media (min-width: 1200px)
   .svg-window-top-wrapper
-    height: 80vh
+    height: 58vh
   .svg-window-top-lights
     box-shadow: rgba(65, 207, 254, 0.064) 0px -70vh 3rem,
   .svg-window-bottom-wrapper
@@ -366,8 +376,7 @@ $font-color2: #6bc4b5
 .titles-svg
   position: absolute
   z-index: -1
-  top: 3rem
-  // left: -10%
+  top: 2.5rem
   width: 100%
   height: 5%
   -webkit-clip-path: url('#thumb-titles-clip')
@@ -413,7 +422,7 @@ $font-color2: #6bc4b5
   color: #44a595
   width: 80%
   margin: auto
-  padding: 4rem 0 .5rem
+  padding: 1rem 0 .5rem
   line-height: 3.8rem
   transition: opacity .5s ease-in-out
 
@@ -431,7 +440,7 @@ $font-color2: #6bc4b5
   border-radius: 0px 35px 40px 45px
   border-radius: 0px 15px 15px 15px
   border-radius: 5px
-  padding: .6rem 0 6rem
+  padding: .6rem 0 3rem
   opacity: 0
   transition: opacity .5s ease-in-out
 
@@ -461,48 +470,36 @@ $font-color2: #6bc4b5
   z-index: -1
   width: 140vw
   height: 40%
-  top: 24rem
+  top: 20rem
   display: none
-
 
 .tools-svg
   position: absolute
-  bottom: 3rem
+  bottom: 5rem
   z-index: -1
   width: 100%
-  height: 10%
+  height: 12%
   -webkit-clip-path: url('#tools-clip')
   clip-path: url('#tools-clip')
   background: rgb(14,37,53)
 
 @media (min-width: 768px) 
-  .tools-svg
-    height: 22%
-
-@media (min-width: 768px) 
   .case-svg
-    // width: 140vw
-    // height: 25%
     display: block
-    // top: 33rem
+  .tools-svg
+    height: 16%
+    bottom: 3rem
 
 @media (min-width: 992px)
-  .case-svg
-    // width: 110vw
-    // height: 15%
-    // top: 33rem
+  // .case-svg
 
 @media (min-width: 1200px) 
-  .case-svg
-    // width: 110vw
-    // height: 25%
-    // top: 33rem
+  // .case-svg
 
 @media (min-width: 1800px)
   .case-svg
     width: 90vw
-    // height: 15%
-    // top: 33rem
+
 
 
 
@@ -533,7 +530,7 @@ $font-color2: #6bc4b5
   background: #181c2dab
   padding: 1rem 1.8rem 1.1rem
   transition: opacity .5s ease-in-out 
-  transition: background .2s ease
+  transition: background .2s ease !important
   background: linear-gradient(289deg, rgba(96, 105, 150, 0) 19%, rgba(67, 76, 121, 0.17) 45%, rgba(86, 98, 159, 0) 76%)
   &:hover
     background: $font
@@ -549,6 +546,7 @@ $font-color2: #6bc4b5
     // padding: 0 0 .8rem
   .project-desc
     font-size: 1.5rem
+    // padding: .6rem 0 6rem
   .tool-icon
     width: 50px
     height: 50px

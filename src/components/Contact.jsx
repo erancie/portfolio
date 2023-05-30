@@ -90,7 +90,6 @@ export default function Contact() {
       <div className="contact-bg"></div>
       <div className="contact-top-svg"></div>
       {FormSent()}
-
       <div className="form-wrapper">
         <h1 className="contact-header fade-in">Message</h1>
         <p className="contact-desc .fade-in">Need help with a project? Tell me about it. Let's work together!</p>
@@ -124,7 +123,6 @@ export default function Contact() {
     </div>
   )
 }
-
 
   //can use for many popups by implementing hook for detecting clicks outside an element
   //https://stackoverflow.com/questions/32553158/detect-click-outside-react-component

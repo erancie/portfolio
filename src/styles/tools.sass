@@ -4,13 +4,20 @@
   position: relative
   z-index: 0
   text-align: center
-  padding: 5rem 0 5rem
-  padding: 2rem 0 
-  height: 70vh
+  padding: 10rem 0 2rem
+//   height: 70vh
+
+@media (min-width: 768px)
+  .site-tools
+    // padding: 10rem 0 2rem
 
 @media (min-width: 992px)
   .site-tools
-    height: 36vh
+    padding: 14rem 0 2rem
+
+@media (min-width: 1200px)
+  .site-tools
+    // padding: 14rem 0 2rem
 
 .site-tools-bg
   // background: rgb(3, 10, 21)
@@ -27,11 +34,28 @@
 
 .site-tools-wrapper
   width: 90%
-  margin: 10vh auto 0
-  padding: 2rem
+  margin: 0 auto
+  padding: 1rem 0 8rem
 
 .site-desc
   margin: 0 auto 2rem
   font-size: 1.5rem
   font-weight: 300
   color: $font-color
+
+.site-tools-svg
+  position: absolute
+  -webkit-clip-path: url('#case-clip')
+  clip-path: url('#case-clip')
+  background: rgb(14,37,53)
+  transform: translateX(-50%)
+  left: 50%
+  z-index: -1
+  width: 80vw
+  display: none
+  height: 76%
+  top: 24%
+
+@media (min-width: 992px)
+  .site-tools-svg
+    display: block
