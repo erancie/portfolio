@@ -12,5 +12,4 @@ function Layout(props) {
     </div>
   )
 }
-
 export default React.memo(Layout)

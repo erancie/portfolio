@@ -177,13 +177,16 @@ canvas
 
 .side-nav
   position: fixed
-  bottom: 6%
+  bottom: 0
+  // bottom: calc(50% + 88px)
+  // transform: translateY(45%)
   right: 0px
   padding: 1rem
   padding-right: 1.2rem
   border-radius: 25px 0 0 25px
   z-index: 3
-  transition: all .3s ease
+  transition: right .3s ease, transform 2.5s ease-out
+  // transition: 
   opacity: .7
   // background: linear-gradient(180deg, #04142340 10%, #030a1540 51%, #04142340)
   &:hover
@@ -792,19 +795,22 @@ $title-color: #44A595
   width: 100%
   z-index: 3
   position: fixed 
-  transition: all 2.5s ease-out
+  // transition: bottom 2.5s ease-out
   height: 100vh
   top: 0
 
 .stars-left, .stars-right
   position: absolute
-  top: 33%
-  width: 120px
+  top: 50%
+  transform: translateY(-50%)
+  // width: 100px
+  height: 92vh
   // fill:rgba(255, 255, 255, .5)
   // stroke:#23588769
-  stroke: #99D5D1
-  stroke-width: .7px
-  opacity: .2
+  // stroke: #99D5D1
+  // stroke-width: .7px
+  opacity: .15
+  transition: left .8s ease-in-out, right .8s ease-in-out, transform 2.5s ease-out
 
 .stars-left
   left: -25%
@@ -814,12 +820,12 @@ $title-color: #44A595
 
 @media (min-width: 768px) 
   .stars-left, .stars-right
-    transform: scale(1.5)
+    // transform: scale(1.5)
     stroke-width: .5px
   .stars-left
     left: 5%
   .stars-right
-    right: 0%
+    right: 5%
 
 
 @media (min-width: 992px)
@@ -828,7 +834,7 @@ $title-color: #44A595
   .stars-left
     // left: 10%
   .stars-right
-    right: 10%
+    // right: 10%
 
 @media (min-width: 1200px) 
   .stars-left, .stars-right
