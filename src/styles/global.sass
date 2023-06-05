@@ -165,8 +165,6 @@ canvas
     fill: #fff
 
 
-  
-
 @keyframes go-down
   20%
     transform: translate(50%, 0)
@@ -177,18 +175,17 @@ canvas
 
 .side-nav
   position: fixed
-  bottom: 0
-  // bottom: calc(50% + 88px)
-  // transform: translateY(45%)
+  // bottom: 50%
+  top: 52%
+  transform: translateY(-50%)
+  scale: .75
   right: 0px
   padding: 1rem
   padding-right: 1.2rem
   border-radius: 25px 0 0 25px
   z-index: 3
-  transition: right .3s ease, transform 2.5s ease-out
-  // transition: 
-  opacity: .7
-  // background: linear-gradient(180deg, #04142340 10%, #030a1540 51%, #04142340)
+  transition: right .3s ease, transform 1.8s ease-out, opacity .3s ease
+  opacity: .8
   &:hover
     opacity: 1
     box-shadow: -1px 0px 2px #ffffff20
@@ -256,31 +253,33 @@ canvas
       transform: scale(1.2)
 
 
+
+
 @media (min-width: 768px) 
   .side-nav
-    bottom: 25%
+    // top: 47%
     background: linear-gradient(180deg, #04142340 10%, #030a1540 51%, #04142340)
     opacity: .2
   .to-top svg
-    width: 30px
-    margin-bottom: 2rem
+    // width: 30px
+    // margin-bottom: 2rem
   .side-intro svg
     // width: 30px
-    width: 8px
+    // width: 8px
   .side-bullets svg
-    width: 32px
+    // width: 32px
 
 @media (min-width: 992px) 
   .side-nav
-    padding: 1.5rem
-    padding-right: 1.8rem
+    // padding: 1.5rem
+    // padding-right: 1.8rem
+    scale: 1
+    top: 58%
 
 @media (min-width: 1400px) 
   .side-nav
     box-shadow: -1px 0px 2px #ffffff20
     opacity: 1
-    // padding: 1.8rem
-
 
 .space-walk
   position: fixed
@@ -795,7 +794,7 @@ $title-color: #44A595
   width: 100%
   z-index: 3
   position: fixed 
-  // transition: bottom 2.5s ease-out
+  transition: transform 1.8s ease-out
   height: 100vh
   top: 0
 
@@ -803,47 +802,39 @@ $title-color: #44A595
   position: absolute
   top: 50%
   transform: translateY(-50%)
-  // width: 100px
-  height: 92vh
-  // fill:rgba(255, 255, 255, .5)
-  // stroke:#23588769
-  // stroke: #99D5D1
-  // stroke-width: .7px
+  height: 60vh
   opacity: .15
-  transition: left .8s ease-in-out, right .8s ease-in-out, transform 2.5s ease-out
+  transition: left .8s ease-in-out, right .8s ease-in-out
+  // transform: scale(.7)
 
 .stars-left
-  left: -25%
+  left: 2%
 .stars-right
-  right: -25%
+  right: 2%
   // bottom: 150px
 
 @media (min-width: 768px) 
+
+
+
+@media (min-width: 992px)
   .stars-left, .stars-right
-    // transform: scale(1.5)
-    stroke-width: .5px
+    height: 80vh
   .stars-left
     left: 5%
   .stars-right
     right: 5%
 
 
-@media (min-width: 992px)
-  .stars-left, .stars-right
-
-  .stars-left
-    // left: 10%
-  .stars-right
-    // right: 10%
 
 @media (min-width: 1200px) 
   .stars-left, .stars-right
-    transform: scale(2)
-    stroke-width: .3px
 
 @media (min-width: 1400px)
-  .stars-left, .stars-right
-
+  .stars-left
+    left: 7%
+  .stars-right
+    right: 8%
 
 
 footer

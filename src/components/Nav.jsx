@@ -120,9 +120,11 @@ export default function Nav() {
 
 
     {/* Side Nav */}
-    <div className="side-nav" style={{right: (scrollPos < 2400) && '-6rem',
+    <div className="side-nav" style={{right: (scrollPos < 2800) && '-6rem',
                                       // bottom: 'calc(45% + '+ scrollPos/88+'px)' 
-                                      transform: `translateY(${scrollPos/88}px)`
+                                      // transform: `translateY(${scrollPos/100}px)`
+                                      transform: `translateY(calc(-50% - ${scrollPos/100}px))`
+
                                       }}>
 
       <a className='to-top' href='#top'>
