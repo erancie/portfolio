@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useScrollContext } from "./utils/useScrollContext"
 import { IKImage } from 'imagekitio-react'
 import Stars from "../components/Stars"
+import Contact from './Contact'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -251,6 +252,8 @@ function ProjectsList() {
         <div className="svg-window-bottom-bg-lights"></div>
         <div className='svg-window-bottom' style={{ opacity: hatchIsOpen && '0' }}></div>
       </div>
+
+      <Contact />
 
 
       {/* clip-path svgs */}

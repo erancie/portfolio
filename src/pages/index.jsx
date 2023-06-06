@@ -39,7 +39,7 @@ export default function Home() {
           <LandingHeaders />
           <Intro />
           <ProjectsList /> 
-          <Contact />
+          {/* <Contact /> */}
         </Layout> 
       </IKContext>
     </ScrollContextProvider>
