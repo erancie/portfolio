@@ -14,5 +14,11 @@ module.exports = {
           timeout: 3500,
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'static/svg/icon.svg',
+      },
+    },
   ],
 }
