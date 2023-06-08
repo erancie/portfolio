@@ -104,7 +104,7 @@ const projects = [
       { label: 'webpack', icon: webpack },
       { label: 'svg', icon: svg },
     ],
-    link: ''
+    link: 'https://circular-e8a2f.web.app/'
   },
 
   {
