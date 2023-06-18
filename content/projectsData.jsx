@@ -24,11 +24,10 @@ const url = 'https://ik.imagekit.io/kv4ohthhz/mern1-1280_qH3SRTAhB'
 
 const IKRoot = 'https://ik.imagekit.io/kv4ohthhz'
 
-const mernDesktop = '/mern-home-desk_-QhnLFzBJ'
-const mernLaptop = '/mern-task-lap_3dZTcgxpi'
-const mernTablet = '/mern-new-tab_0nAsdBvUP'
-const mernMobile = '/mern-experts-mob_XYr5kcQMw'
-
+const mernDesktop = '/mern-desk_rE4mgwQCZc.JPG'
+const mernLaptop = '/mern-lap_QCo7qLXgKH.JPG'
+const mernTablet = '/mern-tab_6w2R3dDAM.JPG'
+const mernMobile = '/mern-mob_2X3tVvmyG.JPG'
 const honeyDesktop = '/honey-desk-2_nu764Oqyo.PNG'
 const honeyLaptop = '/honey-lap-2_T5x-T05rF.PNG'
 const honeyTablet = '/honey-tab-3_I7RMjjk18.PNG'
