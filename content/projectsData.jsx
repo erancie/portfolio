@@ -28,6 +28,7 @@ const mernDesktop = '/mern-desk_rE4mgwQCZc.JPG'
 const mernLaptop = '/mern-lap_QCo7qLXgKH.JPG'
 const mernTablet = '/mern-tab_6w2R3dDAM.JPG'
 const mernMobile = '/mern-mob_2X3tVvmyG.JPG'
+
 const honeyDesktop = '/honey-desk-2_nu764Oqyo.PNG'
 const honeyLaptop = '/honey-lap-2_T5x-T05rF.PNG'
 const honeyTablet = '/honey-tab-3_I7RMjjk18.PNG'
@@ -42,6 +43,11 @@ const circularDesktop = '/circular-desktop_O2p2xyWdK.PNG'
 const circularLaptop = '/circular-laptop_cOy72qQILd.PNG'
 const circularTablet = '/circular-tablet_cNLvk29I5.PNG'
 const circularMobile = '/circular-mobile_zxQx1vTbI.PNG'
+
+const gptDesktop = ''
+const gptLaptop = ''
+const gptTablet = ''
+const gptMobile = ''
 
 // const tools = {
 //   html: html,
@@ -167,24 +173,25 @@ const projects = [
      ],       
      link: 'https://honey-8cd45.web.app/'
   },
-  // {
-  //   name: 'gpt',
-  //   title: 'GPT-3 App',
-  //   imgRoot: IKRoot,
-  //   imgSrc: {
-  //     desktop: null,
-  //     laptop: null,
-  //     tablet: null,
-  //     mobile: null
-  //   },
-  //   desc: 'A front end implementation using the GPT-3 API',
-  //   tools: [
-  //     { label: 'openai', icon: openai },
-  //     { label: 'react', icon: react },
-  //     { label: 'speech recognition', icon: speechRec },
-  //   ],
-  //   link: ''
-  // },
+  
+  {
+    name: 'gpt',
+    title: 'GPT-3 App',
+    imgRoot: IKRoot,
+    imgSrc: {
+      desktop: null,
+      laptop: null,
+      tablet: null,
+      mobile: null
+    },
+    desc: 'A front end implementation using the GPT-3 API',
+    tools: [
+      { label: 'openai', icon: openai },
+      { label: 'react', icon: react },
+      { label: 'speech recognition', icon: speechRec },
+    ],
+    link: 'https://quickstories-60609.web.app/'
+  },
 
 ]
 
