@@ -4,9 +4,10 @@
 </h1>
 
 ## 🚀 Take Off! 
-**..and visit a showcase of front-end and full-stack web applications developed by Elliot Rancie.. .**
+**..and visit a showcase of front-end and full-stack web applications developed by Elliot Rancie:**
 
 https://elliotrancie.space/ 
+
 
 
 **Projects.**
