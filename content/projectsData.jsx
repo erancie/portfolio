@@ -49,33 +49,6 @@ const gptLaptop = ''
 const gptTablet = ''
 const gptMobile = ''
 
-// const tools = {
-//   html: html,
-//   css: css,
-//   js: js,
-//   react: react,
-//   node: node,
-//   express: express,
-//   mongodb: mongodb,
-//   sass: sass,
-//   svg: svg,
-//   bootstrap: bootstrap,
-//   gpt: openai,
-//   speechRec: speechRec,
-//   wordpress: wordpress,
-//   webpack: webpack,
-//   firebase: firebase,
-//   three: three,
-//   gsap: gsap,
-//   gatsby: gatsby,            
-// }
-
-    //use this object schema and use obejcts for projects tools when figure out 'for in' for jsx {} error
-    // const tools = {
-    //           html: html ,
-    //           css: css ,
-    //           js: js ,
-    //         },
     
 export const thisSite = {
   tools: [
@@ -128,7 +101,6 @@ const projects = [
       { label: 'css', icon: css },
       { label: 'javascript', icon: js },
       { label: 'wordpress', icon: wordpress },
-
     ],
     link: 'https://psgsports.co/'
   },
@@ -149,7 +121,6 @@ const projects = [
       { label: 'express', icon: express },
       { label: 'react', icon: react },
       { label: 'node', icon: node },
-
      ],    
      link: 'https://iservice.onrender.com'
   },
@@ -169,14 +140,13 @@ const projects = [
       { label: 'html', icon: html },
       { label: 'css', icon: css },
       { label: 'bootstrap', icon: bootstrap },
-
      ],       
      link: 'https://honey-8cd45.web.app/'
   },
-  
+
   {
     name: 'gpt',
-    title: 'GPT-3 App',
+    title: 'Clever Clive',
     imgRoot: IKRoot,
     imgSrc: {
       desktop: null,
@@ -184,7 +154,7 @@ const projects = [
       tablet: null,
       mobile: null
     },
-    desc: 'A front end implementation using the GPT-3 API',
+    desc: 'Social AI Asssitant',
     tools: [
       { label: 'openai', icon: openai },
       { label: 'react', icon: react },
