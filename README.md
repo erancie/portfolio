@@ -3,7 +3,10 @@
   Portfolio - Elliot Rancie
 </h1>
 
-## 🚀 Take Off! and visit a showcase of front-end and full-stack web applications developed by Elliot Rancie.
+## 🚀 Take Off! 
+**..and visit a showcase of front-end and full-stack web applications developed by Elliot Rancie.. .**
+
+https://elliotrancie.space/ 
 
 
 **Projects.**
@@ -16,9 +19,6 @@
 
   **`iService`**: Task/Services Platform
 
-
-**Visit the hosted site:.**
-
-https://elliotrancie.space/ 
+ 
   
 
