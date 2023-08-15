@@ -1,21 +1,24 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 
 <h1 align="center">
   Portfolio - Elliot Rancie
 </h1>
 
-A decription of my services.
-
-## 🚀 Portfolio
-
-1.  **Projects.**
-
-    A portfolio of work by Elliot Rancie
+## 🚀 Take Off! and visit a showcase of front-end and full-stack web applications developed by Elliot Rancie.
 
 
-1.  **`projects`**: A decription of the first project
+**Projects.**
 
-2.  **`contact`**: Contact infomation
+  **`Clever Clive`**: Social AI Assistant
+
+  **`Circular Economies`**: AI-based Crowdfunding Platform.
+
+  **`PSG Sports`**: Professional Basketball Services Platform
+
+  **`iService`**: Task/Services Platform
 
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+**Visit the hosted site:.**
+
+https://elliotrancie.space/ 
+  
+
