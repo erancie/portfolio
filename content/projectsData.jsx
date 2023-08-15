@@ -122,7 +122,7 @@ const projects = [
       tablet: psgTablet,
       mobile: psgMobile
     },
-    desc: 'Professional Basketball Platform.',
+    desc: 'Professional Basketball Services Platform.',
     tools: [
       { label: 'html', icon: html },
       { label: 'css', icon: css },
