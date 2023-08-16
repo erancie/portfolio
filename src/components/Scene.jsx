@@ -32,8 +32,7 @@ const Controls = () => {
   )
 }
 
-//make this a wrapper for several globes - pass in position and rotation rate from app scene
-//make wrapper for previous meshs?
+//OPT: make this a wrapper for several globes - pass in position and rotation rate from app scene
 const Sphere = () => {
 
   const groupRef = React.useRef()
@@ -42,12 +41,12 @@ const Sphere = () => {
   const scrollPos = useScrollContext()
 
   //get Z pos and rotation according to scroll position
-  const [ positionZ, rotationZ ] = useMemo(() => {
+  const [ positionZ, rotationZ ] = ()=> {
     const thold = 1200
     if(scrollPos < thold)
       return [ 4.1-scrollPos/300, Math.PI/2-scrollPos*((Math.PI/2)/thold) ]
     return [ 4.1-thold/300, 0 ] 
-  }, [scrollPos])
+  }
 
   //animate changes in scale & position w/ spring
   const { position, rotation } = useSpring({ 
@@ -65,7 +64,7 @@ const Sphere = () => {
   //   leave: { opacity: 0.5 },
   //   config: { duration: 2000 },
   //   // config: config.molasses,
-  //   onRest: () => setShow((pre)=>!pre),
+  //   onRest: () => setShow((curr)=>!curr),
   //   trail: 100
   // })
   // return transition( ({ opacity }, item) => (    

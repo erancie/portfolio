@@ -3,7 +3,6 @@ import projects, { thisSite } from '../../content/projectsData'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useScrollContext } from "./utils/useScrollContext"
-import { IKImage } from 'imagekitio-react'
 import Stars from "../components/Stars"
 import Contact from './Contact'
 
@@ -12,9 +11,7 @@ gsap.registerPlugin(ScrollTrigger)
 export function ProjectThumb({project, hatchIsOpen}) {
 
   const cardRef = useRef(null)
-
   const [inView, setInView] = useState('')
-
   const scrollPos = useScrollContext()
 
   //make this a custom hook?
@@ -38,25 +35,8 @@ export function ProjectThumb({project, hatchIsOpen}) {
 
   return (
     <div className='project-thumb-container'>
-      
-      <div className="project-thumb-bg-wrapper" style={hatchIsOpen ? { 
-                                                            boxShadow: 'none', 
-                                                            // overflow: 'hidden' 
-                                                          } 
-                                                                  : null} >
-        <div className="project-thumb-bg" 
-             style={{
-                    // transform: hatchIsOpen && 'translateX(-100%)',
-                    opacity: hatchIsOpen && '0'
-                  }}>
-        </div>
-        {/* <div className="project-thumb-bg-fore" 
-             style={{
-                    // transform: hatchIsOpen && 'translateX(-100%)',
-                    opacity: hatchIsOpen ? '1' : '0'
-                  }}>
-        </div> */}
-
+      <div className="project-thumb-bg-wrapper" style={hatchIsOpen ? {  boxShadow: 'none' } : null} >
+        <div className="project-thumb-bg" style={{ opacity: hatchIsOpen && '0' }}> </div>
         <div ref={cardRef} id={`${project.name}`} key={project.name} className='project-thumb side-viewing col-12 col-lg-10 col-xl-10 '>
           
           <div className='project-titles-wrapper' style={{
@@ -65,11 +45,8 @@ export function ProjectThumb({project, hatchIsOpen}) {
             <h1 className='project-title fade-in'>{project.title}</h1>
             <p className='project-desc fade-in'>{project.desc}</p>
           </div>
-
           <div className="titles-svg"></div>
-
           <div className="project-imgs-wrapper">
-
           <div className="wrapper-desktop wrapper fade-in">
               <img className='img-desktop card-img' src={`${project.imgRoot}/tr:w-800,tr:q-100${project.imgSrc.desktop}`} />
               <svg className='svg-desktop' viewBox="14 8 400 225" xmlns="http://www.w3.org/2000/svg">
@@ -137,16 +114,8 @@ export function ProjectThumb({project, hatchIsOpen}) {
               </svg>
             </div> 
 
-
-            <div className="project-imgs-shadow"
-                         style={{
-                          // transform: hatchIsOpen && 'translateX(-100%)',
-                          opacity: hatchIsOpen && '0'
-                        }}>
-            </div>
-
+            <div className="project-imgs-shadow" style={{ opacity: hatchIsOpen && '0' }}> </div>
           </div>
-
 
           <div className='project-tools fade-in'>
             {project.tools.map((t)=>(
@@ -158,11 +127,8 @@ export function ProjectThumb({project, hatchIsOpen}) {
           </div>
 
           <a className='project-link fade-in' target="_blank" href={`${project.link}`}>Visit</a>
-
           <div className="case-svg"></div>
-
           <div className="tools-svg"></div>
-
         </div>
       </div>
 
@@ -180,21 +146,15 @@ export function ProjectThumb({project, hatchIsOpen}) {
 
       </div>
     </div>
-
   ) 
 }
 
-
 function ProjectsList() {  
-
-  const scrollPos = useScrollContext()
-  const bgContainer = useRef()
-  const landingRef = useRef()
 
   //move this to a useContext
   const [hatchIsOpen, setHatchIsOpen] = useState(false)
 
-  //passdown if space hatch is open 
+  //pass down if space hatch is open 
   const handleSpaceWalk = () => {
     (!hatchIsOpen) ? setHatchIsOpen(true) : setHatchIsOpen(false)
   }
@@ -350,52 +310,11 @@ function ProjectsList() {
         </defs>
       </svg>
 
-
-
-
     </div>
   )
 }
 
 export default React.memo(ProjectsList)
 
-{/* <path fill-rule="evenodd" clip-rule="evenodd" d="M745.495 0.000276954C748.994 0.000276648 752.239 1.82964 754.051 4.82379L799.385 79.7546C799.914 80.6289 800.297 81.5623 800.535 82.5218C800.296 81.7909 799.97 81.0805 799.557 80.4058L754.272 6.47347C752.454 3.50591 749.224 1.69673 745.744 1.69673L707.923 1.69674C706.116 1.69674 704.632 1.03116 703.554 0.000280621L745.495 0.000276954ZM97.7741 0.000348839L51.9927 0.000352841C48.3513 0.000353159 44.9978 1.97969 43.238 5.16759L1.46088 80.8479C1.05011 81.592 0.741761 82.3735 0.534607 83.1734C0.729249 82.5957 0.978455 82.0308 1.28278 81.4862L43.0123 6.81829C44.7796 3.65599 48.119 1.69679 51.7416 1.69679L93.4062 1.69679C95.2134 1.69679 96.6962 1.03117 97.7741 0.000348839ZM58.6229 170.218L107.824 238.72C109.703 241.336 112.726 242.886 115.947 242.886L238.929 242.886C241.257 242.886 243.356 244.291 244.244 246.443C245.131 248.596 247.23 250 249.558 250L550.055 250C552.381 250 554.476 248.595 555.358 246.443C556.241 244.292 558.336 242.886 560.661 242.886L685.31 242.886C688.542 242.886 691.574 241.324 693.451 238.693L742.164 170.39L693.631 237.607C691.751 240.211 688.735 241.754 685.523 241.754L560.15 241.754C558.115 241.754 556.277 242.971 555.483 244.844C554.69 246.718 552.852 247.935 550.817 247.935L248.948 247.935C246.911 247.935 245.07 246.719 244.272 244.844C243.473 242.97 241.633 241.754 239.595 241.754L115.733 241.754C112.534 241.754 109.527 240.222 107.645 237.635L58.6229 170.218Z" */}
 
-{/* <svg id="case-clip-wrapper" viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
-<defs>
-  <clipPath id="case-clip"    
-            viewBox="0 0 800 250" 
-            clipPathUnits="objectBoundingBox" >
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.0901489 27.2047C0.355347 27.1835 0.621826 27.1728 0.888916 27.1728L188.117 27.1729C191.055 27.1729 193.844 25.8811 195.744 23.6406L214.599 1.40621C214.896 1.05632 215.215 0.729559 215.552 0.427246C214.864 0.835134 214.222 1.32733 213.642 1.89722L192.575 22.6004C190.705 24.4383 188.188 25.4681 185.566 25.4681L5.91614 25.468C4.35541 25.468 2.81641 25.8333 1.42224 26.5346L0.0901489 27.2047ZM800.091 27.2077L798.719 26.5222C797.331 25.8291 795.801 25.4683 794.25 25.4683L617.014 25.4682C614.402 25.4682 611.893 24.4461 610.025 22.6205L588.797 1.87742C588.224 1.3174 587.59 0.832994 586.912 0.430503C587.241 0.725755 587.552 1.0443 587.843 1.38494L606.843 23.6622C608.743 25.8899 611.524 27.173 614.451 27.173L799.259 27.1731C799.538 27.1731 799.815 27.1847 800.091 27.2077ZM768.38 223.641C767.989 223.688 767.594 223.711 767.198 223.711L595.876 223.711C592.788 223.711 589.874 225.137 587.98 227.575L571.117 249.272C570.795 249.686 570.444 250.071 570.067 250.425C570.783 249.972 571.444 249.426 572.033 248.795L590.864 228.602C592.755 226.574 595.404 225.422 598.177 225.422L762.571 225.422C764.253 225.422 765.908 224.998 767.383 224.189L768.38 223.641ZM31.9002 223.637L32.9377 224.203C34.4059 225.003 36.0513 225.422 37.7234 225.422L199.899 225.422C202.662 225.422 205.302 226.566 207.193 228.581L226.17 248.816C226.752 249.436 227.405 249.974 228.111 250.421C227.742 250.075 227.398 249.698 227.082 249.294L210.088 227.553C208.193 225.128 205.287 223.711 202.209 223.711L33.112 223.711C32.7058 223.711 32.3011 223.686 31.9002 223.637Z" 
-
-          transform="scale(0.00125, 0.004)" />        
-  </clipPath>
-</defs>
-</svg> */}
-//SRCSET & SIZES
-
-{/* <img className='layout-img2'
-srcset="https://ik.imagekit.io/kv4ohthhz/tr:w-480/mern1_Fju_qVyiC.png 480w, 
-       https://ik.imagekit.io/kv4ohthhz/tr:w-800/mern1_Fju_qVyiC.png 800w"
-sizes="(min-width: 800px) 800px,
-      480px"
-src="https://ik.imagekit.io/kv4ohthhz/mern1_Fju_qVyiC.png"
-alt="mern stack site" 
-/> */}
-
-// image kit sdk
-{/* <IKImage style={{margin: 'auto', width: '200px'}} path="/mern1-1280_qH3SRTAhB" 
-transformation={[{
-  // "height": "200",
-  // "width": "200"
-}]}
-loading="lazy" /> */}
-
-
-
-
-    //options
-    //bounding
-    //intersection
-    //gsap
 
