@@ -1314,6 +1314,9 @@ canvas {
   text-align: center;
   height: 100vh;
 }
+.landing > * {
+  cursor: none;
+}
 
 .titles-wrapper {
   position: relative;
