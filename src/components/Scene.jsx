@@ -41,13 +41,13 @@ const Sphere = () => {
   const scrollPos = useScrollContext()
 
   //get Z pos and rotation according to scroll position
-  const zCoord = ()=> {
+  const zCoords = ()=> {
     const thold = 1200
     if(scrollPos < thold)
       return [ 4.1-scrollPos/300, Math.PI/2-scrollPos*((Math.PI/2)/thold) ]
     return [ 4.1-thold/300, 0 ] 
   }
-  const [ positionZ, rotationZ ] = zCoord()
+  const [ positionZ, rotationZ ] = zCoords()
 
   //animate changes in scale & position w/ spring
   const { position, rotation } = useSpring({ 
