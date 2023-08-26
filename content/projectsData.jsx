@@ -44,10 +44,10 @@ const circularLaptop = '/circular-laptop_cOy72qQILd.PNG'
 const circularTablet = '/circular-tablet_cNLvk29I5.PNG'
 const circularMobile = '/circular-mobile_zxQx1vTbI.PNG'
 
-const gptDesktop = ''
-const gptLaptop = ''
-const gptTablet = ''
-const gptMobile = ''
+const gptDesktop = '/clive-desk_ESSblQT1c.png'
+const gptLaptop = '/clive-lap_7SNMiya3E.png'
+const gptTablet = '/clive-tab_OIXrLhuBC.png'
+const gptMobile = '/clive-mob-walk_zNEL2jYL3.png'
 
     
 export const thisSite = {
@@ -64,6 +64,26 @@ export const thisSite = {
 }
 
 const projects = [
+  {
+    name: 'gpt',
+    title: 'Clever Clive',
+    imgRoot: IKRoot,
+    imgSrc: {
+      desktop: gptDesktop,
+      laptop: gptLaptop,
+      tablet: gptTablet,
+      mobile: gptMobile
+    },
+    desc: 'Social AI Asssitant',
+    tools: [
+      { label: 'openai', icon: openai },
+      { label: 'react', icon: react },
+      { label: 'speech recognition', icon: speechRec },
+      { label: 'firebase', icon: firebase },
+    ],
+    link: 'https://quickstories-60609.web.app/'
+  },
+
   {
     name: 'circular',
     title: 'Circular Economies',
@@ -142,25 +162,6 @@ const projects = [
       { label: 'bootstrap', icon: bootstrap },
      ],       
      link: 'https://honey-8cd45.web.app/'
-  },
-
-  {
-    name: 'gpt',
-    title: 'Clever Clive',
-    imgRoot: IKRoot,
-    imgSrc: {
-      desktop: null,
-      laptop: null,
-      tablet: null,
-      mobile: null
-    },
-    desc: 'Social AI Asssitant',
-    tools: [
-      { label: 'openai', icon: openai },
-      { label: 'react', icon: react },
-      { label: 'speech recognition', icon: speechRec },
-    ],
-    link: 'https://quickstories-60609.web.app/'
   },
 
 ]

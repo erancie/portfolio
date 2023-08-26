@@ -178,7 +178,7 @@
   bottom: -40px;
   z-index: 2;
   margin-right: -50px;
-  box-shadow: 1px 1px 0 1px #f9f9fb, 10px 60px 2px 0 rgba(255, 255, 255, 0.06), 55px -180px 2px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: 1px 1px 0 1px #f9f9fb, 10px 60px 2px 0 rgba(255, 255, 255, 0.06), 30px -230px 2px 0 rgba(255, 255, 255, 0.06);
 }
 .wrapper-mobile:hover {
   transform: scale(1.35) translateY(-15px) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg);

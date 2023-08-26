@@ -233,7 +233,6 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   margin: 50px auto
   position: relative
   transition: all .5s ease-in-out !important
-  box-shadow: 1px 1px 0 1px #f9f9fb, -30px 60px 2px 0 rgba(255, 255, 255, 0.06), 40px -60px 2px -10px rgba(255, 255, 255, 0.06)
   &:hover
     transform: scale(1.2) translateY(-15px) 
     &~.wrapper
@@ -241,23 +240,26 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 
 .wrapper-laptop
   left: -1.2rem
+  box-shadow: 1px 1px 0 1px #f9f9fb, 30px 100px 2px 0 rgba(255, 255, 255, 0.025), 60px -90px 2px -10px rgba(255, 255, 255, 0.025)
   &:hover
     transform: scale(1.2) translate(2rem, -15px)
+
 .wrapper-tablet
   top: 12px
   z-index: 1
+  box-shadow: 1px 1px 0 1px #f9f9fb, -20px 110px 2px 0 rgba(255, 255, 255, 0.025), 40px -60px 2px -10px rgba(255, 255, 255, 0.025)
 
 .wrapper-mobile
   right: 1rem
   bottom: -40px
   z-index: 2
   margin-right: -50px
-  box-shadow:   1px 1px 0 1px #f9f9fb, 10px 60px 2px 0 rgba(255, 255, 255, 0.06), 55px -180px 2px 0 rgba(255, 255, 255, 0.06)
+  box-shadow:   1px 1px 0 1px #f9f9fb, 15px 120px 2px 0 rgba(255, 255, 255, 0.025), 55px -190px 2px 0 rgba(255, 255, 255, 0.025)
   &:hover
     transform: scale(1.35) translateY(-15px) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
 
 .wrapper-desktop
-  box-shadow:   1px 1px 0 1px #f9f9fb, -70px 60px 2px 0 rgba(255, 255, 255, 0.06), 40px -60px 2px -10px rgba(255, 255, 255, 0.06)
+  box-shadow:   1px 1px 0 1px #f9f9fb, -80px 100px 2px 0 rgba(255, 255, 255, 0.025), 40px -60px 2px -10px rgba(255, 255, 255, 0.025)
   left: .7rem
   &:hover
     transform: scale(1.2) translate(10px, -15px) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
@@ -272,6 +274,7 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
   overflow: visible
 
 .project-imgs-wrapper
+  position: relative
   width: 80%
   flex-wrap: wrap
   margin: -6rem auto 8rem
@@ -288,36 +291,49 @@ $thumb-bg-color: rgb(17 23 45 / 95%)
 
 @media (min-width: 768px) 
   .project-imgs-wrapper
+    left: -20px
     flex-wrap: nowrap
     width: 100%
-    margin: 3rem auto 10rem
-    transform: translateX(-2.5rem)  perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+    margin: 3rem auto 12rem
+    transform: translateX(-2.5rem)  perspective(1000px) rotateX(5deg) rotateY(-24deg) rotate(1deg)
     &:hover
+      left: 0
       transform: translateX(-.5rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
 
 @media (min-width: 992px) 
   .project-imgs-wrapper
-    width: 90%
-    transform: translateX(-3.8rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+    left: -30px
+    // width: 90%
+    transform: translateX(-3.8rem) perspective(1000px) rotateX(5deg) rotateY(-24deg) rotate(1deg)
     &:hover
+      left: 0
       transform: translateX(-2.5rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+    .wrapper-mobile
+        box-shadow: 1px 1px 0 1px #f9f9fb, 15px 120px 2px 0 rgba(255, 255, 255, 0.025), 55px -230px 2px 0 rgba(255, 255, 255, 0.025)
+
       
 @media (min-width: 1200px) 
   .project-imgs-wrapper
-    width: 85%
-    transform: translateX(-4.2rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+    left: -40px
+    // width: 85%
+    transform: translateX(-4.2rem) perspective(1000px) rotateX(5deg) rotateY(-24deg) rotate(1deg)
     &:hover
+      left: 0
       transform: translateX(-3.2rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
+    .wrapper-mobile
+      box-shadow: 1px 1px 0 1px #f9f9fb, 15px 120px 2px 0 rgba(255, 255, 255, 0.025), 55px -260px 2px 0 rgba(255, 255, 255, 0.025)
+
+      
       
 @media (min-width: 1400px) 
   .project-imgs-wrapper
-    width: 80%
-    transform: translateX(-4.8rem) perspective(1000px) rotateX(6deg) rotateY(-30deg) rotate(1deg)
+    // width: 80%
+    transform: translateX(-4.8rem) perspective(1000px) rotateX(5deg) rotateY(-24deg) rotate(1deg)
     &:hover
       transform: translateX(-3.6rem) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg)
 
 
-//Note: desktop first styling here for device wrappers
+//Note: desktop first styling here for device wrappers on mob screens
 @media (max-width: 768px)
   .wrapper
     &:hover
