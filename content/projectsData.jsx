@@ -45,7 +45,7 @@ const circularTablet = '/circular-tablet_cNLvk29I5.PNG'
 const circularMobile = '/circular-mobile_zxQx1vTbI.PNG'
 
 const gptDesktop = '/clive-desk_ESSblQT1c.png'
-const gptLaptop = '/clive-lap_7SNMiya3E.png'
+const gptLaptop = '/clive-lap_RChUU6xXw.png?'
 const gptTablet = '/clive-tab_OIXrLhuBC.png'
 const gptMobile = '/clive-mob-walk_zNEL2jYL3.png'
 
