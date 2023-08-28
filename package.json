@@ -23,6 +23,7 @@
     "dotenv": "^16.0.3",
     "gatsby": "^5.2.0",
     "gatsby-env-variables": "^2.0.0",
+    "gatsby-plugin-google-gtag": "^5.12.0",
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-manifest": "^5.10.0",
     "gatsby-plugin-mdx": "^5.2.0",
