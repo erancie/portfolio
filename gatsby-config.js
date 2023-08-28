@@ -26,7 +26,7 @@ module.exports = {
         trackingIds: [ 
           {
             trackingId:  process.env.GATSBY_GA_TRACKING_ID, 
-            head: true
+            head: false
           }
         ],
       },
