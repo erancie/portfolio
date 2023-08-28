@@ -14,18 +14,16 @@ module.exports = {
           timeout: 3500,
       },
     },
-
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'static/svg/icon.svg',
       },
     },
-
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [ process.env.GA_TRACKING_ID ]
+        trackingIds: [ process.env.GATSBY_GA_TRACKING_ID, ],
       },
     },
   ],
