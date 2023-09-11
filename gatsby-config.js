@@ -1,6 +1,8 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
+const adapter = require("gatsby-adapter-netlify")
+
 
 module.exports = {
   plugins: [
@@ -23,8 +25,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [  process.env.GATSBY_GA_TRACKING_ID ]
+        trackingIds: [ process.env.GATSBY_GA_TRACKING_ID ]
       },
     },
   ],
+  adapter: adapter({
+    excludeDatastoreFromEngineFunction: false,
+  }),
 }
