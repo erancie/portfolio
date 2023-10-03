@@ -53,7 +53,7 @@ const Sphere = () => {
     rotation: [0, 0, rotationZ]
   })
 
-  useFrame(() => { rotationRef.current.rotation.y -= .0003 })
+  useFrame(() => { rotationRef.current.rotation.y -= .0008 })
 
   //TODO:-------- globe to fade in when loaded -------- //////////////////////////
   // const [show, setShow] = useState(false)
@@ -141,7 +141,8 @@ const Scene = () => {
   )
 }
 
-export default React.memo(Scene)
+export default Scene
+// export default React.memo(Scene)
 
 
 // controls sandbox

@@ -24,3 +24,21 @@ export const {Provider: ScrollProvider, Consumer: ScrollConsumer} = ScrollContex
 
 //expose usage 
 export const useScrollContext = () => useContext(ScrollContext)
+
+
+
+
+
+// import React , { useContext, createContext } from 'react'
+// import { useScrollPosition } from './useScrollPosition'
+// const ScrollContext = createContext(0)
+// export function ScrollContextProvider({children}) {
+//   const scrollPos = useScrollPosition()
+//   return (
+//     <ScrollContext.Provider value={scrollPos}>
+//       {children}
+//     </ScrollContext.Provider>
+//   )
+// }
+// export const {Provider: ScrollProvider, Consumer: ScrollConsumer} = ScrollContext
+// export const useScrollContext = () => useContext(ScrollContext)
