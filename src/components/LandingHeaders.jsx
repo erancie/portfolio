@@ -17,11 +17,11 @@ export default function LandingHeaders() {
               <defs>
               <linearGradient id="paint0_linear_103_19" x1="59.6331" y1="199.328" x2="57.9829" y2="-9.57601" gradientUnits="userSpaceOnUse">
               <stop offset="0.321607" stop-color={fillColor.current}/>
-              <stop offset="1" stop-color={fillColor.current} stop-opacity="0"/>
+              <stop offset="1" stop-color={fillColor.current} stop-opacity=".15"/>
               </linearGradient>
               <linearGradient id="paint1_linear_103_19" x1="59.6331" y1="199.328" x2="57.9829" y2="-9.57601" gradientUnits="userSpaceOnUse">
               <stop offset="0.321607" stop-color={fillColor.current}/>
-              <stop offset="1" stop-color={fillColor.current} stop-opacity="0"/>
+              <stop offset="1" stop-color={fillColor.current} stop-opacity=".15"/>
               </linearGradient>
               </defs>
             </svg>
