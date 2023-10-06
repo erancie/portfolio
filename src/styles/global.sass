@@ -31,6 +31,7 @@ html, body
   scroll-behavior: smooth
   box-sizing: border-box
   font-family: $main-font, sans-serif
+  background: black
 
 *, *:before, *:after 
   box-sizing: inherit
@@ -55,11 +56,13 @@ canvas
   // z-index stacking context is relevant to an element's nearest parent with a z-index (always infront) - otherwise it's on the global z-index (can be behind)
   //https://web.dev/learn/css/z-index/ 
 
-.loading-state 
+.loading-splash 
   position: absolute
   background: black
   width: 100%
   height: 100vh
+  animation: blink 2s ease 3s 
+  // opacity: 0
 
   .loading-container
     position: relative
@@ -89,10 +92,17 @@ canvas
   animation: blink 2s ease 1s infinite
 
 @keyframes blink 
-  0%, 100%
+  0%
     opacity: 1
   50%
     opacity: 0
+
+@keyframes fade 
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+
 
 
 //Navigation
@@ -423,8 +433,6 @@ $title-color: #44A595
   -webkit-background-clip: text
   opacity: .2
 
-
-
 .logo-wrapper
   position: relative
   top: 14vh
@@ -439,16 +447,8 @@ $title-color: #44A595
   transform: translateX(-50%) 
   margin: auto
   width: 100%
-
   stroke: #44a59590
-  // stroke: #ffffff
-  // stroke-width: 1.2px
   stroke-linecap: round
-
-  /* Vector */
-// background: linear-gradient(0.08deg, rgba(0, 0, 0, 0) -20.13%, #000000 27.92%, rgba(0, 0, 0, 0) 106.3%);
-
-
   
 .sparkle-1
   position: absolute
