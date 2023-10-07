@@ -6,6 +6,7 @@ import LandingHeaders from "../components/LandingHeaders"
 import Intro from "../components/Intro"
 import ProjectsList from "../components/ProjectsList"
 import { ScrollContextProvider } from "../components/utils/useScrollContext"
+import SEO from "../components/SEO"
 
 export default function Home() {
 
@@ -22,10 +23,14 @@ export default function Home() {
 
         {isLoaded ? <>
 
-        {/* <Suspense fallback={<div className="loading-state"><h1>Loading..</h1></div>}> */}
-        {/* </Suspense>         */}
-
           <Layout >
+
+            <SEO 
+              title='Elliot Rancie Showcase'
+              description='An out of this world experience showcasing projects designed and developed by Elliot Rancie'
+              // author='Elliot Rancie'
+            />
+
             <BackgroundScene />
             <LandingHeaders />
             <Intro />
@@ -47,4 +52,13 @@ export default function Home() {
     </ScrollContextProvider>
   )
 }
+
+// export const Head = () => (
+//   <SEO 
+//     title='Elliot Rancie Showcase'
+//     description='An out of this world experience showcasing projects designed and developed by Elliot Rancie'
+//     // author='Elliot Rancie'
+//   />
+// )
+
 

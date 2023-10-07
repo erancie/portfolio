@@ -4,10 +4,21 @@ require("dotenv").config({
 
 
 module.exports = {
+
+  siteMetadata: {
+    title: `Elliot Rancie Showcase`,
+    description: `An out of this world experience showcasing projects designed and developed by Elliot Rancie`,
+    // twitterUsername: `@gatsbyjs`,
+    image: `/svg/icon.svg`,
+    siteUrl: `https://www.elliotrancie.space`                                                 ,
+    author: `Elliot Rancie`
+  },
+  
   plugins: [
     `gatsby-plugin-mdx`,
     `gatsby-plugin-sass`,
     'gatsby-plugin-postcss',
+    `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-mailchimp', // see: https://www.gatsbyjs.com/plugins/gatsby-plugin-mailchimp/
       options: {
@@ -28,4 +39,5 @@ module.exports = {
       },
     },
   ],
+
 }
