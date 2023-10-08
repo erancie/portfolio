@@ -52,14 +52,14 @@ const gptMobile = '/clive-mob-walk_zNEL2jYL3.png'
     
 export const thisSite = {
   tools: [
-    { label: 'react', icon: react },
-    { label: 'three', icon: three },
-    { label: 'gsap', icon: gsap },
-    { label: 'sass', icon: sass },
-    { label: 'gatsby', icon: gatsby },
-    { label: 'mailchimp', icon: mailchimp },
-    { label: 'imagekit', icon: imagekit },
-    { label: 'figma', icon: figma },
+    { label: 'react', icon: react, alt: 'React.js Icon' },
+    { label: 'three', icon: three, alt: 'Three.js Icon' },
+    { label: 'gsap', icon: gsap, alt: 'GSAP Icon'  },
+    { label: 'sass', icon: sass, alt: 'Sass Icon'  },
+    { label: 'gatsby', icon: gatsby, alt: 'Gatsby.js Icon' },
+    { label: 'mailchimp', icon: mailchimp, alt: 'Mailchimp Icon'  },
+    { label: 'imagekit', icon: imagekit, alt: 'ImageKit Icon'  },
+    { label: 'figma', icon: figma, alt: 'Figma Icon'  },
   ]
 }
 
@@ -74,12 +74,18 @@ const projects = [
       tablet: gptTablet,
       mobile: gptMobile
     },
-    desc: 'Social AI Asssitant',
+    imgAlt: {
+      desktop: 'Clever Clive - AI Bot Social Platform- desktop screenshot',
+      laptop: 'Clever Clive - AI Bot Social Platform- laptop screenshot',
+      tablet: 'Clever Clive - AI Bot Social Platform- tablet screenshot',
+      mobile: 'Clever Clive - AI Bot Social Platform- mobile screenshot'
+    },
+    desc: 'Your Social AI Asssitant',
     tools: [
-      { label: 'openai', icon: openai },
-      { label: 'react', icon: react },
-      { label: 'speech recognition', icon: speechRec },
-      { label: 'firebase', icon: firebase },
+      { label: 'openai', icon: openai, alt: 'OpenAI Icon'},
+      { label: 'react', icon: react, alt: 'React Icon' },
+      { label: 'speech recognition', icon: speechRec, alt: 'Speech Recognition Icon' },
+      { label: 'firebase', icon: firebase, alt: 'Google Firebase Icon' },
     ],
     link: 'https://quickstories-60609.web.app/'
   },
@@ -94,13 +100,19 @@ const projects = [
       tablet: circularTablet,
       mobile: circularMobile
     },
+    imgAlt: {
+      desktop: 'Circular Economies - desktop screenshot',
+      laptop: 'Circular Economies - laptop screenshot',
+      tablet: 'Circular Economies - tablet screenshot',
+      mobile: 'Circular Economies - mobile screenshot'
+    },
     desc: 'A crowd funding platform powered by AI and circular economics.',
     tools: [
-      { label: 'html', icon: html },
-      { label: 'javascript', icon: js },
-      { label: 'sass', icon: sass },
-      { label: 'webpack', icon: webpack },
-      { label: 'svg', icon: svg },
+      { label: 'html', icon: html, alt:'HTML Icon' },
+      { label: 'javascript', icon: js, alt:'Javascript Icon' },
+      { label: 'sass', icon: sass, alt:'Sass Icon' },
+      { label: 'webpack', icon: webpack, alt:'Webpack Icon' },
+      { label: 'svg', icon: svg, alt:'SVG Icon' },
     ],
     link: 'https://circular-e8a2f.web.app/'
   },
@@ -115,12 +127,18 @@ const projects = [
       tablet: psgTablet,
       mobile: psgMobile
     },
+    imgAlt: {
+      desktop: 'Circular Economies - desktop screenshot',
+      laptop: 'Circular Economies - laptop screenshot',
+      tablet: 'Circular Economies - tablet screenshot',
+      mobile: 'Circular Economies - mobile screenshot'
+    },
     desc: 'Professional Basketball Services Platform.',
     tools: [
-      { label: 'html', icon: html },
-      { label: 'css', icon: css },
-      { label: 'javascript', icon: js },
-      { label: 'wordpress', icon: wordpress },
+      { label: 'html', icon: html, alt:'HTML Icon'},
+      { label: 'css', icon: css, alt:'CSS Icon'},
+      { label: 'javascript', icon: js, alt:'Javascript Icon'},
+      { label: 'wordpress', icon: wordpress, alt:'Wordpress Icon'},
     ],
     link: 'https://psgsports.co/'
   },
@@ -135,12 +153,18 @@ const projects = [
       tablet: mernTablet,
       mobile: mernMobile
     },
+    imgAlt: {
+      desktop: 'iService Task Platform - desktop screenshot',
+      laptop: 'iService Task Platform - laptop screenshot',
+      tablet: 'iService Task Platform - tablet screenshot',
+      mobile: 'iService Task Platform - mobile screenshot'
+    },
     desc: 'A full stack project bringing experts and clients together.',
     tools: [
-      { label: 'mongo', icon: mongodb },
-      { label: 'express', icon: express },
-      { label: 'react', icon: react },
-      { label: 'node', icon: node },
+      { label: 'mongo', icon: mongodb, alt: 'MongoDB Icon' },
+      { label: 'express', icon: express, alt: 'Express.js Icon' },
+      { label: 'react', icon: react, alt: 'React.js Icon' },
+      { label: 'node', icon: node, alt: 'Node.js Icon' },
      ],    
      link: 'https://iservice.onrender.com'
   },
@@ -155,13 +179,19 @@ const projects = [
       tablet: honeyTablet,
       mobile: honeyMobile
     },
-    desc: 'E-commerce website selling organic honey.',
+    imgAlt: {
+      desktop: 'Whole Honey Online Shop - desktop screenshot',
+      laptop: 'Whole Honey Online Shop - laptop screenshot',
+      tablet: 'Whole Honey Online Shop - tablet screenshot',
+      mobile: 'Whole Honey Online Shop - mobile screenshot'
+    },
+    desc: 'Online shop selling organic honey.',
     tools: [
-      { label: 'html', icon: html },
-      { label: 'css', icon: css },
-      { label: 'bootstrap', icon: bootstrap },
+      { label: 'html', icon: html, alt:'HTML Icon' },
+      { label: 'css', icon: css, alt:'CSS Icon'},
+      { label: 'bootstrap', icon: bootstrap, alt: 'Bootstrap Icon' },
      ],       
-     link: 'https://honey-8cd45.web.app/'
+    //  link: 'https://honey-8cd45.web.app/'
   },
 
 ]

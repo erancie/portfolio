@@ -22,22 +22,21 @@ export default function Home() {
     <ScrollContextProvider>
 
         {isLoaded ? <>
-
           <Layout >
 
-            <SEO 
-              title='Elliot Rancie Showcase'
-              description='An out of this world experience showcasing projects designed and developed by Elliot Rancie'
+            {/* <SEO 
+              title='Elliot Rancie - Showcase'
+              description='An out of this world web experience 
+                           showcasing projects designed and developed by Elliot Rancie'
               // author='Elliot Rancie'
-            />
-
+            /> */}
+            <SEO />
+            
             <BackgroundScene />
             <LandingHeaders />
             <Intro />
             <ProjectsList /> 
           </Layout> 
-        
-
         </> 
         : <div className="loading-splash">
             <div className="loading-container">
