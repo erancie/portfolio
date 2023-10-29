@@ -118,7 +118,6 @@ export default function Nav() {
     </a>
 
 
-
     {/* Side Nav */}
     <div className="side-nav" style={{right: (scrollPos < 2800) && '-6rem',
                                       // bottom: 'calc(45% + '+ scrollPos/88+'px)' 
@@ -128,10 +127,6 @@ export default function Nav() {
                                       }}>
 
       <a className='to-top' href='#top'>
-        {/* <svg  viewBox="0 0 50 30" xmlns="http://www.w3.org/2000/svg">
-          <path d="M49.9999 29.9854L25.1514 0L21.1301 4.8382L0 30L14.4274 28.0786C14.7991 28.0292 15.1489 27.8422 15.4286 27.5435L25.1961 17.1134L35.0244 27.5492C35.3023 27.8443 35.6489 28.0295 36.0172 28.0797L49.9999 29.9854Z"/>
-        </svg> */}
-
         <svg version="1.1"  
           viewBox="0 0 512 512" >
         <g id="XMLID_1_">
@@ -150,15 +145,9 @@ export default function Nav() {
             s12.1,4.7,22.3,2.8C458.9,348.2,439.4,382.6,411.5,411.5z"/>
         </g>                          
         </svg>
-
       </a>
       
       <a href="#intro" className="side-intro">
-        {/* <svg  viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6.14459 1.40343C6.30754 1.52688 6.56554 1.5886 6.9186 1.5886C7.26487 1.5886 7.51948 1.52688 7.68243 1.40343C7.84538 1.27348 7.92686 1.07206 7.92686 0.799174C7.92686 0.519788 7.84538 0.31837 7.68243 0.19492C7.51948 0.0649735 7.26487 0 6.9186 0C6.56554 0 6.30754 0.0649735 6.14459 0.19492C5.98843 0.31837 5.91035 0.519788 5.91035 0.799174C5.91035 1.07206 5.98843 1.27348 6.14459 1.40343Z" />
-          <path d="M7.78428 7.02689V2.15387H6.05293V7.02689H7.78428Z" />
-          <path d="M10.8533 4.53201L10.6105 4.77921L12.6252 5.74016L7 10.4355L1.37476 5.74016L3.38947 4.77921L3.14672 4.53201L0.769371 5.66593L1.62646 6.38134L0 7.15712L7 13L14 7.15712L12.3735 6.38135L13.2306 5.66593L10.8533 4.53201Z" />
-        </svg> */}
         <svg viewBox="0 0 7 27" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.5 6.10402C2.27441 6.10402 1.37879 5.86685 0.813131 5.39251C0.271044 4.8932 0 4.11928 0 3.07073C0 1.99722 0.271044 1.2233 0.813131 0.748959C1.37879 0.249653 2.27441 0 3.5 0C4.70202 0 5.58586 0.249653 6.15152 0.748959C6.71717 1.2233 7 1.99722 7 3.07073C7 4.11928 6.71717 4.8932 6.15152 5.39251C5.58586 5.86685 4.70202 6.10402 3.5 6.10402ZM6.50505 8.27601V27H0.49495V8.27601H6.50505Z"/>
         </svg>
@@ -196,9 +185,6 @@ export default function Nav() {
 
       </a>
 
-      {/* TODO: bullet state changes for current project in viewport */}
-      
-      
 
       {/* IDEA: make a 'collect them all' game for the side bullets.
        bullet state permanently changes for visited project */}
@@ -219,25 +205,3 @@ export default function Nav() {
 
 //pretty cool - && and turnary expressions can be used to coniditonally include arguments in a function call
 
-
-  //white a function that checks if any of the projects are in view
-  // const checkInView = useCallback(() => {
-  //   const projectElements = document.querySelectorAll('.side-viewing')
-  //   projectElements.forEach(project => {
-  //     const projectTop = project.getBoundingClientRect().top
-  //     const projectBottom = project.getBoundingClientRect().bottom
-  //     // const projectHeight = project.getBoundingClientRect().height
-  //     const windowHeight = window.innerHeight
-  //     if (projectTop < windowHeight && projectBottom > 0) {
-  //       setInView(project.id)
-  //       console.log('inView: ', inView)
-  //       console.log('project.id: ', project.id)
-  //     }
-  //   })
-  // }, [])
-  // useEffect(() => {
-  //   window.addEventListener('scroll', checkInView)
-  //   return () => {
-  //     window.removeEventListener('scroll', checkInView)
-  //   }
-  // }, [checkInView])

@@ -24,6 +24,27 @@ const url = 'https://ik.imagekit.io/kv4ohthhz/mern1-1280_qH3SRTAhB'
 
 const IKRoot = 'https://ik.imagekit.io/kv4ohthhz'
 
+
+const gptDesktop = '/clive-desk_ESSblQT1c.png'
+const gptLaptop = '/clive-lap_RChUU6xXw.png?'
+const gptTablet = '/clive-tab_OIXrLhuBC.png'
+const gptMobile = '/clive-mob-walk_zNEL2jYL3.png'
+
+const circularDesktop = '/circular-desktop_O2p2xyWdK.PNG'
+const circularLaptop = '/circular-laptop_cOy72qQILd.PNG'
+const circularTablet = '/circular-tablet_cNLvk29I5.PNG'
+const circularMobile = '/circular-mobile_zxQx1vTbI.PNG'
+
+const finsightDesktop = '/finsight-desktop_2Tri_N31nq.PNG?updatedAt=1698581762816'
+const finsightLaptop = '/finsight-laptop_h79HB0BUi.PNG?updatedAt=1698581192993'
+const finsightTablet = '/finsight-tablet_y80wVEUfZ.PNG?updatedAt=1698581700668'
+const finsightMobile = '/finsight-mobile_IkmA-rwcs.PNG?updatedAt=1698581782017'
+
+const psgDesktop = '/psg-desktop_iUe4PJHEC.PNG'
+const psgLaptop = '/psg-laptop_o0fPjWkZl.PNG'
+const psgTablet = '/psg-tablet_nbD2CNwVi.PNG'
+const psgMobile = '/psg-mobile-2_F7MRd90mr.PNG'
+
 const mernDesktop = '/mern-desk_rE4mgwQCZc.JPG'
 const mernLaptop = '/mern-lap_QCo7qLXgKH.JPG'
 const mernTablet = '/mern-tab_6w2R3dDAM.JPG'
@@ -34,20 +55,6 @@ const honeyLaptop = '/honey-lap-2_T5x-T05rF.PNG'
 const honeyTablet = '/honey-tab-3_I7RMjjk18.PNG'
 const honeyMobile = '/honey-mobile_BJW5P7JcQ'
 
-const psgDesktop = '/psg-desktop_iUe4PJHEC.PNG'
-const psgLaptop = '/psg-laptop_o0fPjWkZl.PNG'
-const psgTablet = '/psg-tablet_nbD2CNwVi.PNG'
-const psgMobile = '/psg-mobile-2_F7MRd90mr.PNG'
-
-const circularDesktop = '/circular-desktop_O2p2xyWdK.PNG'
-const circularLaptop = '/circular-laptop_cOy72qQILd.PNG'
-const circularTablet = '/circular-tablet_cNLvk29I5.PNG'
-const circularMobile = '/circular-mobile_zxQx1vTbI.PNG'
-
-const gptDesktop = '/clive-desk_ESSblQT1c.png'
-const gptLaptop = '/clive-lap_RChUU6xXw.png?'
-const gptTablet = '/clive-tab_OIXrLhuBC.png'
-const gptMobile = '/clive-mob-walk_zNEL2jYL3.png'
 
     
 export const thisSite = {
@@ -118,6 +125,33 @@ const projects = [
   },
 
   {
+    name: 'finsight',
+    title: 'Finsight',
+    imgRoot: IKRoot,
+    imgSrc: {
+      desktop: finsightDesktop,
+      laptop: finsightLaptop,
+      tablet: finsightTablet,
+      mobile: finsightMobile
+    },
+    imgAlt: {
+      desktop: 'Finsight - desktop screenshot',
+      laptop: 'Finsight - laptop screenshot',
+      tablet: 'Finsight - tablet screenshot',
+      mobile: 'Finsight - mobile screenshot'
+    },
+    desc: 'A collated snapshot of your fiat and crypto holdings.',
+    tools: [
+      { label: 'html', icon: html, alt:'HTML Icon' },
+      { label: 'javascript', icon: js, alt:'Javascript Icon' },
+      { label: 'sass', icon: sass, alt:'Sass Icon' },
+      { label: 'webpack', icon: webpack, alt:'Webpack Icon' },
+      { label: 'svg', icon: svg, alt:'SVG Icon' },
+    ],
+    link: ''
+  },
+
+  {
     name: 'psg',
     title: 'PSG Sports',
     imgRoot: IKRoot,
@@ -128,10 +162,10 @@ const projects = [
       mobile: psgMobile
     },
     imgAlt: {
-      desktop: 'Circular Economies - desktop screenshot',
-      laptop: 'Circular Economies - laptop screenshot',
-      tablet: 'Circular Economies - tablet screenshot',
-      mobile: 'Circular Economies - mobile screenshot'
+      desktop: 'PSG Sports - desktop screenshot',
+      laptop: 'PSG Sports - laptop screenshot',
+      tablet: 'PSG Sports - tablet screenshot',
+      mobile: 'PSG Sports - mobile screenshot'
     },
     desc: 'Professional Basketball Services Platform.',
     tools: [

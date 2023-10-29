@@ -33,6 +33,7 @@
     "gltf-webpack-loader": "^1.0.6",
     "gsap": "^3.11.1",
     "imagekitio-react": "^2.0.0",
+    "locomotive-scroll": "^4.1.4",
     "lodash": "^4.17.21",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

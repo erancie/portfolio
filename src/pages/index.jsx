@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useEffect} from "react"
+import React, { Suspense, useState, useEffect, useLayoutEffect} from "react"
 import '../styles/global.sass'
 import Layout from "../components/Layout"
 import BackgroundScene from "../components/BackgroundScene"
@@ -7,6 +7,9 @@ import Intro from "../components/Intro"
 import ProjectsList from "../components/ProjectsList"
 import { ScrollContextProvider } from "../components/utils/useScrollContext"
 import SEO from "../components/SEO"
+
+// import LocomotiveScroll from 'locomotive-scroll';
+
 
 export default function Home() {
 
@@ -18,23 +21,44 @@ export default function Home() {
     }, [4000])
   },[])
 
+  // useLayoutEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     const scroll = new LocomotiveScroll({
+  //       el: document.querySelector("#___gatsby"),
+  //       smooth: true,
+  //       smoothMobile: true,
+  //       inertia: 0.75
+  //     });
+    
+  //     return () => {
+  //       if (scroll) scroll.destroy();
+  //     }
+  //   }
+  // }, []);
+
   return (
+    // <div id='scroll-wrapper'>
     <ScrollContextProvider>
 
         {isLoaded ? <>
           <Layout >
-
-            {/* <SEO 
-              title='Elliot Rancie - Showcase'
-              description='An out of this world web experience 
-                           showcasing projects designed and developed by Elliot Rancie'
-              // author='Elliot Rancie'
-            /> */}
             <SEO />
-            
             <BackgroundScene />
             <LandingHeaders />
             <Intro />
+
+            <div className="design">
+
+              <img className="design-panel" src="https://ik.imagekit.io/kv4ohthhz/4shots-panel_bamBv0ygn.PNG?updatedAt=1698475443621"></img>
+              <img className="design-panel" src="https://ik.imagekit.io/kv4ohthhz/circle2-panel_sDuLFglqe.PNG?updatedAt=1698503075084"></img>
+              <img className="design-panel" src="https://ik.imagekit.io/kv4ohthhz/circle-blue-panel_yJ6zoqywg.PNG?updatedAt=1698502843019"></img>
+              <img className="design-panel" src="https://ik.imagekit.io/kv4ohthhz/circle1-panel_XLEfzN80d.PNG?updatedAt=1698502842445"></img>
+
+              <img className="slanted design-panel" src="https://ik.imagekit.io/kv4ohthhz/tr:q-50/ucd-clear_ES34Ejcu2.png?updatedAt=1698503834346"></img>
+
+            </div>
+
+
             <ProjectsList /> 
           </Layout> 
         </> 
@@ -49,6 +73,7 @@ export default function Home() {
           </div> }
         
     </ScrollContextProvider>
+    // </div>
   )
 }
 

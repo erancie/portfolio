@@ -95,6 +95,10 @@ export default function Intro() {
 
       <p className="keep-scrolling intro-paras fade-in">See the project showcase below..</p>
 
+      <h1>DESIGN</h1>
+      
+      <h1>DEVELEOPMENT</h1>
+
       <a href="#circular" className="go-down-intro" >
         <svg viewBox="0 0 51 31" xmlns="http://www.w3.org/2000/svg">
           <path d="M0.00488281 0.434526L24.8534 30.4199L28.8746 25.5817L50.0047 0.419922L35.5774 2.34127C35.2057 2.39077 34.8559 2.57773 34.5762 2.8764L24.8087 13.3065L14.9803 2.87069C14.7024 2.57561 14.3558 2.39043 13.9875 2.34024L0.00488281 0.434526Z" />

@@ -128,6 +128,7 @@ export function ProjectThumb({project, hatchIsOpen}) {
             ))} 
           </div>
 
+                {/* put gtag click event here */}
           <a className='project-link fade-in' target="_blank" href={`${project.link}`}>Visit</a>
           <div className="case-svg"></div>
           <div className="tools-svg"></div>

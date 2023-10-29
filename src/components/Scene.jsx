@@ -55,35 +55,6 @@ const Sphere = () => {
 
   useFrame(() => { rotationRef.current.rotation.y -= .0008 })
 
-  //TODO:-------- globe to fade in when loaded -------- //////////////////////////
-  // const [show, setShow] = useState(false)
-  // const transition = useTransition(show, {
-  //   from: { opacity: 0 },
-  //   enter: { opacity: 1 },
-  //   leave: { opacity: 0.5 },
-  //   config: { duration: 2000 },
-  //   // config: config.molasses,
-  //   onRest: () => setShow((curr)=>!curr),
-  //   trail: 100
-  // })
-  // return transition( ({ opacity }, item) => (    
-  // item && <>
-
-  // const obj = useLoader(OBJLoader, '/models/wire-globe.obj')
-  // const { scene, nodes, materials } = useGLTF('/models/gemer/scene.gltf')
-
-  // const orange = new THREE.Color(0xffa500);
-  
-  
-  //find out how to change gltf materials - colors, roughness etc..
-  
-  // 3 ways to use 3D model mesh objects (Geometry nodes & Materials) 
-  //  -use three mesh of gemoetry and a material
-  //  -import obj or gltf file and pass into primitive as 'object' 
-  //  -use gltfjsx to convert nodes and materials from gltf into R3F mesh JSX
-
-  //gltf files house nodes - can refer to texture files
-
   return ( 
     <>
       <animated.group
@@ -148,3 +119,41 @@ export default Scene
 // controls sandbox
 // https://codesandbox.io/s/react-three-fiber-lighting-essentials-qwxb8?file=/src/App.js
 
+
+
+
+
+
+
+
+
+  //IN SPHERE
+  //
+  //TODO:-------- globe to fade in when loaded -------- //////////////////////////
+  // const [show, setShow] = useState(false)
+  // const transition = useTransition(show, {
+  //   from: { opacity: 0 },
+  //   enter: { opacity: 1 },
+  //   leave: { opacity: 0.5 },
+  //   config: { duration: 2000 },
+  //   // config: config.molasses,
+  //   onRest: () => setShow((curr)=>!curr),
+  //   trail: 100
+  // })
+  // return transition( ({ opacity }, item) => (    
+  // item && <>
+
+  // const obj = useLoader(OBJLoader, '/models/wire-globe.obj')
+  // const { scene, nodes, materials } = useGLTF('/models/gemer/scene.gltf')
+
+  // const orange = new THREE.Color(0xffa500);
+  
+  
+  //find out how to change gltf materials - colors, roughness etc..
+  
+  // 3 ways to use 3D model mesh objects (Geometry nodes & Materials) 
+  //  -use three mesh of gemoetry and a material
+  //  -import obj or gltf file and pass into primitive as 'object' 
+  //  -use gltfjsx to convert nodes and materials from gltf into R3F mesh JSX
+
+  //gltf files house nodes - can refer to texture files

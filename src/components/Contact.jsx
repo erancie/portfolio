@@ -92,8 +92,7 @@ export default function Contact() {
       {FormSent()}
       <div className="form-wrapper">
         <h1 className="contact-header fade-in">Message</h1>
-        <p className="contact-desc .fade-in">Need help with a project? Tell me about it. Let's work together!</p>
-        
+        <p className="contact-desc .fade-in">Working on a web project?</p>
         <form className="contact-form" onSubmit={handleSubmit} >
           <div className="name col-12 fade-in">
             <label for='name'>
