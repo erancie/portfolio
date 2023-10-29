@@ -35,8 +35,8 @@ const circularLaptop = '/circular-laptop_cOy72qQILd.PNG'
 const circularTablet = '/circular-tablet_cNLvk29I5.PNG'
 const circularMobile = '/circular-mobile_zxQx1vTbI.PNG'
 
-const finsightDesktop = '/finsight-desktop_2Tri_N31nq.PNG?updatedAt=1698581762816'
-const finsightLaptop = '/finsight-laptop_h79HB0BUi.PNG?updatedAt=1698581192993'
+const finsightDesktop = '/finsight-laptop_h79HB0BUi.PNG?updatedAt=1698581192993'
+const finsightLaptop = '/finsight-desktop_2Tri_N31nq.PNG?updatedAt=1698581762816'
 const finsightTablet = '/finsight-tablet_y80wVEUfZ.PNG?updatedAt=1698581700668'
 const finsightMobile = '/finsight-mobile_IkmA-rwcs.PNG?updatedAt=1698581782017'
 
