@@ -47,7 +47,7 @@ export default function Home() {
             <LandingHeaders />
             <Intro />
 
-            <div className="design">
+            {/* <div className="design">
 
               <img className="design-panel" src="https://ik.imagekit.io/kv4ohthhz/4shots-panel_bamBv0ygn.PNG?updatedAt=1698475443621"></img>
               <img className="design-panel" src="https://ik.imagekit.io/kv4ohthhz/circle2-panel_sDuLFglqe.PNG?updatedAt=1698503075084"></img>
@@ -56,7 +56,7 @@ export default function Home() {
 
               <img className="slanted design-panel" src="https://ik.imagekit.io/kv4ohthhz/tr:q-50/ucd-clear_ES34Ejcu2.png?updatedAt=1698503834346"></img>
 
-            </div>
+            </div> */}
 
 
             <ProjectsList /> 

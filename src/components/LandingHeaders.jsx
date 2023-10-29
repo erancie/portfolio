@@ -75,8 +75,8 @@ export default function LandingHeaders() {
               <h1 className="title-2d">..experiences on the web</h1>
             </div>
             
-            <h1>DESIGN</h1>
-            <h1>DEVELEOPMENT</h1>
+            {/* <h1>DESIGN</h1>
+            <h1>DEVELEOPMENT</h1> */}
 
           </div>
 
