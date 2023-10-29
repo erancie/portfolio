@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from 'react'
 import Nav from './Nav'
-import LocomotiveScroll from 'locomotive-scroll';
+// import LocomotiveScroll from 'locomotive-scroll';
 
 
 function Layout(props) {
