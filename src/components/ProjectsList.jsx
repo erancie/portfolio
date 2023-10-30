@@ -8,7 +8,7 @@ import Contact from './Contact'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function ProjectThumb({project, hatchIsOpen}) {
+export function ProjectThumb({project, index, hatchIsOpen}) {
 
   const cardRef = useRef(null)
   const [inView, setInView] = useState('')
@@ -34,11 +34,25 @@ export function ProjectThumb({project, hatchIsOpen}) {
   }, [])
 
   return (
-    <div className='project-thumb-container'>
+    <div className='project-thumb-container dc'>
       <div className="project-thumb-bg-wrapper" style={hatchIsOpen ? {  boxShadow: 'none' } : null} >
         <div className="project-thumb-bg" style={{ opacity: hatchIsOpen && '0' }}> </div>
         <div ref={cardRef} id={`${project.name}`} key={project.name} className='project-thumb side-viewing col-12 col-lg-10 col-xl-10 '>
-          
+            
+            {/* go to prev section */}
+            {projects[index-1] ?
+              <a href={`#${projects[index-1]?.name}`} className="prev-section" >
+                <svg viewBox="0 0 51 31" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.00488281 0.434526L24.8534 30.4199L28.8746 25.5817L50.0047 0.419922L35.5774 2.34127C35.2057 2.39077 34.8559 2.57773 34.5762 2.8764L24.8087 13.3065L14.9803 2.87069C14.7024 2.57561 14.3558 2.39043 13.9875 2.34024L0.00488281 0.434526Z" />
+                </svg>
+              </a>
+              :
+              <a className="prev-section" >
+              <svg viewBox="0 0 51 11" xmlns="http://www.w3.org/2000/svg">
+              </svg>
+            </a>
+            }
+
           <div className='project-titles-wrapper' style={{
               // background: hatchIsOpen && 'rgb(3,10,21)' 
           }}>
@@ -128,8 +142,25 @@ export function ProjectThumb({project, hatchIsOpen}) {
             ))} 
           </div>
 
-                {/* put gtag click event here */}
+          {/* put gtag click event here */}
           <a className='project-link fade-in' target="_blank" href={`${project.link}`}>Visit</a>
+
+          {/*go to next thumbnail section */}
+          {projects[index+1] ?
+            <a href={`#${projects[index+1]?.name}`} className="next-section" >
+              <svg viewBox="0 0 51 31" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.00488281 0.434526L24.8534 30.4199L28.8746 25.5817L50.0047 0.419922L35.5774 2.34127C35.2057 2.39077 34.8559 2.57773 34.5762 2.8764L24.8087 13.3065L14.9803 2.87069C14.7024 2.57561 14.3558 2.39043 13.9875 2.34024L0.00488281 0.434526Z" />
+              </svg>
+            </a>
+            :
+            <a className="next-section" >
+              <svg viewBox="0 0 51 11" xmlns="http://www.w3.org/2000/svg">
+              </svg>
+            </a>
+          }
+
+
+
           <div className="case-svg"></div>
           <div className="tools-svg"></div>
         </div>
@@ -185,7 +216,7 @@ function ProjectsList() {
 
         <Stars />
 
-        {projects.map( p=> <ProjectThumb project={p} hatchIsOpen={hatchIsOpen} /> )}
+        {projects.map( (p, i)=> <ProjectThumb project={p} index={i} hatchIsOpen={hatchIsOpen} /> )}
       
       </div>
 

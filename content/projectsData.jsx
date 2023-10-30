@@ -22,6 +22,8 @@ import figma from '/static/svg/figma.svg'
 import blazor from '/static/svg/blazor.svg'
 import dotnet from '/static/svg/dotnet.svg'
 import csharp from '/static/svg/csharp.svg'
+import syncfusion from '/static/svg/syncfusion.svg'
+// import syncfusion from '/static/svg/syncfusion.png'
 
 const url = 'https://ik.imagekit.io/kv4ohthhz/mern1-1280_qH3SRTAhB'
 
@@ -75,7 +77,7 @@ export const thisSite = {
 
 const projects = [
   {
-    name: 'gpt',
+    name: 'clever-clive',
     title: 'Clever Clive',
     imgRoot: IKRoot,
     imgSrc: {
@@ -147,6 +149,7 @@ const projects = [
     tools: [
       { label: 'React', icon: react, alt: 'React Icon' },
       { label: 'Blazor', icon: blazor, alt: 'Blazor Icon' },
+      { label: 'SyncFusion', icon: syncfusion, alt: 'SyncFusion Icon' },
       { label: 'C#', icon: csharp, alt: 'C# Icon' },
       { label: '.NET', icon: dotnet, alt: '.NET Icon' },
       { label: 'Webpack', icon: webpack, alt:'Webpack Icon' },
@@ -208,7 +211,7 @@ const projects = [
   },
 
   {
-    name: 'honey',
+    name: 'whole-honey',
     title: 'Whole Honey',
     imgRoot: IKRoot,
     imgSrc: {
