@@ -7,7 +7,7 @@ export default function LandingHeaders() {
   const fillColor = useRef('#44a59590')
 
   return (
-         <div className="landing"style={ scrollPos < 550 ? { transform:`scale(${1-scrollPos/550})` } : { display:`none` } } > 
+         <div className="landing dc"style={ scrollPos < 550 ? { transform:`scale(${1-scrollPos/550})` } : { display:`none` } } > 
 
           <div className="logo-wrapper">
 
