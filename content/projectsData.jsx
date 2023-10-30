@@ -19,6 +19,9 @@ import firebase from '/static/svg/firebase.svg'
 import mailchimp from '/static/svg/mailchimp.svg'
 import imagekit from '/static/svg/imagekit.svg'
 import figma from '/static/svg/figma.svg'
+import blazor from '/static/svg/blazor.svg'
+import dotnet from '/static/svg/dotnet.svg'
+import csharp from '/static/svg/csharp.svg'
 
 const url = 'https://ik.imagekit.io/kv4ohthhz/mern1-1280_qH3SRTAhB'
 
@@ -142,11 +145,12 @@ const projects = [
     },
     desc: 'A collated snapshot of your fiat and crypto holdings.',
     tools: [
-      { label: 'html', icon: html, alt:'HTML Icon' },
-      { label: 'javascript', icon: js, alt:'Javascript Icon' },
-      { label: 'sass', icon: sass, alt:'Sass Icon' },
+      { label: 'react', icon: react, alt: 'React Icon' },
+      { label: 'blazor', icon: blazor, alt: 'Blazor Icon' },
+      { label: 'csharp', icon: csharp, alt: 'C# Icon' },
+      { label: 'dotnet', icon: dotnet, alt: '.NET Icon' },
       { label: 'webpack', icon: webpack, alt:'Webpack Icon' },
-      { label: 'svg', icon: svg, alt:'SVG Icon' },
+      ,
     ],
     link: ''
   },
