@@ -62,14 +62,14 @@ const honeyMobile = '/honey-mobile_BJW5P7JcQ'
     
 export const thisSite = {
   tools: [
-    { label: 'react', icon: react, alt: 'React.js Icon' },
-    { label: 'three', icon: three, alt: 'Three.js Icon' },
-    { label: 'gsap', icon: gsap, alt: 'GSAP Icon'  },
-    { label: 'sass', icon: sass, alt: 'Sass Icon'  },
-    { label: 'gatsby', icon: gatsby, alt: 'Gatsby.js Icon' },
-    { label: 'mailchimp', icon: mailchimp, alt: 'Mailchimp Icon'  },
-    { label: 'imagekit', icon: imagekit, alt: 'ImageKit Icon'  },
-    { label: 'figma', icon: figma, alt: 'Figma Icon'  },
+    { label: 'React', icon: react, alt: 'React.js Icon' },
+    { label: 'Three', icon: three, alt: 'Three.js Icon' },
+    { label: 'GSAP', icon: gsap, alt: 'GSAP Icon'  },
+    { label: 'Sass', icon: sass, alt: 'Sass Icon'  },
+    { label: 'Gatsby', icon: gatsby, alt: 'Gatsby.js Icon' },
+    { label: 'Mailchimp', icon: mailchimp, alt: 'Mailchimp Icon'  },
+    { label: 'ImageKit', icon: imagekit, alt: 'ImageKit Icon'  },
+    { label: 'Figma', icon: figma, alt: 'Figma Icon'  },
   ]
 }
 
@@ -92,10 +92,10 @@ const projects = [
     },
     desc: 'Your Social AI Asssitant',
     tools: [
-      { label: 'openai', icon: openai, alt: 'OpenAI Icon'},
-      { label: 'react', icon: react, alt: 'React Icon' },
-      { label: 'speech recognition', icon: speechRec, alt: 'Speech Recognition Icon' },
-      { label: 'firebase', icon: firebase, alt: 'Google Firebase Icon' },
+      { label: 'ApenAI', icon: openai, alt: 'OpenAI Icon'},
+      { label: 'React', icon: react, alt: 'React Icon' },
+      { label: 'Speech Recognition', icon: speechRec, alt: 'Speech Recognition Icon' },
+      { label: 'Firebase', icon: firebase, alt: 'Google Firebase Icon' },
     ],
     link: 'https://quickstories-60609.web.app/'
   },
@@ -118,11 +118,11 @@ const projects = [
     },
     desc: 'A crowd funding platform powered by AI and circular economics.',
     tools: [
-      { label: 'html', icon: html, alt:'HTML Icon' },
-      { label: 'javascript', icon: js, alt:'Javascript Icon' },
-      { label: 'sass', icon: sass, alt:'Sass Icon' },
-      { label: 'webpack', icon: webpack, alt:'Webpack Icon' },
-      { label: 'svg', icon: svg, alt:'SVG Icon' },
+      { label: 'HTML', icon: html, alt:'HTML Icon' },
+      { label: 'JavaScript', icon: js, alt:'Javascript Icon' },
+      { label: 'Sass', icon: sass, alt:'Sass Icon' },
+      { label: 'Webpack', icon: webpack, alt:'Webpack Icon' },
+      { label: 'SVG', icon: svg, alt:'SVG Icon' },
     ],
     link: 'https://circular-e8a2f.web.app/'
   },
@@ -145,11 +145,11 @@ const projects = [
     },
     desc: 'A collated snapshot of your fiat and crypto holdings.',
     tools: [
-      { label: 'react', icon: react, alt: 'React Icon' },
-      { label: 'blazor', icon: blazor, alt: 'Blazor Icon' },
-      { label: 'csharp', icon: csharp, alt: 'C# Icon' },
-      { label: 'dotnet', icon: dotnet, alt: '.NET Icon' },
-      { label: 'webpack', icon: webpack, alt:'Webpack Icon' },
+      { label: 'React', icon: react, alt: 'React Icon' },
+      { label: 'Blazor', icon: blazor, alt: 'Blazor Icon' },
+      { label: 'C#', icon: csharp, alt: 'C# Icon' },
+      { label: '.NET', icon: dotnet, alt: '.NET Icon' },
+      { label: 'Webpack', icon: webpack, alt:'Webpack Icon' },
       ,
     ],
     link: ''
@@ -173,10 +173,10 @@ const projects = [
     },
     desc: 'Professional Basketball Services Platform.',
     tools: [
-      { label: 'html', icon: html, alt:'HTML Icon'},
-      { label: 'css', icon: css, alt:'CSS Icon'},
-      { label: 'javascript', icon: js, alt:'Javascript Icon'},
-      { label: 'wordpress', icon: wordpress, alt:'Wordpress Icon'},
+      { label: 'HTML', icon: html, alt:'HTML Icon'},
+      { label: 'CSS', icon: css, alt:'CSS Icon'},
+      { label: 'JavaScript', icon: js, alt:'Javascript Icon'},
+      { label: 'Wordpress', icon: wordpress, alt:'Wordpress Icon'},
     ],
     link: 'https://psgsports.co/'
   },
@@ -199,10 +199,10 @@ const projects = [
     },
     desc: 'A full stack project bringing experts and clients together.',
     tools: [
-      { label: 'mongo', icon: mongodb, alt: 'MongoDB Icon' },
-      { label: 'express', icon: express, alt: 'Express.js Icon' },
-      { label: 'react', icon: react, alt: 'React.js Icon' },
-      { label: 'node', icon: node, alt: 'Node.js Icon' },
+      { label: 'MongoDB', icon: mongodb, alt: 'MongoDB Icon' },
+      { label: 'Express', icon: express, alt: 'Express.js Icon' },
+      { label: 'React', icon: react, alt: 'React.js Icon' },
+      { label: 'Node', icon: node, alt: 'Node.js Icon' },
      ],    
      link: 'https://iservice.onrender.com'
   },
@@ -225,9 +225,9 @@ const projects = [
     },
     desc: 'Online shop selling organic honey.',
     tools: [
-      { label: 'html', icon: html, alt:'HTML Icon' },
-      { label: 'css', icon: css, alt:'CSS Icon'},
-      { label: 'bootstrap', icon: bootstrap, alt: 'Bootstrap Icon' },
+      { label: 'HTML', icon: html, alt:'HTML Icon' },
+      { label: 'CSS', icon: css, alt:'CSS Icon'},
+      { label: 'Bootstrap', icon: bootstrap, alt: 'Bootstrap Icon' },
      ],       
     //  link: 'https://honey-8cd45.web.app/'
   },
