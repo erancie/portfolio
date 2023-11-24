@@ -53,13 +53,12 @@ export default function Design() {
     itemsRef.current[centeredIndex].classList.add('centered')
   },[currdeg])
 
-  //FIX
   const centerImage = useCallback((index) => {
     let currentIndex = [0, 3, 2, 1][((currdeg.current / 90) % 4 + 4) % 4];
     let targetIndex = index;
     let diff = (targetIndex - currentIndex + 4) % 4;
     rotate(diff * 90);
-   }, [currdeg, rotate]);
+   }, [rotate]);
 
   return (
     <div id='design' className="design dc">
