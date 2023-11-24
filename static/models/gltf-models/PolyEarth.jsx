@@ -23,16 +23,19 @@ export function PolyEarth(props) {
   const brown = new THREE.Color(0x989260);
   const silver = new THREE.Color(0x1c1e10);
   const iron = new THREE.Color(0xadc3c7);
+  const black = new THREE.Color(0x000000);
 
   // const outterMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-60/earth-clouds-2k-lossless_Fx89Vwggc.jpg')
   // const innerNightMap = useLoader(TextureLoader, 'https://ik.imagekit.io/kv4ohthhz/tr:q-80/earth-night-8k_dMIDkPbA_.jpg')
 
   return (
+    //applying materials to mesh in 2 diff ways:
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Sphere004.geometry} 
             material={materials.water} 
             // material-color={iron}
             material-color={darkblue2}
+            // material-color={black}
             // material-transparent
             // material-opacity={.}
             // material-map={outterMap}
@@ -57,7 +60,9 @@ export function PolyEarth(props) {
       >
         <meshStandardMaterial 
           material={materials.earth} 
-          color={darkblue}
+          color={darkblue2}
+          // color={black}
+          // color={"BLACK"}
           // color={'white'}
           // color={green}
           // normalMap={outterMap}

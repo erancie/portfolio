@@ -1,13 +1,137 @@
 .design 
-  z-index: 2
+  z-index: 4
   position: relative
   width: 100%
   margin: auto
-  background: #ffffff5b
+  // background: #ffffff5b
 
-.design-panel
-  width: 80%
-  margin: 8rem auto 
+#design
+  margin-top: 15rem
+  scroll-padding-top: 140px
 
-.slanted
-  transform: translateX(-4.8rem) perspective(1000px) rotateX(5deg) rotateY(-24deg) rotate(1deg)
+.font-small
+  font-size: 3rem
+
+.design-header
+  margin: auto
+  width: 400px
+  text-align: center
+  margin-bottom: 10rem
+  font-size: 5rem
+  font-weight: 700
+  clip-path: url(#design-clip)
+  background: linear-gradient(96deg, rgba(13, 31, 50, 0.534) 50%, rgb(4, 20, 35) 50%)
+
+#design-clip
+  position: absolute
+
+.carousel-container
+  margin: 0 auto
+  width: 200px
+  height: 150px
+  position: relative
+  perspective: 1000px
+  transform-style: preserve-3d
+  transform: rotate3d(0, 0, 45deg)
+
+@media (min-width: 568px) 
+  .carousel-container
+      width: 400px
+      height: 280px
+
+@media (min-width: 768px) 
+  .carousel-container
+      width: 460px
+      height: 320px
+
+@media (min-width: 992px) 
+  .carousel-container
+      width: 520px
+      height: 360px
+
+@media (min-width: 1200px) 
+    .carousel-container
+      width: 600px
+      height: 400px
+
+@media (min-width: 1400px) 
+    .carousel-container
+      width: 780px
+      height: 520px
+
+.carousel
+  height: 100%
+  width: 100%
+  position: absolute
+  transform-style: preserve-3d
+  transition: transform 1s
+  div
+    transform-style: preserve-3d
+
+.item
+  display: block
+  position: absolute
+  background: #000
+  font-size: 5em
+  text-align: center
+  color: #FFF
+  border-radius: 3px
+  transition: all 1s ease
+  opacity: 0.2
+
+
+.centered 
+  opacity: 1 !important
+
+
+.a
+  transform: rotateY(0deg) translateZ(250px) rotateY(0deg)
+
+.b
+  transform: rotateY(90deg) translateZ(250px) rotateY(-90deg)
+
+.c
+  transform: rotateY(180deg) translateZ(250px) rotateY(-180deg)
+
+.d
+  transform: rotateY(270deg) translateZ(250px) rotateY(-270deg)
+
+.prev-next-cont
+  width: 160px
+  // max-width: 600px
+  transform: translateY(-100px)
+  position: relative
+  margin: auto
+  z-index: 1
+
+.next, .prev
+  color: #444
+  position: absolute
+  bottom: -180px
+  cursor: pointer
+  fill: #44a59587
+
+  // fill: none
+  // stroke:rgb(112, 180, 205)
+  // stroke-width: 2px !important
+  width: 50px
+  transition: all .2s ease
+  
+  &:hover
+    fill: white
+  &:active
+    bottom: -190px
+
+
+.next
+  right: 1em
+  transform: rotate(-90deg)
+
+.prev
+  left: 1em
+  transform: rotate(90deg)
+
+.disable-caret
+  caret: none
+
+  

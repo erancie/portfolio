@@ -17,16 +17,23 @@ $shadow: #0a0a0abf
 $purple: #6d498c
 $light-purple: #b17fdc
 $orange: #dda345
+$orange2: rgb(225, 149, 63)
 $bg: #101018db
+$title-color2: #81dffb
+$title-color: rgb(68, 165, 149)
+$panel-bg: linear-gradient(127deg, rgb(28, 10, 54) 0%, rgb(4, 20, 35) 100%)
 
 $on-dark-shadow: -6px 4px 4px $shadow
 
+@import "landing.sass"
+@import "about.sass"
 @import "cards.sass"
 @import "trick-cards.sass"
-@import "contact.sass"
 @import "tools.sass"
 @import "intro.sass"
 @import "design.sass"
+@import "contact.sass"
+
 
 
 html, body
@@ -171,6 +178,12 @@ canvas
     height: 2rem
     transition: all .15s ease-in
 
+.link-design, .link-dev
+  margin: 0 1rem
+  transition: all .3s ease
+  &:hover
+    color: #fff
+    transform: translateY(5px)
 
 .link-git, .link-li, .link-email, .link-message
   display: inline-block
@@ -229,14 +242,14 @@ canvas
   padding: 1rem
   padding-right: 1.2rem
   border-radius: 25px 0 0 25px
-  z-index: 3
+  z-index: 100
   transition: right .3s ease, transform 1.8s ease-out, opacity .3s ease
   opacity: .8
   &:hover
     opacity: 1
     box-shadow: -1px 0px 2px #ffffff20
 
-.to-top svg, .side-intro svg
+.to-top svg, .side-intro svg, .side-design svg
   fill: #44a595
   transition: all .3s ease
   width: 24px
@@ -250,7 +263,7 @@ canvas
   margin-top: .8rem
 .side-intro svg
   width: 5px
-  margin-bottom: 2.4rem
+  margin-top: 1.5rem
 
 .side-divide, .side-divide-bot
   height: 50px
@@ -351,349 +364,8 @@ canvas
     bottom: 4rem
     right: 1.5rem
 
-$title-color2: #81dffb
-$title-color: #44A595
-
-//Landing////////////////////////////////////
-.landing
-  scroll-snap-align: start
-  color: white
-  width: 100%
-  max-width: 100vw
-  position: fixed
-  top: 0
-  left: 0
-  transition: transform 100ms ease-out
-  text-align: center
-  height: 100vh
-
-.titles-wrapper
-  position: relative
-  top: 15vh
-
-.title-1-container
-  position: relative
-  margin: 3rem auto 0
-  height: 40%
-  min-height: 220px
-
-.title-1, .title-1b, .title-1c, .title-1d
-  position: absolute
-  // font-style: italic
-  bottom: 0
-  left: 50%
-  transform: translateX(-50%)
-  font-family: $nunito
-  font-style: black
-  text-align: center
-  font-weight: 1000
-  font-size: 2.8rem
-  // text-transform: uppercase
-  margin: 0rem auto 0
-  width: 90%
-  letter-spacing: 3px
-  // line-height: 4rem
-  background: #a193dc
-  background: #7b77de
-  background: $title-color
-
-  -webkit-text-fill-color: transparent
-  -webkit-background-clip: text
-  -moz-background-clip: text
-  transition: scale .3s ease 
-
-.title-2-container
-  position: relative
-
-.title-2, .title-2b, .title-2c, .title-2d
-  width: 90%
-  text-align: center
-  font-weight: 400
-  // font-style: italic
-  font-family: $main-font
-  letter-spacing: 1px
-  font-size: 1.6rem
-  position: absolute
-  left: 50%
-  transform: translateX(-50%)
-  background: #7b77de
-  background: $title-color
-
-  -webkit-text-fill-color: transparent
-  -webkit-background-clip: text
-  -moz-background-clip: text
 
 
-.title-1b, .title-2b
-  animation: title-1b 9s ease-in-out infinite 
-  background: linear-gradient(127deg, $title-color 12%,#FFF  30%, $title-color 53%)
-  -webkit-text-fill-color: transparent
-  -webkit-background-clip: text
-  opacity: .2
-
-.title-1c, .title-2c
-  animation: title-1c 9s ease-in-out infinite 
-  background: linear-gradient(127deg, $title-color 30%,#FFF  52%, $title-color 72%)
-  -webkit-text-fill-color: transparent
-  -webkit-background-clip: text
-  opacity: .2
-
-.title-1d, .title-2d
-  animation: title-1d 9s ease-in-out infinite 
-  background: linear-gradient(127deg, $title-color 50%,#FFF 72%, $title-color 94%)
-  -webkit-text-fill-color: transparent
-  -webkit-background-clip: text
-  opacity: .2
-
-.logo-wrapper
-  position: relative
-  top: 14vh
-  left: 50%
-  transform: translateX(-50%) scale(.9)
-  width: 80px
-
-.logo-landing
-  position: absolute
-  top: 0
-  left: 50%
-  transform: translateX(-50%) 
-  margin: auto
-  width: 100%
-  stroke: #44a59590
-  stroke-linecap: round
-  
-.sparkle-1
-  position: absolute
-  width: 113px
-  animation: sparkles-1 9s infinite linear
-  top: -37px
-  left: -38%
-
-.sparkle-2
-  position: absolute
-  width: 110px
-  animation: sparkles-2 9s infinite linear
-  top: 31px
-  left: -68%
-  opacity: 0
-
-.sparkle-3
-  position: absolute
-  width: 140px
-  animation: sparkles-3 9s infinite linear
-  top: 22px
-  left: 12%
-  opacity: 0
-
-
-@media (min-width: 612px) 
-  .logo-wrapper
-    // transform: translateX(-50%) scale(1)
-    top: 20vh
-  .titles-wrapper
-    top: 14vh
-
-@media (min-width: 768px) 
-  .logo-wrapper
-    transform: translateX(-50%) scale(1.05)
-    top: 17vh
-  .titles-wrapper
-    top: 16vh
-
-@media (min-width: 992px) 
-  .logo-wrapper
-    transform: translateX(-50%) scale(1.12)
-    top: 16vh
-  .titles-wrapper
-    top: 17vh
-
-
-@media (min-width: 1200px) 
-  .logo-wrapper
-    transform: translateX(-50%) scale(1.18)
-    top: 12vh
-  .titles-wrapper
-    top: 18vh
-
-@media (min-width: 1400px) 
-  .logo-wrapper
-    transform: translateX(-50%) scale(1.22)
-  .titles-wrapper
-    top: 20vh
-
-@media (min-width: 1640px) 
-  .logo-wrapper
-    transform: translateX(-50%) scale(1.35)
-  .titles-wrapper
-    top: 22vh
-
-@keyframes sparkles-1
-  0%
-    opacity: 1
-    transform: rotate(0deg)
-  25%
-    opacity: 0
-    transform: rotate(-40deg)
-
-  // 50%
-  //   transform: rotate(360deg)
-  70%
-    transform: rotate(40deg)
-  90%
-    opacity: 0
-
-@keyframes sparkles-2
-  27%
-    opacity: 0
-    transform: rotate(25deg)
-  40%
-    opacity: 1
-    transform: rotate(0deg)
-  58%
-    transform: rotate(-25deg)
-    opacity: 0
-
-@keyframes sparkles-3
-
-  62%
-    opacity: 0
-    transform: rotate(10deg)
-  75%
-    opacity: 1
-    transform: rotate(0deg)
-  90%
-    transform: rotate(-10deg)
-    opacity: 0
-    
-
-.logo-landing-b, .logo-landing-f
-  opacity: .2
-  animation: title-1b 9s infinite
-
-.logo-landing-c, .logo-landing-g
-  opacity: .2
-  animation: title-1c 9s infinite
-
-.logo-landing-d, .logo-landing-h
-  opacity: .2
-  animation: title-1d 9s infinite
-
-  //slow burn with quick flash animation
-@keyframes title-1b
-  10%
-    opacity: 0
-  18.75%
-    opacity: 1
-  51%
-    opacity: 0
-
-  25%
-    opacity: 0
-  68%
-    opacity: .4
-  68.75%
-    opacity: 1
-  70%
-    opacity: .4
-  71.5%
-    opacity: .2
-
-@keyframes title-1c
-  8%
-    opacity: 0
-  31%
-    opacity: 1
-  62%
-    opacity: 0
-
-  65%
-    opacity: 0
-  // 69%
-  //   opacity: .4
-  69.25%
-    opacity: 1
-  81%
-    opacity: .2
-  82.5%
-    opacity: .2
-
-@keyframes title-1d
-  18%
-    opacity: .1
-  46%
-    opacity: 1
-  64%
-    opacity: 0
-
-  68%
-    opacity: 0
-  // 70%
-  //   opacity: .4
-  71.25%
-    opacity: 1
-  76.5%
-    opacity: .2
-  84%
-    opacity: .1
-
-
-
-@media (min-width: 768px) 
-  .landing
-    .title-1, .title-1b, .title-1c, .title-1d
-      font-size: 3.5rem
-      // line-height: 5rem
-    .title-2, .title-2b,  .title-2c, .title-2d
-      font-size: 1.9rem
-
-@media (min-width: 992px)
-  .landing
-    .title-1, .title-1b, .title-1c, .title-1d
-      font-size: 4.2rem
-      // line-height: 4.5rem
-    .title-2, .title-2b,  .title-2c, .title-2d
-      font-size: 2.2rem
-
-@media (min-width: 1200px) 
-  .landing
-    .title-1, .title-1b, .title-1c, .title-1d
-      font-size: 5rem
-      // line-height: 7rem
-    .title-2, .title-2b,  .title-2c, .title-2d
-      font-size: 2.5rem
-
-@media (min-width: 1400px)
-  .landing
-    .title-1, .title-1b, .title-1c, .title-1d
-      font-size: 5.6rem
-    .title-2, .title-2b,  .title-2c, .title-2d
-      font-size: 3rem
-    
-@media (min-width: 1640px)
-  .landing
-    .title-1, .title-1b, .title-1c, .title-1d
-      margin: 0 auto 
-      font-size: 6.2rem
-
-
-.back-scene
-  height: 100vh
-  width: 100%
-  top: 0
-  left: 0
-  position: sticky
-
-.bg-overlay
-  width: 100%
-  height: 43vh
-  position: absolute
-  top: 0
-  background: linear-gradient(180deg, rgb(0 0 0 / 34%) 0, rgba(0, 0, 0, 0) 100%)
-
-@media ( max-width: 800px )
-  .landing-bg::before
-    background: radial-gradient(circle, #00d5ff44 0%, #1c1cc344 18%, #02002444 40%), url('https://ik.imagekit.io/kv4ohthhz/tr:w-1118,tr:q-100/milkyway-square-8k_rdtI2Ci4c'), rgb(0, 0, 0)
-  
 //globe
 .globe
   position: absolute
@@ -733,13 +405,14 @@ $title-color: #44A595
   top: 50%
   transform: translateY(-50%)
   height: 60vh
-  opacity: .15
+  opacity: .1
   transition: left .8s ease-in-out, right .8s ease-in-out
 
 .stars-left
   left: 2%
 .stars-right
   right: 2%
+  opacity: .07
 
 @media (min-width: 768px) 
   .stars-container

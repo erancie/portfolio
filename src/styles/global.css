@@ -1039,6 +1039,7 @@ canvas {
   height: 100%;
   position: relative;
   background: #101018;
+  overflow: hidden;
 }
 
 .nav {

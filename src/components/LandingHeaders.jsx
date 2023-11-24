@@ -74,12 +74,12 @@ export default function LandingHeaders() {
               <h1 className="title-2c">..experiences on the web</h1>
               <h1 className="title-2d">..experiences on the web</h1>
             </div>
-            
-            {/* <h1>DESIGN</h1>
-            <h1>DEVELEOPMENT</h1> */}
-
           </div>
 
+          <div className='header-actions'>
+            <a href='#design' className='design-action'>UI/UX</a>
+            <a href='#clever-clive' className='dev-action'>WEB/DEV</a>
+          </div>
 
         </div>
   )

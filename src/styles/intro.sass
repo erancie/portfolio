@@ -6,8 +6,8 @@
 .introduction
   z-index: 3
   margin: auto
-  margin-top: 55rem
-  margin-bottom: 15rem
+  margin-top: 6rem
+  // margin-bottom: 10rem
   padding: 2.3rem
   padding-top: 4rem
   padding-bottom: 0rem
@@ -19,12 +19,51 @@
   font-weight: 400
   font-size: 1rem
   background: rgba(4,20,35,.95)
-  background: linear-gradient(127deg,  rgba(10,32,54,.95) 0%, rgba(4,20,35,.95) 100%)
+  background: linear-gradient(127deg,  rgb(10, 32, 54) 0%, rgb(4, 20, 35) 85%)
   -webkit-clip-path: url(#intro-clip)
   clip-path: url(#intro-clip)
   .intro-paras
     margin: auto
 
+.intro-heading, .process-heading
+  font-size: 3rem
+  font-weight: 200
+
+.intro-hr
+  border: 1px solid #24655b6d
+  margin: 1rem auto
+  width: 30%
+  &:nth-of-type(2)
+    margin-bottom: 5rem
+
+    
+
+.intro-header
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.intro-icon
+  fill: #24655b0e
+  // stroke: #ffffff09
+  // stroke-width: .5px
+  position: absolute
+  z-index: -1
+  width: 80%
+  right: 50%
+  transform: translate(60%, 40%) rotate(22deg)
+  // bottom: 50%
+
+.portrait
+  width: 200px
+  margin: 0 auto 4rem
+  padding-right: .5rem
+  svg
+    fill: #24655b
+    fill: #265568
+    fill: #1a394d
+
+    fill: rgb(225, 149, 63)
 
 #intro-clip
   position: absolute
@@ -36,8 +75,11 @@
 
 .logo-intro
   height: 120px
+  height: 320px
   margin: 1rem auto 2.5rem
   fill: #44a595
+  fill: #1a394d
+
 
 .call-to-action
   position: relative
@@ -91,7 +133,7 @@
   right: 23%
   // stroke: #ffffff
   &:hover
-    fill: #fff
+    // fill: #fff
 
 @media (min-width: 768px) 
   .introduction 

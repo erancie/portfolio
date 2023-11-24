@@ -40,7 +40,7 @@ const LandingBg = styled.div`
     }
   }
 `
-
+//should this memo be here? - what is changing? -layout - not state
 const BackgroundScene = React.memo(() => {
 
   const scrollPos = useScrollContext()

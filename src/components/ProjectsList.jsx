@@ -194,7 +194,7 @@ function ProjectsList() {
   }
 
   return (
-    <div className='projects-container'>
+    <div className='projects-container'> 
 
       {/* <div className="proj-bg-container" ref={bgContainer}></div> */}
       <div className='projects-list'>

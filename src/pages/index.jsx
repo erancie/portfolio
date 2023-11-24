@@ -7,6 +7,8 @@ import Intro from "../components/Intro"
 import ProjectsList from "../components/ProjectsList"
 import { ScrollContextProvider } from "../components/utils/useScrollContext"
 import SEO from "../components/SEO"
+import About from "../components/About"
+import Design from "../components/Design"
 
 // import LocomotiveScroll from 'locomotive-scroll';
 
@@ -45,20 +47,9 @@ export default function Home() {
             <SEO />
             <BackgroundScene />
             <LandingHeaders />
+            <About />
+            <Design />
             <Intro />
-
-            {/* <div className="design">
-
-              <img className="design-panel" src="https://ik.imagekit.io/kv4ohthhz/4shots-panel_bamBv0ygn.PNG?updatedAt=1698475443621"></img>
-              <img className="design-panel" src="https://ik.imagekit.io/kv4ohthhz/circle2-panel_sDuLFglqe.PNG?updatedAt=1698503075084"></img>
-              <img className="design-panel" src="https://ik.imagekit.io/kv4ohthhz/circle-blue-panel_yJ6zoqywg.PNG?updatedAt=1698502843019"></img>
-              <img className="design-panel" src="https://ik.imagekit.io/kv4ohthhz/circle1-panel_XLEfzN80d.PNG?updatedAt=1698502842445"></img>
-
-              <img className="slanted design-panel" src="https://ik.imagekit.io/kv4ohthhz/tr:q-50/ucd-clear_ES34Ejcu2.png?updatedAt=1698503834346"></img>
-
-            </div> */}
-
-
             <ProjectsList /> 
           </Layout> 
         </> 

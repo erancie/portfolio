@@ -1,0 +1,67 @@
+.about-container
+  position: relative
+  padding: 4rem 0 5rem
+  color: rgb(68, 165, 149)
+  // color: rgb(225, 149, 63)
+  margin: auto
+  margin-top: 55rem
+  overflow: hidden
+
+.main-color
+  color: rgb(68, 165, 149)
+
+
+.alt-color
+  color: rgb(253, 169, 33)
+  color: #81dffb
+
+  
+.about
+  font-size: 2rem
+  font-weight: 600
+  margin: 0 auto 3rem
+  width: 69%
+  line-height: 115%
+  color: var(--title-color)
+  // background: linear-gradient(127deg, rgb(28, 10, 54) 0%, rgb(4, 20, 35) 100%)
+  background: linear-gradient(99deg, rgba(10, 32, 54, 0.562) 58%, rgb(4, 20, 35) 50%)
+  // background: linear-gradient(110deg,  rgb(10, 32, 54) 16%, rgb(4, 20, 35) 26%, rgb(4, 20, 35) 86%, rgb(10, 32, 54) 91%)
+  padding: 4rem 3rem 5rem
+  svg
+    fill: rgb(68, 165, 149)
+    fill: #81dffb
+    fill: rgb(225, 149, 63)
+  &:nth-of-type(1)
+    clip-path: url(#about-clip-1)
+  &:nth-of-type(2)
+    clip-path: url(#about-clip-2)
+    // background: linear-gradient(-82deg,  rgb(10, 32, 54) 16%, rgb(4, 20, 35) 26%)
+
+  &:nth-of-type(3)
+    clip-path: url(#about-clip-3)
+
+      
+#about-clip-1-wrapper, #about-clip-2-wrapper, #about-clip-3-wrapper
+  position: absolute
+
+@media (min-width: 768px) 
+  .about
+    font-size: 3.5rem
+    // text-align: center
+    &:nth-of-type(1)
+      width: 400px
+
+    &:nth-of-type(2)
+      width: 420px
+
+    &:nth-of-type(3)
+      width: 390px
+
+      
+    // width: 100vw
+    // transform: translateX(3rem)
+
+
+@media (min-width: 992px) 
+  .about
+    // width: 50%
