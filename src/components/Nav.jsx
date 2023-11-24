@@ -59,13 +59,10 @@ export default function Nav() {
           </svg>
         </Link></div>
 
-      <div className='nav-links'>
-        <a href='#design' className='link-design' >Design</a>
-        <a href='#clever-clive' className='link-dev' >Development</a>
-      </div>
 
       <div className='nav-links'>
-
+        <a href='#design' className='link-design' >UI/UX</a>
+        <a href='#clever-clive' className='link-dev' >Dev</a>
         <div>
           <a className='link-message' href='#contact'>
             <svg viewBox="0 0 42 37" xmlns="http://www.w3.org/2000/svg">
