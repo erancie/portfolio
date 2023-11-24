@@ -53,6 +53,13 @@ export default function Design() {
     itemsRef.current[centeredIndex].classList.add('centered')
   },[currdeg])
 
+  //FIX
+  const centerImage = useCallback((index) => {
+    let currentIndex = [0, 3, 2, 1][((currdeg.current / 90) % 4 + 4) % 4];
+    let targetIndex = index;
+    let diff = (targetIndex - currentIndex + 4) % 4;
+    rotate(diff * 90);
+   }, [currdeg, rotate]);
 
   return (
     <div id='design' className="design dc">
@@ -63,19 +70,19 @@ export default function Design() {
         <div ref={carouselRef} className="carousel">
 
           <div className="a">
-            <img id={designs[0].name} className='item design-img' src={designs[0].src} ></img>
+            <img id={designs[0].name} className='item design-img' onClick={() => centerImage(0)} src={designs[0].src} ></img>
           </div>
 
           <div className="b">
-            <img id={designs[1].name} className='item design-img' src={designs[1].src} ></img>
+            <img id={designs[1].name} className='item design-img' onClick={() => centerImage(1)} src={designs[1].src} ></img>
           </div>
 
           <div className="c">
-            <img id={designs[2].name} className='item design-img' src={designs[2].src} ></img>
+            <img id={designs[2].name} className='item design-img' onClick={() => centerImage(2)} src={designs[2].src} ></img>
           </div>
 
           <div className="d">
-            <img id={designs[3].name} className='item design-img' src={designs[3].src} ></img>
+            <img id={designs[3].name} className='item design-img' onClick={() => centerImage(3)} src={designs[3].src} ></img>
           </div>
 
         </div>
