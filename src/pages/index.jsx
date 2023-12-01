@@ -23,23 +23,8 @@ export default function Home() {
     }, [4000])
   },[])
 
-  // useLayoutEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     const scroll = new LocomotiveScroll({
-  //       el: document.querySelector("#___gatsby"),
-  //       smooth: true,
-  //       smoothMobile: true,
-  //       inertia: 0.75
-  //     });
-    
-  //     return () => {
-  //       if (scroll) scroll.destroy();
-  //     }
-  //   }
-  // }, []);
 
   return (
-    // <div id='scroll-wrapper'>
     <ScrollContextProvider>
 
         {isLoaded ? <>
@@ -64,16 +49,6 @@ export default function Home() {
           </div> }
         
     </ScrollContextProvider>
-    // </div>
   )
 }
-
-// export const Head = () => (
-//   <SEO 
-//     title='Elliot Rancie Showcase'
-//     description='An out of this world experience showcasing projects designed and developed by Elliot Rancie'
-//     // author='Elliot Rancie'
-//   />
-// )
-
 

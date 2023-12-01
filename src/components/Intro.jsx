@@ -45,64 +45,71 @@ export default function Intro() {
         I also build <span className='highlight'> Full Stack </span>
          web apps.  
       </p>
-      <br/>      
 
+      <br/>      
+      <br/>      
       <hr className='intro-hr'></hr>
 
-      <br/>      
-      <p className='intro-paras fade-in process-heading'>
-      Design Process:
-      </p>
-      <br/>      
-      <p className='intro-paras fade-in'>
-      Listen and understand the <span className='highlight'>Product Vision</span>.
-      </p>
-      <br/>      
-      <p className='intro-paras fade-in'>
-      <span className='highlight'>Define</span> the product.
-      </p>
-      <br/>      
-      <p className='intro-paras fade-in'>
-        Research the market and profile <span className='highlight'>Ideal Users</span>. 
-      </p>
-      <br/>      
-      <p className='intro-paras fade-in'>
-      Creative <span className='highlight'>Ideation</span> and mockups. 
-      </p>
-      <br/>
-      <p className='intro-paras fade-in'>
-      <span className='highlight'>Wireframe</span> the user experience.
-      </p>
-      <br/>      
-      <p className='intro-paras fade-in'>
-        Produce a <span className='highlight'>Prototype</span>.
-      </p>
-      <br/>      
-      <p className='intro-paras fade-in'>
-        Preliminary <span className='highlight'>User Testing</span>.
-      </p>
-      <br/>      
-      <p className='intro-paras fade-in'>
-        High fidelity <span className='highlight'>UI</span> design.
-      </p>
-      <br/>      
-      <p className='intro-paras fade-in'>
-        Technical team <span className='highlight'>Handover</span>
-      </p>
-      <br/>      
-      <p className='intro-paras fade-in'>
-        Aid techincal <span className='highlight'>Development</span>.
-      </p>
-      <br/>      
-      <p className='intro-paras fade-in'>
-        Analyse <span className='highlight'>User Behavior</span> and improve the experience.
-      </p>
-      <br/>
-      <br/>
+
+      <div className='design-process'>
+
+        <p className='intro-paras fade-in process-heading'>
+          Process:
+        </p>
+        <p className='intro-paras fade-in'>
+          Listen and understand the <span className='highlight'>Product Vision</span>.
+        </p>
+        <br/>      
+        <p className='intro-paras fade-in'>
+        <span className='highlight'>Define</span> the product.
+        </p>
+        <br/>      
+        <p className='intro-paras fade-in'>
+          Research the market and profile <span className='highlight'>Ideal Users</span>. 
+        </p>
+        <br/>      
+        <p className='intro-paras fade-in'>
+          Creative <span className='highlight'>Ideation</span> and mockups. 
+        </p>
+        <br/>
+        <p className='intro-paras fade-in'>
+        <span className='highlight'>Wireframe</span> the user experience.
+        </p>
+        <br/>      
+        <p className='intro-paras fade-in'>
+          Produce a <span className='highlight'>Prototype</span>.
+        </p>
+        <br/>      
+        <p className='intro-paras fade-in'>
+          Preliminary <span className='highlight'> User Testing</span>.
+        </p>
+        <br/>      
+        <p className='intro-paras fade-in'>
+          High fidelity <span className='highlight'>UI</span> design.
+        </p>
+        <br/>      
+        <p className='intro-paras fade-in'>
+          Technical team <span className='highlight'>Handover</span>
+        </p>
+        <br/>      
+        <p className='intro-paras fade-in'>
+          Aid techincal <span className='highlight'>Development</span>.
+        </p>
+        <br/>      
+        <p className='intro-paras fade-in'>
+          Analyse <span className='highlight'>User Behavior</span> and improve the experience.
+        </p>
+        <br/>
+      </div>
+
 
       <hr className='intro-hr'></hr>
+      <br/>
+      <br/>
 
       <div className='call-to-action'>   
+        <p className='reach-out'>Reach out.</p>
+
         <p className="intro-actions-text col-12 fade-in"> 
           <a className='intro-message' href='#contact'>
             Message <svg viewBox="0 0 42 37" xmlns="http://www.w3.org/2000/svg">                           
@@ -123,7 +130,6 @@ export default function Intro() {
       <br/>
 
       <div className='call-to-action'>  
-
         <p className="intro-actions-text col-12 fade-in">
           Check out my <a className='intro-git' href='https://github.com/erancie' target="_blank">
             GutHub <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
