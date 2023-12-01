@@ -6,6 +6,7 @@
   margin: auto
   margin-top: 55rem
   overflow: hidden
+  z-index: 4
 
 .main-color
   color: rgb(68, 165, 149)
@@ -39,11 +40,25 @@
 
   &:nth-of-type(3)
     clip-path: url(#about-clip-3)
+    padding-bottom: 2rem
 
       
 #about-clip-1-wrapper, #about-clip-2-wrapper, #about-clip-3-wrapper
   position: absolute
   left: 0
+
+.about-actions
+  display: flex
+  gap: 30px
+  // justify-content: space-between
+  align-items: center
+.about-email, .about-li
+  svg
+    fill: #81dffb
+    width: 80px
+    margin: 3rem 0
+.about-li svg
+  width: 75px
 
 @media (min-width: 768px) 
   .about
