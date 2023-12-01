@@ -63,7 +63,7 @@ export default function Design() {
   return (
     <div id='design' className="design side-viewing dc">
 
-      <h1 className='design-header main-color'>&nbsp;UI&nbsp;&nbsp;UX</h1>
+      <h1 className='design-header main-color fade-in'>&nbsp;UI&nbsp;&nbsp;UX</h1>
 
       <div className="carousel-container">
         <div ref={carouselRef} className="carousel">
