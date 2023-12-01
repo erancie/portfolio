@@ -25,7 +25,7 @@ export default function Intro() {
   }, [])
 
   return (
-    <div id='intro' className='introduction'>
+    <div id='intro' className='introduction side-viewing'>
 
       <svg className='intro-icon' viewBox="0 0 101 166" xmlns="http://www.w3.org/2000/svg">
         <path d="M77.9963 39.7322C77.683 52.9144 79.8427 63.2601 79.8427 63.2601C79.8427 63.2601 63.7386 50.1241 62.1369 46.1802C60.5353 42.2364 62.7872 37.5958 67.1666 35.8152C71.5461 34.0346 76.3947 35.7883 77.9963 39.7322Z" />

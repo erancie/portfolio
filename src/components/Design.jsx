@@ -61,7 +61,7 @@ export default function Design() {
    }, [rotate]);
 
   return (
-    <div id='design' className="design dc">
+    <div id='design' className="design side-viewing dc">
 
       <h1 className='design-header main-color'>&nbsp;UI&nbsp;&nbsp;UX</h1>
 
