@@ -118,7 +118,7 @@ export default function Contact() {
               Message
             </label> */}
             <textarea  id='message' type="text" name='message' onChange={handleChange} value={form.message} 
-                       placeholder="Hi Elliot,&#10;I need your help with a developing a digital product.. "/>
+                       placeholder="Hi Elliot,&#10;I need your help with a digital product.. "/>
           </div>
 
           <button className='form-submit-btn fade-in' type='submit'>SEND</button>

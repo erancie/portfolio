@@ -21,7 +21,7 @@ export default function Intro() {
   }, [])
 
   useEffect(() => {
-    fadeInObserver() 
+    fadeInObserver()
   }, [])
 
   return (
@@ -33,17 +33,20 @@ export default function Intro() {
       </svg>
 
       <p className='intro-paras fade-in intro-heading'>
-        Hi, I'm <span className="">Elliot</span>.
+        Elliot is a creative dynamo.. 
       </p>
-      <br/>
+      <br/>      
+      <p className='intro-paras fade-in '>
+       ..who is passionate about wielding modern technologies to capture <span className="highlight">Product Vision</span> and amplify <span className="highlight">Brand Impact.</span> 
+      </p>
+      <br/>      
+      <p className='intro-paras fade-in '>
+        An able collaborator with a keen eye for design, Elliot specialises in <span className="highlight">Product Management,</span> <span className="highlight">Digital Design,</span> and crafting compelling <span className="highlight">User Experiences.</span> 
+      </p>
+      <br/>      
       <p className='intro-paras fade-in'>
-       I design and develop compelling <span className='highlight'> User Experiences </span>for digital products. 
+        Elliot's expertise extends to <span className="highlight">Product Development,</span> including building both Front-End & Full-Stack web apps, demonstrating a blend of technical prowess and artistic flair.  
       </p>
-      <br/>
-      <p className='intro-paras fade-in'>
-        I also build <span className='highlight'> Full Stack </span>web apps.  
-      </p>
-
       <br/>      
       <br/>      
       <hr className='intro-hr'></hr>
@@ -58,7 +61,7 @@ export default function Intro() {
         </p>
         <br/>      
         <p className='intro-paras fade-in'>
-        <span className='highlight'>Define</span> the product.
+          Gather requirements. <span className='highlight'>Define</span> the product.
         </p>
         <br/>      
         <p className='intro-paras fade-in'>

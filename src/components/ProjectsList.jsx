@@ -23,7 +23,7 @@ export function ProjectThumb({project, index, hatchIsOpen}) {
           entry.target.classList.add('show')
         }
       })
-    }, { threshold: 1 })
+    }, { threshold: .5 })
     projectElements.forEach(project => {
       observer.observe(project) 
     })
