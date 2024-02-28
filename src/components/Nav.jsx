@@ -19,8 +19,8 @@ export default function Nav() {
     if( scrollPos > lastPosition.current ) hide.current = true
     else hide.current = false
     lastPosition.current = scrollPos  
-    console.log('scrollPos')
-    console.log(scrollPos)
+    // console.log('scrollPos')
+    // console.log(scrollPos)
   }, [scrollPos])
   
 

@@ -37,7 +37,7 @@ export default function Intro() {
       </p>
       <br/>      
       <p className='intro-paras fade-in '>
-       ..who is passionate about wielding modern technologies to capture <span className="highlight">Product Vision</span> and amplify <span className="highlight">Brand Impact.</span> 
+       ..who is passionate about wielding modern technologies to capture a <span className="highlight">Product Vision</span> and amplify <span className="highlight">Brand Impact.</span> 
       </p>
       <br/>      
       <p className='intro-paras fade-in '>

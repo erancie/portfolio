@@ -8,7 +8,8 @@ import ProjectsList from "../components/ProjectsList"
 import { ScrollContextProvider } from "../components/utils/useScrollContext"
 import SEO from "../components/SEO"
 import About from "../components/About"
-import Design from "../components/Design"
+import MobDesign from "../components/MobDesign"
+import WebDesign from "../components/WebDesign"
 
 // import LocomotiveScroll from 'locomotive-scroll';
 
@@ -33,7 +34,8 @@ export default function Home() {
             <BackgroundScene />
             <LandingHeaders />
             <About />
-            <Design />
+            <WebDesign />
+            <MobDesign />
             <Intro />
             <ProjectsList /> 
           </Layout> 

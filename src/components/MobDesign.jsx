@@ -17,15 +17,11 @@ var designs = [
     name: 'cb2',
     src: 'https://ik.imagekit.io/kv4ohthhz/tr:q-100/circle1-panel_XLEfzN80d.PNG?updatedAt=1698502842445'
   },
-  // { 
-  //   name: 'cb3',
-  //   src: 'https://ik.imagekit.io/kv4ohthhz/tr:q-100/ucd-clear_ES34Ejcu2.png?updatedAt=1698503834346'
-  // },
 ]
 
 
 
-export default function Design() {
+export default function MobDesign() {
 
   const currdeg = useRef(0)
   const carouselRef = useRef('')
@@ -38,32 +34,43 @@ export default function Design() {
 
   }, []);
   
-  const rotate = useCallback((e)=>{
-    e=="n" ? currdeg.current -= 90 : currdeg.current += 90
-    carouselRef.current.style.transform = "rotateY("+currdeg.current+"deg)"
-    itemsRef.current.forEach((item)=> {
-      item.style.transform = "rotateY("+(-currdeg.current)+"deg)"
+  const rotate = useCallback((deg) => {
+    // Convert e to a number if it's not already
+    let rotationAngle = typeof deg === 'string' ? (deg === "n" ? -90 : 90) : deg;
+   
+    // Adjust the current degree based on the rotation angle
+    currdeg.current += rotationAngle;
+   
+    // Apply the rotation to the carousel and items
+    carouselRef.current.style.transform = `rotateY(${currdeg.current}deg)`;
+    itemsRef.current.forEach((item) => {
+       item.style.transform = `rotateY(${-currdeg.current}deg)`;
     });
+   
     // Remove the 'centered' class from all images
-    itemsRef.current.forEach((item)=> {
-      item.classList.remove('centered');
+    itemsRef.current.forEach((item) => {
+       item.classList.remove('centered');
     });
-    // Add the 'centered' class to the currently centered image
+   
+    // Calculate the centered index for 4 images
     let centeredIndex = [0, 3, 2, 1][((currdeg.current / 90) % 4 + 4) % 4];
-    itemsRef.current[centeredIndex].classList.add('centered')
-  },[currdeg])
+    itemsRef.current[centeredIndex].classList.add('centered');
+   }, [currdeg]);
 
-  const centerImage = useCallback((index) => {
+
+   const centerImage = useCallback((targetIndex) => {
+    // let currentIndex = ((currdeg.current / 90) % 4 + 4) % 4;
     let currentIndex = [0, 3, 2, 1][((currdeg.current / 90) % 4 + 4) % 4];
-    let targetIndex = index;
+
     let diff = (targetIndex - currentIndex + 4) % 4;
-    rotate(diff * 90);
+    let rotationAngle = diff * 90;
+    rotate(rotationAngle);
    }, [rotate]);
 
   return (
     <div id='design' className="design side-viewing dc">
 
-      <h1 className='design-header main-color fade-in'>&nbsp;UI&nbsp;&nbsp;UX</h1>
+      {/* <h1 className='design-header main-color fade-in'>&nbsp;UI&nbsp;&nbsp;UX</h1> */}
 
       <div className="carousel-container">
         <div ref={carouselRef} className="carousel">
