@@ -45,7 +45,7 @@ export default function Intro() {
       </p>
       <br/>      
       <p className='intro-paras fade-in'>
-        Elliot's expertise extends to <span className="highlight">Product Development,</span> including building both Front-End & Full-Stack web apps, demonstrating a blend of technical prowess and artistic flair.  
+        Elliot's expertise extends to <span className="highlight">Web Development,</span> including building both Front-End & Full-Stack web apps, demonstrating a blend of technical prowess and artistic flair.  
       </p>
       <br/>      
       <br/>      

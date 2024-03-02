@@ -200,7 +200,7 @@ const projects = [
       tablet: 'iService Task Platform - tablet screenshot',
       mobile: 'iService Task Platform - mobile screenshot'
     },
-    desc: 'A full stack project bringing experts and clients together.',
+    desc: 'Bringing experts and clients together.',
     tools: [
       { label: 'MongoDB', icon: mongodb, alt: 'MongoDB Icon' },
       { label: 'Express', icon: express, alt: 'Express.js Icon' },
@@ -226,7 +226,7 @@ const projects = [
       tablet: 'Whole Honey Online Shop - tablet screenshot',
       mobile: 'Whole Honey Online Shop - mobile screenshot'
     },
-    desc: 'Online shop selling organic honey.',
+    desc: 'Online shop selling organic honey from Australia.',
     tools: [
       { label: 'HTML', icon: html, alt:'HTML Icon' },
       { label: 'CSS', icon: css, alt:'CSS Icon'},

@@ -10,6 +10,7 @@ import SEO from "../components/SEO"
 import About from "../components/About"
 import MobDesign from "../components/MobDesign"
 import WebDesign from "../components/WebDesign"
+import WebDesign2 from "../components/WebDesign2"
 
 // import LocomotiveScroll from 'locomotive-scroll';
 
@@ -35,6 +36,7 @@ export default function Home() {
             <LandingHeaders />
             <About />
             <WebDesign />
+            {/* <WebDesign2 /> */}
             <MobDesign />
             <Intro />
             <ProjectsList /> 

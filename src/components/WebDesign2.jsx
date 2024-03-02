@@ -2,42 +2,43 @@ import React, { useEffect, useState, useRef, useCallback } from 'react'
 
 var designs = [
   { 
-    name: 'datakey-nn8',
-    src: 'https://ik.imagekit.io/kv4ohthhz/datakey-nn5_blfRprsrl.PNG?updatedAt=1709099966509'
-  },
-  { 
-    name: 'datakey-nn1',
+    name: 'datakey-ai1',
     src: 'https://ik.imagekit.io/kv4ohthhz/datakey-nn1_a6AxIEhKZ.PNG?updatedAt=1709099968755'
   },
   { 
-    name: 'datakey-nn2',
+    name: 'datakey-ai2',
     src: 'https://ik.imagekit.io/kv4ohthhz/datakey-nn4_zC3UJnBaom.PNG?updatedAt=1709099966615'
   },
   { 
-    name: 'datakey-nn3',
+    name: 'datakey-ai3',
     src: 'https://ik.imagekit.io/kv4ohthhz/datakey-nn7_gvFBoLQnf.PNG?updatedAt=1709099966526'
   },
   { 
-    name: 'datakey-nn4',
+    name: 'datakey-ai4',
     src: 'https://ik.imagekit.io/kv4ohthhz/datakey-nn5_blfRprsrl.PNG?updatedAt=1709099966509'
   },
   { 
-    name: 'datakey-nn5',
+    name: 'datakey-ai5',
     src: 'https://ik.imagekit.io/kv4ohthhz/datakey-nn2_FFJyGt5SiQ.PNG?updatedAt=1709099966417'
   },
   { 
-    name: 'datakey-nn6',
+    name: 'datakey-ai6',
     src: 'https://ik.imagekit.io/kv4ohthhz/datakey-nn3_bA_uaUyZ3.PNG?updatedAt=1709099966348'
   },
   { 
-    name: 'datakey-nn7',
+    name: 'datakey-ai7',
     src: 'https://ik.imagekit.io/kv4ohthhz/datakey-nn6_BKzAY3MBm.PNG?updatedAt=1709099966350'
   },
+  { 
+    name: 'datakey-ai8',
+    src: 'https://ik.imagekit.io/kv4ohthhz/datakey-nn5_blfRprsrl.PNG?updatedAt=1709099966509'
+  },
+
 ]
 
 
 
-export default function WebDesign() {
+export default function WebDesign2() {
 
   const currdeg = useRef(0)
   const carouselRef = useRef('')
@@ -85,49 +86,49 @@ export default function WebDesign() {
    }, [rotate]);
 
   return (
-    <div id='web-design' className="design side-viewing dc">
+    <div id='web-design2' className="design side-viewing dc">
 
-      <h1 className='design-header main-color fade-in'>&nbsp;UI&nbsp;&nbsp;UX</h1>
+      {/* <h1 className='design-header main-color fade-in'>&nbsp;UI&nbsp;&nbsp;UX</h1> */}
 
-      <div className="web-carousel-container">
-        <div ref={carouselRef} className="web-carousel">
+      <div className="web2-carousel-container">
+        <div ref={carouselRef} className="web2-carousel">
 
-          <div className="web-a">
+          <div className="web2-a">
             <img id={designs[0].name} className='web-item web-design-img' onClick={() => centerImage(0)} src={designs[0].src} ></img>
           </div>
 
-          <div className="web-b">
+          <div className="web2-b">
             <img id={designs[1].name} className='web-item web-design-img' onClick={() => centerImage(1)} src={designs[1].src} ></img>
           </div>
 
-          <div className="web-c">
+          <div className="web2-c">
             <img id={designs[2].name} className='web-item web-design-img' onClick={() => centerImage(2)} src={designs[2].src} ></img>
           </div>
 
-          <div className="web-d">
+          <div className="web2-d">
             <img id={designs[3].name} className='web-item web-design-img' onClick={() => centerImage(3)} src={designs[3].src} ></img>
           </div>
 
-          <div className="web-e">
+          <div className="web2-e">
             <img id={designs[4].name} className='web-item web-design-img' onClick={() => centerImage(4)} src={designs[4].src} ></img>
           </div>
 
-          <div className="web-f">
+          <div className="web2-f">
             <img id={designs[5].name} className='web-item web-design-img' onClick={() => centerImage(5)} src={designs[5].src} ></img>
           </div>
 
-          <div className="web-g">
+          <div className="web2-g">
             <img id={designs[6].name} className='web-item web-design-img' onClick={() => centerImage(6)} src={designs[6].src} ></img>
           </div>
 
-          <div className="web-h">
+          <div className="web2-h">
             <img id={designs[7].name} className='web-item web-design-img' onClick={() => centerImage(7)} src={designs[7].src} ></img>
           </div>
 
         </div>
       </div>
 
-      <div className='prev-next-cont-web'>
+      <div className='prev-next-cont-web2'>
         <div onClick={()=>rotate("n")} class="next">
           <svg viewBox="0 0 51 31" xmlns="http://www.w3.org/2000/svg">
             <path d="M0.00488281 0.434526L24.8534 30.4199L28.8746 25.5817L50.0047 0.419922L35.5774 2.34127C35.2057 2.39077 34.8559 2.57773 34.5762 2.8764L24.8087 13.3065L14.9803 2.87069C14.7024 2.57561 14.3558 2.39043 13.9875 2.34024L0.00488281 0.434526Z" />
