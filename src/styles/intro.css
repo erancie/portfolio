@@ -3,36 +3,89 @@
 }
 
 .introduction {
+  z-index: 3;
   margin: auto;
-  margin-top: 55rem;
+  margin-top: 14rem;
   padding: 2.3rem;
-  padding-bottom: 10rem;
+  padding-top: 8rem;
+  padding-bottom: 0rem;
   border-radius: 12px;
   position: relative;
   color: #5cabc9;
   width: 90%;
-  max-width: 840px;
+  max-width: 620px;
   font-weight: 400;
-  font-size: 1.22rem;
+  font-size: 1rem;
   background: rgba(4, 20, 35, 0.95);
-  background: linear-gradient(127deg, rgba(10, 32, 54, 0.95) 0%, rgba(4, 20, 35, 0.95) 100%);
+  background: linear-gradient(127deg, rgb(10, 32, 54) 0%, rgb(4, 20, 35) 85%);
+  -webkit-clip-path: url(#intro-clip);
+  clip-path: url(#intro-clip);
 }
 .introduction .intro-paras {
   margin: auto;
 }
 
+.intro-heading, .process-heading, .reach-out {
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.process-heading {
+  padding-bottom: 2rem;
+}
+
+.reach-out {
+  margin-bottom: 3rem;
+}
+
+.intro-hr {
+  border: 1px solid rgba(36, 101, 91, 0.4274509804);
+  margin: 1rem auto;
+  width: 30%;
+}
+.intro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro-icon {
+  fill: rgba(36, 101, 91, 0.1960784314);
+  position: absolute;
+  z-index: -1;
+  width: 80%;
+  right: 50%;
+  transform: translate(60%, 40%) rotate(22deg);
+}
+
+.portrait {
+  width: 200px;
+  margin: 0 auto 4rem;
+  padding-right: 0.5rem;
+}
+.portrait svg {
+  fill: #24655b;
+  fill: #265568;
+  fill: #1a394d;
+  fill: #e1953f;
+}
+
+#intro-clip {
+  position: absolute;
+}
+
 .highlight {
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: #44a595;
 }
 
 .logo-intro {
-  width: 10%;
-  margin: auto;
-  fill: #5cabc9;
+  height: 120px;
+  height: 320px;
+  margin: 1rem auto 2.5rem;
   fill: #44a595;
-  padding-bottom: 3rem;
+  fill: #1a394d;
 }
 
 .call-to-action {
@@ -59,22 +112,22 @@
 }
 
 .intro-message svg {
-  width: 38px;
+  width: 28px;
   transform: translateY(-2px);
 }
 
 .intro-email svg {
-  width: 36px;
+  width: 26px;
   transform: translateY(-4px);
 }
 
 .intro-git svg {
-  width: 40px;
+  width: 30px;
   transform: translateY(-4px);
 }
 
 .intro-li svg {
-  width: 37px;
+  width: 27px;
   transform: translateY(-4px);
 }
 
@@ -90,20 +143,18 @@
   fill: #44a595;
   transition: all 0.3s ease;
   position: absolute;
-  bottom: 65px;
-  right: 50%;
+  bottom: 80px;
+  right: 23%;
 }
-.go-down-intro:hover {
-  fill: #fff;
-}
-
 @media (min-width: 768px) {
   .introduction {
-    border-radius: 20px;
+    border-radius: 0px;
     width: 80%;
-    font-size: 1.4rem;
-    padding: 2.8rem;
-    padding-bottom: 10rem;
+    font-size: 1.2rem;
+    padding-top: 9rem;
+  }
+  .logo-intro {
+    margin: 1rem auto 4rem;
   }
   .intro-paras {
     width: 90%;
@@ -112,28 +163,17 @@
     width: 90%;
   }
   .highlight {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
   .go-down-intro {
-    bottom: 80px;
+    bottom: 100px;
   }
 }
 @media (min-width: 992px) {
   .call-to-action {
     flex-wrap: nowrap;
   }
-  .introduction {
-    padding-bottom: 6rem;
-  }
   .go-down-intro {
-    right: 160px;
-    bottom: 100px;
-  }
-}
-@media (min-width: 1200px) {
-  .introduction {
-    padding: 3.5rem;
-    padding-bottom: 6rem;
-    font-size: 1.6rem;
+    bottom: 120px;
   }
 }/*# sourceMappingURL=intro.css.map */

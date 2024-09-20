@@ -48,7 +48,8 @@ export default function Intro() {
         Elliot's expertise extends to <span className="highlight">Web Development,</span> including building both Front-End & Full-Stack web apps, demonstrating a blend of technical prowess and artistic flair.  
       </p>
       <br/>      
-      <br/>      
+
+      {/* <br/>      
       <hr className='intro-hr'></hr>
 
       <div className='design-process'>
@@ -100,7 +101,7 @@ export default function Intro() {
           Analyse <span className='highlight'>User Behavior</span> and improve the experience.
         </p>
         <br/>
-      </div>
+      </div> */}
 
 
       <hr className='intro-hr'></hr>

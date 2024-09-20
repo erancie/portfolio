@@ -303,6 +303,13 @@ function ProjectsList() {
         </defs>
       </svg>
 
+
+      <svg width="1438" height="839" viewBox="0 0 1438 839" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M1438 328.678V838.497H0V0L838.182 0C825.588 54.2107 818.375 110.294 818.074 165.607V171.91L817.945 172.197C818.722 441.393 961.571 588.384 1137.57 588.384C1275.33 588.384 1393.26 497.808 1438 328.678ZM1436.57 0C1437.06 2.03982 1437.53 4.08229 1438 6.12728V0L1436.57 0ZM1351.54 767.015C1296.13 665.07 1204.01 611.288 1100.1 611.288C995.903 611.288 903.832 665.065 848.514 767.015H1351.54Z" fill="#C0E0E7"/>
+      </svg>
+
+
+
       <svg id="window-bottom-lights-clip-wrapper" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <clipPath id="window-bottom-lights-clip"    
@@ -313,6 +320,7 @@ function ProjectsList() {
           </clipPath>
         </defs>
       </svg>
+      
 
       <svg id="thumb-titles-clip-wrapper"  xmlns="http://www.w3.org/2000/svg">
         <defs>
