@@ -26,7 +26,7 @@ function Layout(props) {
       <Nav />
       {props.children}
       <footer>
-        Copywright &#169; 2023, Elliot Rancie. All rights reserved.
+        Copywright &#169; 2025, Elliot Rancie. All rights reserved.
       </footer>
     </div>
     // </div>
