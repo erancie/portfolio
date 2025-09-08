@@ -78,9 +78,8 @@ const Sphere = () => {
   )
 }
 
-const Scene = () => {
-
-  // const scroll = useScrollContext()
+const Scene = React.memo( () => {
+// const Scene = () => {
 
   const isBrowser = typeof window !== "undefined"
   return (
@@ -110,7 +109,8 @@ const Scene = () => {
       )}
     </>
   )
-}
+})
+// }
 
 export default Scene
 // export default React.memo(Scene)

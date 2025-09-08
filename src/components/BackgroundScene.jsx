@@ -40,8 +40,7 @@ const LandingBg = styled.div`
     }
   }
 `
-//should this memo be here? - what is changing? -layout - not state
-const BackgroundScene = React.memo(() => {
+const BackgroundScene = () => {
 
   const scrollPos = useScrollContext()
 
@@ -57,14 +56,11 @@ const BackgroundScene = React.memo(() => {
       
       <div className="bg-overlay"></div>
 
-      {/* <div className="landing-bg" 
-           style={{transform: `scale(${scrollPos < 800 ? 1-scrollPos/(800/.1) : .9}) rotate(${scrollPos < 800 ? scrollPos*(30/800) : 30}})`}} ></div> */}
       <div className="globe">
         <Scene />
       </div>
-      {/* <div className="bg-overlay"></div> */}
     </div>
   )
-})
+}
 
 export default BackgroundScene
