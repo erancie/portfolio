@@ -55,10 +55,10 @@ const mernLaptop = '/mern-lap_QCo7qLXgKH.JPG'
 const mernTablet = '/mern-tab_6w2R3dDAM.JPG'
 const mernMobile = '/mern-mob_2X3tVvmyG.JPG'
 
-const honeyDesktop = '/honey-desk-2_nu764Oqyo.PNG'
-const honeyLaptop = '/honey-lap-2_T5x-T05rF.PNG'
-const honeyTablet = '/honey-tab-3_I7RMjjk18.PNG'
-const honeyMobile = '/honey-mobile_BJW5P7JcQ'
+// const honeyDesktop = '/honey-desk-2_nu764Oqyo.PNG'
+// const honeyLaptop = '/honey-lap-2_T5x-T05rF.PNG'
+// const honeyTablet = '/honey-tab-3_I7RMjjk18.PNG'
+// const honeyMobile = '/honey-mobile_BJW5P7JcQ'
 
 
     
@@ -210,30 +210,30 @@ const projects = [
      link: 'https://iservice.onrender.com'
   },
 
-  {
-    name: 'whole-honey',
-    title: 'Whole Honey',
-    imgRoot: IKRoot,
-    imgSrc: {
-      desktop: honeyDesktop,
-      laptop: honeyLaptop,
-      tablet: honeyTablet,
-      mobile: honeyMobile
-    },
-    imgAlt: {
-      desktop: 'Whole Honey Online Shop - desktop screenshot',
-      laptop: 'Whole Honey Online Shop - laptop screenshot',
-      tablet: 'Whole Honey Online Shop - tablet screenshot',
-      mobile: 'Whole Honey Online Shop - mobile screenshot'
-    },
-    desc: 'Online shop selling organic honey from Australia.',
-    tools: [
-      { label: 'HTML', icon: html, alt:'HTML Icon' },
-      { label: 'CSS', icon: css, alt:'CSS Icon'},
-      { label: 'Bootstrap', icon: bootstrap, alt: 'Bootstrap Icon' },
-     ],       
-    //  link: 'https://honey-8cd45.web.app/'
-  },
+  // {
+  //   name: 'whole-honey',
+  //   title: 'Whole Honey',
+  //   imgRoot: IKRoot,
+  //   imgSrc: {
+  //     desktop: honeyDesktop,
+  //     laptop: honeyLaptop,
+  //     tablet: honeyTablet,
+  //     mobile: honeyMobile
+  //   },
+  //   imgAlt: {
+  //     desktop: 'Whole Honey Online Shop - desktop screenshot',
+  //     laptop: 'Whole Honey Online Shop - laptop screenshot',
+  //     tablet: 'Whole Honey Online Shop - tablet screenshot',
+  //     mobile: 'Whole Honey Online Shop - mobile screenshot'
+  //   },
+  //   desc: 'Online shop selling organic honey from Australia.',
+  //   tools: [
+  //     { label: 'HTML', icon: html, alt:'HTML Icon' },
+  //     { label: 'CSS', icon: css, alt:'CSS Icon'},
+  //     { label: 'Bootstrap', icon: bootstrap, alt: 'Bootstrap Icon' },
+  //    ],       
+  //   //  link: 'https://honey-8cd45.web.app/'
+  // },
 
 ]
 
