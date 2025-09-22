@@ -2,10 +2,10 @@ import html from '/static/svg/html.svg'
 import css from '/static/svg/css.svg'
 import js from '/static/svg/js.svg'
 import react from '/static/svg/react.svg'
-import node from '/static/svg/node.svg'
-import express from '/static/svg/express.svg'
-import mongodb from '/static/svg/mongodb.svg'
-import bootstrap from '/static/svg/bootstrap.svg'
+// import node from '/static/svg/node.svg'
+// import express from '/static/svg/express.svg'
+// import mongodb from '/static/svg/mongodb.svg'
+// import bootstrap from '/static/svg/bootstrap.svg'
 import openai from '/static/svg/openai.svg'
 import wordpress from '/static/svg/wordpress.svg'
 import speechRec from '/static/svg/speechrec.svg'
@@ -126,7 +126,7 @@ const projects = [
       { label: 'Webpack', icon: webpack, alt:'Webpack Icon' },
       { label: 'SVG', icon: svg, alt:'SVG Icon' },
     ],
-    link: 'https://circular-e8a2f.web.app/'
+    link: undefined
   },
 
   {
@@ -155,7 +155,7 @@ const projects = [
       { label: 'Webpack', icon: webpack, alt:'Webpack Icon' },
       ,
     ],
-    link: ''
+    link: undefined
   },
 
   {
@@ -181,34 +181,34 @@ const projects = [
       { label: 'JavaScript', icon: js, alt:'Javascript Icon'},
       { label: 'Wordpress', icon: wordpress, alt:'Wordpress Icon'},
     ],
-    link: 'https://psgsports.co/'
+    link: undefined
   },
   
-  {
-    name:'mern',
-    title: 'iService',
-    imgRoot: IKRoot,
-    imgSrc: {
-      desktop: mernDesktop,
-      laptop: mernLaptop,
-      tablet: mernTablet,
-      mobile: mernMobile
-    },
-    imgAlt: {
-      desktop: 'iService Task Platform - desktop screenshot',
-      laptop: 'iService Task Platform - laptop screenshot',
-      tablet: 'iService Task Platform - tablet screenshot',
-      mobile: 'iService Task Platform - mobile screenshot'
-    },
-    desc: 'Bringing experts and clients together.',
-    tools: [
-      { label: 'MongoDB', icon: mongodb, alt: 'MongoDB Icon' },
-      { label: 'Express', icon: express, alt: 'Express.js Icon' },
-      { label: 'React', icon: react, alt: 'React.js Icon' },
-      { label: 'Node', icon: node, alt: 'Node.js Icon' },
-     ],    
-     link: 'https://iservice.onrender.com'
-  },
+  // {
+  //   name:'mern',
+  //   title: 'iService',
+  //   imgRoot: IKRoot,
+  //   imgSrc: {
+  //     desktop: mernDesktop,
+  //     laptop: mernLaptop,
+  //     tablet: mernTablet,
+  //     mobile: mernMobile
+  //   },
+  //   imgAlt: {
+  //     desktop: 'iService Task Platform - desktop screenshot',
+  //     laptop: 'iService Task Platform - laptop screenshot',
+  //     tablet: 'iService Task Platform - tablet screenshot',
+  //     mobile: 'iService Task Platform - mobile screenshot'
+  //   },
+  //   desc: 'Bringing experts and clients together.',
+  //   tools: [
+  //     { label: 'MongoDB', icon: mongodb, alt: 'MongoDB Icon' },
+  //     { label: 'Express', icon: express, alt: 'Express.js Icon' },
+  //     { label: 'React', icon: react, alt: 'React.js Icon' },
+  //     { label: 'Node', icon: node, alt: 'Node.js Icon' },
+  //    ],    
+  //    link: 'https://iservice.onrender.com'
+  // },
 
   // {
   //   name: 'whole-honey',

@@ -143,7 +143,9 @@ export function ProjectThumb({project, index, hatchIsOpen}) {
           </div>
 
           {/* put gtag click event here */}
-          <a className='project-link fade-in' target="_blank" href={`${project.link}`}>Visit</a>
+          {project.link &&
+            <a className='project-link fade-in' target="_blank" href={`${project.link}`}>Visit</a>
+          }
 
           {/*go to next thumbnail section */}
           {projects[index+1] ?
