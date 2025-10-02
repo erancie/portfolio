@@ -8,7 +8,8 @@ import Contact from './Contact'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function ProjectThumb({project, index, hatchIsOpen}) {
+
+export const ProjectThumb = React.memo(({project, index, hatchIsOpen}) => {
 
   const cardRef = useRef(null)
   const [inView, setInView] = useState('')
@@ -183,7 +184,7 @@ export function ProjectThumb({project, index, hatchIsOpen}) {
       </div>
     </div>
   ) 
-}
+})
 
 function ProjectsList() {  
 
