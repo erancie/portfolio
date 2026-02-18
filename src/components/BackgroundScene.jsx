@@ -23,20 +23,23 @@ const LandingBg = styled.div`
     top: -50vh;
     z-index: -1;
     background: radial-gradient(circle, #00d5ff45 0%, #1c1cc345 38%, #02002414 60%), url('https://ik.imagekit.io/kv4ohthhz/tr:q-92/milkyway-square-8k_rdtI2Ci4c'), rgb(0, 0, 0);
+    //background: radial-gradient(circle, #00d5ff45 0%, #1c1cc345 38%, #02002414 60%), url('https://ik.imagekit.io/kv4ohthhz/milkyway-square-8k_rdtI2Ci4c?updatedAt=1667922959249'), rgb(0, 0, 0);
     // background: radial-gradient(circle, #00d5ff25 0%, #1c1cc325 24%, #02002414 60%), url('https://ik.imagekit.io/kv4ohthhz/tr:q-92/milky-way-8k_BjWQB2UAv.jpg'), rgb(0, 0, 0);
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: cover;
     transform: scale(${props => props.scale}) rotate(${props =>props.rotate}deg);
     transition: transform 300ms ease-out;
     @media (min-width: 992px){
-      width: 200vw;
+      width: 140vw;
       height: 220vh;
-      left: -50vw;
+      left: -20vw;
       top: -55vh;
-      background: radial-gradient(circle, #00d5ff25 0%, #1c1cc325 24%, #02002414 60%), url('https://ik.imagekit.io/kv4ohthhz/tr:q-92/milky-way-8k_BjWQB2UAv.jpg'), rgb(0, 0, 0);
-      background-position: center center;
-      background-repeat: no-repeat;
-
+      //background: radial-gradient(circle, #00d5ff25 0%, #1c1cc325 24%, #02002414 60%), url('https://ik.imagekit.io/kv4ohthhz/tr:q-92/milky-way-8k_BjWQB2UAv.jpg'), rgb(0, 0, 0);
+      //background: radial-gradient(circle, #00d5ff25 0%, #1c1cc325 24%, #02002414 60%), url('https://ik.imagekit.io/kv4ohthhz/milkyway-rect_jszdXI-s8.png'), rgb(0, 0, 0);
+      //background-position: center center;
+      //background-repeat: no-repeat;
+      //background-size: cover;
     }
   }
 `
