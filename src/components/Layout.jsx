@@ -26,7 +26,7 @@ function Layout(props) {
       <Nav />
       {props.children}
       <footer>
-        Copywright &#169; 2025, Elliot Rancie. All rights reserved.
+        Copyright &#169; {new Date().getFullYear()}, Elliot Rancie. All rights reserved.
       </footer>
     </div>
     // </div>

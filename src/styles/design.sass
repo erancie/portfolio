@@ -13,9 +13,17 @@
   margin-top: 15rem
   scroll-padding-top: 140px
 
-#design
-  margin-top: 44rem
+#web-design3
+  margin-top: 15rem
   scroll-padding-top: 140px
+
+#design
+  margin-top: 10rem
+  scroll-padding-top: 140px
+  padding: 2rem 1rem 4rem
+  max-width: 1200px
+  margin-left: auto
+  margin-right: auto
 
 .design-process
   padding: 2rem
@@ -114,7 +122,7 @@
   .prev-next-cont-web
       transform: translateY(9rem)
   #design
-    margin-top: 54rem
+    margin-top: 10rem
 
 @media (min-width: 992px) 
   .carousel-container
@@ -125,7 +133,7 @@
   .prev-next-cont-web
       transform: translateY(14rem)
   #design
-    margin-top: 64rem
+    margin-top: 10rem
 
 @media (min-width: 1200px) 
     .carousel-container
@@ -273,4 +281,242 @@
 .disable-caret
   caret: none
 
-  
+// ---- Design Mosaic Grid (replaces carousel image display) ----
+.design-mosaic
+  z-index: 4
+  position: relative
+  width: 100%
+  max-width: 1200px
+  margin-left: auto
+  margin-right: auto
+  padding: 2rem 1rem 4rem
+  scroll-padding-top: 140px
+
+.design-mosaic__title
+  margin: 0 auto 2.5rem
+  width: fit-content
+  text-align: center
+  font-size: clamp(2rem, 5vw, 3.5rem)
+  font-weight: 700
+
+.design-mosaic__grid
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-auto-rows: minmax(140px, 20vw)
+  gap: 0.75rem
+  align-items: stretch
+
+// Portrait variant: 2×2 checkerboard, 3:4 tiles, large:small = 1.6 (8fr:5fr)
+.design-mosaic--portrait .design-mosaic__grid
+  grid-template-columns: 8fr 5fr
+  grid-auto-rows: 10.67fr
+  gap: 0.75rem
+  align-items: stretch
+
+.design-mosaic--portrait .design-mosaic__cell
+  grid-column: unset
+  grid-row: unset
+  min-height: 0
+
+.design-mosaic--portrait .design-mosaic__cell--large
+  grid-column: span 1
+  grid-row: span 1
+
+.design-mosaic--portrait .design-mosaic__cell--small
+  grid-column: span 1
+  grid-row: span 1
+  align-self: start
+
+.design-mosaic--portrait .design-mosaic__cell .design-mosaic__img
+  aspect-ratio: 3 / 4
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+// Landscape variant: shorter rows, wider cells
+.design-mosaic--landscape .design-mosaic__grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-auto-rows: minmax(100px, 14vw)
+  gap: 0.75rem
+
+.design-mosaic__cell
+  position: relative
+  border-radius: 12px
+  overflow: hidden
+  background: #0d1320
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35)
+  transition: transform 0.25s ease, box-shadow 0.25s ease
+
+  &:hover
+    transform: scale(1.02)
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45)
+
+.design-mosaic__cell--normal
+  grid-column: span 1
+  grid-row: span 1
+
+.design-mosaic__cell--large
+  grid-column: span 2
+  grid-row: span 2
+
+.design-mosaic__cell--wide
+  grid-column: span 2
+  grid-row: span 1
+
+.design-mosaic__cell--tall
+  grid-column: span 1
+  grid-row: span 2
+
+.design-mosaic__img
+  width: 100%
+  height: 100%
+  object-fit: cover
+  display: block
+  vertical-align: middle
+
+@media (max-width: 767px)
+  .design-mosaic__grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-auto-rows: minmax(120px, 28vw)
+    gap: 0.5rem
+
+  .design-mosaic--portrait .design-mosaic__grid
+    grid-template-columns: 8fr 5fr
+    grid-auto-rows: 10.67fr
+    gap: 0.5rem
+
+  .design-mosaic--landscape .design-mosaic__grid
+    grid-auto-rows: minmax(90px, 22vw)
+
+  .design-mosaic__cell--large
+    grid-column: span 2
+    grid-row: span 2
+
+  .design-mosaic__cell--wide
+    grid-column: span 2
+
+  .design-mosaic__cell--tall
+    grid-column: span 1
+    grid-row: span 2
+
+  .design-mosaic
+    padding: 1.5rem 0.75rem 3rem
+
+// Section spacing for mosaic sections uses #web-design, #web-design3, #design above
+
+// Partially faded bg for design sections (body tint fading to transparent)
+// #design1,
+// #design2,
+// #design3,
+// #design
+//   background: radial-gradient(ellipse 80% 70% at 50% 40%, rgb(4, 20, 35) 0%, rgba(4, 20, 35, 0.411) 70%)
+
+// ---- Design1 + MosaicGridPortrait (new 2×2 grid) ----
+#design1
+  margin-top: 15rem
+  scroll-padding-top: 140px
+  padding: 2rem 1rem 4rem
+  max-width: 1200px
+  margin-left: auto
+  margin-right: auto
+
+// ---- Design2 + MosaicGridPortrait (same grid, portrait 3:4 tiles) ----
+#design2
+  margin-top: 10rem
+  scroll-padding-top: 140px
+  padding: 2rem 1rem 4rem
+  max-width: 1200px
+  margin-left: auto
+  margin-right: auto
+
+#design3
+  margin-top: 10rem
+  scroll-padding-top: 140px
+  padding: 2rem 1rem 4rem
+  max-width: 1200px
+  margin-left: auto
+  margin-right: auto
+
+.mosaic-grid-portrait
+  width: 100%
+  max-width: 700px
+  margin-left: auto
+  margin-right: auto
+
+.mosaic-grid-portrait--landscape
+  max-width: 1100px
+
+@media (max-width: 1200px)
+  .mosaic-grid-portrait
+    max-width: 500px
+
+  .mosaic-grid-portrait--landscape
+    max-width: 900px
+
+.mosaic-grid-portrait__grid
+  display: grid
+  grid-template-columns: repeat(8, 1fr)
+  grid-template-rows: 6.67fr 5.33fr
+  gap: 0.75rem
+  width: 100%
+  min-height: 280px
+
+.mosaic-grid-portrait--has-title .mosaic-grid-portrait__grid
+  grid-template-rows: auto 6.67fr 5.33fr
+
+.mosaic-grid-portrait--has-title.mosaic-grid-portrait--landscape .mosaic-grid-portrait__grid
+  grid-template-rows: auto 3.75fr 3fr
+
+.mosaic-grid-portrait__title
+  align-self: end
+  justify-self: start
+  width: fit-content
+  padding: 1rem 2.5rem
+  margin-bottom: 2.5rem
+  // background: linear-gradient(to right, rgb(5, 11, 25) 0%, rgba(4, 20, 35, 0) 40%)
+  // background: linear-gradient(to right, #44A595 10%, rgba(1, 7, 13, 0) 80%)
+  background:  #44A595 
+  // border-radius: 10px
+  h2
+    // margin: 0 1rem
+    font-size: clamp(1rem, 5vw, 2.5rem)
+    font-weight: 800
+    padding-bottom: 0.25rem
+    color: rgba(24, 32, 65, 1)
+    letter-spacing: -1px
+    text-transform: uppercase
+
+
+
+.mosaic-grid-portrait__cell
+  position: relative
+  border-radius: 8px
+  overflow: hidden
+  min-height: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  aspect-ratio: 3 / 4
+
+.mosaic-grid-portrait--landscape .mosaic-grid-portrait__cell
+  aspect-ratio: 16 / 9
+
+.mosaic-grid-portrait--landscape .mosaic-grid-portrait__grid
+  grid-template-rows: 3.75fr 3fr
+
+.mosaic-grid-portrait__cell:first-child
+  align-self: end
+
+// When title exists, first tile is 2nd child
+.mosaic-grid-portrait--has-title .mosaic-grid-portrait__grid > .mosaic-grid-portrait__cell:nth-child(2)
+  align-self: end
+
+.mosaic-grid-portrait__img
+  width: 100%
+  height: 100%
+  // aspect-ratio: 3 / 4
+  object-fit: cover
+  display: block
+  object-position: center
+
+

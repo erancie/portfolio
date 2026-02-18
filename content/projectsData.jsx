@@ -129,34 +129,34 @@ const projects = [
     link: undefined
   },
 
-  {
-    name: 'finsight',
-    title: 'Finsight',
-    imgRoot: IKRoot,
-    imgSrc: {
-      desktop: finsightDesktop,
-      laptop: finsightLaptop,
-      tablet: finsightTablet,
-      mobile: finsightMobile
-    },
-    imgAlt: {
-      desktop: 'Finsight - desktop screenshot',
-      laptop: 'Finsight - laptop screenshot',
-      tablet: 'Finsight - tablet screenshot',
-      mobile: 'Finsight - mobile screenshot'
-    },
-    desc: 'A collated snapshot of your fiat and crypto holdings.',
-    tools: [
-      { label: 'React', icon: react, alt: 'React Icon' },
-      { label: 'Blazor', icon: blazor, alt: 'Blazor Icon' },
-      { label: 'SyncFusion', icon: syncfusion, alt: 'SyncFusion Icon' },
-      { label: 'C#', icon: csharp, alt: 'C# Icon' },
-      { label: '.NET', icon: dotnet, alt: '.NET Icon' },
-      { label: 'Webpack', icon: webpack, alt:'Webpack Icon' },
-      ,
-    ],
-    link: undefined
-  },
+  // {
+  //   name: 'finsight',
+  //   title: 'Finsight',
+  //   imgRoot: IKRoot,
+  //   imgSrc: {
+  //     desktop: finsightDesktop,
+  //     laptop: finsightLaptop,
+  //     tablet: finsightTablet,
+  //     mobile: finsightMobile
+  //   },
+  //   imgAlt: {
+  //     desktop: 'Finsight - desktop screenshot',
+  //     laptop: 'Finsight - laptop screenshot',
+  //     tablet: 'Finsight - tablet screenshot',
+  //     mobile: 'Finsight - mobile screenshot'
+  //   },
+  //   desc: 'A collated snapshot of your fiat and crypto holdings.',
+  //   tools: [
+  //     { label: 'React', icon: react, alt: 'React Icon' },
+  //     { label: 'Blazor', icon: blazor, alt: 'Blazor Icon' },
+  //     { label: 'SyncFusion', icon: syncfusion, alt: 'SyncFusion Icon' },
+  //     { label: 'C#', icon: csharp, alt: 'C# Icon' },
+  //     { label: '.NET', icon: dotnet, alt: '.NET Icon' },
+  //     { label: 'Webpack', icon: webpack, alt:'Webpack Icon' },
+  //     ,
+  //   ],
+  //   link: undefined
+  // },
 
   {
     name: 'psg',

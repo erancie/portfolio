@@ -11,6 +11,10 @@ import About from "../components/About"
 import MobDesign from "../components/MobDesign"
 import WebDesign from "../components/WebDesign"
 import WebDesign2 from "../components/WebDesign2"
+import WebDesign3 from "../components/WebDesign3"
+import Design1 from "../components/Design1"
+import Design2 from "../components/Design2"
+import Design3 from "../components/Design3"
 
 // import LocomotiveScroll from 'locomotive-scroll';
 
@@ -35,8 +39,13 @@ export default function Home() {
             <BackgroundScene />
             <LandingHeaders />
             <About />
-            <WebDesign />
+            <Design1 />
+
+            <Design2 />
+            <Design3 />
+            {/* <WebDesign /> */}
             {/* <WebDesign2 /> */}
+            {/* <WebDesign3 /> */}
             <MobDesign />
             <Intro />
             <ProjectsList /> 
