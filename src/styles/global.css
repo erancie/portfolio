@@ -405,7 +405,8 @@
   width: 100%;
   top: 0;
   left: 0;
-  position: sticky;
+  position: fixed;
+  z-index: 0;
 }
 
 .bg-overlay {
@@ -2069,6 +2070,8 @@ html, body {
   box-sizing: border-box;
   font-family: "Work Sans", sans-serif;
   background: black;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 *, *:before, *:after {
@@ -2145,6 +2148,8 @@ canvas {
 .nav {
   grid-area: nav;
   position: fixed;
+  top: 0;
+  left: 0;
   transition: all 0.2s ease-in;
   display: flex;
   justify-content: center;

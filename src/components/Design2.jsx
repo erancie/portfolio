@@ -11,7 +11,7 @@ const designs = [
 
 export default function Design2() {
   return (
-    <section id="design2" className="design design2">
+    <section id="design2" className="design design2 side-viewing">
       <MosaicGridPortrait designs={designs} variant="landscape" title="Econic" />
     </section>
   )
