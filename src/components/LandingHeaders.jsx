@@ -69,10 +69,10 @@ export default function LandingHeaders() {
               <h1 className="title-1d">OUT OF THIS WORLD</h1>
             </div>
             <div className="title-2-container">
-              <h1 className="title-2">..experiences on the web</h1>
-              <h1 className="title-2b">..experiences on the web</h1>
-              <h1 className="title-2c">..experiences on the web</h1>
-              <h1 className="title-2d">..experiences on the web</h1>
+              <h1 className="title-2">..experiences on mobile & web</h1>
+              <h1 className="title-2b">..experiences on mobile & web</h1>
+              <h1 className="title-2c">..experiences on mobile & web</h1>
+              <h1 className="title-2d">..experiences on mobile & web</h1>
             </div>
           </div>
 

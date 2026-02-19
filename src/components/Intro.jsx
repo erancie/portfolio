@@ -33,19 +33,19 @@ export default function Intro() {
       </svg>
 
       <p className='intro-paras fade-in intro-heading'>
-        Elliot is a creative dynamo.. 
+        Elliot is a product dynamo.. 
       </p>
       <br/>      
       <p className='intro-paras fade-in '>
-       ..who is passionate about wielding modern technologies to capture a <span className="highlight">Product Vision</span> and amplify <span className="highlight">Brand Impact.</span> 
+       ..who is passionate about capturing a <span className="highlight">Product Vision</span> and transforming the idea into a product that has impact at <span className="highlight">Market.</span> 
       </p>
       <br/>      
       <p className='intro-paras fade-in '>
-        An able collaborator with a keen eye for design, Elliot specialises in <span className="highlight">Product Management,</span> <span className="highlight">Digital Design,</span> and crafting compelling <span className="highlight">User Experiences.</span> 
+        An able collaborator with a keen eye for design, Elliot specialises in <span className="highlight">Concept Development,</span> <span className="highlight">Product Management,</span> and crafting compelling <span className="highlight">User Experiences.</span> 
       </p>
       <br/>      
       <p className='intro-paras fade-in'>
-        Elliot's expertise extends to <span className="highlight">Web Development</span> with a focus on building agent driven Web Apps, demonstrating a blend of technical prowess and artistic flair.  
+        Elliot's expertise extends to <span className="highlight">Web & Mobile Development</span> and <span className="highlight">Project Managament</span>, demonstrating a blend of technical prowess and artistic flair.  
       </p>
       <br/>      
 
@@ -106,7 +106,6 @@ export default function Intro() {
 
       <hr className='intro-hr'></hr>
       <br/>
-      <br/>
 
       <div className='call-to-action'>   
         <p className='reach-out'>Reach out.</p>
@@ -127,7 +126,6 @@ export default function Intro() {
 
       </div>
 
-      <br/>
       <br/>
 
       <div className='call-to-action'>  
@@ -158,9 +156,8 @@ export default function Intro() {
       </div>
 
       <br/>
-      <br/>
 
-      <p className="keep-scrolling intro-paras fade-in">See development projects below..</p>
+      <p className="keep-scrolling intro-paras fade-in">See projects below..</p>
 
 
       <div className="go-down-intro" >
@@ -178,6 +175,30 @@ export default function Intro() {
         </defs>
       </svg>
 
+      <svg id="about-clip-1-wrapper" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="about-clip-1" viewBox="0 0 800 800" clipPathUnits="objectBoundingBox" >
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.00015 800.004C2.23874 800.004 9.17484e-05 797.765 9.19898e-05 795.004L0.000155486 766.848L0.000158385 733.691L-1.89643e-05 667.85L2.73294e-05 138.312L0.000156691 54.9121C0.000156993 51.4533 1.78751 48.2401 4.72617 46.4159L77.0776 1.50403C78.6611 0.521116 80.4878 0.000242274 82.3515 0.000242436L296.84 0.000261188C300.225 0.000261484 303.554 0.859148 306.516 2.49648L344.83 23.6753C347.792 25.3126 351.121 26.1715 354.505 26.1715L706.964 26.1716C708.629 26.1716 710.266 26.5869 711.73 27.38L797.383 73.8071C798.996 74.6812 800 76.3684 800 78.2028L800 139.11L800 139.11L800 667.379L800 667.379L800 748.078C800 750.839 797.762 753.078 795 753.078L671.33 753.078C667.917 753.078 664.561 753.951 661.58 755.615L626.045 775.457C623.065 777.121 619.708 777.994 616.295 777.994L200.583 777.994C197.248 777.994 193.965 778.828 191.034 780.421L159.466 797.575C156.535 799.168 153.253 800.002 149.917 800.002L77.5002 800.003L38.7502 800.003L5.00015 800.004Z" 
+                  transform="scale(0.00125, 0.00125)" /> 
+          </clipPath>
+        </defs>
+      </svg>
+      <svg id="about-clip-2-wrapper" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="about-clip-2" viewBox="0 0 800 800" clipPathUnits="objectBoundingBox" >
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M795 5.04462e-10C797.761 -3.88033e-05 800 2.23855 800 5.00001L800 132.532L800 664.948L800 671.76L800 747.215C800 749.977 797.762 752.215 795 752.215H671.413C667.947 752.215 664.541 753.116 661.528 754.829L626.097 774.974C623.084 776.687 619.678 777.588 616.212 777.588L200.665 777.587C197.277 777.587 193.945 778.448 190.981 780.088L159.519 797.497C156.555 799.137 153.223 799.998 149.836 799.998L5.00005 800C2.2386 800 -2.09536e-05 797.761 -1.8222e-05 795L0.00011049 664.948H0.000183105V135.052H-0.00012207V52.7847C-0.00012207 50.0233 2.23846 47.7847 4.99988 47.7847H128.587C132.053 47.7847 135.459 46.884 138.472 45.1709L173.903 25.0261C176.916 23.3131 180.322 22.4124 183.788 22.4124H599.335C602.723 22.4124 606.055 21.552 609.019 19.912L640.481 2.50246C643.445 0.862454 646.777 0.00208288 650.164 0.00203528L795 5.04462e-10Z" 
+                  transform="scale(0.00125, 0.00125)" /> 
+          </clipPath>
+        </defs>
+      </svg>
+      <svg id="about-clip-3-wrapper" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="about-clip-3" viewBox="0 0 800 800" clipPathUnits="objectBoundingBox" >
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M795 4.86507e-10C797.762 -3.81065e-05 800 2.23856 800 5.00001L800 132.154V661.692L800 745.092C800 748.551 798.213 751.764 795.274 753.588L722.923 798.5C721.339 799.483 719.513 800.004 717.649 800.004H503.16C499.775 800.004 496.446 799.145 493.484 797.507L455.171 776.329C452.209 774.691 448.88 773.832 445.495 773.832L93.036 773.832C91.3718 773.832 89.7338 773.417 88.2707 772.624L2.61742 726.197C1.00469 725.323 0.000113253 723.636 0.000113379 721.801L0.00011756 660.894H0.000374169V132.625H8.33097e-09L0 51.926C-2.83762e-10 49.1646 2.23859 46.926 5 46.926H128.67C132.083 46.926 135.44 46.0525 138.42 44.3884L173.955 24.5473C176.935 22.8833 180.292 22.0097 183.705 22.0097H599.417C602.753 22.0097 606.035 21.1754 608.966 19.5828L640.534 2.42892C643.465 0.836332 646.747 0.00204586 650.083 0.00199983L795 4.86507e-10Z"
+                  transform="scale(0.00125, 0.00125)" /> 
+          </clipPath>
+        </defs>
+      </svg>
     </div>
   )
 }

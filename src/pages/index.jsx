@@ -38,7 +38,9 @@ export default function Home() {
             <SEO />
             <BackgroundScene />
             <LandingHeaders />
-            <About />
+            {/* <About /> */}
+            <Intro />
+
             <Design1 />
 
             <Design2 />
@@ -47,7 +49,6 @@ export default function Home() {
             {/* <WebDesign2 /> */}
             {/* <WebDesign3 /> */}
             <MobDesign />
-            <Intro />
             <ProjectsList /> 
           </Layout> 
         </> 
