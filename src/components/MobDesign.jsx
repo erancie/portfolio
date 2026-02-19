@@ -10,7 +10,7 @@ const designs = [
 
 export default function MobDesign() {
   return (
-    <section id="design" className="design mob-design">
+    <section id="design4" className="design mob-design design4 side-viewing">
       <MosaicGridPortrait designs={designs} variant="landscape" title='Mobile Native' />
     </section>
   )
